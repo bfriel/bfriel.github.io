@@ -30,9 +30,12 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
+    "typeface-lato": "0.0.75",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
+    "typeface-neuton": "0.0.72",
     "typography": "^0.16.19",
+    "typography-theme-stow-lake": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
