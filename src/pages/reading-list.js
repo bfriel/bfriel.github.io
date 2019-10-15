@@ -10,6 +10,7 @@ export default function ReadingList({ data, location }) {
         <Layout location={location} title={siteTitle}>
             <SEO title="Reading List" />
             <h1>Hello from reading list</h1>
+            <Link to='/'>Go Home</Link>
         </Layout>
     )
 };

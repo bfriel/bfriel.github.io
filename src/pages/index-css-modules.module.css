@@ -1,0 +1,12 @@
+.article {
+    display: flex;
+    align-items: flex-start;
+}
+
+.main {
+    margin-left: 10px;
+}
+
+.title {
+    margin: 0;
+}

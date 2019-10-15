@@ -1,0 +1,41 @@
+.nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.header {
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-family: "Neuton", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.link {
+    padding: 2px 0;
+    margin: 0 10px;
+    position: relative;
+}
+
+.link.active::after {
+    content: ' ';
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+}
+
+.nav .link:last-of-type {
+    margin-right: 0;
+}
+
+.nav .link:first-of-type {
+    margin-left: 0;
+}

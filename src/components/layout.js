@@ -1,76 +1,62 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import "./layout.css";
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography";
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-            letterSpacing: `0.5px`,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
+export default function Layout({location, title, children}) {
+  // const rootPath = `${__PATH_PREFIX__}/`;
+  // console.log(location)
+  return (
+    <div
+      style={{
+        marginLeft: `auto`,
+        marginRight: `auto`,
+        maxWidth: rhythm(24),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
+      // style={{
+      //   marginLeft: `auto`,
+      //   marginRight: `auto`,
+      //   maxWidth: rhythm(36),
+      //   padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      // }}
+    >
+      <header>
+        <nav className={`nav`} style={{marginBottom: rhythm(1.5)}}>
+          <Link to={`/`} className={`link`} >
+            <h2 className={`header`}>
+                {title}
+            </h2>
           </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Neuton, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
-    return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
+          <div>
+            <Link to={`/`} className={location.pathname === `/` ? `link active` : `link`}>
+              Writings
+            </Link>
+            <Link to={`/reading-list`}className={location.pathname === `/reading-list` ? `link active` : `link`}>
+              Reading List
+            </Link>
+            <Link to={`/about`} className={location.pathname === `/about` ? `link active` : `link`}>
+              About
+            </Link>
+          </div>
+        </nav>
+      </header>
+      <main
+        // style={{
+        //   marginLeft: `auto`,
+        //   marginRight: `auto`,
+        //   maxWidth: rhythm(24),
+        //   padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        // }}
       >
-        <header>{header}</header>
-        <main>{children}</main>
-        {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
-      </div>
-    )
-  }
-}
-
-export default Layout
+        {children}
+      </main>
+      {/* <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer> */}
+    </div>
+  );
+};

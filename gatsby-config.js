@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Brian Friel`,
     author: `Brian Friel`,
-    description: `Brian Friel is a San Francisco based frontend developer and product manager`,
+    description: `Brian Friel is a San Francisco-based frontend developer and product manager`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `brianfriel_`,
@@ -72,6 +72,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
       },
     },
   ],

@@ -1,23 +1,16 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { rhythm } from "../utils/typography";
 
-import { rhythm } from "../utils/typography"
-
-const Bio = () => {
+export default function Bio() {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -30,9 +23,9 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
+  const { author } = data.site.siteMetadata;
 
-  const { author, social } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -40,29 +33,35 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      <div style={{ width: `100%`, maxWidth: `80px` }}>
+        <Img fluid={data.avatar.childImageSharp.fluid} style={{ borderRadius: `100px` }} />
+      </div>
+      <div>
+        <p
+          style={{
+            fontFamily: `medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif`,
+            lineHeight: `20px`,
+            color: `rgba(0,0,0,0.54)`,
+            fontWeight: 300,
+            fontSize: `15px`,
+            textTransform: `uppercase`,
+            letterSpacing: `0.5px`,
+            margin: 0,
+          }}
+        >
+          Written by
+        </p>
+        <h3
+          style={{
+            margin: 0,
+            fontSize: `28px`,
+            lineHeight: `36px`,
+          }}
+        >
+          {author}
+        </h3>
+        <p>Head of Product at Castle Funds, a cryptoasset investment firm.</p>
+      </div>
     </div>
-  )
-}
-
-export default Bio
+  );
+};
