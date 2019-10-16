@@ -9,6 +9,7 @@ export default function Layout({location, title, children}) {
 
   const [headerScrollClass, setHeaderScrollClass] = useState(`show`);
   const [headerBoxShadowClass, setHeaderBoxShadowClass] = useState(`no-shadow`);
+  const [hamburgerClass, setHamburgerClass] = useState(`not-toggled`);
 
   useEffect(() => {
     let didScroll;
@@ -47,6 +48,12 @@ export default function Layout({location, title, children}) {
       clearInterval(checkScrollInterval);
     }
   }, []);
+
+  const handleHamburgerClick = e => hamburgerClass === `not-toggled`
+    ? setHamburgerClass(`toggled`)
+    : setHamburgerClass(`not-toggled`);
+
+
   return (
     <div>
       <header id={`header`}>
@@ -63,7 +70,7 @@ export default function Layout({location, title, children}) {
                   {title}
               </h2>
             </Link>
-            <div>
+            <div className={`desktop-nav`}>
               <Link to={`/`} className={location.pathname === `/` ? `link active` : `link`}>
                 Writings
               </Link>
@@ -74,8 +81,18 @@ export default function Layout({location, title, children}) {
                 About
               </Link>
             </div>
+            <div className={`hamburger-container`} onClick={handleHamburgerClick}>
+              <div className={`hamburger ${hamburgerClass}`}>
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+            <div className={`overlay ${hamburgerClass}`} />
+            <div className={`mobile-menu ${hamburgerClass}`}>
+              
+            </div>
           </nav>
-
         </div>
       </header>
       <main

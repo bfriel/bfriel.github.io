@@ -1,3 +1,8 @@
+blockquote {
+    border-color: #232C3A;
+}
+
+
 #header {
     position: relative;
     width: 100%;
@@ -71,6 +76,110 @@ a {
     margin-left: 0;
 }
 
+/* 
+MOBILE MENU
+*/
+
+.hamburger-container {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    z-index: 200;
+    user-select: none;
+    /* height: 70px;
+    width: 70px; */
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 40px;
+    height: 32px; */
+    cursor: pointer;
+    z-index: 300;
+    /* padding: 10px; */
+    padding: 10px 10px 0 10px;
+}
+
+.hamburger span {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    border-radius: 3px;
+    z-index: 200;
+    transform-origin: 5px 0;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    background-color: #000;
+}
+
+.hamburger span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.hamburger span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+.hamburger.toggled span {
+    opacity: 1;
+    background-color: #000;
+    transform: rotate(45deg) translate(-6px, -13px);
+}
+
+.hamburger.toggled span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(-2px, 11px);
+}
+
+.hamburger.toggled span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+    height: 100vh;
+    width: 100vwh;
+}
+
+.overlay.toggled {
+    display: block;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FAFAFA;
+    width: 80vw;
+    height: 100vh;
+    z-index: 4;
+    box-shadow: 0 0 10px #85888C;
+    transform: translateX(102%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.mobile-menu.toggled {
+    transform: translateX(0%);
+}
+
+/* 
+EXPERIMENTAL LINK STYLING
+ */
+
 .cover-link {
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   background-repeat: no-repeat;
@@ -80,4 +189,18 @@ a {
 }
 .cover-link:hover {
     background-size: 100% 88%;
+}
+
+/* 
+MEDIA QUERY
+ */
+
+@media screen and (max-width: 740px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-container {
+        display: flex;
+    }
 }
