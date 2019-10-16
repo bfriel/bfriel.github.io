@@ -1,10 +1,30 @@
+.header {
+    background-color: #FFF;
+    position: sticky;
+    z-index: 200;
+    /* box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05); */
+    transition: all .2s ease;
+}
+
+.header.show {
+    top: 0;
+}
+
+.header.hide {
+    top: -100px;
+}
+
+.header.shadow {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
 .nav {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
 
-.header {
+.title {
     margin: 0;
     letter-spacing: 0.5px;
     font-family: "Neuton", sans-serif;
