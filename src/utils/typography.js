@@ -6,6 +6,9 @@ StowLake.overrideThemeStyles = () => {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    "h3": {
+      letterSpacing: `0.5px`,
+    },
     // "h1, h2": {
     //   fontWeight: 500,
     // },

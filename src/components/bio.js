@@ -36,7 +36,7 @@ export default function Bio() {
       <div style={{ width: `100%`, maxWidth: `80px` }}>
         <Img fluid={data.avatar.childImageSharp.fluid} style={{ borderRadius: `100px` }} />
       </div>
-      <div>
+      <div style={{marginLeft: rhythm(0.5)}}>
         <p
           style={{
             fontFamily: `medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif`,
@@ -56,6 +56,7 @@ export default function Bio() {
             margin: 0,
             fontSize: `28px`,
             lineHeight: `36px`,
+            fontWeight: `500`,
           }}
         >
           {author}
