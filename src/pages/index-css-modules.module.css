@@ -3,10 +3,14 @@
     align-items: flex-start;
 }
 
-.main {
+.articleMain {
     margin-left: 10px;
 }
 
-.title {
+.articleTitle {
     margin: 0;
+}
+
+.title {
+    margin-top: 0;
 }

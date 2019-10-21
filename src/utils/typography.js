@@ -9,12 +9,6 @@ StowLake.overrideThemeStyles = () => {
     "h3": {
       letterSpacing: `0.5px`,
     },
-    // "h1, h2": {
-    //   fontWeight: 500,
-    // },
-    // "h1, h2, h3, h4, h5": {
-    //   fontWeight: 500,
-    // },
   }
 }
 

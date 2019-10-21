@@ -51,22 +51,25 @@ a {
     color: inherit;
     text-decoration: none;
     box-shadow: none;
-
-    /* background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 88%;
-    transition: background-size 0.25s ease-in; */
 }
 
-/* a:hover {
-    background-size: 100% 88%;
-} */
+a.link {
+    padding: 2px 0;
+    position: relative;
+}
+
+a.link::after {
+    content: ' ';
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+}
 
 .nav a.link {
-    padding: 2px 0;
     margin: 0 10px;
-    position: relative;
     font-size: 0.72572rem;
     text-transform: uppercase;
 }
@@ -80,13 +83,8 @@ a {
 }
 
 .nav a.link::after {
-    content: ' ';
-    position: absolute;
-    background-color: #000;
     width: 0;
     height: 0;
-    left: 0;
-    bottom: 0;
     transition: width .2s ease;
 }
 
