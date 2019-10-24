@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@jamesdanylik/gatsby-source-goodreads": "^0.1.0",
     "gatsby": "^2.16.4",
     "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.29",

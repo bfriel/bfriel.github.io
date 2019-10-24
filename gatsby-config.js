@@ -74,5 +74,28 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    // {
+    //   resolve: "gatsby-source-goodreads",
+    //   options: {
+    //     developerKey: "A9w8xewykvBqDRUM6Qvbg",
+    //     goodReadsUserId: "104343871",
+    //     userShelf: "currently-reading", //optional
+    //   }
+    // },
+    // {
+    //   resolve: "gatsby-source-goodreads",
+    //   options: {
+    //     developerKey: "A9w8xewykvBqDRUM6Qvbg",
+    //     goodReadsUserId: "104343871",
+    //     userShelf: "changed-the-way-i-think", //optional
+    //   }
+    // },
+    {
+      resolve: "@jamesdanylik/gatsby-source-goodreads",
+      options: {
+        key: "A9w8xewykvBqDRUM6Qvbg",
+        id: "104343871",
+      }
+    },
   ],
 }
