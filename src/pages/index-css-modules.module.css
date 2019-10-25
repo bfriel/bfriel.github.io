@@ -14,3 +14,38 @@
 .title {
     margin-top: 0;
 }
+
+/* reading list */
+
+.book {
+    background-color: #fafafa;
+}
+
+.book:hover .bookDetails {
+    opacity: 1;
+}
+
+.bookDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fafafa;
+    opacity: 0;
+    transition: opacity .2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.bookTitle, .bookAuthors {
+    text-align: center;
+}
+
+.bookAuthors {
+    font-size: 12px;
+    margin: 0;
+}

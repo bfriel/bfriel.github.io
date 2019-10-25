@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import styles from './index-css-modules.module.css';
+import { rhythm } from "../utils/typography"
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,18 +10,40 @@ export default function ReadingList({ data, location }) {
   const allBooksImReadingNow = data.allBooksImReadingNow.edges;
   const allBooksThatChangedTheWayIThink = data.allBooksThatChangedTheWayIThink.edges;
 
+  const showBooks = books => books.map(book => 
+    <a 
+      key={book.node.id} 
+      className={styles.book}
+      href={book.node.volumeInfo.link}
+      target={`_blank`}
+      rel={`noopener noreferrer`}
+      style={{ 
+        display: `block`,
+        height: `200px`, 
+        width: `130px`, 
+        margin: `10px`, 
+        backgroundImage: `url(${book.node.volumeInfo.thumbnail})`, 
+        backgroundSize: `cover`, 
+        position: `relative`,
+        cursor: `pointer`,
+      }}>
+      <div className={styles.bookDetails}>
+        <p className={styles.bookTitle}>{book.node.volumeInfo.title}</p>
+        <p className={styles.bookAuthors}>{book.node.volumeInfo.authors.join(` & `)}</p>
+      </div>
+    </a>
+  );
+
   return (
       <Layout location={location} title={data.site.siteMetadata.title}>
           <SEO title="Reading List" />
           <h1 className={styles.title}>Currently Reading</h1>
           <section style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-evenly` }}>
-            {allBooksImReadingNow.map(book => <div key={book.node.id} style={{ height: `200px`, width: `130px`, margin: `10px`, backgroundImage: `url(${book.node.volumeInfo.thumbnail})`, backgroundSize: `cover`, }} />)}
+            {showBooks(allBooksImReadingNow)}
           </section>
-
-
-          <h1 className={styles.title}>Changed the Way I Think</h1>
+          <h1 style={{marginTop: rhythm(2)}} className={styles.title}>Changed the Way I Think</h1>
           <section style={{display: `flex`, flexWrap: `wrap`, justifyContent: `space-evenly`}}>
-          {allBooksThatChangedTheWayIThink.map(book => <div key={book.node.id} style={{ height: `200px`, width: `130px`, margin: `10px`, backgroundImage: `url(${book.node.volumeInfo.thumbnail})`, backgroundSize: `cover`, }} />)}
+            {showBooks(allBooksThatChangedTheWayIThink)}
           </section>
       </Layout>
   );
