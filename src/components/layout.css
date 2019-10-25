@@ -51,9 +51,32 @@ a {
     color: inherit;
     text-decoration: none;
     box-shadow: none;
+
+    /*  */
+    padding: 2px 0;
+    position: relative;
+    transition: color .1s ease;
 }
 
-a.link {
+a::after {
+    content: ' ';
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+}
+
+a:hover {
+    color: #4665b7;
+}
+
+a:hover::after {
+    background-color: #4665b7;
+}
+
+/* a.link {
     padding: 2px 0;
     position: relative;
 }
@@ -66,6 +89,10 @@ a.link::after {
     height: 2px;
     left: 0;
     bottom: 0;
+} */
+
+a.no-underline::after {
+    display: none;
 }
 
 .nav a.link {
@@ -88,10 +115,19 @@ a.link::after {
     transition: width .2s ease;
 }
 
+.nav a:hover {
+    color: #000;
+}
+
 .nav a.link:hover::after {
     height: 2px;
-    width: 75%;
+    width: 100%;
+    background-color: #000;
  }
+
+.nav a.link.active {
+    color: #000;
+}
 
 .nav a.link.active::after {
     height: 2px;

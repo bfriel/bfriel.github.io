@@ -21,6 +21,10 @@
     background-color: #fafafa;
 }
 
+.book::after {
+    display: none;
+}
+
 .book:hover .bookDetails {
     opacity: 1;
 }

@@ -65,7 +65,7 @@ export default function Layout({location, title, children}) {
               padding: `${rhythm(1.0)} ${rhythm(3 / 4)}`,
             }}
           >
-            <Link to={`/`}>
+            <Link to={`/`} className={`no-underline`}>
               <h2 className={`title`}>
                   {title}
               </h2>

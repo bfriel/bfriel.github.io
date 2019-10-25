@@ -26,6 +26,7 @@ export default function ReadingList({ data, location }) {
         backgroundSize: `cover`, 
         position: `relative`,
         cursor: `pointer`,
+        color: `#000`,
       }}>
       <div className={styles.bookDetails}>
         <p className={styles.bookTitle}>{book.node.volumeInfo.title}</p>
