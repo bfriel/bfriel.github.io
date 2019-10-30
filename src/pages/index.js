@@ -18,13 +18,7 @@ export default function Homepage({data, location}) {
         const featuredImgFluid = node.frontmatter.featuredImage.childImageSharp.fluid;
         return (
           <Link style={{ boxShadow: `none`, color: 'initial' }} to={node.fields.slug} key={node.fields.slug}>
-            <article className={styles.article} style={{ marginBottom: rhythm(1) }}>
-                <BackgroundImage
-                  Tag="section"
-                  fluid={featuredImgFluid}
-                  style={{height: `150px`, width: `100%`, maxWidth: `200px`}}
-                  backgroundColor={`#040e18`}
-                />
+            <article className={`article`} style={{ marginBottom: rhythm(2)}}>
               <section className={styles.articleMain}>
                 <header>
                   <h3 className={styles.articleTitle}>
@@ -36,8 +30,15 @@ export default function Homepage({data, location}) {
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
+                  className="article-preview"
                 />
               </section>
+              <BackgroundImage
+                Tag="section"
+                fluid={featuredImgFluid}
+                style={{ height: `186px`, width: `100%`, maxWidth: `200px` }}
+                backgroundColor={`#040e18`}
+              />
             </article>
           </Link>
         );

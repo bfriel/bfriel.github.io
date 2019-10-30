@@ -6,13 +6,17 @@
 
 /* writings */
 
-.article {
+/* .article {
     display: flex;
     align-items: flex-start;
-}
+    width: 100%;
+} */
 
 .articleMain {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    width: 100%;
+    margin-right: 10px;
+    padding: 20px 0 20px 20px;
 }
 
 .articleTitle {
