@@ -1,7 +1,59 @@
+/* HTML ELEMENTS */
+
 blockquote {
     border-color: #232C3A;
 }
 
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 120px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: none;
+    padding: 2px 0;
+    position: relative;
+    transition: color .1s ease;
+}
+
+a::after {
+    content: ' ';
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+}
+
+a:hover {
+    color: #4665b7;
+}
+
+a:hover::after {
+    background-color: #4665b7;
+}
+
+
+/* GENERAL */
+
+.center-text {
+    text-align: center;
+}
+
+a.no-underline::after, a.gatsby-resp-image-link::after {
+    display: none;
+}
+
+a.gatsby-resp-image-link, a.no-padding {
+    padding: initial;
+}
+
+
+/* NAVAGATION */
 
 #header {
     position: relative;
@@ -47,34 +99,7 @@ blockquote {
     font-weight: 500;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-    box-shadow: none;
 
-    /*  */
-    padding: 2px 0;
-    position: relative;
-    transition: color .1s ease;
-}
-
-a::after {
-    content: ' ';
-    position: absolute;
-    background-color: #000;
-    width: 100%;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-}
-
-a:hover {
-    color: #4665b7;
-}
-
-a:hover::after {
-    background-color: #4665b7;
-}
 
 /* a.link {
     padding: 2px 0;
@@ -91,9 +116,7 @@ a.link::after {
     bottom: 0;
 } */
 
-a.no-underline::after {
-    display: none;
-}
+
 
 .nav a.link {
     margin: 0 10px;
@@ -135,6 +158,34 @@ a.no-underline::after {
 }
 
 
+/* FOOTER */
+
+.main-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.social-icon {
+    height: 42px;
+    width: 42px;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.social-icon.twitter {
+    margin-right: 5px;
+}
+
+.social-icon.twitter:hover {
+    fill: rgb(0, 157, 247);
+}
+
+.social-icon.linkedin:hover {
+    fill: rgb(0, 93, 197);
+}
 
 
 
@@ -148,8 +199,6 @@ MOBILE MENU
     position: relative;
     z-index: 200;
     user-select: none;
-    /* height: 70px;
-    width: 70px; */
 }
 
 .hamburger {
@@ -157,11 +206,8 @@ MOBILE MENU
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 40px;
-    height: 32px; */
     cursor: pointer;
     z-index: 300;
-    /* padding: 10px; */
     padding: 10px 10px 0 10px;
 }
 
@@ -236,6 +282,11 @@ MOBILE MENU
 
 .mobile-menu.toggled {
     transform: translateX(0%);
+}
+
+.mobile-menu-item {
+    text-transform: uppercase;
+    margin: 30px auto;
 }
 
 
