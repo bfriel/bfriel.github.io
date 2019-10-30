@@ -52,6 +52,9 @@ a.gatsby-resp-image-link, a.no-padding {
     padding: initial;
 }
 
+.show-xs {
+    display: none;
+}
 
 /* NAVAGATION */
 
@@ -165,6 +168,15 @@ a.link::after {
     bottom: 0;
     width: 100%;
     height: 80px;
+}
+
+.inner-footer {
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid #e6e6e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .social-icon {
@@ -382,24 +394,20 @@ MOBILE MENU
 }
 
 /* extra small */
-/* 
+
 @media screen and (max-width: 480px) {
-    .desktop-nav {
+    .hide-xs {
         display: none;
     }
 
-    .hamburger-container {
-        display: flex;
+    .show-xs {
+        display: block;
     }
 
-    .text-center-small {
-        text-align: center;;
+    .inner-footer {
+        flex-direction: column;
     }
-
-    .about-headshot {
-        float: none;
-    }
-} */
+}
 
 /* @media all and (max-width: 991px) { ... }
 @media all and (max-width: 768px) { ... }
