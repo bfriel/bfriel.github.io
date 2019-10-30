@@ -1,3 +1,11 @@
+/* general */
+
+.title {
+    margin-top: 0;
+}
+
+/* writings */
+
 .article {
     display: flex;
     align-items: flex-start;
@@ -9,11 +17,17 @@
 
 .articleTitle {
     margin: 0;
+    transition: color .1s ease;
 }
 
-.title {
-    margin-top: 0;
+.articlePreview {
+    margin-bottom: 0;
 }
+
+.article:hover .articleTitle {
+    color: #4665b7;
+}
+
 
 /* reading list */
 

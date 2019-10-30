@@ -238,24 +238,7 @@ MOBILE MENU
     transform: translateX(0%);
 }
 
-/* 
-EXPERIMENTAL LINK STYLING
- */
-
-.cover-link {
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in;
-}
-.cover-link:hover {
-    background-size: 100% 88%;
-}
-
-/* 
-MEDIA QUERY
- */
+/* MEDIA QUERY */
 
 @media screen and (max-width: 740px) {
     .desktop-nav {
