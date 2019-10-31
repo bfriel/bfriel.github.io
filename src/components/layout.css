@@ -354,6 +354,15 @@ MOBILE MENU
 }
 
 
+/* POSTS */
+
+.post-nav-bottom {
+    margin: 0;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 300;
+}
+
 
 /* MEDIA QUERIES */
 

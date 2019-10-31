@@ -60,20 +60,27 @@ class BlogPostTemplate extends React.Component {
               justifyContent: `space-between`,
               listStyle: `none`,
               padding: 0,
+              marginLeft: 0,
             }}
           >
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
+                <div>
+                  <Link to={previous.fields.slug} rel="prev">
+                    <h5 className={`post-nav-bottom`}>Previous Post</h5>
+                    ← {previous.frontmatter.title}
+                  </Link>
+                </div>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
+                <div>
+                  <Link to={next.fields.slug} rel="next">
+                    <h5 className={`post-nav-bottom`}>Next Post</h5>
+                    {next.frontmatter.title} →
+                  </Link>
+                </div>
               )}
             </li>
           </ul>
