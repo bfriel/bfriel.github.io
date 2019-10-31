@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import styles from './index-css-modules.module.css';
 import clsx from 'clsx';
@@ -24,6 +24,7 @@ export default function About({ data, location }) {
             <p>I'm a product manager with a background in software engineering and an interest in big, futuristic ideas.</p>
             <p>Currently, I lead product at <a className="link" href="https://castlefunds.io/" target="_blank" rel="noopener noreferrer">Castle Funds</a>, a cryptoasset investment firm in the San Francisco Bay Area. At Castle, I focus on building institutional-grade investment products around assets like Bitcoin and emerging DeFi protocols.</p>
             <p>Before getting into tech, I worked as a whitewater raft guide, led backpacking trips across four European countries, and <a className="link" href="https://www.sagehens.com/sports/fball/2014-15/bios/friel_brian_ar4p" target="_blank" rel="noopener noreferrer">played football at Pomona College.</a></p>
+            <p>You can send me an email <Link to="/contact">here.</Link></p>
           </section>
       </Layout>
   );

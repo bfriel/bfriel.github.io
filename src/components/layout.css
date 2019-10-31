@@ -199,7 +199,16 @@ a.link::after {
     padding: 10px;
 }
 
+.social-icon.email {
+    fill: hsla(0,0%,0%,0.8);
+}
+
+.social-icon.email:hover {
+    fill: #4BB543 !important;
+}
+
 .social-icon.twitter {
+    margin-left: 5px;
     margin-right: 5px;
 }
 
