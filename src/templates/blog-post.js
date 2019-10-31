@@ -67,7 +67,7 @@ class BlogPostTemplate extends React.Component {
               {previous && (
                 <div>
                   <Link to={previous.fields.slug} rel="prev">
-                    <h5 className={`post-nav-bottom`}>Previous Post</h5>
+                    <h5 className={`light-subheader`}>Previous Post</h5>
                     ← {previous.frontmatter.title}
                   </Link>
                 </div>
@@ -77,7 +77,7 @@ class BlogPostTemplate extends React.Component {
               {next && (
                 <div>
                   <Link to={next.fields.slug} rel="next">
-                    <h5 className={`post-nav-bottom`}>Next Post</h5>
+                    <h5 className={`light-subheader`}>Next Post</h5>
                     {next.frontmatter.title} →
                   </Link>
                 </div>

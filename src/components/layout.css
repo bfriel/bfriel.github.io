@@ -56,6 +56,18 @@ a.gatsby-resp-image-link, a.no-padding {
     display: none;
 }
 
+.light-subheader {
+    margin: 0;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
 /* NAVAGATION */
 
 #header {
@@ -356,13 +368,43 @@ MOBILE MENU
 
 /* POSTS */
 
-.post-nav-bottom {
-    margin: 0;
-    text-transform: uppercase;
-    color: #999;
-    font-weight: 300;
+
+/* CONTACT */
+
+.user-input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 16px;
+    margin: 8px 0;
+    letter-spacing: .5px;
 }
 
+textarea.user-input {
+    min-height: 200px;
+    resize: none;
+}
+
+.error-text {
+    color: red;
+}
+
+.submit-button {
+    display: block;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #e6e6e5;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
+    transition: all .2s ease;
+}
+
+.submit-button:hover {
+    background-color: #d4d4d1
+}
 
 /* MEDIA QUERIES */
 

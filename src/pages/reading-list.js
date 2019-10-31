@@ -55,11 +55,11 @@ export default function ReadingList({ data, location }) {
   return (
       <Layout location={location} title={data.site.siteMetadata.title}>
           <SEO title="Reading List" />
-          <h1 className={clsx(styles.title, `text-center-small`)}>Currently Reading</h1>
+          <h1 className={clsx(styles.title, `text-center`)}>Currently Reading</h1>
           <section style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-evenly` }}>
             {showBooks(allBooksImReadingNow)}
           </section>
-          <h1 style={{marginTop: rhythm(2)}} className={clsx(styles.title, `text-center-small`)}>Changed the Way I Think</h1>
+          <h1 style={{marginTop: rhythm(2)}} className={clsx(styles.title, `text-center`)}>Changed the Way I Think</h1>
           <section style={{display: `flex`, flexWrap: `wrap`, justifyContent: `space-evenly`}}>
             {showBooks(allBooksThatChangedTheWayIThink)}
           </section>
