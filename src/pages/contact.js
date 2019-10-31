@@ -78,7 +78,7 @@ export default function Contact({data, location}) {
 
     const renderSubmit = () => {
         if (status === 'submitted') {
-            return <div className="text-center" style={{color: `#4BB543`}}>Thanks! I'll get back to you as soon as I can.</div>
+            return <div className="text-center" style={{ color: `#4BB543` }}>Thanks! I&#39;ll get back to you as soon as I can.</div>
         } else if (status === 'submitting') {
             return <button className="submit-button" disabled type="submit">Submitting..</button>;
         }; 
