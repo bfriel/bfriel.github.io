@@ -55,6 +55,8 @@ export default function Contact({data, location}) {
                 email,
                 message,
                 _replyto: email,
+                _subject: `Email to Brian Friel from ${name}`,
+                _gotcha: document.getElementById(`bottrap`).value, //If the _gotcha hidden element has a value, Formspree will silently ignore it on their end!
             }
         )
         .then((resp) => {
@@ -76,7 +78,7 @@ export default function Contact({data, location}) {
 
     const renderSubmit = () => {
         if (status === 'submitted') {
-            return <div className="text-center">Thanks! I'll get back to you as soon as I can.</div>
+            return <div className="text-center" style={{color: `#4BB543`}}>Thanks! I'll get back to you as soon as I can.</div>
         } else if (status === 'submitting') {
             return <button className="submit-button" disabled type="submit">Submitting..</button>;
         }; 
@@ -150,7 +152,7 @@ export default function Contact({data, location}) {
                     />
                     <p className="error-text">{errors.message}</p>
                 </label>
-                <input type="text" name="_gotcha" style={{display:"none"}} />
+                <input id="bottrap" type="text" name="_gotcha" style={{ display: `none` }} />
                 {renderSubmit()}
                 <p className="error-text text-center" style={{marginTop: `7px`}}>{errors.form}</p>
             </form>
