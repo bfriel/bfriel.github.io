@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
+import clsx from 'clsx';
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -13,6 +14,7 @@ export default function Homepage({data, location}) {
   return(
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
+      <h1 className={clsx(styles.title, `text-center`, `show-xs`)}>Writings</h1>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         const featuredImgFluid = node.frontmatter.featuredImage.childImageSharp.fluid;
