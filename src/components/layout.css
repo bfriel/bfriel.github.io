@@ -354,6 +354,9 @@ MOBILE MENU
 
 .article-preview {
     margin-bottom: 0;
+    margin-top: 10px;
+    font-style: italic;
+    color: #636161;
 }
 
 /* ABOUT */
