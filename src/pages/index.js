@@ -26,7 +26,7 @@ export default function Homepage({data, location}) {
                   <h3 className={styles.articleTitle}>
                     {title}
                   </h3>
-                  <small>{node.frontmatter.date}</small>
+                  <small>{node.frontmatter.date} | {node.timeToRead} Min Read</small>
                 </header>
                 <p
                   dangerouslySetInnerHTML={{
@@ -63,6 +63,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
