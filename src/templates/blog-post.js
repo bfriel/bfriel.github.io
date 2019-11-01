@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image";
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -21,6 +21,12 @@ class BlogPostTemplate extends React.Component {
         />
         <article>
           <header>
+            <BackgroundImage
+              Tag="section"
+              fluid={featuredImgFluid}
+              style={{ height: `300px`, width: `100%`}}
+              backgroundColor={`#040e18`}
+            />
             <h1
               style={{
                 marginTop: rhythm(1),
@@ -39,7 +45,6 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date} | {post.timeToRead} Min Read
             </p>
           </header>
-          <Img fluid={featuredImgFluid} />
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
