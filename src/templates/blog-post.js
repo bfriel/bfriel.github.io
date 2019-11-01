@@ -40,10 +40,19 @@ class BlogPostTemplate extends React.Component {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: rhythm(1),
+                marginBottom: rhythm(0.2),
               }}
             >
               {post.frontmatter.date} | {post.timeToRead} Min Read
+            </p>
+            <p
+              style={{
+                display: `block`,
+                fontStyle: `italic`,
+                marginBottom: rhythm(1),
+              }}
+            >
+              {post.frontmatter.description}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
