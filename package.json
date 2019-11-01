@@ -1,14 +1,13 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "brian-friel",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Brian Friel is a San Francisco-based product manager and frontend developer",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Brian Friel <briandfriel@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/bfriel/bfriel.github.io/issues"
   },
   "dependencies": {
-    "@jamesdanylik/gatsby-source-goodreads": "^0.1.0",
     "clsx": "^1.0.4",
     "gatsby": "^2.16.4",
     "gatsby-background-image": "^0.8.15",
@@ -35,25 +34,22 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-lato": "0.0.75",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
     "typeface-neuton": "0.0.72",
     "typography": "^0.16.19",
-    "typography-theme-stow-lake": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-stow-lake": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/bfriel/bfriel.github.io#readme",
   "keywords": [
-    "gatsby"
+    "friel"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/bfriel/bfriel.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",

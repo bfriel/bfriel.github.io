@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Brian Friel`,
     author: `Brian Friel`,
-    description: `Brian Friel is a San Francisco-based frontend developer and product manager`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Brian Friel is a San Francisco-based product manager and frontend developer`,
+    siteUrl: `https://brianfriel.xyz/`,
     social: {
       twitter: `brianfriel_`,
     },
@@ -50,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-151349675-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -73,29 +73,6 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
-    },
-    // {
-    //   resolve: "gatsby-source-goodreads",
-    //   options: {
-    //     developerKey: "A9w8xewykvBqDRUM6Qvbg",
-    //     goodReadsUserId: "104343871",
-    //     userShelf: "currently-reading", //optional
-    //   }
-    // },
-    // {
-    //   resolve: "gatsby-source-goodreads",
-    //   options: {
-    //     developerKey: "A9w8xewykvBqDRUM6Qvbg",
-    //     goodReadsUserId: "104343871",
-    //     userShelf: "changed-the-way-i-think", //optional
-    //   }
-    // },
-    {
-      resolve: "@jamesdanylik/gatsby-source-goodreads",
-      options: {
-        key: "A9w8xewykvBqDRUM6Qvbg",
-        id: "104343871",
-      }
     },
   ],
 }
