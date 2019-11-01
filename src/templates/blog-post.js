@@ -18,6 +18,7 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          image={post.frontmatter.featuredImage.childImageSharp.resize.src}
         />
         <article>
           <header>
@@ -117,6 +118,9 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
+            }
+            resize(width: 900, quality: 90) {
+              src
             }
           }
         }
