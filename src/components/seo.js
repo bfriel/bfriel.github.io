@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title, image }) {
 
   const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || avatar.childImageSharp.resize.src;
-  console.log('seo image', metaImage);
+
   return (
     <Helmet
       htmlAttributes={{
