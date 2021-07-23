@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image";
+import BackgroundImage from "gatsby-background-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -12,7 +12,8 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+    const featuredImgFluid =
+      post.frontmatter.featuredImage.childImageSharp.fluid
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -25,7 +26,7 @@ class BlogPostTemplate extends React.Component {
             <BackgroundImage
               Tag="section"
               fluid={featuredImgFluid}
-              style={{ height: `300px`, width: `100%`}}
+              style={{ height: `300px`, width: `100%` }}
               backgroundColor={`#040e18`}
             />
             <h1
@@ -57,6 +58,7 @@ class BlogPostTemplate extends React.Component {
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
+            className="divider"
             style={{
               marginBottom: rhythm(1),
             }}
@@ -80,9 +82,13 @@ class BlogPostTemplate extends React.Component {
             <li>
               {previous && (
                 <div>
-                  <Link to={previous.fields.slug} rel="prev">
-                    <h5 className={`light-subheader`}>Previous Post</h5>
-                    ← {previous.frontmatter.title}
+                  <Link
+                    to={previous.fields.slug}
+                    rel="prev"
+                    className="no-underline"
+                  >
+                    <h5 className="light-subheader">Previous Post</h5>←{" "}
+                    {previous.frontmatter.title}
                   </Link>
                 </div>
               )}
@@ -90,8 +96,12 @@ class BlogPostTemplate extends React.Component {
             <li>
               {next && (
                 <div>
-                  <Link to={next.fields.slug} rel="next">
-                    <h5 className={`light-subheader`}>Next Post</h5>
+                  <Link
+                    to={next.fields.slug}
+                    rel="next"
+                    className="no-underline"
+                  >
+                    <h5 className="light-subheader">Next Post</h5>
                     {next.frontmatter.title} →
                   </Link>
                 </div>

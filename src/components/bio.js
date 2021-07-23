@@ -1,8 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import { rhythm } from "../utils/typography";
+import { rhythm } from "../utils/typography"
 
 export default function Bio() {
   const data = useStaticQuery(graphql`
@@ -23,8 +23,8 @@ export default function Bio() {
         }
       }
     }
-  `);
-  const { author } = data.site.siteMetadata;
+  `)
+  const { author } = data.site.siteMetadata
 
   return (
     <div
@@ -34,12 +34,14 @@ export default function Bio() {
       }}
     >
       <div style={{ width: `100%`, maxWidth: `80px` }}>
-        <Img fluid={data.avatar.childImageSharp.fluid} style={{ borderRadius: `100px` }} />
+        <Img
+          fluid={data.avatar.childImageSharp.fluid}
+          style={{ borderRadius: `100px` }}
+        />
       </div>
-      <div style={{marginLeft: rhythm(0.5)}}>
+      <div style={{ marginLeft: rhythm(0.5) }}>
         <p
           style={{
-            fontFamily: `medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif`,
             lineHeight: `20px`,
             color: `rgba(0,0,0,0.54)`,
             fontWeight: 300,
@@ -61,8 +63,18 @@ export default function Bio() {
         >
           {author}
         </h3>
-        <p>Head of Product at Castle Funds, a cryptoasset investment firm.</p>
+        <p>
+          Product Manager at{" "}
+          <a
+            href="https://castlefunds.com"
+            target="_blank"
+            rel="noreferrer"
+            className="blue-link"
+          >
+            Castle Funds
+          </a>
+        </p>
       </div>
     </div>
-  );
-};
+  )
+}
