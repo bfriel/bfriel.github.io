@@ -2,8 +2,8 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
-const axios = require("axios")
-const crypto = require("crypto")
+// const axios = require("axios")
+// const crypto = require("crypto")
 // -----
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -78,8 +78,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 // exports.sourceNodes = async ({ boundActionCreators }) => {
 //   const { createNode } = boundActionCreators;
 
-//   const fetchBooksImReadingNow = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/3/volumes?key=AIzaSyAmv-EtRWvkeTQuec7JkgYxRqnd32duE3o`);
-//   const fetchBooksThatChangedTheWayIThink = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/1001/volumes?key=AIzaSyAmv-EtRWvkeTQuec7JkgYxRqnd32duE3o`);
+//   const fetchBooksImReadingNow = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/3/volumes?key=REDACTED`);
+//   const fetchBooksThatChangedTheWayIThink = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/1001/volumes?key=REDACTED`);
 
 //   const nowRes = await fetchBooksImReadingNow();
 //   const changedRes = await fetchBooksThatChangedTheWayIThink();
