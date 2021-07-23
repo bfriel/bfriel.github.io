@@ -1,39 +1,142 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brian Friel]]></title><description><![CDATA[Brian Friel is a San Francisco-based product manager and frontend developer]]></description><link>https://brianfriel.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 01 Nov 2019 21:06:55 GMT</lastBuildDate><item><title><![CDATA[Early Lending Opportunities in Crypto]]></title><description><![CDATA[Introduction The traditional world of finance is about to undergo a large shift. For the first time, anyone in the world is able to send…]]></description><link>https://brianfriel.xyz/early-lending-opportunities-in-crypto/</link><guid isPermaLink="false">https://brianfriel.xyz/early-lending-opportunities-in-crypto/</guid><pubDate>Wed, 18 Sep 2019 23:46:37 GMT</pubDate><content:encoded>&lt;h1&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;The traditional world of finance is about to undergo a large shift. For the first time, anyone in the world is able to send money to anyone else quickly, cheaply, and without any bank or government’s permission. Today, cryptocurrency is a young and volatile speculative instrument. In the coming years, however, it will be the payment rails that enable global financial participation.&lt;/p&gt;
-&lt;p&gt;A common deterrent for practical applications of &lt;a href=&quot;https://bitcoin.org/&quot;&gt;Bitcoin&lt;/a&gt; and other cryptocurrencies today is that their prices swing wildly. Overtime, some of these cryptocurrencies may become stable units of account, but for the time being it is extremely difficult to conduct any business in them while their prices fluctuate unpredictably.&lt;/p&gt;
-&lt;p&gt;To address this problem of price volatility, various blockchain-based tokens have arisen with the sole purpose of maintaining a stable value. These assets are called &lt;strong&gt;Stablecoins&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1&gt;What’s a Stablecoin?&lt;/h1&gt;
-&lt;p&gt;A &lt;em&gt;stablecoin&lt;/em&gt; is a cryptocurrency designed to minimize the volatility of its price, relative to some stable asset (such as the dollar) or a basket of assets.&lt;/p&gt;
-&lt;p&gt;Most stablecoins are simple tokens that live on existing blockchains such as Bitcoin or &lt;a href=&quot;https://www.ethereum.org/&quot;&gt;Ethereum&lt;/a&gt;. These tokens are backed 1-1 by real USD sitting in a trusted bank account. While primitive in design, they allow people to get their dollars into the crypto ecosystem so that they can send money over blockchains and interact with various blockchain-based applications. A prime example of this type of stablecoin is &lt;a href=&quot;https://www.coinbase.com/usdc&quot;&gt;USDC&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Another, more advanced type of stablecoin is one which is backed by a basket of assets. While it remains to be seen how these can hold up during periods of extreme stress, these stablecoins are more decentralized in nature. The most well known example of this is &lt;a href=&quot;https://makerdao.com/dai/&quot;&gt;DAI&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;For the purpose of this primer, we will focus only on &lt;strong&gt;USDC&lt;/strong&gt; and &lt;strong&gt;DAI&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1&gt;USDC&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Market cap rank #25 — $412M market cap — $263M daily volume  —  As of 9/17/2019&lt;/em&gt; &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brian Friel]]></title><description><![CDATA[Brian Friel is a San Francisco-based product manager and frontend developer]]></description><link>https://brianfriel.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 23 Jul 2021 23:02:15 GMT</lastBuildDate><item><title><![CDATA[Bitcoin on Ethereum]]></title><description><![CDATA[This article was originally published on castlefunds.com. Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of…]]></description><link>https://brianfriel.xyz/btc-on-ethereum/</link><guid isPermaLink="false">https://brianfriel.xyz/btc-on-ethereum/</guid><pubDate>Sun, 20 Sep 2020 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This article was originally published on &lt;a href=&quot;https://castlefunds.com&quot;&gt;castlefunds.com&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of innovation happening on the Ethereum network. Fueled by permissionless software development on top blockchain-enforced contracts, a Cambrian explosion of new projects arose surrounding financial services such as lending, trading, and synthetic asset issuance. But while the 100x returns and catastrophic collapses of some of these projects dominated headlines, a new trend has quietly begun taking hold: More and more bitcoin (BTC) continues to move over to Ethereum.&lt;/p&gt;
+&lt;p&gt;Since Ethereum’s inception in 2015, the two networks have remained completely separate and incompatible with each other. Recent developments, however, have now enabled investors to lockup their bitcoin on the Bitcoin network and mint “tokenized” BTC on Ethereum, combining Bitcoin’s power as a digital store of value with the diversity of activities available on Ethereum.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/77815e371e0e00e1fa3099e315a4e960/8ff1e/usdc.png&quot;
+    href=&quot;/static/cdaf8a39701c0b3b3ae5cc50359b6553/f4b34/dune-analytics-wbtc-growth.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 30%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABMElEQVQY02OQyz/OyAABjIyxBxQZGGSZGPAAP/8ARiQ2ExCDxfz8/OHiDDzJh8UD+q8ccem49D9wwpWjvMkHJf8DLXCNzGcDKuQFahDy8wsQBtJiUIMkQGLolvn6+0MYzu0X2wrXvvtfterej8wVb/67t5/ud9UVUvULi1fw9Q/IAhoWAjTAHYidgdgWiB2AWAWIjYDYFYjt/Pz9NeEmu3de7Mhd9fZ//dr734vWvf/v1nmpy91EwcAvMDQIaKANUEM6EIcCsT0QOwKxNRAbAC2KANKVQBwAxJbw4BBKPyIVOunqSY/uK/9DJ105zZ97WaLcnIHdJzBMFuhlHogX/cWAtCTYy34B0kBxUaCYEBDz+/r5swHlWPxAXlYuPgkNzCxmtoRD6gwMFSzERgo2AAA3M2/Z4iqaxQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 27.7027027027027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+klEQVQY052Qy0oEMRBF+/+3/oArcSG4naUoiDtHRnyg0zJND9NqtPPopDuPyjXJoA6iGy9cqlJJnUpSISnG+G9nBRcQQoCSEtVfwE/9rO2uKVIqAJfdA3pr0LQvvwOzOOeo67rEbK31FkIZFOEplHOMCxysT2BogpbDNzCP2gUKwbFcPibQAClFgvYwGUr0dftpdDjenGFfzWCjK7Uq94eQJgYqseSekPvynnNUbNM/GeswJK/TsBvW4mh1gb35KQ7P7zBavwVqPUIbj2kiSDVBDRZjyoUw4L2GUg6vbxodU+hS7Ym9Y941uGINrttn3C4EVvcW3oXyyg/EcdDiX8fw4QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;WBTC Growth&quot;
+        title=&quot;WBTC Growth&quot;
+        src=&quot;/static/cdaf8a39701c0b3b3ae5cc50359b6553/fcda8/dune-analytics-wbtc-growth.png&quot;
+        srcset=&quot;/static/cdaf8a39701c0b3b3ae5cc50359b6553/12f09/dune-analytics-wbtc-growth.png 148w,
+/static/cdaf8a39701c0b3b3ae5cc50359b6553/e4a3f/dune-analytics-wbtc-growth.png 295w,
+/static/cdaf8a39701c0b3b3ae5cc50359b6553/fcda8/dune-analytics-wbtc-growth.png 590w,
+/static/cdaf8a39701c0b3b3ae5cc50359b6553/efc66/dune-analytics-wbtc-growth.png 885w,
+/static/cdaf8a39701c0b3b3ae5cc50359b6553/c83ae/dune-analytics-wbtc-growth.png 1180w,
+/static/cdaf8a39701c0b3b3ae5cc50359b6553/f4b34/dune-analytics-wbtc-growth.png 1457w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;At the time of this writing, over 125,000 BTC valued at ~$1.3 billion dollars is active on Ethereum, up from around 1,000 at the beginning of this year. Represented as ERC-20 tokens, these bitcoins are free to lend, trade, and serve as collateral for a rapidly growing list of DeFi applications. The growth of this new trend has been staggering, with no signs of slowing down despite the recent market volatility.&lt;/p&gt;
+&lt;p&gt;The most popular mechanism for minting bitcoin onto Ethereum is &lt;a href=&quot;https://www.bitgo.com/&quot;&gt;BitGo&lt;/a&gt;’s Wrapped Bitcoin (WBTC). The process, illustrated below, involves custodying bitcoin with BitGo and issuing tokenized representations onto Ethereum in a 1:1 ratio. As a KYC/AML compliant process, WBTC mainly caters to large institutions, a list of which can be found on their &lt;a href=&quot;https://wbtc.network/dashboard/order-book&quot;&gt;online orderbook&lt;/a&gt;. In recent months, numerous alternative methods have arisen including &lt;a href=&quot;https://synthetix.io/&quot;&gt;Synthetix&lt;/a&gt;’s sBTC, &lt;a href=&quot;https://renproject.io/&quot;&gt;Ren&lt;/a&gt;’s renBTC, and &lt;a href=&quot;https://keep.network/&quot;&gt;Keep&lt;/a&gt;’s tBTC. All three seek to decentralize this issuance process, either via synthetic representations in the case of sBTC, or trust-minimized collateralization via renBTC or tBTC. To date, however, WBTC accounts for over 74% of all tokenized bitcoin, suggesting this movement is largely driven by institutional players.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/17b7bf6d56e80435f17064f5016b6501/6a068/wbtc.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60.810810810810814%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAgABBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAeykTJx//8QAGhABAAEFAAAAAAAAAAAAAAAAAQIAEBESIf/aAAgBAQABBQI2y9ICRot//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAwEBAAAAAAAAAAAAAAAAABEhASD/2gAIAQEABj8C1pE0t4//xAAZEAACAwEAAAAAAAAAAAAAAAABEQAgUXH/2gAIAQEAAT8hRyigkoQdiEbbR//aAAwDAQACAAMAAAAQkA//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAEAAgEFAAAAAAAAAAAAAAABABExECFBUfD/2gAIAQEAAT8Qae45lfVLDAUdGCqosOJimn//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;WBTC Growth&quot;
+        title=&quot;WBTC Growth&quot;
+        src=&quot;/static/17b7bf6d56e80435f17064f5016b6501/1c72d/wbtc.jpg&quot;
+        srcset=&quot;/static/17b7bf6d56e80435f17064f5016b6501/a80bd/wbtc.jpg 148w,
+/static/17b7bf6d56e80435f17064f5016b6501/1c91a/wbtc.jpg 295w,
+/static/17b7bf6d56e80435f17064f5016b6501/1c72d/wbtc.jpg 590w,
+/static/17b7bf6d56e80435f17064f5016b6501/a8a14/wbtc.jpg 885w,
+/static/17b7bf6d56e80435f17064f5016b6501/6a068/wbtc.jpg 960w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;What is all this tokenized bitcoin doing on Ethereum? Analysis from &lt;a href=&quot;https://duneanalytics.com/&quot;&gt;Dune Analytics&lt;/a&gt; shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms &lt;a href=&quot;https://aave.com/&quot;&gt;Aave&lt;/a&gt; and &lt;a href=&quot;https://compound.finance/&quot;&gt;Compound&lt;/a&gt;, which have at times offered attractive variable yields on WBTC. Other DeFi applications include &lt;a href=&quot;https://uniswap.org/&quot;&gt;Uniswap&lt;/a&gt; and &lt;a href=&quot;https://balancer.fi/&quot;&gt;Balancer&lt;/a&gt;, which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a6bb4ebd191af2ab5e8e8da2109b629b/f4b34/dune-analytics-wbtc-usage.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.7027027027027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVQY032M70vbUBiF+5cPZDBtc5Nom6Q/RFGcWGNlg7UbU4rsgygWldJ+coxZraXUNElvk6ZV2eNtZV994YHDOS9P6qnV4j1mrfY7m6Kt9maTWeeOMJSkxkLwHyl0IpFRWUPqxiJPxSfVa4RqG+u6yoLR/F8XTAxBYujEK8tE1Rqdbk8JLRu5wCKxVvGdErGdp29qXJsFTo0K99oak1UlsbJM7BzPjoU0LXoZh9tcCS+jER/VeXmB1HTNZM6zKbgo1snvj3E//8HN1llKu3xwDyiWqtTEDreZHD3d4Txtk99aJ328S+GkgrtbpnF1yfxSzfV9rkt7nG8ckv/VIF2usGQ5fNzZxGqU2fa/Y/+uoje/sfG1RuHnIcbZHsXBD9zuCTdfWvzdauNd9N6ED10fz4sZPEZEMiTwHwmDIb4cMkoihkGIjCVBFDCI/QWjpwjP90n6EdPumFk/JhnG/FPCV/qjjTTskY8HAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;WBTC Usage&quot;
+        title=&quot;WBTC Usage&quot;
+        src=&quot;/static/a6bb4ebd191af2ab5e8e8da2109b629b/fcda8/dune-analytics-wbtc-usage.png&quot;
+        srcset=&quot;/static/a6bb4ebd191af2ab5e8e8da2109b629b/12f09/dune-analytics-wbtc-usage.png 148w,
+/static/a6bb4ebd191af2ab5e8e8da2109b629b/e4a3f/dune-analytics-wbtc-usage.png 295w,
+/static/a6bb4ebd191af2ab5e8e8da2109b629b/fcda8/dune-analytics-wbtc-usage.png 590w,
+/static/a6bb4ebd191af2ab5e8e8da2109b629b/efc66/dune-analytics-wbtc-usage.png 885w,
+/static/a6bb4ebd191af2ab5e8e8da2109b629b/c83ae/dune-analytics-wbtc-usage.png 1180w,
+/static/a6bb4ebd191af2ab5e8e8da2109b629b/f4b34/dune-analytics-wbtc-usage.png 1457w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Whatever the killer app may end up being, the trend is clear: Tokenized bitcoin is here to stay. We believe that tokenized bitcoin offers the best of both worlds. Namely, that bitcoin holders get access to a myriad array of DeFi applications while keeping the attack surface of the Bitcoin network itself small and highly secure. As the largest, most liquid digital asset with the longest track record, we believe that Bitcoin will continue to exist across multiple domains and will cement itself as the most versatile digital store of value.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Photo by &lt;a href=&quot;https://unsplash.com/@modestasu&quot;&gt;Modestas Urbonas&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com/&quot;&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Early Lending Opportunities in Crypto]]></title><description><![CDATA[Introduction The traditional world of finance is about to undergo a large shift. For the first time, anyone in the world is able to send…]]></description><link>https://brianfriel.xyz/early-lending-opportunities-in-crypto/</link><guid isPermaLink="false">https://brianfriel.xyz/early-lending-opportunities-in-crypto/</guid><pubDate>Wed, 18 Sep 2019 23:46:37 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The traditional world of finance is about to undergo a large shift. For the first time, anyone in the world is able to send money to anyone else quickly, cheaply, and without any bank or government’s permission. Today, cryptocurrency is a young and volatile speculative instrument. In the coming years, however, it will be the payment rails that enable global financial participation.&lt;/p&gt;
+&lt;p&gt;A common deterrent for practical applications of &lt;a href=&quot;https://bitcoin.org/&quot;&gt;Bitcoin&lt;/a&gt; and other cryptocurrencies today is that their prices swing wildly. Overtime, some of these cryptocurrencies may become stable units of account, but for the time being it is extremely difficult to conduct any business in them while their prices fluctuate unpredictably.&lt;/p&gt;
+&lt;p&gt;To address this problem of price volatility, various blockchain-based tokens have arisen with the sole purpose of maintaining a stable value. These assets are called &lt;strong&gt;Stablecoins&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;What’s a Stablecoin?&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;stablecoin&lt;/em&gt; is a cryptocurrency designed to minimize the volatility of its price, relative to some stable asset (such as the dollar) or a basket of assets.&lt;/p&gt;
+&lt;p&gt;Most stablecoins are simple tokens that live on existing blockchains such as Bitcoin or &lt;a href=&quot;https://www.ethereum.org/&quot;&gt;Ethereum&lt;/a&gt;. These tokens are backed 1-1 by real USD sitting in a trusted bank account. While primitive in design, they allow people to get their dollars into the crypto ecosystem so that they can send money over blockchains and interact with various blockchain-based applications. A prime example of this type of stablecoin is &lt;a href=&quot;https://www.coinbase.com/usdc&quot;&gt;USDC&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Another, more advanced type of stablecoin is one which is backed by a basket of assets. While it remains to be seen how these can hold up during periods of extreme stress, these stablecoins are more decentralized in nature. The most well known example of this is &lt;a href=&quot;https://makerdao.com/dai/&quot;&gt;DAI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For the purpose of this primer, we will focus only on &lt;strong&gt;USDC&lt;/strong&gt; and &lt;strong&gt;DAI&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;USDC&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Market cap rank #25 — $412M market cap — $263M daily volume — As of 9/17/2019&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/77815e371e0e00e1fa3099e315a4e960/5a190/usdc.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 29.72972972972973%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbUlEQVQY02OQyz/OKJ17nAEIGBljDygyMMgySeccYfgPFPAIz2Dw8/Nn8PMPANIBENo/gNEXwWeCiPkzgsRBbAa+1CMMPMmHxQP6rxxxbr/4P3DClaO8yQclgQYyukbmswEN5AUqFAIaIAykxaCGSoDF/OGWwDFD9LRrDECD2tLn3vxfterej8RZN/67t5/ud9UVUvULi1cAuiYLqDAEiN2B2BnoGlsg7QDEKkBs5Ovv7wqk7YDimkA2A0P8zOsM7p0XO5Jn3/hfv/b+94x5N/+7dV7qcjdRMPALDA0CGmgD1JAOxKFAbA/EjkBsDcQGQBwBxJVAHADEliCvM4hlHWMQSj8iFTrp6kn3zkv/QyddOc2fe1mi3JyB3ScwTBboZR5fiBdB3pUEecvXz18aiEWBBoC8zQ9kswFpFrCXlYtPMsoXnABGQRYzW8IhdQaGCha50ssM5RoMDL4BIeBIgUSCPzxSMMLODxZJ/gwA9DyVMF01CwwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;USDC Logo&quot;
         title=&quot;USDC Logo&quot;
-        src=&quot;/static/77815e371e0e00e1fa3099e315a4e960/b9e4f/usdc.png&quot;
-        srcset=&quot;/static/77815e371e0e00e1fa3099e315a4e960/cf440/usdc.png 148w,
-/static/77815e371e0e00e1fa3099e315a4e960/d2d38/usdc.png 295w,
-/static/77815e371e0e00e1fa3099e315a4e960/b9e4f/usdc.png 590w,
-/static/77815e371e0e00e1fa3099e315a4e960/8ff1e/usdc.png 800w&quot;
+        src=&quot;/static/77815e371e0e00e1fa3099e315a4e960/fcda8/usdc.png&quot;
+        srcset=&quot;/static/77815e371e0e00e1fa3099e315a4e960/12f09/usdc.png 148w,
+/static/77815e371e0e00e1fa3099e315a4e960/e4a3f/usdc.png 295w,
+/static/77815e371e0e00e1fa3099e315a4e960/fcda8/usdc.png 590w,
+/static/77815e371e0e00e1fa3099e315a4e960/5a190/usdc.png 800w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -43,31 +146,32 @@
 that is constantly monitored and audited.&lt;/p&gt;
 &lt;p&gt;Along with the advantage of sending USDC to any address in the world, the digital nature of USDC allows for much easier and programmable lending, payroll, and crowdfunding. It is divisible down to as little as 0.000001 cents.&lt;/p&gt;
 &lt;p&gt;This system is great for moving dollars in and out of the Ethereum ecosystem, but is ultimately prone to a single point of failure — The special bank account.&lt;/p&gt;
-&lt;h1&gt;DAI&lt;/h1&gt;
+&lt;h2&gt;DAI&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Market cap rank #69 — $85M market cap — $4M daily volume — As of 9/17/2019&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 178px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 178px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a00358e24b122a24029f9f0e60eadf3c/9a78a/dai.png&quot;
+    href=&quot;/static/a00358e24b122a24029f9f0e60eadf3c/43e0d/dai.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAADu0lEQVQ4y3WUz28bVRDHX3LpqRISEpwR/AMcEFKaFqV10gQkuBSpKiQcIEU0IlXhABSJW5F6gVJxANQLQhSRQ/MLV7aTtAkmkZI0TkxbmsZpUpJGIU68a7uuY+/umy8zb3fttFJHWu/T23kfz7zvzKiNkVYlNv+1UoDdKOvnlWoszHS9tbv64y+Vjf4VLxtzvGzcrWwMrFVWL/UVUyePX3lJ7RNfAI0rPxuEsqfe9hd3fjAf/M3JN9uczcE0kMPTrQj3v6tLhZnOYyqwrf5nGvZE5sNKt774Cvp+eMol8lx+a23fJDc7Tbwm0mbP9V2yKC+e+y6E/ntZ1dM0MDwSL82nXNIOMYHw8B551zsoH42Qsz0fQB1DDsEMvRimH6Z5NIiMYZ4GGT8ihtHYEejMT8inLsAaeg11qMs/HvlQC8Ub73ca2HMsgLM5kEbNK4StQo8dBv1zHnIqf38C1l+fwx4+LFDsgXrmfrKj66letV+JmoEAJk3jWBLYEdD8Z+amyHOQX47BWroKK/kJ7KEWODthDI68+aeK0t+ffqCkNGp/F6Spx1pA093wt/ge3F3kl4Zg3R2ELdDxUwytpS9+xrG6fjmqpM7MptzfwxWi8Q4ftqdI9O3zyI+egLXYDzsTg708wtAe2H9EONIFcdUmxZ1kRknRGmBxifT466QTzaCFs6C734MWvwWlv4QeOYj88CFYI+/ATp7htM/A/rOXRYrAkjvdSRmgzs9vKW877qtQyRLd/JAoycBrh6Bjr/DzKijRxPfZiny0jQEtsAcOwhps5uhaYEWbUUh2wiut+cDCQpZTHlwLUiboMmHxI9AsQ2+8AZo6CppoY2AEeU7PirbCjrXBHu2AFWfYVBd0daeWspebvMeiXOoLRREoeY8Id04Bs02scjuQikBPM3CUgfzY19phJQ4w7D3oyk541JRO9cHvCVWcO3lcetNvNRcBFMRQmmkCGEpzDLzOwDGGxQ/4kdVhQdlolG6d/VhdeUHtk0YPvnpcdAG0bKASqZ5rZ2A7cvEnIhNf6Syj8EQ284161nRLYebdY9LowUCgOpTTX5RIWQRRerLrSRj50ZVRSvf2qL0NLVOjPmUkUtevRRZK3+5GceoEvEpubx9rHwbsLl/4NWA1qHA4BtCL0uiBOeH4ompO691Nbda+AI7vUq7BxDaHX2x4fDiyydSQRpfefLppubPtUvp0T23Axl9ueGxsy3AM00+dVvul0avrv0XdXDLDBbslRSt1Vn3QlxA1QwEkzTAye7Zb/Q8X6tPsiTGMrAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAAEC0lEQVQ4y3WU229UVRTGd9t3Iw/wB5gQ44XAAyS2Ighpa6PR6IPGREO9pcH6IjEmRN8woUXtk8T4JolGQ8VCaWlneqHVgpbptCNxSi8MZFoi7fTQc2bKzLRzzt7rc619ZmqDepIzcy77/Pa3vnVR+eSnKj/1rnJ/bazufFgp5EbV0oXtO4tzp04Gmf6Y78ZXTS5hdDYRBG5syb/bdTmf/OTDmXa1Tac+UwCqFn6orro3sFt5144oC8uNv1a9eEbJUVWcOdGms5M+dAH/d5DvIXBGlu9PHX2Hb1ULf5i5uKPKiTymrDKBTR5XD5UWzowiyIYfAT4ZreVSp8+SvzTGj2DI+PLMt2uKiyjOtZ0WqBzp7/inc1uozMIokHUlIk2MEShhsZOC6H7y+l4g35kSKDGUf+xmAZUccFQdQEbCr7aeSZhlZQITTVYApc+Chg5Ar/wON9YO7+Ih+E4ifGcC2I0BbfIpZMdff7l4/ahSS+e372TPSuEqUWbCy4WfYCL7gJUr0PzYuxmBe/U4vJ7DD0CN3d1f6km2KlWjJJuSAPFsU9niOZj+PaA7F6yfeiMHb66Hof1wx46x0mcZ+gcq4csS8TM30fyiktIov9GbsL5doFvfyiYhcC0N78aPcOd74c33wR1tLUMTtCmVwRu3v/5GSZ2Vs0p05zyZyF7Q3FeVTLOrXCJXj8AbehPuTBcDL4VKR1rg9dbDv3fd+iirN+72jCkpWvvxcpRMdC+Zy8+BJo+Bpj4CJT4G/fYGgugz7N0huNFX4Q2/DZdPb6gZbjc/660nvXbLMvRKNKV0LmFrhTYyRNMfEF2pA40cgBmohYnWggYPIhhqYDUNcDnLXvdBDpfPvsNwL9Uin/ycc1mywCATnVXSTuXwDEyRMNsKxPezyudB442gsQYG1tvw3H4GDzSyyias8maFG19WnAnkr/RX16CS3gyNDbT1UTI+w9AJVppoAhL10NcYyFB3mIFsyWrkqa0w/ogL3Kxj/WbHKSWNLr0ppcRQ/AN9HxSrY2AT9AQDBTYcwvLTX1RgkmDbkiY/D/eXhlolU0MavVzYutJyW5XqeNN/KSOmiTpbiKXF7wdtT+vUCSVTQwrT9uaWPmao9VSPP80ZrkP+XzDbz9BezDiRJ3ZnR/YpO8+EXJw7eVoa3VY9F7ltK7kz6xT82UKF6Tba9IzDrCgz92exFn+vmdIdCs65GiXDUeaZhfLUMIVUZezpskGagoKMLWMjsBlFWHfehGHYW1wCdtI8InNLJm2me0eVstCMkqnhL/cmrQUmeHC0QrIpCRDPnMiTe6wyhnW/olS8nSEytp3I43Y4yot1HkEyNaTRpTelnbQzkJKilTqT0pBsSkTiGZyfax5VIWx55CX1N6ovDwYGGHaKAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;DAI Logo&quot;
         title=&quot;DAI Logo&quot;
-        src=&quot;/static/a00358e24b122a24029f9f0e60eadf3c/9a78a/dai.png&quot;
-        srcset=&quot;/static/a00358e24b122a24029f9f0e60eadf3c/cf440/dai.png 148w,
-/static/a00358e24b122a24029f9f0e60eadf3c/9a78a/dai.png 178w&quot;
+        src=&quot;/static/a00358e24b122a24029f9f0e60eadf3c/43e0d/dai.png&quot;
+        srcset=&quot;/static/a00358e24b122a24029f9f0e60eadf3c/12f09/dai.png 148w,
+/static/a00358e24b122a24029f9f0e60eadf3c/43e0d/dai.png 178w&quot;
         sizes=&quot;(max-width: 178px) 100vw, 178px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -76,44 +180,45 @@ that is constantly monitored and audited.&lt;/p&gt;
 &lt;p&gt;Assets deposited inside a CDP can only be retrieved once the borrower has paid back the initial DAI they borrowed plus interest. Active CDPs must always hold a higher collateral value than the value of the debt the user has, otherwise they are liquidated and sold off.&lt;/p&gt;
 &lt;p&gt;MakerDAO/DAI has been in development since 2014, with heavy sponsorship from prominent venture capitalists including Andreesen Horowitz. DAI has been able to handle market fluctuations to this today, but is still considered experimental technology and is riskier than USDC.&lt;/p&gt;
 &lt;p&gt;Those looking to learn more about the inner workings of this system should check out &lt;a href=&quot;https://medium.com/mycrypto/what-is-dai-and-how-does-it-work-742d09ba25d6&quot;&gt;Sharon Manrique’s overview on DAI&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;The Lending Opportunity&lt;/h1&gt;
+&lt;h2&gt;The Lending Opportunity&lt;/h2&gt;
 &lt;p&gt;One of the most exciting aspects of stablecoins is the freedom they enable for borrowers and lenders. Instead of asking a traditional bank for a loan, early crypto adopters are able to borrow money directly from their peers via blockchain-based smart contracts that ensure the transaction is fair and the borrower is properly collateralized. These systems of smart contracts act as global liquidity pools, or &lt;strong&gt;money markets&lt;/strong&gt;, for crypto.&lt;/p&gt;
 &lt;p&gt;The most popular crypto money markets today include &lt;a href=&quot;https://compound.finance/&quot;&gt;Compound&lt;/a&gt;, &lt;a href=&quot;https://dydx.exchange/&quot;&gt;dYdX&lt;/a&gt;, and &lt;a href=&quot;https://fulcrum.trade/&quot;&gt;Fulcrum&lt;/a&gt;. For the rest of this primer, we’ll focus on &lt;strong&gt;Compound&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Currently, there exists a big opportunity for lenders to receive outsized returns on their stablecoins. At the time of this writing, lenders can receive &lt;strong&gt;5.21% APR for USDC and 7.43% APR for DAI on Compound&lt;/strong&gt; — well above the best in class 2.63% APR returned by the finance app &lt;a href=&quot;https://www.wealthfront.com/&quot;&gt;Wealthfront&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Currently, there exists a big opportunity for lenders to receive outsized returns on their stablecoins. At the time of this writing, lenders can receive &lt;strong&gt;5.21% APR for USDC and 7.43% APR for DAI on Compound&lt;/strong&gt; — well above the best in class 2.63% APR returned by the finance app &lt;a href=&quot;https://www.wealthfront.com/&quot;&gt;Wealthfront&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Who might be borrowing these stablecoins? &lt;a href=&quot;https://www.dharma.io/&quot;&gt;Dharma&lt;/a&gt;, a soon-to-launch frontend for Compound, speculates that these borrowers are often traders taking leveraged positions, or the crypto-rich making large personal purchases with the gains on their cryptocurrencies that have appreciated in value, without having to sell the crypto.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://unchainedpodcast.com/how-youll-earn-interest-on-your-crypto-with-compound-ep-82/&quot;&gt;In a podcast with Laura Shin&lt;/a&gt;, Robert Leshner, the founder of Compound, stated the core demand for borrowing comes from small crypto hedge funds looking to margin trade and/or short in order to differentiate their returns.&lt;/p&gt;
-&lt;h1&gt;Compound&lt;/h1&gt;
+&lt;h2&gt;Compound&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/766b310783057e9dfd6721fe5b7ae776/b37e5/compound.png&quot;
+    href=&quot;/static/766b310783057e9dfd6721fe5b7ae776/78597/compound.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 58.07814149947201%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAACHElEQVQoz5WS227TQBCGfQH0yEFCSIiiUImHAAqoFwjxAgjxIggeBcETtHDFQQKKRCOSi+QlIG2SNgk52N6Dd727PzPrEMFFLrD9a+3db/8Z70zy4OEj7Nzfxa07d3F75158v3T5Cs6srGNl/TzOrW3+l5La9k2wtmrbuLpVw7XrN7C2eRFnVzcWEBuzeH5148JSM2aSvf23ePfhI96TDut1fDus43ujgUazGcdWu41nz19gb/8NPn0+wJeDr2g0eK0ZmYprotVq4/GTp0ikVCiMgdYFll1sMplMibMoS7eUe/nqNZI0y3Hc7aF/coofnSOMhwO4dEobSzjnqtF7pGmGbq8f2U7nGAORYmIVPDMkZi0FS6wtIYSEoQw9TQTOgBYRwiKyIcZYC6EkdKEpiIWLt58TFasLg0QTOCkUMmeQe9pEcmxGT05zo1LF39TaQuYWtggoDWB1QHAkYgvpoYVHQV6JsAY9k+EXbZy5IhobT9GDj+9DNqSMpbCYjSjg1JMcjPJwZYD3ASr3UXPDAh01g6TMPEVjIzs3TMlwYGU0VMpCCRcz4yzZKBpSljy3yNASrAOfBy2SuABsFkfv52dIx+DC4rTYbCFHnKs4Td2SGGqFbrcfKyil/KcN8lzgdDCMmWd5jp9HXZzQd/irYHxlQmA0HldV5h7k1mEprWMBLLUK/6YuCuQEc/9JpTGj1uFvXv+jijMQUsbxN5fyLMpU1PgFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACJUlEQVQoz3WS6W7TQBSFLaGWhrSBih+IEsoingGxqBTK2yDEQ4B4BhAIXgFRwR9aEEub5CfpC2S14xApTbyMZ/XhzjSOKNCRjseTOfnu9Znx7t3fwuaDh7h5+y5u3dnAxuYWLqxVcWqxhNNnVrBYWp5rYamMhT/W/5N3af0arly/gSrNF6vrWLt8FZXV8w62VK7MVVo+i3JlFeWVc8d+/1vei5evsLP7GdsfPuL7jz2n/Vod9UbDzT+bTTx99hyv37zFl6/f8GlnF7V6w+0X895+Dc2DAzx6/AReu9OBHXGc4KRh/9hqt2HyHBnnJ/revd+GlzKGnu8jGIRod3sYhiH0ZAwlBbTWRzIGacrQ9wOnVquDYTTBSKYwhYektIEnpQIjM2ccRmnktAEr6qYYUikIKWGLM57RWkLnBIGZOY68XEh4nIxjzjBVHJERTio3xKPPMwqhSh2Qc4kklhCZgRKgOafucuez7ywyrqjH6BHwGCNFUM2dhKHqBE2NREifJbVClkkcjgh6aBCPNXhqoCVBTe7e0+kMmNGjyyYOZEO3IElSM+BAJg7IM4omUZA8d7LdFVKCOoxnQEl5ccpDEcwmYQ/AQq2UMfMMbeBFWraw7ayQouztcEC7CIIQ3b6PyTQ6dg3sFfHp9BUVTVmGTq+PfjAggPrHN/w1coU9ezIR3cFpFLtTlFTAbriDoL04SZAJAZZRvlHkvLaTwlPcgDhJCSzwG0tILggz+ReqAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;The Compound Interface&quot;
         title=&quot;The Compound Interface&quot;
-        src=&quot;/static/766b310783057e9dfd6721fe5b7ae776/b9e4f/compound.png&quot;
-        srcset=&quot;/static/766b310783057e9dfd6721fe5b7ae776/cf440/compound.png 148w,
-/static/766b310783057e9dfd6721fe5b7ae776/d2d38/compound.png 295w,
-/static/766b310783057e9dfd6721fe5b7ae776/b9e4f/compound.png 590w,
-/static/766b310783057e9dfd6721fe5b7ae776/f9b6a/compound.png 885w,
-/static/766b310783057e9dfd6721fe5b7ae776/b37e5/compound.png 947w&quot;
+        src=&quot;/static/766b310783057e9dfd6721fe5b7ae776/fcda8/compound.png&quot;
+        srcset=&quot;/static/766b310783057e9dfd6721fe5b7ae776/12f09/compound.png 148w,
+/static/766b310783057e9dfd6721fe5b7ae776/e4a3f/compound.png 295w,
+/static/766b310783057e9dfd6721fe5b7ae776/fcda8/compound.png 590w,
+/static/766b310783057e9dfd6721fe5b7ae776/efc66/compound.png 885w,
+/static/766b310783057e9dfd6721fe5b7ae776/78597/compound.png 947w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The leading money market protocol today is Compound. As a protocol built on the Ethereum blockchain, Compound pools individual crypto positions and algorithmically derives interest rates based on the supply of assets in its pool and the demand to borrow assets. Suppliers and borrowers interact directly with the protocol and use the floating interest rate provided by Compound. Because individual users are not being matched with each other, there is no concept of negotiations, and users are free to enter and exit positions at any time.&lt;/p&gt;
+&lt;p&gt;The leading money market protocol today is Compound. At the time of this writing, over $160M are earning interest on Compound alone. As a protocol built on the Ethereum blockchain, Compound pools individual crypto positions and algorithmically derives interest rates based on the supply of assets in its pool and the demand to borrow assets. Suppliers and borrowers interact directly with the protocol and use the floating interest rate provided by Compound. Because individual users are not being matched with each other, there is no concept of negotiations, and users are free to enter and exit positions at any time.&lt;/p&gt;
 &lt;p&gt;Compound is built by a company (also called Compound) which takes a small percentage of the interest from every transaction. The company is led by &lt;a href=&quot;https://twitter.com/rleshner&quot;&gt;Robert Leshner&lt;/a&gt; and backed with $8M+ by VCs including Coinbase Ventures. Currently, the company provides a centralized price oracle to the network and controls a few key parameters such as the collateral requirement and the types of markets that are available. Leshner has stated that his goal is to decentralize the company out of the equation in the future.&lt;/p&gt;
 &lt;p&gt;While the company provides a standard user interface for interacting with the protocol, the open-source nature of the protocol allows any number of third-parties to create their own connections to the network. Already, we are seeing the beginnings of third-party robo-advisor services, such as Dharma and &lt;a href=&quot;https://www.staked.us/&quot;&gt;Staked&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;How it Works&lt;/h3&gt;
@@ -145,9 +250,8 @@ that is constantly monitored and audited.&lt;/p&gt;
 &lt;li&gt;You could withdraw a portion, such as your original 1,000 USDC, which would redeem 45,433.89 cUSDC (keeping 4,541.12 cUSDC in your wallet that keeps earning interest).&lt;/li&gt;
 &lt;li&gt;You could borrow any asset supported by Compound (such as ETH), as long as the value of whatever you borrow doesn’t exceed $725 (the 1099.94 USDC you have in the pool * the 66% collateral factor of USDC).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;It might seem like a niche experiment today, but networks like Compound are the first iterations of a new type of financial system — One that is global, with less friction, and easily accessible to anyone with an internet connection.&lt;/p&gt;
 &lt;p&gt;This new system will not just happen over night. Large technical projects always come with unforeseen bugs and setbacks, and mainstream users will overreact to the headlines that surround them, both good and bad.&lt;/p&gt;
 &lt;p&gt;It’s scary to put real money in a new technology, and especially so when that technology is difficult to understand.&lt;/p&gt;
-&lt;p&gt;My goal in writing this was to help educate friends and family so they’re better prepared to think critically about the systems they invest with — Before they are inundated with ads for exceedingly high returns on their investments. &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;If you found this useful, feel free to &lt;a href=&quot;https://twitter.com/brianfriel_&quot;&gt;follow me on Twitter&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;My goal in writing this was to help educate friends and family so they’re better prepared to think critically about the systems they invest with — Before they are inundated with ads for exceedingly high returns on their investments.&lt;/p&gt;</content:encoded></item></channel></rss>
