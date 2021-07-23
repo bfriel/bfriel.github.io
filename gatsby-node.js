@@ -2,8 +2,8 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
-const axios = require('axios');
-const crypto = require('crypto');
+const axios = require("axios")
+const crypto = require("crypto")
 // -----
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -68,10 +68,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-
-
-
-
 // Many thanks to: https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
 // This is a one-off implementation for my specific use case. In the future, I may rewrite this to preserve the original Google Books data and turn this into an open-source plugin.
 // If I were to do that, I would want to make sure that the security is much better than what I have here (i.e. apiKey in source code)
@@ -79,88 +75,87 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 // Future work could also be done to pre-process external images. Neat idea, but a bit overkill given the scope of my project
 
-exports.sourceNodes = async ({ boundActionCreators }) => {
-  const { createNode } = boundActionCreators;
+// exports.sourceNodes = async ({ boundActionCreators }) => {
+//   const { createNode } = boundActionCreators;
 
-  const fetchBooksImReadingNow = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/3/volumes?key=AIzaSyAmv-EtRWvkeTQuec7JkgYxRqnd32duE3o`);
-  const fetchBooksThatChangedTheWayIThink = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/1001/volumes?key=AIzaSyAmv-EtRWvkeTQuec7JkgYxRqnd32duE3o`);
-  
-  const nowRes = await fetchBooksImReadingNow();
-  const changedRes = await fetchBooksThatChangedTheWayIThink();
+//   const fetchBooksImReadingNow = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/3/volumes?key=AIzaSyAmv-EtRWvkeTQuec7JkgYxRqnd32duE3o`);
+//   const fetchBooksThatChangedTheWayIThink = () => axios.get(`https://www.googleapis.com/books/v1/users/111402020683239666542/bookshelves/1001/volumes?key=AIzaSyAmv-EtRWvkeTQuec7JkgYxRqnd32duE3o`);
 
+//   const nowRes = await fetchBooksImReadingNow();
+//   const changedRes = await fetchBooksThatChangedTheWayIThink();
 
-  // map into these results and create nodes
-  nowRes.data.items.map((book) => {
-    // Create your node object
-    // console.log(`book ${i}: `, book);
-    const readingNowNode = {
-      // Required fields
-      id: book.id,
-      parent: `__SOURCE__`,
-      internal: {
-        type: `BooksImReadingNow`, // name of the graphQL query --> allBooksImReadingNow {}
-        // contentDigest will be added just after
-        // but it is required
-      },
-      children: [],
+//   // map into these results and create nodes
+//   nowRes.data.items.map((book) => {
+//     // Create your node object
+//     // console.log(`book ${i}: `, book);
+//     const readingNowNode = {
+//       // Required fields
+//       id: book.id,
+//       parent: `__SOURCE__`,
+//       internal: {
+//         type: `BooksImReadingNow`, // name of the graphQL query --> allBooksImReadingNow {}
+//         // contentDigest will be added just after
+//         // but it is required
+//       },
+//       children: [],
 
-      // Other fields that you want to query with graphQl
-      volumeInfo: {
-        title: book.volumeInfo.title,
-        authors: book.volumeInfo.authors,
-        thumbnail: book.volumeInfo.imageLinks.thumbnail,
-        link: book.volumeInfo.infoLink,
-      },
-    }
+//       // Other fields that you want to query with graphQl
+//       volumeInfo: {
+//         title: book.volumeInfo.title,
+//         authors: book.volumeInfo.authors,
+//         thumbnail: book.volumeInfo.imageLinks.thumbnail,
+//         link: book.volumeInfo.infoLink,
+//       },
+//     }
 
-    // Get content digest of node. (Required field)
-    const contentDigest = crypto
-      .createHash(`md5`)
-      .update(JSON.stringify(readingNowNode))
-      .digest(`hex`);
-    // add it to readingNowNode
-    readingNowNode.internal.contentDigest = contentDigest;
+//     // Get content digest of node. (Required field)
+//     const contentDigest = crypto
+//       .createHash(`md5`)
+//       .update(JSON.stringify(readingNowNode))
+//       .digest(`hex`);
+//     // add it to readingNowNode
+//     readingNowNode.internal.contentDigest = contentDigest;
 
-    // Create node with the gatsby createNode() API
-    createNode(readingNowNode);
-  });
+//     // Create node with the gatsby createNode() API
+//     createNode(readingNowNode);
+//   });
 
-  changedRes.data.items.map((book) => {
-    // Create your node object
-    // console.log(`book ${i}: `, book);
-    const changedTheWayIThinkNode = {
-      // Required fields
-      id: book.id,
-      parent: `__SOURCE__`,
-      internal: {
-        type: `BooksThatChangedTheWayIThink`, // name of the graphQL query --> allBooksThatChangedTheWayIThink {}
-        // contentDigest will be added just after
-        // but it is required
-      },
-      children: [],
+//   changedRes.data.items.map((book) => {
+//     // Create your node object
+//     // console.log(`book ${i}: `, book);
+//     const changedTheWayIThinkNode = {
+//       // Required fields
+//       id: book.id,
+//       parent: `__SOURCE__`,
+//       internal: {
+//         type: `BooksThatChangedTheWayIThink`, // name of the graphQL query --> allBooksThatChangedTheWayIThink {}
+//         // contentDigest will be added just after
+//         // but it is required
+//       },
+//       children: [],
 
-      // Other fields that you want to query with graphQl
-      volumeInfo: {
-        title: book.volumeInfo.title,
-        authors: book.volumeInfo.authors,
-        thumbnail: book.volumeInfo.imageLinks.thumbnail,
-        link: book.volumeInfo.infoLink,
-      },
-    }
+//       // Other fields that you want to query with graphQl
+//       volumeInfo: {
+//         title: book.volumeInfo.title,
+//         authors: book.volumeInfo.authors,
+//         thumbnail: book.volumeInfo.imageLinks.thumbnail,
+//         link: book.volumeInfo.infoLink,
+//       },
+//     }
 
-    // Get content digest of node. (Required field)
-    const contentDigest = crypto
-      .createHash(`md5`)
-      .update(JSON.stringify(changedTheWayIThinkNode))
-      .digest(`hex`);
-    // add it to changedTheWayIThinkNode
-    changedTheWayIThinkNode.internal.contentDigest = contentDigest;
+//     // Get content digest of node. (Required field)
+//     const contentDigest = crypto
+//       .createHash(`md5`)
+//       .update(JSON.stringify(changedTheWayIThinkNode))
+//       .digest(`hex`);
+//     // add it to changedTheWayIThinkNode
+//     changedTheWayIThinkNode.internal.contentDigest = contentDigest;
 
-    // Create node with the gatsby createNode() API
-    createNode(changedTheWayIThinkNode);
-  });
+//     // Create node with the gatsby createNode() API
+//     createNode(changedTheWayIThinkNode);
+//   });
 
-  return;
-}
+//   return;
+// }
 
 // --
