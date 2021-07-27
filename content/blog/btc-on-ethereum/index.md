@@ -7,7 +7,7 @@ featuredImage: ./bridge.jpeg
 
 _This article was originally published on [castlefunds.com](https://castlefunds.com)._
 
-Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of innovation happening on the Ethereum network. Fueled by permissionless software development on top blockchain-enforced contracts, a Cambrian explosion of new projects arose surrounding financial services such as lending, trading, and synthetic asset issuance. But while the 100x returns and catastrophic collapses of some of these projects dominated headlines, a new trend has quietly begun taking hold: More and more bitcoin (BTC) continues to move over to Ethereum.
+Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of innovation happening on the Ethereum network. Fueled by permissionless software development on top of blockchain-enforced contracts, a Cambrian explosion of new projects arose surrounding financial services such as lending, trading, and synthetic asset issuance. But while the 100x returns and catastrophic collapses of some of these projects dominated headlines, a new trend has quietly begun taking hold: More and more bitcoin (BTC) continues to move over to Ethereum.
 
 Since Ethereum’s inception in 2015, the two networks have remained completely separate and incompatible with each other. Recent developments, however, have now enabled investors to lockup their bitcoin on the Bitcoin network and mint "tokenized" BTC on Ethereum, combining Bitcoin’s power as a digital store of value with the diversity of activities available on Ethereum.
 
@@ -19,7 +19,7 @@ The most popular mechanism for minting bitcoin onto Ethereum is [BitGo](https://
 
 ![WBTC Growth](wbtc.jpeg)
 
-What is all this tokenized bitcoin doing on Ethereum? Analysis from [Dune Analytics](https://duneanalytics.com/) shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms [Aave](https://aave.com/) and [Compound](https://compound.finance/), which have at times offered attractive variable yields on WBTC. Other DeFi applications include [Uniswap](https://uniswap.org/) and [Balancer](https://balancer.fi/), which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.
+What is all this tokenized bitcoin doing on Ethereum? Analysis from [Dune Analytics](https://duneanalytics.com/) shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms [Aave](https://aave.com/) and [Compound](https://compound.finance/), which let depositers borrow against their WBTC collateral and have at times offered attractive variable yields on lending WBTC. Other DeFi applications include [Uniswap](https://uniswap.org/) and [Balancer](https://balancer.fi/), which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.
 
 ![WBTC Usage](dune-analytics-wbtc-usage.png)
 
