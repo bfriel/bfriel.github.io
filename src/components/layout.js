@@ -4,10 +4,10 @@ import "./layout.css"
 
 import { rhythm } from "../utils/typography"
 
-export default function Layout({ location, title, children }) {
+export default function Layout({ title, children }) {
   // const rootPath = `${__PATH_PREFIX__}/`;
-  const [headerScrollClass, setHeaderScrollClass] = useState(`show`)
-  const [headerBoxShadowClass, setHeaderBoxShadowClass] = useState(`no-shadow`)
+  const [headerScrollClass, setHeaderScrollClass] = useState("show")
+  const [headerBoxShadowClass, setHeaderBoxShadowClass] = useState("no-shadow")
 
   useEffect(() => {
     let didScroll
