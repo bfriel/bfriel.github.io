@@ -39,6 +39,15 @@ export default function Homepage({ data, location }) {
                     {node.frontmatter.date} | {node.timeToRead} Min Read
                   </small>
                 </header>
+                <small
+                  className="show-xs"
+                  style={{
+                    textDecoration: "underline",
+                    marginTop: rhythm(0.5),
+                  }}
+                >
+                  Read More
+                </small>
               </section>
               <BackgroundImage
                 Tag="section"
