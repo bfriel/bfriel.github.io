@@ -145,6 +145,10 @@ a.no-underline {
   /* letter-spacing: 0.5px; */
 }
 
+a.gatsby-resp-image-link {
+  padding: initial;
+}
+
 /* POSTS */
 
 .article {
