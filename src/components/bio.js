@@ -29,25 +29,25 @@ export default function Bio() {
   return (
     <div
       style={{
-        display: `flex`,
+        display: "flex",
         marginBottom: rhythm(2.5),
       }}
     >
-      <div style={{ width: `100%`, maxWidth: `80px` }}>
+      <div style={{ width: "100%", maxWidth: "80px" }}>
         <Img
           fluid={data.avatar.childImageSharp.fluid}
-          style={{ borderRadius: `100px` }}
+          style={{ borderRadius: "100px" }}
         />
       </div>
       <div style={{ marginLeft: rhythm(0.5) }}>
         <p
           style={{
-            lineHeight: `20px`,
-            color: `rgba(0,0,0,0.54)`,
+            lineHeight: "20px",
+            color: "rgba(0,0,0,0.54)",
             fontWeight: 300,
-            fontSize: `15px`,
-            textTransform: `uppercase`,
-            letterSpacing: `0.5px`,
+            fontSize: "15px",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px",
             margin: 0,
           }}
         >
@@ -56,9 +56,9 @@ export default function Bio() {
         <h3
           style={{
             margin: 0,
-            fontSize: `28px`,
-            lineHeight: `36px`,
-            fontWeight: `500`,
+            fontSize: "28px",
+            lineHeight: "36px",
+            fontWeight: 500,
           }}
         >
           {author}
