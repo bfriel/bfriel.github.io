@@ -53,13 +53,12 @@ export default function About({ data, location }) {
           Feel free to reach out via{" "}
           <a
             className="blue-link"
-            href="https://twitter.com/brianfriel_"
+            href="https://twitter.com/bfriel_"
             target="_blank"
             rel="noopener noreferrer"
           >
             Twitter
           </a>{" "}
-          or send me an email at <strong>briandfriel@gmail.com</strong>
         </p>
       </section>
     </Layout>

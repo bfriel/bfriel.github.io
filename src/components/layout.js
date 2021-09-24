@@ -86,7 +86,7 @@ export default function Layout({ title, children }) {
           <div className="hide-xs small-font">Made in San Francisco, CA</div>
           <div style={{ display: "flex" }}>
             <a
-              href="https://twitter.com/brianfriel_"
+              href="https://twitter.com/bfriel_"
               className="no-link"
               target="_blank"
               rel="noopener noreferrer"
