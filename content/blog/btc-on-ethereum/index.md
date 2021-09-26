@@ -19,7 +19,7 @@ The most popular mechanism for minting bitcoin onto Ethereum is [BitGo](https://
 
 ![WBTC Growth](wbtc.jpeg)
 
-What is all this tokenized bitcoin doing on Ethereum? Analysis from [Dune Analytics](https://duneanalytics.com/) shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms [Aave](https://aave.com/) and [Compound](https://compound.finance/), which let depositers borrow against their WBTC collateral and have at times offered attractive variable yields on lending WBTC. Other DeFi applications include [Uniswap](https://uniswap.org/) and [Balancer](https://balancer.fi/), which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.
+What is all this tokenized bitcoin doing on Ethereum? Analysis from [Dune Analytics](https://duneanalytics.com/) shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms [Aave](https://aave.com/) and [Compound](https://compound.finance/), which let depositors borrow against their WBTC collateral and have at times offered attractive variable yields on lending WBTC. Other DeFi applications include [Uniswap](https://uniswap.org/) and [Balancer](https://balancer.fi/), which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.
 
 ![WBTC Usage](dune-analytics-wbtc-usage.png)
 
