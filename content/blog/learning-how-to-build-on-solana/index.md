@@ -100,11 +100,11 @@ This is the basic program from the [official Anchor docs](https://project-serum.
 
 - Right off the bat, you should notice `declare_id!("your-program-id-here")`. What this does is statically define your program address and embed it into the program. This is one of many ways in which Anchor makes it easy for us to build more-secure applications.
 - Macros such as `#[program]` and `#[derive(Accounts)]` are the cornerstones of the Anchor framework. These macros abstract away lots of low level Rust code that would otherwise slow down developers and create room for more errors. With `#[program]` we're able to easily define our program and set up inner methods such as `initialize` that will automatically be recognized by our clients as valid [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) endpoints they can call. In the case of `#[derive(Accounts)]` we're able to define transaction instructions and handle our validation logic outside of our main program. We'll cover this in more detail later.
-- `Context` is always the first parameter passed in any method we create with Anchor. In this case, `ctx: Context<Initialize>`, Context is a simple container over the `Initialize` struct at the bottom of our program. This struct is empty for now, but the relationship will make more sense in the next example.
+- `Context` is always the first parameter passed in any method we create with Anchor. In this case, `ctx: Context<Initialize>`, Context is a simple container over the `Initialize` struct defined at the bottom of our file. This struct is empty for now, but the relationship will make more sense in the next example.
 
 #### Writing our Program
 
-Let's go ahead and look at our finished program. To recap: We're looking to create an app that let's the world vote for its favorite type of peanut butter. Specifically, we're writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.
+Let's go ahead and look at our finished program. To recap: We're looking to create an app that let's the world vote for their favorite type of peanut butter. Specifically, we're writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.
 
 Below is my basic implementation, filled with comments explaining what each section is doing. Give it a read, and if you're following along go ahead and copy-paste the code below in `programs/crunchy-vs-smooth/src/lib.rs`.
 
@@ -171,7 +171,7 @@ pub struct VoteAccount {
 
 There are two things I want to highlight here. The first is the way that Solana programs handle data. If you're familiar with Solidity, you're used to the idea of code and data living in the same place. In Ethereum, smart contracts own data and can update their data within their own functions. In Solana, data and code live separately. If you take a look at our updated `initialize` function, you'll see that we are reading and writing data from a vote account that is being passed into our program via the Context parameter `ctx`. Our vote account is defined at the bottom of our file as a simple struct with two fields, crunchy and smooth, that hold unsigned 64-bit integers.
 
-This idea of code and data separation can be a bit unintuitive at first, but Anchor makes it a bit easier with this `#[derive(Accounts)]` macro. This is the second thing I want to highlight. With `#[derive(Accounts)]`, we can specify all the accounts that are required for a given transaction instruction and let Anchor deal with all the serialization and deserialization required to tie everything together. The big take away here is that with Anchor, we're able to separate our account validation logic and focus on the business logic in our main program. This leads to less boilerplate and less code to reason about. More information on how accounts work with programs, I recommend reading the aptly named [ok so what the fuck is the deal with solana anyway](https://2501babe.github.io/posts/solana101.html).
+This idea of code and data separation can be a bit unintuitive at first, but Anchor makes it easier with the `#[derive(Accounts)]` macro. This is the second thing I want to highlight. With `#[derive(Accounts)]`, we can specify all the accounts that are required for a given transaction instruction and let Anchor deal with all the serialization and deserialization required to tie everything together. The big take away here is that with Anchor, we're able to separate our account validation logic from the business logic in our main program. This leads to less boilerplate and less code to reason about. For more information on how accounts work with programs, I recommend reading the aptly named [ok so what the fuck is the deal with solana anyway](https://2501babe.github.io/posts/solana101.html).
 
 With our program newly updated, lets build our code by running the following command:
 
@@ -181,27 +181,23 @@ anchor build
 
 Once complete, you'll see a new folder named `target` full of a bunch of files and folders. When we build our code, one of the things that Anchor creates for us is an [Interface Description Language (IDL)](https://en.wikipedia.org/wiki/Interface_description_language). This IDL serves as a common interface for interacting with our Rust program. Go ahead and open this file at `target/idl/crunch_vs_smooth.json`. In here, you should see a list of the three methods we defined earlier (`initialize`, `voteCrunchy`, `voteSmooth`) as well as the accounts that are required to be passed in for each transaction. With this IDL, we now have a standardized way of communicating with our program from any other programming language, be it JavaScript, Go, C#, etc.
 
-#### Testing and Deploying to Devnet
+#### Testing and Deploying to Localnet
 
-With our Anchor program now built, we can move on to testing and deploying our program. In our `tests` folder we should already a file named `crunchy-vs-smooth.js` go ahead and replace its contents with the following:
+With our Anchor program now built, we can move on to testing and deploying our program. In our `tests` folder we should already see a file named `crunchy-vs-smooth.js` go ahead and replace its contents with the following:
 
-```javascript
-const assert = require("assert")
-const anchor = require("@project-serum/anchor")
-const { SystemProgram } = anchor.web3
-
+```
+const assert = require("assert");
+const anchor = require("@project-serum/anchor");
+const { SystemProgram } = anchor.web3;
 describe("crunchy-vs-smooth", () => {
-  // Configure the client
-  const provider = anchor.Provider.env()
-  anchor.setProvider(provider)
-
-  const program = anchor.workspace.CrunchyVsSmooth
-  const voteAccount = anchor.web3.Keypair.generate()
-
+  /* Configure the client */
+  const provider = anchor.Provider.env();
+  anchor.setProvider(provider);
+  const program = anchor.workspace.CrunchyVsSmooth;
+  const voteAccount = anchor.web3.Keypair.generate();
   it("Initializes with 0 votes for crunchy and smooth", async () => {
-    console.log("Testing Initialize...")
-    // The last element passed to RPC methods is always the transaction options
-    // Because voteAccount is being created here, we are required to pass it as a signers array
+    console.log("Testing Initialize...");
+    /* The last element passed to RPC methods is always the transaction options ecause voteAccount is being created here, we are required to pass it as a signers array */
     await program.rpc.initialize({
       accounts: {
         voteAccount: voteAccount.publicKey,
@@ -209,51 +205,52 @@ describe("crunchy-vs-smooth", () => {
         systemProgram: SystemProgram.programId,
       },
       signers: [voteAccount],
-    })
-
+    });
     const account = await program.account.voteAccount.fetch(
       voteAccount.publicKey
-    )
-    console.log("Crunchy: ", account.crunchy.toString())
-    console.log("Smooth: ", account.smooth.toString())
-    assert.ok(account.crunchy.toString() == 0 && account.smooth.toString() == 0)
-  })
+    );
+    console.log("Crunchy: ", account.crunchy.toString());
+    console.log("Smooth: ", account.smooth.toString());
+    assert.ok(
+      account.crunchy.toString() == 0 && account.smooth.toString() == 0
+    );
+  });
   it("Votes correctly for crunchy", async () => {
-    console.log("Testing voteCrunchy...")
+    console.log("Testing voteCrunchy...");
     await program.rpc.voteCrunchy({
       accounts: {
         voteAccount: voteAccount.publicKey,
       },
-    })
-
+    });
     const account = await program.account.voteAccount.fetch(
       voteAccount.publicKey
-    )
-    console.log("Crunchy: ", account.crunchy.toString())
-    console.log("Smooth: ", account.smooth.toString())
-
-    assert.ok(account.crunchy.toString() == 1 && account.smooth.toString() == 0)
-  })
+    );
+    console.log("Crunchy: ", account.crunchy.toString());
+    console.log("Smooth: ", account.smooth.toString());
+    assert.ok(
+      account.crunchy.toString() == 1 && account.smooth.toString() == 0
+    );
+  });
   it("Votes correctly for smooth", async () => {
-    console.log("Testing voteSmooth...")
+    console.log("Testing voteSmooth...");
     await program.rpc.voteSmooth({
       accounts: {
         voteAccount: voteAccount.publicKey,
       },
-    })
-
+    });
     const account = await program.account.voteAccount.fetch(
       voteAccount.publicKey
-    )
-    console.log("Crunchy: ", account.crunchy.toString())
-    console.log("Smooth: ", account.smooth.toString())
-
-    assert.ok(account.crunchy.toString() == 1 && account.smooth.toString() == 1)
-  })
-})
+    );
+    console.log("Crunchy: ", account.crunchy.toString());
+    console.log("Smooth: ", account.smooth.toString());
+    assert.ok(
+      account.crunchy.toString() == 1 && account.smooth.toString() == 1
+    );
+  });
+});
 ```
 
-Here we can see our IDL in action, as we're now using JavaScript to interact with our program's RPC endpoints. Interacting with an Anchor program requires two key building blocks: a **provider** and a **program**. The provider is an abstraction of our connection to Solana, while program is an abstraction that combines our provider, IDL, and program ID. In testing, Anchor provides convenient methods for us to create these variables based on our environment.
+Here we can see our IDL in action, as we're now using JavaScript to interact with our program's RPC endpoints. Interacting with an Anchor program generally requires two key building blocks: a **provider** and a **program**. The provider is an abstraction of our connection to Solana, while program is an abstraction that combines our provider, IDL, and program ID. In testing, Anchor provides convenient methods for us to create these variables based on our environment.
 
 ```javascript
 const provider = anchor.Provider.env()
@@ -262,9 +259,9 @@ anchor.setProvider(provider)
 const program = anchor.workspace.CrunchyVsSmooth
 ```
 
-Later on, when we develop our client, we will have to construct the these ourselves using the user's Solana wallet.
+Later on, when we develop our client, we will have to construct these ourselves by interacting with the user's Solana wallet.
 
-With these two building blocks, we can start now start calling functions and accounts in our program using the convenient patterns `program.rpc.functionName` and `program.account.accountName`.
+With these two building blocks, we can start now start calling functions and accounts in our program using the convenient patterns `program.rpc.[functionName]` and `program.account.[accountName]`.
 
 ```javascript
 await program.rpc.initialize({
@@ -279,14 +276,111 @@ await program.rpc.initialize({
 const account = await program.account.voteAccount.fetch(voteAccount.publicKey)
 ```
 
+Before running our tests, let's take care of two housekeeping issues:
+
+1. **Update your Program ID**
+
+When we built our Solana program earlier, Anchor generated a new program ID. Let's go ahead and grab that.
+
 ```
 solana address -k target/deploy/crunchy_vs_smooth-keypair.json
-
 ```
 
-I my case it returns `7Ntd1GePKvSSYseiHqdk88k3mRLaQrMxmGnnoVpn8QQd`
+Take the output of this command and paste it into the `declare_id!()` macro in `programs/crunchy-vs-smooth/src/lib.rs`
+
+```rust
+// programs/crunchy-vs-smooth/src/lib.rs
+declare_id!("your-program-id");
+```
+
+as well as the `Anchor.toml` file at the root of our directory.
+
+```bash
+# Anchor.toml
+[programs.localnet]
+crunchy_vs_smooth = "your-program-id"
+```
+
+h/t [Nader Dabit](https://twitter.com/dabit3) for sharing the above command.
+
+2. **Make sure your Solana CLI is Configured for Localhost**
+
+You'l notice we haven't interacted with the Solana CLI at all yet. This is one of the few times in which we will. If this is your first time using the Solana CLI, please stop reading and go set up a [command line wallet and associated keypair path](https://docs.solana.com/wallet-guide/cli). If you think you may send real funds to this one day, please make sure to take your time and secure your backup phrase.
+
+Let's check in on our current solana configuration
+
+```bash
+solana config get
+
+# output
+Config File: /Users/yourname/.config/solana/cli/config.yml
+RPC URL: http://localhost:8899
+WebSocket URL: ws://localhost:8900/ (computed)
+Keypair Path: /Users/yourname/.config/solana/id.json
+Commitment: confirmed
+```
+
+If your configuration is on any different network than the one above (such as `devnet` or `mainnet-beta`) you can switch it over to localhost with the following command
+
+```bash
+solana config set --url localhost
+```
+
+As you develop your application, you'll likely be switching back and forth between `localhost` and `devnet` to iterate and then test your product against a live network. On each network, your address will be the same, but you will have to acquire SOL for each separate network. To do this, lets first spin up a local node.
+
+```bash
+solana-test-validator
+```
+
+Then lets check our address:
+
+```bash
+solana address
+```
+
+And check our balance:
+
+```bash
+solana balance
+```
+
+If you're not on `mainnet-beta` you can airdrop yourself some SOL. On `devnet` you will likely be rate-limited to nothing more than 5-10 SOL, but on localnet we can act like kings. Let's go ahead and treat ourselves to 1000 SOL
+
+```bash
+solana airdrop 1000
+```
+
+With our program all set up and our localnet wallet flush with generational wealth, we can now finally test and deploy our program.
+
+One quirky thing about Anchor is the way it works with your [local validator while testing](https://project-serum.github.io/anchor/cli/commands.html#test). Before running your tests, you must either shut down your local validator or add a `--skip-local-validator` flag to your test command. You can shut down your local validator by clicking on the terminal window in which it runs and pressing `control` + `c`. With our validator offline, Let's run our the JavaScript tests we looked at earlier.
+
+```bash
+anchor test
+```
+
+With our three tests passing, let's go ahead and deploy our program. Fire up the validator again in a new terminal window
+
+```bash
+solana-test-validator
+```
+
+With the validator running, we can open a second new terminal window and begin streaming our logs
+
+```bash
+solana logs
+```
+
+Our logs should be quiet for now. Let's see what the say when they deploy our program
+
+```bash
+anchor deploy
+```
+
+If you see a ton of transaction messages in your log terminal, followed by `Deploy success` in your original terminal, congrats! You just deployed your first Solana program.
 
 ## Creating our React application to interface with our Solana program
+
+With our program deployed, we can now begin interacting with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app). However, there are a few key considerations I'd like to share when creating a React app to interface our Solana program.
 
 #### Scaffolding our React app
 
