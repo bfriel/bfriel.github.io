@@ -7,6 +7,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
+
+deckDeckGoHighlightElement()
+
 export default function BlogPostTemplate({ data, pageContext, location }) {
   const { previous, next } = pageContext
   const siteTitle = data.site.siteMetadata.title
