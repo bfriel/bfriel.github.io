@@ -19,6 +19,10 @@ blockquote {
   border-color: #232c3a;
 }
 
+code {
+  background-color: #e6e6e5;
+}
+
 /* GENERAL */
 
 .small-font {

@@ -1,6 +1,6 @@
 ---
 title: Learning How to Build on Solana
-date: "2021-09-25T13:46:37.121Z"
+date: "2021-09-26T13:46:37.121Z"
 description: "An introductory tour to writing applications on Solana, built with the Anchor framework and React."
 featuredImage: ./shipbuilder.jpeg
 ---
@@ -9,7 +9,7 @@ featuredImage: ./shipbuilder.jpeg
 
 ## Introduction
 
-About a week ago I was scrolling Twitter when I came across the following tweet from Armani Ferrante, a software engineer at [Alameda Research](https://www.alameda-research.com/).
+About a week ago I was scrolling through Twitter when I came across the following tweet from Armani Ferrante, a software engineer at [Alameda Research](https://www.alameda-research.com/).
 
 [![Armani Ferrante Tweet](tweet.jpeg)](https://twitter.com/armaniferrante/status/1434554725093949452)
 
@@ -31,15 +31,85 @@ This walkthrough covers three main sections:
 2. Creating our React application to interface with our Solana program
 3. Deploying our completed work for the rest of the world to see
 
-## 1. Writing our Rust-based Solana program using Anchor
+## Writing our Rust-based Solana program using Anchor
+
+### Prerequisites
+
+Before we can build anything, we first have to install the necessary command line tools. Chief amongst these are [Solana](https://docs.solana.com/cli/install-solana-cli-tools), [Anchor](https://project-serum.github.io/anchor/getting-started/installation.html#install-rust), and [NodeJS](https://nodejs.org/en/). I've linked to guides on how to install Solana and Anchor which include installing their necessary dependencies such as Rust. If you don't have Node yet, I recommend installing it via [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm).
+
+Before proceeding, you should be able to run the following commands in your terminal:
+
+```
+solana --version
+anchor --version
+node -v
+```
+
+I developed my app with the following versions:
+
+```
+solana-cli 1.7.11
+anchor-cli 0.16.0
+node v16.7.0
+```
+
+At the time of this writing, my setup runs on MacOS 11.5.2. For the purposes of this walkthrough, I won't be covering anything related to other operating systems such as Linux or Windows.
 
 #### Getting Started with Anchor
 
+With the necessary tools installed, we can initialize our project by calling `anchor init` and then changing into our project directory.
+
+```
+anchor init crunchy-vs-smooth
+cd crunchy-vs-smooth
+```
+
+Opening up our project, the first thing you'll notice is that Anchor already created a bunch of files to get us started. The majority of these files are organized into five main folders:
+
+**app** - Where our react app will go
+
+**migrations** - Home to a single deploy script
+
+**programs** - Where we will write our Solana program
+
+**target** - The output for when we build our code
+
+**test** - Where we can write JavaScript tests for our program
+
+It's worth reiterating that Anchor is an _opinionated_ framework. This means that it makes makes assumptions about how code should be structured and makes tradeoffs surrounding low-level things like serialization and deserialization. For the vast majority of new developers entering Solana, these opinions shouldn't get in your way. Anchor's goal is to become a true zero-cost abstraction in the sense that there is no performance penalty adopting the framework.
+
+Diving into our `programs` folder, you'll notice
+
+```rust
+    use anchor_lang::prelude::*;
+
+declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+
+#[program]
+pub mod exampleanchor {
+    use super::*;
+    pub fn initialize(ctx: Context<Initialize>) -> ProgramResult {
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct Initialize {}
+
+```
+
 #### Writing our Program
+
+```
+solana address -k target/deploy/crunchy_vs_smooth-keypair.json
+
+```
+
+I my case it returns `7Ntd1GePKvSSYseiHqdk88k3mRLaQrMxmGnnoVpn8QQd`
 
 #### Testing and Deploying to Devnet
 
-## 2. Creating our React application to interface with our Solana program
+## Creating our React application to interface with our Solana program
 
 #### Scaffolding our React app
 
@@ -47,7 +117,7 @@ This walkthrough covers three main sections:
 
 #### Working with Phantom
 
-## 3. Deploying our completed work for the rest of the world to see
+## Deploying our completed work for the rest of the world to see
 
 #### Serving our React app with Node
 
@@ -56,3 +126,5 @@ This walkthrough covers three main sections:
 ## Potential Improvements
 
 ## Acknowledgements
+
+If you found this helpful please let me know via [Twitter](https://twitter.com/bfriel_)!
