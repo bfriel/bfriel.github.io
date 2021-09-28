@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brian Friel]]></title><description><![CDATA[Brian Friel is a San Francisco-based product manager and frontend developer]]></description><link>https://brianfriel.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 28 Sep 2021 07:32:14 GMT</lastBuildDate><item><title><![CDATA[Learning How to Build on Solana]]></title><description><![CDATA[Check out the live app and its code. Introduction About a week ago I was scrolling through Twitter when I came across the following tweet…]]></description><link>https://brianfriel.xyz/learning-how-to-build-on-solana/</link><guid isPermaLink="false">https://brianfriel.xyz/learning-how-to-build-on-solana/</guid><pubDate>Mon, 27 Sep 2021 20:46:37 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brian Friel]]></title><description><![CDATA[Brian Friel is a San Francisco-based product manager and frontend developer]]></description><link>https://brianfriel.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 28 Sep 2021 15:27:00 GMT</lastBuildDate><item><title><![CDATA[Learning How to Build on Solana]]></title><description><![CDATA[Check out the live app and its code. Introduction About a week ago I was scrolling through Twitter when I came across the following tweet…]]></description><link>https://brianfriel.xyz/learning-how-to-build-on-solana/</link><guid isPermaLink="false">https://brianfriel.xyz/learning-how-to-build-on-solana/</guid><pubDate>Mon, 27 Sep 2021 20:46:37 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;Check out the &lt;a href=&quot;https://www.pbvote.com/&quot;&gt;live app&lt;/a&gt; and its &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth&quot;&gt;code&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
@@ -93,7 +93,7 @@ pub struct Initialize {}&lt;/code&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt; is always the first parameter passed in any method we create with Anchor. In this case, &lt;code class=&quot;language-text&quot;&gt;ctx: Context&amp;lt;Initialize&gt;&lt;/code&gt;, Context is a simple container over the &lt;code class=&quot;language-text&quot;&gt;Initialize&lt;/code&gt; struct defined at the bottom of our file. This struct is empty for now, but the relationship will make more sense in the next example.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Writing our Program&lt;/h4&gt;
-&lt;p&gt;Let’s go ahead and look at our finished program. To recap: We’re looking to create an app that let’s the world vote for their favorite type of peanut butter. Specifically, we’re writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.&lt;/p&gt;
+&lt;p&gt;Let’s go ahead and look at our finished program. To recap: We’re looking to create an app that lets the world vote for their favorite type of peanut butter. Specifically, we’re writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.&lt;/p&gt;
 &lt;p&gt;Below is my basic implementation, filled with comments explaining what each section is doing. Give it a read, and if you’re following along go ahead and copy-paste the code below in &lt;code class=&quot;language-text&quot;&gt;programs/crunchy-vs-smooth/src/lib.rs&lt;/code&gt;.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;rust&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;use anchor_lang::prelude::*;
@@ -132,7 +132,7 @@ pub struct Initialize&amp;lt;&amp;#39;info&amp;gt; {
     /// payer, which funds the account creation
     /// space, which defines how large the account should be
     /// and the system_program which is required by the runtime
-    /// This enforces that our vote_account be owned by the currently executing program, and that it should be deserialized to the VoteAccount struct below at #[account]
+    /// This enforces that our vote_account must be owned by the currently executing program, and that it should be deserialized to the VoteAccount struct below at #[account]
     #[account(init, payer = user, space = 16 + 16)]
     pub vote_account: Account&amp;lt;&amp;#39;info, VoteAccount&amp;gt;,
     #[account(mut)]
@@ -320,7 +320,7 @@ Commitment: confirmed&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;If you see a ton of transaction messages in your log terminal, followed by &lt;code class=&quot;language-text&quot;&gt;Deploy success&lt;/code&gt; in your original terminal, congrats! You just deployed your first Solana program.&lt;/p&gt;
 &lt;h2&gt;Creating our React application to Interface with our Solana Program&lt;/h2&gt;
-&lt;p&gt;With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won’t be spending much time on my &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth/tree/master/app&quot;&gt;React code&lt;/a&gt; which you can feel free to copy-paste. However, there are a few key considerations I’d like to share when creating a React app to interface our Solana program.&lt;/p&gt;
+&lt;p&gt;With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won’t be spending much time on my &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth/tree/master/app&quot;&gt;React code&lt;/a&gt; which you can feel free to copy-paste. However, there are a few key considerations I’d like to share when creating a React app to interface with our Solana program.&lt;/p&gt;
 &lt;h4&gt;Scaffolding our React App&lt;/h4&gt;
 &lt;p&gt;Anchor was kind enough to get us started with an empty &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory. In the root of our project, we can overwrite this folder with a new React app by calling:&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
@@ -332,7 +332,7 @@ Commitment: confirmed&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;And then adding the newly renamed &lt;code class=&quot;language-text&quot;&gt;..git&lt;/code&gt; file to our &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; file.&lt;/p&gt;
 &lt;p&gt;Even though it provides a &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; file at the root of our project, Anchor does not start us off with a git repository. If you want to track all your work together in git as one big project, you can call &lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt; from the root directory and Anchor will help us ignore unnecessary folders like &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt;. For more information or links on how to install git, check out &lt;a href=&quot;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&quot;&gt;Git SCM&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Another thing to note is that your project should now have two &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; files, one at the root created by Anchor and one within &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; created by Create React App. When you’re working on your frontend, you’ll need to install your dependencies within your &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; folder instead of at the project root.&lt;/p&gt;
+&lt;p&gt;Another thing to note is that your project should now have two &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; files, one at the root created by Anchor and one within &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; created by Create React App. When you’re working on your frontend, you’ll need to install your React dependencies within your &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; folder instead of at the project root.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Building Your Own Frontend&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;If you want to continue by building your own frontend from scratch, read on. If you prefer to just copy-paste my example, skip down to the next section. Let’s change into our &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory and install Anchor, &lt;a href=&quot;https://solana-labs.github.io/solana-web3.js/&quot;&gt;Solana Web3.js&lt;/a&gt;, and &lt;a href=&quot;https://solana-labs.github.io/wallet-adapter/&quot;&gt;Solana Wallet Adapter&lt;/a&gt;.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
@@ -417,7 +417,7 @@ npm install&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;With your Phantom wallet set to localnet, go ahead and connect to our app by clicking on the blue “Select Wallet” button. You should be greeted with a green “Connected” message.&lt;/p&gt;
 &lt;h4&gt;Interacting with the Anchor IDL&lt;/h4&gt;
-&lt;p&gt;Let’s take a look at how we can interact with our program from a React frontend. Go ahead and open up &lt;code class=&quot;language-text&quot;&gt;app/src/Main.jsx&lt;/code&gt;. There’s a lot happening in the file, but I want to focus on the &lt;code class=&quot;language-text&quot;&gt;getVotes&lt;/code&gt; function within our &lt;code class=&quot;language-text&quot;&gt;useEffect()&lt;/code&gt; hook.&lt;/p&gt;
+&lt;p&gt;Let’s take a look at how we can interact with our program from a React frontend. Go ahead and open up &lt;code class=&quot;language-text&quot;&gt;app/src/components/Main.jsx&lt;/code&gt;. There’s a lot happening in the file, but I want to focus on the &lt;code class=&quot;language-text&quot;&gt;getVotes()&lt;/code&gt; function within our &lt;code class=&quot;language-text&quot;&gt;useEffect()&lt;/code&gt; hook.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;async function getVotes() {
   const connection = new Connection(network, preflightCommitment)
@@ -436,12 +436,16 @@ npm install&lt;/code&gt;
   }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Remember back to when we were testing our Rust program, I mentioned the two key building blocks required to interact with Anchor programs via RPC: &lt;strong&gt;provider&lt;/strong&gt; and &lt;strong&gt;program&lt;/strong&gt;. Here we can see how we can construct these again from within our React client. Solana Web3.js can provide us our &lt;code class=&quot;language-text&quot;&gt;Connection&lt;/code&gt;, and the parameters &lt;code class=&quot;language-text&quot;&gt;network&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;preflightCommitment&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;programID&lt;/code&gt; can simply be hardcoded. What’s left for us to bring together is &lt;code class=&quot;language-text&quot;&gt;wallet&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;idl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Remember back to when we were testing our Rust program, I mentioned the two key building blocks required to interact with Anchor programs via RPC: &lt;strong&gt;provider&lt;/strong&gt; and &lt;strong&gt;program&lt;/strong&gt;. Here we can see how we can construct these again from within our React client. Solana Web3.js can provide us our &lt;code class=&quot;language-text&quot;&gt;Connection&lt;/code&gt;, and the parameters &lt;code class=&quot;language-text&quot;&gt;network&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;preflightCommitment&lt;/code&gt; can simply be hardcoded. What’s left for us to bring together is &lt;code class=&quot;language-text&quot;&gt;programID&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;idl&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;wallet&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;As you recall, we already copied over the IDL from our &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; directory into our React app’s &lt;code class=&quot;language-text&quot;&gt;src&lt;/code&gt; folder. We can import that IDL and check that item off our list:&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;import idl from &amp;quot;../idl.json&amp;quot;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;What’s left for us to handle is &lt;code class=&quot;language-text&quot;&gt;wallet&lt;/code&gt;. Thankfully, the &lt;code class=&quot;language-text&quot;&gt;@solana/wallet-adapter-react&lt;/code&gt; package has our back here. If our component is properly nested within the necessary &lt;code class=&quot;language-text&quot;&gt;&amp;lt;WalletProviders&gt;&lt;/code&gt; (see App.js) we can simply wallet equal to the convenient &lt;code class=&quot;language-text&quot;&gt;useWallet()&lt;/code&gt; hook:&lt;/p&gt;
+&lt;p&gt;With our IDL now accessible on our frontend, we can snag our &lt;code class=&quot;language-text&quot;&gt;programID&lt;/code&gt; out of it and wrap it within a Web3.js &lt;code class=&quot;language-text&quot;&gt;PublicKey&lt;/code&gt;:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;export const programID = new PublicKey(idl.metadata.address)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;What’s left for us to handle is &lt;code class=&quot;language-text&quot;&gt;wallet&lt;/code&gt;. Thankfully, the &lt;code class=&quot;language-text&quot;&gt;@solana/wallet-adapter-react&lt;/code&gt; package has our back here. If our component is properly nested within the necessary &lt;code class=&quot;language-text&quot;&gt;&amp;lt;WalletProvider&gt;&lt;/code&gt; (see &lt;code class=&quot;language-text&quot;&gt;App.js&lt;/code&gt;) we can simply set our wallet equal to the convenient &lt;code class=&quot;language-text&quot;&gt;useWallet()&lt;/code&gt; hook:&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;import { useWallet } from &amp;quot;@solana/wallet-adapter-react&amp;quot;
 
@@ -454,7 +458,7 @@ const wallet = useWallet()&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;This is fine for testing and local development, but if we were to do the same in our React app we would generate a new keypair on every site refresh. This would mean that each new visitor would have to call &lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt; and then see our vote count start at 0. Not ideal.&lt;/p&gt;
 &lt;h4&gt;Serving our React app with Node&lt;/h4&gt;
-&lt;p&gt;One way to get around this issue is to store our &lt;code class=&quot;language-text&quot;&gt;voteAccount&lt;/code&gt; keypair on a backend server and then route our RPC calls via that backend server. If you open up &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; within our &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; folder, you’ll see I already added following line to the root of our JSON object:&lt;/p&gt;
+&lt;p&gt;One naive way to get around this issue is to store our &lt;code class=&quot;language-text&quot;&gt;voteAccount&lt;/code&gt; keypair on a backend server and then route our RPC calls via that backend server. If you open up &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; within our &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; folder, you’ll see I already added following line to the root of our JSON object:&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;json&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;  &amp;quot;proxy&amp;quot;: &amp;quot;http://localhost:3001&amp;quot;,&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
@@ -582,7 +586,7 @@ solana config set --url devnet&lt;/code&gt;
     &amp;quot;build&amp;quot;: &amp;quot;cd app &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build&amp;quot;
   }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;If you followed along until now, thank you! Hopefully you have an understanding of how to go about building and experimenting with your own small projects.&lt;/p&gt;
+&lt;p&gt;If you followed along until now, thank you! Hopefully you have a better understanding of how to go about building and experimenting with your own small projects.&lt;/p&gt;
 &lt;h2&gt;Potential Improvements&lt;/h2&gt;
 &lt;p&gt;I built this app in around three days, but if I had more time I would definitely want to implement a number of improvements, including:&lt;/p&gt;
 &lt;ul&gt;
