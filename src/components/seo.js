@@ -42,11 +42,11 @@ export default function SEO({
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image || avatar.childImageSharp.resize.src
   const thumbnailSrc = thumbnail && thumbnail.childImageSharp.sizes.src
-  let origin = ""
-  if (typeof window !== "undefined") {
-    origin = window.location.origin
-  }
-  const thumbnailImg = origin + thumbnailSrc
+  // let origin = ""
+  // if (typeof window !== "undefined") {
+  //   origin = window.location.origin
+  // }
+  const thumbnailImg = `https://www.brianfriel.xyz${thumbnailSrc}`
 
   return (
     <Helmet
