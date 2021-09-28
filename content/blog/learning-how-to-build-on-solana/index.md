@@ -105,7 +105,7 @@ This is the basic program from the [official Anchor docs](https://project-serum.
 
 #### Writing our Program
 
-Let's go ahead and look at our finished program. To recap: We're looking to create an app that let's the world vote for their favorite type of peanut butter. Specifically, we're writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.
+Let's go ahead and look at our finished program. To recap: We're looking to create an app that lets the world vote for their favorite type of peanut butter. Specifically, we're writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.
 
 Below is my basic implementation, filled with comments explaining what each section is doing. Give it a read, and if you're following along go ahead and copy-paste the code below in `programs/crunchy-vs-smooth/src/lib.rs`.
 
@@ -146,7 +146,7 @@ pub struct Initialize<'info> {
     /// payer, which funds the account creation
     /// space, which defines how large the account should be
     /// and the system_program which is required by the runtime
-    /// This enforces that our vote_account be owned by the currently executing program, and that it should be deserialized to the VoteAccount struct below at #[account]
+    /// This enforces that our vote_account must be owned by the currently executing program, and that it should be deserialized to the VoteAccount struct below at #[account]
     #[account(init, payer = user, space = 16 + 16)]
     pub vote_account: Account<'info, VoteAccount>,
     #[account(mut)]
@@ -383,7 +383,7 @@ If you see a ton of transaction messages in your log terminal, followed by `Depl
 
 ## Creating our React application to Interface with our Solana Program
 
-With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app) which you can feel free to copy-paste. However, there are a few key considerations I'd like to share when creating a React app to interface our Solana program.
+With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app) which you can feel free to copy-paste. However, there are a few key considerations I'd like to share when creating a React app to interface with our Solana program.
 
 #### Scaffolding our React App
 
@@ -403,7 +403,7 @@ And then adding the newly renamed `..git` file to our `.gitignore` file.
 
 Even though it provides a `.gitignore` file at the root of our project, Anchor does not start us off with a git repository. If you want to track all your work together in git as one big project, you can call `git init` from the root directory and Anchor will help us ignore unnecessary folders like `target` and `node_modules`. For more information or links on how to install git, check out [Git SCM](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-Another thing to note is that your project should now have two `package.json` files, one at the root created by Anchor and one within `app` created by Create React App. When you're working on your frontend, you'll need to install your dependencies within your `app` folder instead of at the project root.
+Another thing to note is that your project should now have two `package.json` files, one at the root created by Anchor and one within `app` created by Create React App. When you're working on your frontend, you'll need to install your React dependencies within your `app` folder instead of at the project root.
 
 **Building Your Own Frontend**
 
@@ -484,7 +484,7 @@ With your Phantom wallet set to localnet, go ahead and connect to our app by cli
 
 #### Interacting with the Anchor IDL
 
-Let's take a look at how we can interact with our program from a React frontend. Go ahead and open up `app/src/Main.jsx`. There's a lot happening in the file, but I want to focus on the `getVotes` function within our `useEffect()` hook.
+Let's take a look at how we can interact with our program from a React frontend. Go ahead and open up `app/src/components/Main.jsx`. There's a lot happening in the file, but I want to focus on the `getVotes()` function within our `useEffect()` hook.
 
 ```javascript
 async function getVotes() {
@@ -505,7 +505,7 @@ async function getVotes() {
 }
 ```
 
-Remember back to when we were testing our Rust program, I mentioned the two key building blocks required to interact with Anchor programs via RPC: **provider** and **program**. Here we can see how we can construct these again from within our React client. Solana Web3.js can provide us our `Connection`, and the parameters `network`, `preflightCommitment`, and `programID` can simply be hardcoded. What's left for us to bring together is `wallet` and `idl`.
+Remember back to when we were testing our Rust program, I mentioned the two key building blocks required to interact with Anchor programs via RPC: **provider** and **program**. Here we can see how we can construct these again from within our React client. Solana Web3.js can provide us our `Connection`, and the parameters `network` and `preflightCommitment` can simply be hardcoded. What's left for us to bring together is `programID`, `idl`, and `wallet`.
 
 As you recall, we already copied over the IDL from our `target` directory into our React app's `src` folder. We can import that IDL and check that item off our list:
 
@@ -513,7 +513,13 @@ As you recall, we already copied over the IDL from our `target` directory into o
 import idl from "../idl.json"
 ```
 
-What's left for us to handle is `wallet`. Thankfully, the `@solana/wallet-adapter-react` package has our back here. If our component is properly nested within the necessary `<WalletProviders>` (see App.js) we can simply wallet equal to the convenient `useWallet()` hook:
+With our IDL now accessible on our frontend, we can snag our `programID` out of it and wrap it within a Web3.js `PublicKey`:
+
+```javascript
+export const programID = new PublicKey(idl.metadata.address)
+```
+
+What's left for us to handle is `wallet`. Thankfully, the `@solana/wallet-adapter-react` package has our back here. If our component is properly nested within the necessary `<WalletProvider>` (see `App.js`) we can simply set our wallet equal to the convenient `useWallet()` hook:
 
 ```javascript
 import { useWallet } from "@solana/wallet-adapter-react"
@@ -533,7 +539,7 @@ This is fine for testing and local development, but if we were to do the same in
 
 #### Serving our React app with Node
 
-One way to get around this issue is to store our `voteAccount` keypair on a backend server and then route our RPC calls via that backend server. If you open up `package.json` within our `app` folder, you'll see I already added following line to the root of our JSON object:
+One naive way to get around this issue is to store our `voteAccount` keypair on a backend server and then route our RPC calls via that backend server. If you open up `package.json` within our `app` folder, you'll see I already added following line to the root of our JSON object:
 
 ```json
   "proxy": "http://localhost:3001",
@@ -653,7 +659,7 @@ The last item I'll leave you with is my deploy script, which should be added to 
   }
 ```
 
-If you followed along until now, thank you! Hopefully you have an understanding of how to go about building and experimenting with your own small projects.
+If you followed along until now, thank you! Hopefully you have a better understanding of how to go about building and experimenting with your own small projects.
 
 ## Potential Improvements
 
