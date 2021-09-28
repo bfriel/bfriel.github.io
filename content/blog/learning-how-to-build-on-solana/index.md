@@ -276,6 +276,8 @@ await program.rpc.initialize({
 const account = await program.account.voteAccount.fetch(voteAccount.publicKey)
 ```
 
+One little detail that blew my mind was that Anchor automatically translates your accounts and functions from snake_case in Rust to camelCase in your JavaScript tests 🤯
+
 Before running our tests, let's take care of two housekeeping issues:
 
 1. **Update your Program ID**
@@ -344,7 +346,7 @@ And check our balance:
 solana balance
 ```
 
-If you're not on `mainnet-beta` you can airdrop yourself some SOL. On `devnet` you will likely be rate-limited to nothing more than 5-10 SOL, but on localnet we can act like kings. Let's go ahead and treat ourselves to 1000 SOL
+If you're not on `mainnet-beta` you can airdrop yourself some SOL. On `devnet` you will likely be rate-limited to nothing more than 5-10 SOL, but on localnet we can live like kings. Let's go ahead and treat ourselves to 1000 SOL
 
 ```bash
 solana airdrop 1000
@@ -358,19 +360,19 @@ One quirky thing about Anchor is the way it works with your [local validator whi
 anchor test
 ```
 
-With our three tests passing, let's go ahead and deploy our program. Fire up the validator again in a new terminal window
+In your terminal, you should see messages about our three tests passing. Let's go ahead and deploy our program. Fire up the validator again in a new terminal window:
 
 ```bash
 solana-test-validator
 ```
 
-With the validator running, we can open a second new terminal window and begin streaming our logs
+With the validator running, we can open a second new terminal window and begin streaming our logs:
 
 ```bash
 solana logs
 ```
 
-Our logs should be quiet for now. Let's see what the say when they deploy our program
+Our logs should be quiet for now. Let's see what the say when they deploy our program:
 
 ```bash
 anchor deploy
@@ -378,18 +380,90 @@ anchor deploy
 
 If you see a ton of transaction messages in your log terminal, followed by `Deploy success` in your original terminal, congrats! You just deployed your first Solana program.
 
-## Creating our React application to interface with our Solana program
+## Creating our React application to Interface with our Solana Program
 
-With our program deployed, we can now begin interacting with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app). However, there are a few key considerations I'd like to share when creating a React app to interface our Solana program.
+With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app) which can feel free to copy-paste. However, there are a few key considerations I'd like to share when creating a React app to interface our Solana program.
 
-#### Scaffolding our React app
+#### Scaffolding our React App
 
-create-react-app
-remove or rename git folder automatically created
+Anchor was kind enough to get us started with an empty `app` directory. In the root of our project, we can overwrite this folder with a new react app by calling:
+
+```bash
+npx create-react-app app
+```
+
+One thing to note is that `create-react-app` will automatically initialize a git folder within our new `app` directory. This will cause issues if we plan to keep all our code in one place and build on it with future commits. I got around this issue by renaming the hidden `.git` file via the terminal
+
+```bash
+mv app/.git app/..git
+```
+
+And then adding the newly renamed `..git` file to our `.gitignore` file.
+
+Even though it provides a `.gitignore` file at the root of our project, Anchor does not start us off with a git repository. If you want to track all your work together in git as one big project, you can call `git init` from the root directory and Anchor will help us ignore unnecessary folders like `target` and `node_modules`. For more information or links on how to install git, check out [Git SCM](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+Another thing to note is that your project should now have two `package.json` files, one at the root created by Anchor and one within app created by Create React App. When you're working on your frontend, you'll need to install your dependencies within your `app` folder instead of at the project root.
+
+**Building Your Own Frontend**
+
+If you want to continue by building your own frontend from scratch, read on. If you prefer to just copy-paste my example, skip down to the next section. Let's change into our `app` directory and install Anchor, [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/), and [Solana Wallet Adapter](https://solana-labs.github.io/wallet-adapter/).
+
+```bash
+cd app
+
+npm install @project-serum/anchor \
+@solana/web3.js \
+@solana/wallet-adapter-react \
+@solana/wallet-adapter-wallets \
+@solana/wallet-adapter-base
+```
+
+I chose to build my app with [Material UI](https://mui.com/) after seeing that Solana Labs created an open source wallet adapter for the project. If you want to build with Material UI as well, you should grab the following packages along with the notification library `notistack`.
+
+```bash
+npm install @material-ui/core \
+@material-ui/icons \
+@solana/wallet-adapter-material-ui \
+notistack
+```
+
+**Using my Example Frontend**
+
+If you'd rather skip ahead and work with a finished product, go ahead and replace your `app` directory with my `app` from [my GitHub](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app), change into the directory, and then install the dependencies.
+
+```bash
+cd app
+
+npm install
+```
+
+**This guide will continue assuming you are using my example frontend.**
+
+Before we can spin up our frontend, you'll need to take care of two housekeeping items:
+
+1. Within `app/src/App.js`, uncomment the `localnet` variable and set `network` equal to it. Our network should be running on `http://127.0.0.1:8899`
+
+2. Copy the IDL that Anchor generated for you previously in `target/idl/myapp.json` over to `app/src/idl.json`. Make sure to replace what I had in there previously. At the time of this writing, Anchor does not automatically update an IDL in your `app` directory like it does in your `target` directory. That means that each you update your anchor program and run `anchor build`, you should copy over your IDL. Nader Dabit shared a script for automating this in [his guide](https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291) which I highly recommend reading.
+
+If you copied over my `app` directory, ran `npm install`, and took care of the two housekeeping items I just mentioned, then let's spin up our frontend app. From a terminal within `app` call:
+
+```bash
+npm install
+```
+
+After a brief moment, you should see a new browser window that looks like this:
+
+![New App Example](newapp.png)
+
+Please ignore the "Could not fetch vote account" and "Could not proxy request" errors for now as we will fill those in later.
 
 #### Working with Phantom
 
 #### Interacting with the Anchor IDL
+
+Initialize account
+
+Set proxy to localhost
 
 In `tests` we defined our vote account as the following:
 
