@@ -1,6 +1,6 @@
 ---
 title: Learning How to Build on Solana
-date: "2021-09-26T13:46:37.121Z"
+date: "2021-09-27T20:46:37.121Z"
 description: "An introductory tour to writing applications on Solana, built with the Anchor framework and React."
 featuredImage: ./shipbuilder.jpeg
 ---
@@ -66,7 +66,7 @@ cd crunchy-vs-smooth
 
 Opening up our project, the first thing you'll notice is that Anchor already created a bunch of files to get us started. The majority of these files are organized into four main folders (outside of `node_modules` which you can ignore):
 
-- **app** - Where our react app will go
+- **app** - Where our React app will go
 
 - **migrations** - Home to a single deploy script
 
@@ -197,7 +197,7 @@ describe("crunchy-vs-smooth", () => {
   const voteAccount = anchor.web3.Keypair.generate();
   it("Initializes with 0 votes for crunchy and smooth", async () => {
     console.log("Testing Initialize...");
-    /* The last element passed to RPC methods is always the transaction options ecause voteAccount is being created here, we are required to pass it as a signers array */
+    /* The last element passed to RPC methods is always the transaction options. Because voteAccount is being created here, we are required to pass it as a signers array */
     await program.rpc.initialize({
       accounts: {
         voteAccount: voteAccount.publicKey,
@@ -280,7 +280,7 @@ One little detail that blew my mind was that Anchor automatically translates you
 
 Before running our tests, let's take care of two housekeeping issues:
 
-1. **Update your Program ID**
+**1. Update your Program ID**
 
 When we built our Solana program earlier, Anchor generated a new program ID. Let's go ahead and grab that.
 
@@ -305,9 +305,9 @@ crunchy_vs_smooth = "your-program-id"
 
 h/t [Nader Dabit](https://twitter.com/dabit3) for sharing the above command.
 
-2. **Make sure your Solana CLI is Configured for Localhost**
+**2. Make sure your Solana CLI is Configured for Localhost**
 
-You'l notice we haven't interacted with the Solana CLI at all yet. This is one of the few times in which we will. If this is your first time using the Solana CLI, please stop reading and go set up a [command line wallet and associated keypair path](https://docs.solana.com/wallet-guide/cli). If you think you may send real funds to this one day, please make sure to take your time and secure your backup phrase.
+You'll notice that we haven't interacted with the Solana CLI yet. This is one of the few times in which we will. If this is your first time using the Solana CLI, please stop reading and go set up a [command line wallet and its associated keypair path](https://docs.solana.com/wallet-guide/cli). If you think you may send real funds to this one day, please make sure to take your time and secure your backup phrase.
 
 Let's check in on our current solana configuration
 
@@ -328,7 +328,7 @@ If your configuration is on any different network than the one above (such as `d
 solana config set --url localhost
 ```
 
-As you develop your application, you'll likely be switching back and forth between `localhost` and `devnet` to iterate and then test your product against a live network. On each network, your address will be the same, but you will have to acquire SOL for each separate network. To do this, lets first spin up a local node.
+As you develop your application, you'll likely be switching back and forth between `localhost` and `devnet` to iterate and then test your product against a live network. On each network, your CLI wallet address will be the same, but you will have to acquire SOL for each separate network. To do this, lets first spin up a local node.
 
 ```bash
 solana-test-validator
@@ -346,7 +346,7 @@ And check our balance:
 solana balance
 ```
 
-If you're not on `mainnet-beta` you can airdrop yourself some SOL. On `devnet` you will likely be rate-limited to nothing more than 5-10 SOL, but on localnet we can live like kings. Let's go ahead and treat ourselves to 1000 SOL
+If you're not on `mainnet-beta` you can airdrop yourself some SOL. On `devnet` you will likely be rate-limited to nothing more than 5-10 SOL, but on localnet we can live like kings. Let's go ahead and treat ourselves to 1,000 SOL
 
 ```bash
 solana airdrop 1000
@@ -382,17 +382,17 @@ If you see a ton of transaction messages in your log terminal, followed by `Depl
 
 ## Creating our React application to Interface with our Solana Program
 
-With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app) which can feel free to copy-paste. However, there are a few key considerations I'd like to share when creating a React app to interface our Solana program.
+With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won't be spending much time on my [React code](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app) which you can feel free to copy-paste. However, there are a few key considerations I'd like to share when creating a React app to interface our Solana program.
 
 #### Scaffolding our React App
 
-Anchor was kind enough to get us started with an empty `app` directory. In the root of our project, we can overwrite this folder with a new react app by calling:
+Anchor was kind enough to get us started with an empty `app` directory. In the root of our project, we can overwrite this folder with a new React app by calling:
 
 ```bash
 npx create-react-app app
 ```
 
-One thing to note is that `create-react-app` will automatically initialize a git folder within our new `app` directory. This will cause issues if we plan to keep all our code in one place and build on it with future commits. I got around this issue by renaming the hidden `.git` file via the terminal
+One thing to note is that `create-react-app` will automatically initialize a git repository within our new `app` directory. This will cause issues if we plan to keep all our code in one place and build on it with future commits. I got around this issue by renaming the hidden `.git` file via the terminal
 
 ```bash
 mv app/.git app/..git
@@ -429,7 +429,7 @@ notistack
 
 **Using my Example Frontend**
 
-If you'd rather skip ahead and work with a finished product, go ahead and replace your `app` directory with my `app` from [my GitHub](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app), change into the directory, and then install the dependencies.
+If you'd rather skip ahead and work with a finished product, go ahead and replace your `app` directory with the `app` from [my GitHub](https://github.com/bfriel/crunchy-vs-smooth/tree/master/app), change into the directory, and then install the dependencies.
 
 ```bash
 cd app
@@ -443,31 +443,31 @@ Before we can spin up our frontend, you'll need to take care of two housekeeping
 
 1. Within `app/src/App.js`, uncomment the `localnet` variable and set `network` equal to it. Our network should be running on `http://127.0.0.1:8899`
 
-2. Copy the IDL that Anchor generated for you previously in `target/idl/myapp.json` over to `app/src/idl.json`. Make sure to replace what I had in there previously. At the time of this writing, Anchor does not automatically update an IDL in your `app` directory like it does in your `target` directory. That means that each you update your anchor program and run `anchor build`, you should copy over your IDL. Nader Dabit shared a script for automating this in [his guide](https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291) which I highly recommend reading.
+2. Copy the IDL that Anchor generated for you previously in `target/idl/myapp.json` over to `app/src/idl.json`. Make sure to replace what I had in there previously. At the time of this writing, Anchor does not automatically update an IDL in your `app` directory like it does in your `target` directory. That means that each time you update your anchor program and run `anchor build` you should copy over your IDL. Nader Dabit shared a script for automating this in [his guide](https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291) which I highly recommend reading.
 
 If you copied over my `app` directory, ran `npm install`, and took care of the two housekeeping items I just mentioned, then let's spin up our frontend app. From a terminal within `app` call:
 
 ```bash
-npm install
+npm start
 ```
 
 After a brief moment, you should see a new browser window that looks like this:
 
 ![New App Example](newapp.png)
 
-Please ignore the "Could not fetch vote account" and "Could not proxy request" errors for now as we will fill those in later.
+Please ignore the "Could not fetch vote account" and "Could not proxy request" errors for now as we will correct those later.
 
 #### Working with Phantom
 
 To interact with our program, we're going to have to set up a crypto wallet. At the time of this writing, I consider [Phantom](https://phantom.app/) to be the gold standard.
 
-If you don't have a Phantom wallet yet, go ahead and install it on the browser of your choice. Once gain, if you think you might ever send real money to this wallet, take your time and properly secure your recovery phase. If you're totally new to crypto and this is your first wallet, go buy a hardware wallet such as a [Ledger](https://www.ledger.com/) or a [Trezor](https://trezor.io/) and get comfortable using it and recovering a throwaway seed before sending real money. I have no affiliation with either product but they are the best \$60 you'll ever spend.
+If you don't have a Phantom wallet yet, go ahead and install it on the browser of your choice. Once again, if you think you might ever send real money to this wallet, take your time and properly secure your recovery phase. If you're totally new to crypto and this is your first wallet, go buy a hardware wallet such as a [Ledger](https://www.ledger.com/) or a [Trezor](https://trezor.io/) and get comfortable using it and recovering a throwaway seed before sending over real money. I have no affiliation with either product but they are the best \$60 you'll ever spend.
 
-With Phantom installed, we need to make sure that our Phantom wallet is in sync with the rest of our application. Remember that we deployed our program to localnet, so our Phantom wallet should be on the same network. Make sure you are still running `solana-test-validator` and the follow the gif below
+With Phantom installed, we need to make sure that our Phantom wallet is in sync with the rest of our application. Remember that we deployed our program to localnet, so our Phantom wallet should be on the same network. Make sure you are still running `solana-test-validator` and then follow the steps in the gif below:
 
 ![New App Example](phantom.gif)
 
-This is address is different from our CLI address we used earlier. You'll want to join me in granting yourself another 1000 localnet SOL. To do that, copy your Phantom wallet address like I do above and paste it into the following command:
+This address is different from the CLI wallet address we used earlier. You'll want to join me in granting your Phantom wallet another 1,000 localnet SOL. To do that, copy your Phantom wallet address like I do in the gif above and paste it into the following command:
 
 ```bash
 solana airdrop 1000 <your-phantom-address-here>
@@ -483,19 +483,125 @@ With your Phantom wallet set to localnet, go ahead and connect to our app by cli
 
 #### Interacting with the Anchor IDL
 
-Initialize account
+Let's take a look at how we can interact with our program from a React frontend. Go ahead and open up `app/src/Main.jsx`. There's a lot happening in the file, but I want to focus in on the `getVotes` function within our `useEffect()` hook.
 
-#### Serving our React app with Node
+```javascript
+async function getVotes() {
+  const connection = new Connection(network, preflightCommitment)
+  const provider = new Provider(connection, wallet, preflightCommitment)
+  const program = new Program(idl, programID, provider)
+  try {
+    const account = await program.account.voteAccount.fetch(
+      voteAccount.publicKey
+    )
+    setVotes({
+      crunchy: parseInt(account.crunchy.toString()),
+      smooth: parseInt(account.smooth.toString()),
+    })
+  } catch (error) {
+    console.log("could not getVotes: ", error)
+  }
+}
+```
 
-Set proxy to localhost
+Remember back to when we were testing our Rust program, I mentioned the two key building blocks required to interact with Anchor programs via RPC: **provider** and **program**. Here we can see how we can construct these again from within our React client. Solana Web3.js can provide us our `Connection`, and the parameters `network`, `preflightCommitment`, and `programID` can simply be hardcoded. What's left for us to bring together is `wallet` and `idl`.
 
-In `tests` we defined our vote account as the following:
+As you recall, we already copied over the IDL from our `target` directory into our React app's `src` folder. We can import that IDL and check that item off our list:
+
+```javascript
+import idl from "../idl.json"
+```
+
+What's left for us to handle is `wallet`. Thankfully, the `@solana/wallet-adapter-react` package has our back here. If our component is properly nested within the necessary `<WalletProviders>` (see App.js) we can simply wallet equal to the convenient `useWallet()` hook:
+
+```javascript
+import { useWallet } from "@solana/wallet-adapter-react"
+
+const wallet = useWallet()
+```
+
+The rest of our program interactions follow the same `program.rpc.[functionName]` and `program.account.[accountName]` patterns we explored earlier. Within `Main.jsx`, you can see I've set up two functions for interacting with our RPC methods: `initializeVoting` and `handleVote`.
+
+If you try and initialize our program via the blue button in the center of the page, you'll likely see the following message: `Error: TypeError: Cannot read properties of null (reading 'publicKey')`. This is because we are missing our `voteAccount` keypair. If you recall back to `tests`, we defined our vote account as a random keypair:
 
 ```javascript
 const voteAccount = anchor.web3.Keypair.generate()
 ```
 
-This is fine for testing and local development, but you'll notice that each time we refresh our page, we generate a new keypair and thus start our voting back at 0.
+This is fine for testing and local development, but if we were to do the same in our React app we would generate a new keypair on every site refresh. This would mean that each new visitor would have to call `initialize` and then see our vote count start at 0. Not ideal.
+
+#### Serving our React app with Node
+
+One way to get around this issue is to store our `voteAccount` keypair on a backend server and then route our RPC calls via that backend server. If you open up `package.json` within our `app` folder, you'll see I already added following line to the root of our JSON object:
+
+```json
+  "proxy": "http://localhost:3001",
+```
+
+This will let us proxy calls to a backend server that is running on PORT 3001.
+
+In a new terminal, change back out to the root of our project and install [Express](https://expressjs.com/).
+
+```bash
+cd ..
+
+# in the crunchy-vs-smooth root directory
+npm install express
+```
+
+Now we can whip up a quick and dirty Express server to persist our `voteAccount` keypair. Go ahead and copy my `index.js` file to the root of our directory.
+
+```
+const path = require("path");
+const anchor = require("@project-serum/anchor");
+const express = require("express");
+
+const voteAccount = anchor.web3.Keypair.generate();
+
+const PORT = process.env.PORT || 3001;
+
+const app = express();
+
+app.use(express.static(path.resolve(__dirname, "app/build")));
+
+app.get("/voteAccount", (req, res) => {
+  res.json({ voteAccount });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "app/build", "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server listening on ${PORT}`);
+});
+
+```
+
+> 🚨 ALERT: I do not consider this code to be secure. Do not use in production apps with actual funds. This is for demonstrative purposes only.
+
+With my disclaimer out of the way, let's fire up our express server
+
+```bash
+# in the crunchy-vs-smooth root directory
+node index.js
+
+# output
+Server listening on 3001
+```
+
+Then let's kill the terminal that's running our existing React app and then restart it:
+
+```bash
+# in crunchy-vs-smooth/app
+npm start
+```
+
+You should now be able to click on the "Initialize Program" button and then vote for your favorite type of peanut butter!
+
+![Voted Screen](ivoted.png)
+
+I'd like to reiterate that my Express server is not meant to be considered production-ready. Outside of security, another big drawback to storing our `voteAccount` keypair on a backend server is that we are beholden to our hosting provider. If our server goes down, our keypair is lost. A much better alternative is to use something called a [Program Derived Address](https://docs.solana.com/developing/programming-model/calling-between-programs#program-derived-addresses) which is native to Solana. I may explore this in a future post.
 
 ## Deploying our completed work for the rest of the world to see
 
