@@ -455,7 +455,7 @@ After a brief moment, you should see a new browser window that looks like this:
 
 ![New App Example](newapp.png)
 
-Please ignore the "Could not fetch vote account" and "Could not proxy request" errors for now as we will correct those later.
+Please ignore the `Could not fetch vote account` and `Could not proxy request` errors for now as we will correct those later.
 
 #### Working with Phantom
 
@@ -551,6 +551,8 @@ npm install express
 
 Now we can whip up a quick and dirty Express server to persist our `voteAccount` keypair. Go ahead and copy my `index.js` file to the root of our directory.
 
+> 🚨 ALERT: I do not consider this code to be secure. Do not use in production apps with actual funds. This is for demonstrative purposes only.
+
 ```
 const path = require("path");
 const anchor = require("@project-serum/anchor");
@@ -605,16 +607,64 @@ I'd like to reiterate that my Express server is not meant to be considered produ
 
 ## Deploying our completed work for the rest of the world to see
 
-- `solana config set --url localhost`, `devnet`, etc
-- `Anchor.toml` -> localnet, devnet, etc
-- `anchor build`, make sure program ID in Anchor.toml is the same (usually is)
-- `anchor deploy`
-- in `app/src/App.js` update the network url to something like `clusterApiUrl("devnet")`
-- switch Phantom network and good to test frontend
+If you made it this far, take a deep breath. The hard stuff is over.
+
+Deploying a live network is very straightforward. The process mirrors the same one we took when we deployed to localnet.
+
+Here is a handy list I use to make sure I'm covering all my bases whenever I switch networks:
+
+1. Set your Solana configuration
+
+```bash
+# replace devnet with your desired network (i.e. localhost, testnet, mainnet-beta)
+solana config set --url devnet
+```
+
+2. Copy this network to your `Anchor.toml` file
+
+3. Rebuild your Anchor program and make sure your program ID matches what's in `Anchor.toml` (it usually does)
+
+```bash
+anchor build
+```
+
+4. Deploy your program
+
+```
+anchor deploy
+```
+
+5. In `app/src/App.js` update the network url to your desired network (i.e. `clusterApiUrl("devnet")`)
+
+6. Update network settings in your Phantom wallet
 
 #### Deploying to Heroku
 
+Because this is a small hobby project and I wanted to get an MVP up quickly, I decided to deploy it to Heroku. If you host your code on GitHub, they make it easy to connect your account and deploy in one click.
+
+If you're considering launching a serious project on Solana, I would highly recommend finding a better hosting solution. If you were around for the Degen Ape Academy launch, you might recall that Heroku had a [few growing pains](https://twitter.com/rajgokal/status/1426344733316554753) when dealing with the influx of demand.
+
+The last item I'll leave you with is my deploy script, which should be added to `package.json` at the root of the directory
+
+```json
+  "scripts": {
+    "build": "cd app && npm install && npm run build"
+  }
+```
+
+If you followed along until now, thank you! Hopefully you have an understanding of how to go about building and experimenting with your own small projects.
+
 ## Potential Improvements
+
+This app was built in three days, but if I had more time I would definitely want to implement a number of improvements, including:
+
+- Replacing my voteAccount keypair with a Program Derived Address
+- Refactoring my program's instruction handlers down to a singular vote function
+- Adding feedback in between casting and confirming a vote on my React frontend
+- Showing voting analytics
+- Adding better transaction instruction metadata
+- Experiment with enforcing voting rules (e.g. 1 account, 1 vote)
+- Showing the entirety of a user's voting history, not just the votes that ocurred during this session
 
 ## Acknowledgements
 
