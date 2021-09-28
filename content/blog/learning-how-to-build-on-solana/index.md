@@ -459,9 +459,33 @@ Please ignore the "Could not fetch vote account" and "Could not proxy request" e
 
 #### Working with Phantom
 
+To interact with our program, we're going to have to set up a crypto wallet. At the time of this writing, I consider [Phantom](https://phantom.app/) to be the gold standard.
+
+If you don't have a Phantom wallet yet, go ahead and install it on the browser of your choice. Once gain, if you think you might ever send real money to this wallet, take your time and properly secure your recovery phase. If you're totally new to crypto and this is your first wallet, go buy a hardware wallet such as a [Ledger](https://www.ledger.com/) or a [Trezor](https://trezor.io/) and get comfortable using it and recovering a throwaway seed before sending real money. I have no affiliation with either product but they are the best \$60 you'll ever spend.
+
+With Phantom installed, we need to make sure that our Phantom wallet is in sync with the rest of our application. Remember that we deployed our program to localnet, so our Phantom wallet should be on the same network. Make sure you are still running `solana-test-validator` and the follow the gif below
+
+![New App Example](phantom.gif)
+
+This is address is different from our CLI address we used earlier. You'll want to join me in granting yourself another 1000 localnet SOL. To do that, copy your Phantom wallet address like I do above and paste it into the following command:
+
+```bash
+solana airdrop 1000 <your-phantom-address-here>
+```
+
+Alternatively, you can send your Phantom wallet some localnet SOL from the command line wallet you made earlier. To do that, enter:
+
+```bash
+solana transfer <your-phantom-address-here> <amount-to-send> --allow-unfunded-recipient
+```
+
+With your Phantom wallet set to localnet, go ahead and connect to our app by clicking on the blue "Select Wallet" button. You should be greeted with a green "Connected" message.
+
 #### Interacting with the Anchor IDL
 
 Initialize account
+
+#### Serving our React app with Node
 
 Set proxy to localhost
 
@@ -475,7 +499,12 @@ This is fine for testing and local development, but you'll notice that each time
 
 ## Deploying our completed work for the rest of the world to see
 
-#### Serving our React app with Node
+- `solana config set --url localhost`, `devnet`, etc
+- `Anchor.toml` -> localnet, devnet, etc
+- `anchor build`, make sure program ID in Anchor.toml is the same (usually is)
+- `anchor deploy`
+- in `app/src/App.js` update the network url to something like `clusterApiUrl("devnet")`
+- switch Phantom network and good to test frontend
 
 #### Deploying to Heroku
 
