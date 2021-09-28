@@ -1,4 +1,602 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brian Friel]]></title><description><![CDATA[Brian Friel is a San Francisco-based product manager and frontend developer]]></description><link>https://brianfriel.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 24 Sep 2021 01:51:04 GMT</lastBuildDate><item><title><![CDATA[Bitcoin on Ethereum]]></title><description><![CDATA[This article was originally published on castlefunds.com. Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of…]]></description><link>https://brianfriel.xyz/btc-on-ethereum/</link><guid isPermaLink="false">https://brianfriel.xyz/btc-on-ethereum/</guid><pubDate>Sun, 20 Sep 2020 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This article was originally published on &lt;a href=&quot;https://castlefunds.com&quot;&gt;castlefunds.com&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brian Friel]]></title><description><![CDATA[Brian Friel is a San Francisco-based product manager and frontend developer]]></description><link>https://brianfriel.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 28 Sep 2021 06:02:06 GMT</lastBuildDate><item><title><![CDATA[Learning How to Build on Solana]]></title><description><![CDATA[Check out the live app and its code. Introduction About a week ago I was scrolling through Twitter when I came across the following tweet…]]></description><link>https://brianfriel.xyz/learning-how-to-build-on-solana/</link><guid isPermaLink="false">https://brianfriel.xyz/learning-how-to-build-on-solana/</guid><pubDate>Mon, 27 Sep 2021 20:46:37 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://www.pbvote.com/&quot;&gt;live app&lt;/a&gt; and its &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth&quot;&gt;code&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;About a week ago I was scrolling through Twitter when I came across the following tweet from Armani Ferrante, a software engineer at &lt;a href=&quot;https://www.alameda-research.com/&quot;&gt;Alameda Research&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/armaniferrante/status/1434554725093949452&quot;&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHvQqaAAA//xAAbEAABBAMAAAAAAAAAAAAAAAABAAIQESAhMf/aAAgBAQABBQImlcO4BvD/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAUEAEAAAAAAAAAAAAAAAAAAAAw/9oACAEBAAY/Ah//xAAbEAACAQUAAAAAAAAAAAAAAAAAAREQICExcf/aAAgBAQABPyGJoSvtEnAcrCP/2gAMAwEAAgADAAAAEEPPAP/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABoQAQEBAAMBAAAAAAAAAAAAAAERABAhMUH/2gAIAQEAAT8QQEqse5MzKV8OGAFaYwsJy+Zqd7//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Armani Ferrante Tweet&quot;
+        title=&quot;Armani Ferrante Tweet&quot;
+        src=&quot;/static/7a811e69772fa4b489dcaaa0d84f72cd/1c72d/tweet.jpg&quot;
+        srcset=&quot;/static/7a811e69772fa4b489dcaaa0d84f72cd/a80bd/tweet.jpg 148w,
+/static/7a811e69772fa4b489dcaaa0d84f72cd/1c91a/tweet.jpg 295w,
+/static/7a811e69772fa4b489dcaaa0d84f72cd/1c72d/tweet.jpg 590w,
+/static/7a811e69772fa4b489dcaaa0d84f72cd/a8a14/tweet.jpg 885w,
+/static/7a811e69772fa4b489dcaaa0d84f72cd/fbd2c/tweet.jpg 1180w,
+/static/7a811e69772fa4b489dcaaa0d84f72cd/e8d98/tweet.jpg 1642w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Armani is the creator of &lt;a href=&quot;https://project-serum.github.io/anchor/getting-started/introduction.html&quot;&gt;Anchor&lt;/a&gt;, a framework for developing smart contracts on &lt;a href=&quot;https://solana.com/&quot;&gt;Solana&lt;/a&gt;. Anchor can be thought of like the &lt;a href=&quot;https://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt; of Solana development: It’s an opinionated way of writing programs that abstracts away a lot of repetitive, low-level code and lets developers focus on just building their apps.&lt;/p&gt;
+&lt;p&gt;Up until stumbling upon Armani’s tweet, I had been interested in learning how to build on Solana, but had largely put it off due to its perceived time commitment. Unlike most other smart contract platforms, Solana is not natively &lt;a href=&quot;https://ethereum.org/en/developers/docs/evm/&quot;&gt;EVM&lt;/a&gt;-compatible, meaning the vast majority of Web 3 applications that exist today cannot be easily copied over to Solana. Over the last six years, a huge developer ecosystem has emerged around &lt;a href=&quot;https://ethereum.org/en/&quot;&gt;Ethereum&lt;/a&gt; that supports writing, testing, and deploying smart contracts written in &lt;a href=&quot;https://docs.soliditylang.org/en/v0.8.7/&quot;&gt;Solidity&lt;/a&gt;. Solana, which launched its mainnet-beta back in March 2020, must build its &lt;a href=&quot;https://www.rust-lang.org/&quot;&gt;Rust&lt;/a&gt;-based developer ecosystem entirely from scratch.&lt;/p&gt;
+&lt;p&gt;While Solana is considered new, Anchor is even newer. The framework is still in its infancy and has yet to publish its official v1.0.0 release. The source code is currently unaudited and its APIs change regularly, but its productivity and security enhancements are such that it is quickly becoming the go-to foundation for the majority of Solana developers.&lt;/p&gt;
+&lt;p&gt;Upon seeing Armani’s tweet, I decided it was time for me to learn how to build on Solana. Specifically, I wanted to learn how to build a program using Anchor that I could then interact with via a &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; application. Having no prior experience with Rust, I set a goal of building a simple voting app that lets the world vote for its favorite type of peanut butter. The live version of this app can be found at &lt;a href=&quot;https://www.pbvote.com/&quot;&gt;www.pbvote.com&lt;/a&gt; and its source code can be found on &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth&quot;&gt;my GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What follows is a walkthrough of my experience and a simple guide for others to follow when building their first Solana application.&lt;/p&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This walkthrough covers three main sections:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Writing our Rust-based Solana program using Anchor&lt;/li&gt;
+&lt;li&gt;Creating our React application to interface with our Solana program&lt;/li&gt;
+&lt;li&gt;Deploying our completed work for the rest of the world to see&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Writing our Rust-based Solana program using Anchor&lt;/h2&gt;
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;Before we can build anything, we first have to install the necessary command line tools. Chief amongst these are &lt;a href=&quot;https://docs.solana.com/cli/install-solana-cli-tools&quot;&gt;Solana&lt;/a&gt;, &lt;a href=&quot;https://project-serum.github.io/anchor/getting-started/installation.html#install-rust&quot;&gt;Anchor&lt;/a&gt;, and &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;NodeJS&lt;/a&gt;. I’ve linked to guides on how to install Solana and Anchor which include installing their necessary dependencies such as Rust. If you don’t have Node yet, I recommend installing it via &lt;a href=&quot;https://github.com/nvm-sh/nvm&quot;&gt;Node Version Manager (NVM)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before proceeding, you should be able to run the following commands in your terminal:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana --version
+anchor --version
+node -v&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;I developed my app with the following versions:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana-cli 1.7.11
+anchor-cli 0.16.0
+node v16.7.0&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;At the time of this writing, my setup runs on MacOS 11.5.2. For the purposes of this walkthrough, I won’t be covering anything related to other operating systems such as Linux or Windows.&lt;/p&gt;
+&lt;h4&gt;Getting Started with Anchor&lt;/h4&gt;
+&lt;p&gt;With the necessary tools installed, we can initialize our project by calling &lt;code class=&quot;language-text&quot;&gt;anchor init&lt;/code&gt; and then changing into our project directory.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;anchor init crunchy-vs-smooth
+cd crunchy-vs-smooth&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Opening up our project, the first thing you’ll notice is that Anchor already created a bunch of files to get us started. The majority of these files are organized into four main folders (outside of &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; which you can ignore):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;app&lt;/strong&gt; - Where our React app will go&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;migrations&lt;/strong&gt; - Home to a single deploy script&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;programs&lt;/strong&gt; - Where we will write our Solana program&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;test&lt;/strong&gt; - Where we can write JavaScript tests for our program&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s worth reiterating that Anchor is an &lt;em&gt;opinionated&lt;/em&gt; framework. This means that it makes makes assumptions about how code should be structured and makes tradeoffs surrounding low-level things like serialization and deserialization. For the vast majority of new developers entering Solana, these opinions shouldn’t get in your way. Anchor’s goal is to become a true zero-cost abstraction in the sense that there is no performance penalty for adopting the framework.&lt;/p&gt;
+&lt;p&gt;Diving into our &lt;code class=&quot;language-text&quot;&gt;programs&lt;/code&gt; folder, you’ll notice a basic program that Anchor has written on our behalf:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;rust&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;use anchor_lang::prelude::*;
+
+declare_id!(&amp;quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&amp;quot;);
+
+#[program]
+pub mod crunchy_vs_smooth {
+    use super::*;
+    pub fn initialize(ctx: Context&amp;lt;Initialize&amp;gt;) -&amp;gt; ProgramResult {
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct Initialize {}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;This is the basic program from the &lt;a href=&quot;https://project-serum.github.io/anchor/tutorials/tutorial-0.html#defining-a-program&quot;&gt;official Anchor docs&lt;/a&gt;. Not much is happening here, we define a program named after our project with a single method &lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt;. When &lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt; is invoked, it returns out of the program successfully without touching any data. Despite the lack of functionality, this example highlights a few key aspects of Anchor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Right off the bat, you should notice &lt;code class=&quot;language-text&quot;&gt;declare_id!(&quot;your-program-id-here&quot;)&lt;/code&gt;. What this does is statically define your program address and embed it into the program. This is one of many ways in which Anchor makes it easy for us to build more-secure applications.&lt;/li&gt;
+&lt;li&gt;Macros such as &lt;code class=&quot;language-text&quot;&gt;#[program]&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;#[derive(Accounts)]&lt;/code&gt; are the cornerstones of the Anchor framework. These macros abstract away lots of low level Rust code that would otherwise slow down developers and create room for more errors. With &lt;code class=&quot;language-text&quot;&gt;#[program]&lt;/code&gt; we’re able to easily define our program and set up inner methods such as &lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt; that will automatically be recognized by our clients as valid &lt;a href=&quot;https://en.wikipedia.org/wiki/Remote_procedure_call&quot;&gt;RPC&lt;/a&gt; endpoints they can call. In the case of &lt;code class=&quot;language-text&quot;&gt;#[derive(Accounts)]&lt;/code&gt; we’re able to define transaction instructions and handle our validation logic outside of our main program. We’ll cover this in more detail later.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt; is always the first parameter passed in any method we create with Anchor. In this case, &lt;code class=&quot;language-text&quot;&gt;ctx: Context&amp;lt;Initialize&gt;&lt;/code&gt;, Context is a simple container over the &lt;code class=&quot;language-text&quot;&gt;Initialize&lt;/code&gt; struct defined at the bottom of our file. This struct is empty for now, but the relationship will make more sense in the next example.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Writing our Program&lt;/h4&gt;
+&lt;p&gt;Let’s go ahead and look at our finished program. To recap: We’re looking to create an app that let’s the world vote for their favorite type of peanut butter. Specifically, we’re writing a program that lets users vote for crunchy or smooth and keeps track of each vote overtime.&lt;/p&gt;
+&lt;p&gt;Below is my basic implementation, filled with comments explaining what each section is doing. Give it a read, and if you’re following along go ahead and copy-paste the code below in &lt;code class=&quot;language-text&quot;&gt;programs/crunchy-vs-smooth/src/lib.rs&lt;/code&gt;.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;rust&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;use anchor_lang::prelude::*;
+declare_id!(&amp;quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&amp;quot;);
+/// We&amp;#39;ll update our declare_id! later. Once you run `anchor build`, your Program ID can be found in /target/idl/[your_project_name].json
+/// Moving on to the #[program] macro below, this is where we define our program.
+/// Each method inside here defines an RPC request handler (aka instruction handler) which can be invoked by clients
+#[program]
+pub mod crunchy_vs_smooth {
+    use super::*;
+    /// The first parameter for every RPC handler is the Context struct. We define Initialize and Vote below at #[derive(Accounts)]
+    pub fn initialize(ctx: Context&amp;lt;Initialize&amp;gt;) -&amp;gt; ProgramResult {
+        let vote_account = &amp;amp;mut ctx.accounts.vote_account;
+        vote_account.crunchy = 0;
+        vote_account.smooth = 0;
+        Ok(())
+    }
+    /// All account validation logic is handled below at the #[account(...)] macros, letting us just focus on the business logic
+    pub fn vote_crunchy(ctx: Context&amp;lt;Vote&amp;gt;) -&amp;gt; ProgramResult {
+        let vote_account = &amp;amp;mut ctx.accounts.vote_account;
+        vote_account.crunchy += 1;
+        Ok(())
+    }
+    pub fn vote_smooth(ctx: Context&amp;lt;Vote&amp;gt;) -&amp;gt; ProgramResult {
+        let vote_account = &amp;amp;mut ctx.accounts.vote_account;
+        vote_account.smooth += 1;
+        Ok(())
+    }
+}
+/// The #[derive(Accounts)] macro specifies all the accounts that are required for a given instruction
+/// Here, we define two structs: Initialize and Vote
+#[derive(Accounts)]
+pub struct Initialize&amp;lt;&amp;#39;info&amp;gt; {
+    /// We mark vote_account with the init attribute, which creates a new account owned by the program
+    /// When using init, we must also provide:
+    /// payer, which funds the account creation
+    /// space, which defines how large the account should be
+    /// and the system_program which is required by the runtime
+    /// This enforces that our vote_account be owned by the currently executing program, and that it should be deserialized to the VoteAccount struct below at #[account]
+    #[account(init, payer = user, space = 16 + 16)]
+    pub vote_account: Account&amp;lt;&amp;#39;info, VoteAccount&amp;gt;,
+    #[account(mut)]
+    pub user: Signer&amp;lt;&amp;#39;info&amp;gt;,
+    pub system_program: Program &amp;lt;&amp;#39;info, System&amp;gt;,
+}
+#[derive(Accounts)]
+pub struct Vote&amp;lt;&amp;#39;info&amp;gt; {
+    /// Marking accounts as mut persists any changes made upon exiting the program, allowing our votes to be recorded
+    #[account(mut)]
+    pub vote_account: Account&amp;lt;&amp;#39;info, VoteAccount&amp;gt;,
+}
+/// Here we define what our VoteAccount looks like
+/// We define a struct with two public properties: crunchy and smooth
+/// These properties will keep track of their respective votes as unsigned 64-bit integers
+/// This VoteAccount will be passed inside each Transaction Instruction to record votes as they occur
+#[account]
+pub struct VoteAccount {
+    pub crunchy: u64,
+    pub smooth: u64,
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;There are two things I want to highlight here. The first is the way that Solana programs handle data. If you’re familiar with Solidity, you’re used to the idea of code and data living in the same place. In Ethereum, smart contracts own data and can update their data within their own functions. In Solana, data and code live separately. If you take a look at our updated &lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt; function, you’ll see that we are reading and writing data from a vote account that is being passed into our program via the Context parameter &lt;code class=&quot;language-text&quot;&gt;ctx&lt;/code&gt;. Our vote account is defined at the bottom of our file as a simple struct with two fields, crunchy and smooth, that hold unsigned 64-bit integers.&lt;/p&gt;
+&lt;p&gt;This idea of code and data separation can be a bit unintuitive at first, but Anchor makes it easier with the &lt;code class=&quot;language-text&quot;&gt;#[derive(Accounts)]&lt;/code&gt; macro. This is the second thing I want to highlight. With &lt;code class=&quot;language-text&quot;&gt;#[derive(Accounts)]&lt;/code&gt;, we can specify all the accounts that are required for a given transaction instruction and let Anchor deal with all the serialization and deserialization required to tie everything together. The big take away here is that with Anchor, we’re able to separate our account validation logic from the business logic in our main program. This leads to less boilerplate and less code to reason about. For more information on how accounts work with programs, I recommend reading the aptly named &lt;a href=&quot;https://2501babe.github.io/posts/solana101.html&quot;&gt;ok so what the fuck is the deal with solana anyway&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With our program newly updated, lets build our code by running the following command:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;anchor build&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Once complete, you’ll see a new folder named &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; full of a bunch of files and folders. When we build our code, one of the things that Anchor creates for us is an &lt;a href=&quot;https://en.wikipedia.org/wiki/Interface_description_language&quot;&gt;Interface Description Language (IDL)&lt;/a&gt;. This IDL serves as a common interface for interacting with our Rust program. Go ahead and open this file at &lt;code class=&quot;language-text&quot;&gt;target/idl/crunch_vs_smooth.json&lt;/code&gt;. In here, you should see a list of the three methods we defined earlier (&lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;voteCrunchy&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;voteSmooth&lt;/code&gt;) as well as the accounts that are required to be passed in for each transaction. With this IDL, we now have a standardized way of communicating with our program from any other programming language, be it JavaScript, Go, C#, etc.&lt;/p&gt;
+&lt;h4&gt;Testing and Deploying to Localnet&lt;/h4&gt;
+&lt;p&gt;With our Anchor program now built, we can move on to testing and deploying our program. In our &lt;code class=&quot;language-text&quot;&gt;tests&lt;/code&gt; folder we should already see a file named &lt;code class=&quot;language-text&quot;&gt;crunchy-vs-smooth.js&lt;/code&gt; go ahead and replace its contents with the following:&lt;/p&gt;
+&lt;deckgo-highlight-code   highlight-lines=&quot;undefined&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;const assert = require(&amp;quot;assert&amp;quot;);
+const anchor = require(&amp;quot;@project-serum/anchor&amp;quot;);
+const { SystemProgram } = anchor.web3;
+describe(&amp;quot;crunchy-vs-smooth&amp;quot;, () =&amp;gt; {
+  /* Configure the client */
+  const provider = anchor.Provider.env();
+  anchor.setProvider(provider);
+  const program = anchor.workspace.CrunchyVsSmooth;
+  const voteAccount = anchor.web3.Keypair.generate();
+  it(&amp;quot;Initializes with 0 votes for crunchy and smooth&amp;quot;, async () =&amp;gt; {
+    console.log(&amp;quot;Testing Initialize...&amp;quot;);
+    /* The last element passed to RPC methods is always the transaction options. Because voteAccount is being created here, we are required to pass it as a signers array */
+    await program.rpc.initialize({
+      accounts: {
+        voteAccount: voteAccount.publicKey,
+        user: provider.wallet.publicKey,
+        systemProgram: SystemProgram.programId,
+      },
+      signers: [voteAccount],
+    });
+    const account = await program.account.voteAccount.fetch(
+      voteAccount.publicKey
+    );
+    console.log(&amp;quot;Crunchy: &amp;quot;, account.crunchy.toString());
+    console.log(&amp;quot;Smooth: &amp;quot;, account.smooth.toString());
+    assert.ok(
+      account.crunchy.toString() == 0 &amp;amp;&amp;amp; account.smooth.toString() == 0
+    );
+  });
+  it(&amp;quot;Votes correctly for crunchy&amp;quot;, async () =&amp;gt; {
+    console.log(&amp;quot;Testing voteCrunchy...&amp;quot;);
+    await program.rpc.voteCrunchy({
+      accounts: {
+        voteAccount: voteAccount.publicKey,
+      },
+    });
+    const account = await program.account.voteAccount.fetch(
+      voteAccount.publicKey
+    );
+    console.log(&amp;quot;Crunchy: &amp;quot;, account.crunchy.toString());
+    console.log(&amp;quot;Smooth: &amp;quot;, account.smooth.toString());
+    assert.ok(
+      account.crunchy.toString() == 1 &amp;amp;&amp;amp; account.smooth.toString() == 0
+    );
+  });
+  it(&amp;quot;Votes correctly for smooth&amp;quot;, async () =&amp;gt; {
+    console.log(&amp;quot;Testing voteSmooth...&amp;quot;);
+    await program.rpc.voteSmooth({
+      accounts: {
+        voteAccount: voteAccount.publicKey,
+      },
+    });
+    const account = await program.account.voteAccount.fetch(
+      voteAccount.publicKey
+    );
+    console.log(&amp;quot;Crunchy: &amp;quot;, account.crunchy.toString());
+    console.log(&amp;quot;Smooth: &amp;quot;, account.smooth.toString());
+    assert.ok(
+      account.crunchy.toString() == 1 &amp;amp;&amp;amp; account.smooth.toString() == 1
+    );
+  });
+});&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Here we can see our IDL in action, as we’re now using JavaScript to interact with our program’s RPC endpoints. Interacting with an Anchor program generally requires two key building blocks: a &lt;strong&gt;provider&lt;/strong&gt; and a &lt;strong&gt;program&lt;/strong&gt;. The provider is an abstraction of our connection to Solana, while program is an abstraction that combines our provider, IDL, and program ID. In testing, Anchor provides convenient methods for us to create these variables based on our environment.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;const provider = anchor.Provider.env()
+anchor.setProvider(provider)
+
+const program = anchor.workspace.CrunchyVsSmooth&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Later on, when we develop our client, we will have to construct these ourselves by interacting with the user’s Solana wallet.&lt;/p&gt;
+&lt;p&gt;With these two building blocks, we can start now start calling functions and accounts in our program using the convenient patterns &lt;code class=&quot;language-text&quot;&gt;program.rpc.[functionName]&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;program.account.[accountName]&lt;/code&gt;.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;await program.rpc.initialize({
+  accounts: {
+    voteAccount: voteAccount.publicKey,
+    user: provider.wallet.publicKey,
+    systemProgram: SystemProgram.programId,
+  },
+  signers: [voteAccount],
+})
+
+const account = await program.account.voteAccount.fetch(voteAccount.publicKey)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;One little detail that blew my mind was that Anchor automatically translates your accounts and functions from snake_case in Rust to camelCase in your JavaScript tests 🤯&lt;/p&gt;
+&lt;p&gt;Before running our tests, let’s take care of two housekeeping issues:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Update your Program ID&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When we built our Solana program earlier, Anchor generated a new program ID. Let’s go ahead and grab that.&lt;/p&gt;
+&lt;deckgo-highlight-code   highlight-lines=&quot;undefined&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;solana address -k target/deploy/crunchy_vs_smooth-keypair.json&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Take the output of this command and paste it into the &lt;code class=&quot;language-text&quot;&gt;declare_id!()&lt;/code&gt; macro in &lt;code class=&quot;language-text&quot;&gt;programs/crunchy-vs-smooth/src/lib.rs&lt;/code&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;rust&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// programs/crunchy-vs-smooth/src/lib.rs
+declare_id!(&amp;quot;your-program-id&amp;quot;);&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;as well as the &lt;code class=&quot;language-text&quot;&gt;Anchor.toml&lt;/code&gt; file at the root of our directory.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# Anchor.toml
+[programs.localnet]
+crunchy_vs_smooth = &amp;quot;your-program-id&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;h/t &lt;a href=&quot;https://twitter.com/dabit3&quot;&gt;Nader Dabit&lt;/a&gt; for sharing the above command.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Make sure your Solana CLI is Configured for Localhost&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You’ll notice that we haven’t interacted with the Solana CLI yet. This is one of the few times in which we will. If this is your first time using the Solana CLI, please stop reading and go set up a &lt;a href=&quot;https://docs.solana.com/wallet-guide/cli&quot;&gt;command line wallet and its associated keypair path&lt;/a&gt;. If you think you may send real funds to this one day, please make sure to take your time and secure your backup phrase.&lt;/p&gt;
+&lt;p&gt;Let’s check in on our current solana configuration&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana config get
+
+# output
+Config File: /Users/yourname/.config/solana/cli/config.yml
+RPC URL: http://localhost:8899
+WebSocket URL: ws://localhost:8900/ (computed)
+Keypair Path: /Users/yourname/.config/solana/id.json
+Commitment: confirmed&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;If your configuration is on any different network than the one above (such as &lt;code class=&quot;language-text&quot;&gt;devnet&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;mainnet-beta&lt;/code&gt;) you can switch it over to localhost with the following command&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana config set --url localhost&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;As you develop your application, you’ll likely be switching back and forth between &lt;code class=&quot;language-text&quot;&gt;localhost&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;devnet&lt;/code&gt; to iterate and then test your product against a live network. On each network, your CLI wallet address will be the same, but you will have to acquire SOL for each separate network. To do this, lets first spin up a local node.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana-test-validator&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Then lets check our address:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana address&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;And check our balance:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana balance&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;If you’re not on &lt;code class=&quot;language-text&quot;&gt;mainnet-beta&lt;/code&gt; you can airdrop yourself some SOL. On &lt;code class=&quot;language-text&quot;&gt;devnet&lt;/code&gt; you will likely be rate-limited to nothing more than 5-10 SOL, but on localnet we can live like kings. Let’s go ahead and treat ourselves to 1,000 SOL&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana airdrop 1000&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;With our program all set up and our localnet wallet flush with generational wealth, we can now finally test and deploy our program.&lt;/p&gt;
+&lt;p&gt;One quirky thing about Anchor is the way it works with your &lt;a href=&quot;https://project-serum.github.io/anchor/cli/commands.html#test&quot;&gt;local validator while testing&lt;/a&gt;. Before running your tests, you must either shut down your local validator or add a &lt;code class=&quot;language-text&quot;&gt;--skip-local-validator&lt;/code&gt; flag to your test command. You can shut down your local validator by clicking on the terminal window in which it runs and pressing &lt;code class=&quot;language-text&quot;&gt;control&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;c&lt;/code&gt;. With our validator offline, Let’s run our the JavaScript tests we looked at earlier.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;anchor test&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;In your terminal, you should see messages about our three tests passing. Let’s go ahead and deploy our program. Fire up the validator again in a new terminal window:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana-test-validator&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;With the validator running, we can open a second new terminal window and begin streaming our logs:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana logs&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Our logs should be quiet for now. Let’s see what the say when they deploy our program:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;anchor deploy&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;If you see a ton of transaction messages in your log terminal, followed by &lt;code class=&quot;language-text&quot;&gt;Deploy success&lt;/code&gt; in your original terminal, congrats! You just deployed your first Solana program.&lt;/p&gt;
+&lt;h2&gt;Creating our React application to Interface with our Solana Program&lt;/h2&gt;
+&lt;p&gt;With our program deployed to localnet, we can now build an app to interact with it. As this is a Solana-focused walkthrough, I won’t be spending much time on my &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth/tree/master/app&quot;&gt;React code&lt;/a&gt; which you can feel free to copy-paste. However, there are a few key considerations I’d like to share when creating a React app to interface our Solana program.&lt;/p&gt;
+&lt;h4&gt;Scaffolding our React App&lt;/h4&gt;
+&lt;p&gt;Anchor was kind enough to get us started with an empty &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory. In the root of our project, we can overwrite this folder with a new React app by calling:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;npx create-react-app app&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;One thing to note is that &lt;code class=&quot;language-text&quot;&gt;create-react-app&lt;/code&gt; will automatically initialize a git repository within our new &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory. This will cause issues if we plan to keep all our code in one place and build on it with future commits. I got around this issue by renaming the hidden &lt;code class=&quot;language-text&quot;&gt;.git&lt;/code&gt; file via the terminal&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;mv app/.git app/..git&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;And then adding the newly renamed &lt;code class=&quot;language-text&quot;&gt;..git&lt;/code&gt; file to our &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Even though it provides a &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; file at the root of our project, Anchor does not start us off with a git repository. If you want to track all your work together in git as one big project, you can call &lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt; from the root directory and Anchor will help us ignore unnecessary folders like &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt;. For more information or links on how to install git, check out &lt;a href=&quot;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&quot;&gt;Git SCM&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Another thing to note is that your project should now have two &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; files, one at the root created by Anchor and one within app created by Create React App. When you’re working on your frontend, you’ll need to install your dependencies within your &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; folder instead of at the project root.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building Your Own Frontend&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you want to continue by building your own frontend from scratch, read on. If you prefer to just copy-paste my example, skip down to the next section. Let’s change into our &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory and install Anchor, &lt;a href=&quot;https://solana-labs.github.io/solana-web3.js/&quot;&gt;Solana Web3.js&lt;/a&gt;, and &lt;a href=&quot;https://solana-labs.github.io/wallet-adapter/&quot;&gt;Solana Wallet Adapter&lt;/a&gt;.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;cd app
+
+npm install @project-serum/anchor \
+@solana/web3.js \
+@solana/wallet-adapter-react \
+@solana/wallet-adapter-wallets \
+@solana/wallet-adapter-base&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;I chose to build my app with &lt;a href=&quot;https://mui.com/&quot;&gt;Material UI&lt;/a&gt; after seeing that Solana Labs created an open source wallet adapter for the project. If you want to build with Material UI as well, you should grab the following packages along with the notification library &lt;code class=&quot;language-text&quot;&gt;notistack&lt;/code&gt;.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;npm install @material-ui/core \
+@material-ui/icons \
+@solana/wallet-adapter-material-ui \
+notistack&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;Using my Example Frontend&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you’d rather skip ahead and work with a finished product, go ahead and replace your &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory with the &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; from &lt;a href=&quot;https://github.com/bfriel/crunchy-vs-smooth/tree/master/app&quot;&gt;my GitHub&lt;/a&gt;, change into the directory, and then install the dependencies.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;cd app
+
+npm install&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;This guide will continue assuming you are using my example frontend.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before we can spin up our frontend, you’ll need to take care of two housekeeping items:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Within &lt;code class=&quot;language-text&quot;&gt;app/src/App.js&lt;/code&gt;, uncomment the &lt;code class=&quot;language-text&quot;&gt;localnet&lt;/code&gt; variable and set &lt;code class=&quot;language-text&quot;&gt;network&lt;/code&gt; equal to it. Our network should be running on &lt;code class=&quot;language-text&quot;&gt;http://127.0.0.1:8899&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy the IDL that Anchor generated for you previously in &lt;code class=&quot;language-text&quot;&gt;target/idl/myapp.json&lt;/code&gt; over to &lt;code class=&quot;language-text&quot;&gt;app/src/idl.json&lt;/code&gt;. Make sure to replace what I had in there previously. At the time of this writing, Anchor does not automatically update an IDL in your &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory like it does in your &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; directory. That means that each time you update your anchor program and run &lt;code class=&quot;language-text&quot;&gt;anchor build&lt;/code&gt; you should copy over your IDL. Nader Dabit shared a script for automating this in &lt;a href=&quot;https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291&quot;&gt;his guide&lt;/a&gt; which I highly recommend reading.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you copied over my &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; directory, ran &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt;, and took care of the two housekeeping items I just mentioned, then let’s spin up our frontend app. From a terminal within &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; call:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;npm start&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;After a brief moment, you should see a new browser window that looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e5be1a42e17ed36120168546035dbd36/3c1e5/newapp.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOElEQVQoz6WSWXKCQBCGuf8Fco085QCpVCpiQbQqcYlB3ACVkWGYBWTpziCixmwP+R6merr7r1n6N+LtfJ8KvCDPc3EgyzIpJedcx0VR6FIFdYNLy5uuGoaFAaAT0MgOMQZBYFmWbdvj0ajf75um2el0CCGnBr3mJVQABrY6bAtxHEdRtFwuHHc+W/qe70WU6mSrbBprajHgNxQV3o7Lu7cMoPpSPF62FpNJN5pZikxB+piuUa1B+Ci9lAWruFgL2IgqVEhS3EqYETWY+u+j16O4pE7um+XmWSweY+c+cR8g7CHpVbuXCSmGBAZh2XXpk7OzF3ywyXteuqLZUXwikfuIScZTgE9P0VvFmWD0ai7G+bcuBW3m5wpenwwt+BdNm4H/wNDW0R5SSmkb8QNJkjR++gU9dsbYB9OdfLNXd9daAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;New App Example&quot;
+        title=&quot;New App Example&quot;
+        src=&quot;/static/e5be1a42e17ed36120168546035dbd36/fcda8/newapp.png&quot;
+        srcset=&quot;/static/e5be1a42e17ed36120168546035dbd36/12f09/newapp.png 148w,
+/static/e5be1a42e17ed36120168546035dbd36/e4a3f/newapp.png 295w,
+/static/e5be1a42e17ed36120168546035dbd36/fcda8/newapp.png 590w,
+/static/e5be1a42e17ed36120168546035dbd36/efc66/newapp.png 885w,
+/static/e5be1a42e17ed36120168546035dbd36/c83ae/newapp.png 1180w,
+/static/e5be1a42e17ed36120168546035dbd36/3c1e5/newapp.png 2854w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Please ignore the &lt;code class=&quot;language-text&quot;&gt;Could not fetch vote account&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;Could not proxy request&lt;/code&gt; errors for now as we will correct those later.&lt;/p&gt;
+&lt;h4&gt;Working with Phantom&lt;/h4&gt;
+&lt;p&gt;To interact with our program, we’re going to have to set up a crypto wallet. At the time of this writing, I consider &lt;a href=&quot;https://phantom.app/&quot;&gt;Phantom&lt;/a&gt; to be the gold standard.&lt;/p&gt;
+&lt;p&gt;If you don’t have a Phantom wallet yet, go ahead and install it on the browser of your choice. Once again, if you think you might ever send real money to this wallet, take your time and properly secure your recovery phase. If you’re totally new to crypto and this is your first wallet, go buy a hardware wallet such as a &lt;a href=&quot;https://www.ledger.com/&quot;&gt;Ledger&lt;/a&gt; or a &lt;a href=&quot;https://trezor.io/&quot;&gt;Trezor&lt;/a&gt; and get comfortable using it and recovering a throwaway seed before sending over real money. I have no affiliation with either product but they are the best $60 you’ll ever spend.&lt;/p&gt;
+&lt;p&gt;With Phantom installed, we need to make sure that our Phantom wallet is in sync with the rest of our application. Remember that we deployed our program to localnet, so our Phantom wallet should be on the same network. Make sure you are still running &lt;code class=&quot;language-text&quot;&gt;solana-test-validator&lt;/code&gt; and then follow the steps in the gif below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/99d2d25d49a8a126f9c457f05adad7ff/phantom.gif&quot; alt=&quot;New App Example&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This address is different from the CLI wallet address we used earlier. You’ll want to join me in granting your Phantom wallet another 1,000 localnet SOL. To do that, copy your Phantom wallet address like I do in the gif above and paste it into the following command:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana airdrop 1000 &amp;lt;your-phantom-address-here&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Alternatively, you can send your Phantom wallet some localnet SOL from the command line wallet you made earlier. To do that, enter:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;solana transfer &amp;lt;your-phantom-address-here&amp;gt; &amp;lt;amount-to-send&amp;gt; --allow-unfunded-recipient&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;With your Phantom wallet set to localnet, go ahead and connect to our app by clicking on the blue “Select Wallet” button. You should be greeted with a green “Connected” message.&lt;/p&gt;
+&lt;h4&gt;Interacting with the Anchor IDL&lt;/h4&gt;
+&lt;p&gt;Let’s take a look at how we can interact with our program from a React frontend. Go ahead and open up &lt;code class=&quot;language-text&quot;&gt;app/src/Main.jsx&lt;/code&gt;. There’s a lot happening in the file, but I want to focus in on the &lt;code class=&quot;language-text&quot;&gt;getVotes&lt;/code&gt; function within our &lt;code class=&quot;language-text&quot;&gt;useEffect()&lt;/code&gt; hook.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;async function getVotes() {
+  const connection = new Connection(network, preflightCommitment)
+  const provider = new Provider(connection, wallet, preflightCommitment)
+  const program = new Program(idl, programID, provider)
+  try {
+    const account = await program.account.voteAccount.fetch(
+      voteAccount.publicKey
+    )
+    setVotes({
+      crunchy: parseInt(account.crunchy.toString()),
+      smooth: parseInt(account.smooth.toString()),
+    })
+  } catch (error) {
+    console.log(&amp;quot;could not getVotes: &amp;quot;, error)
+  }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Remember back to when we were testing our Rust program, I mentioned the two key building blocks required to interact with Anchor programs via RPC: &lt;strong&gt;provider&lt;/strong&gt; and &lt;strong&gt;program&lt;/strong&gt;. Here we can see how we can construct these again from within our React client. Solana Web3.js can provide us our &lt;code class=&quot;language-text&quot;&gt;Connection&lt;/code&gt;, and the parameters &lt;code class=&quot;language-text&quot;&gt;network&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;preflightCommitment&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;programID&lt;/code&gt; can simply be hardcoded. What’s left for us to bring together is &lt;code class=&quot;language-text&quot;&gt;wallet&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;idl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As you recall, we already copied over the IDL from our &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; directory into our React app’s &lt;code class=&quot;language-text&quot;&gt;src&lt;/code&gt; folder. We can import that IDL and check that item off our list:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;import idl from &amp;quot;../idl.json&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;What’s left for us to handle is &lt;code class=&quot;language-text&quot;&gt;wallet&lt;/code&gt;. Thankfully, the &lt;code class=&quot;language-text&quot;&gt;@solana/wallet-adapter-react&lt;/code&gt; package has our back here. If our component is properly nested within the necessary &lt;code class=&quot;language-text&quot;&gt;&amp;lt;WalletProviders&gt;&lt;/code&gt; (see App.js) we can simply wallet equal to the convenient &lt;code class=&quot;language-text&quot;&gt;useWallet()&lt;/code&gt; hook:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;import { useWallet } from &amp;quot;@solana/wallet-adapter-react&amp;quot;
+
+const wallet = useWallet()&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;The rest of our program interactions follow the same &lt;code class=&quot;language-text&quot;&gt;program.rpc.[functionName]&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;program.account.[accountName]&lt;/code&gt; patterns we explored earlier. Within &lt;code class=&quot;language-text&quot;&gt;Main.jsx&lt;/code&gt;, you can see I’ve set up two functions for interacting with our RPC methods: &lt;code class=&quot;language-text&quot;&gt;initializeVoting&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;handleVote&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you try and initialize our program via the blue button in the center of the page, you’ll likely see the following message: &lt;code class=&quot;language-text&quot;&gt;Error: TypeError: Cannot read properties of null (reading &apos;publicKey&apos;)&lt;/code&gt;. This is because we are missing our &lt;code class=&quot;language-text&quot;&gt;voteAccount&lt;/code&gt; keypair. If you recall back to &lt;code class=&quot;language-text&quot;&gt;tests&lt;/code&gt;, we defined our vote account as a random keypair:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;const voteAccount = anchor.web3.Keypair.generate()&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;This is fine for testing and local development, but if we were to do the same in our React app we would generate a new keypair on every site refresh. This would mean that each new visitor would have to call &lt;code class=&quot;language-text&quot;&gt;initialize&lt;/code&gt; and then see our vote count start at 0. Not ideal.&lt;/p&gt;
+&lt;h4&gt;Serving our React app with Node&lt;/h4&gt;
+&lt;p&gt;One way to get around this issue is to store our &lt;code class=&quot;language-text&quot;&gt;voteAccount&lt;/code&gt; keypair on a backend server and then route our RPC calls via that backend server. If you open up &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; within our &lt;code class=&quot;language-text&quot;&gt;app&lt;/code&gt; folder, you’ll see I already added following line to the root of our JSON object:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;json&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;  &amp;quot;proxy&amp;quot;: &amp;quot;http://localhost:3001&amp;quot;,&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;This will let us proxy calls to a backend server that is running on PORT 3001.&lt;/p&gt;
+&lt;p&gt;In a new terminal, change back out to the root of our project and install &lt;a href=&quot;https://expressjs.com/&quot;&gt;Express&lt;/a&gt;.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;cd ..
+
+# in the crunchy-vs-smooth root directory
+npm install express&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Now we can whip up a quick and dirty Express server to persist our &lt;code class=&quot;language-text&quot;&gt;voteAccount&lt;/code&gt; keypair. Go ahead and copy my &lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt; file to the root of our directory.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🚨 ALERT: I do not consider this code to be secure. Do not use in production apps with actual funds. This is for demonstrative purposes only.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;deckgo-highlight-code   highlight-lines=&quot;undefined&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;const path = require(&amp;quot;path&amp;quot;);
+const anchor = require(&amp;quot;@project-serum/anchor&amp;quot;);
+const express = require(&amp;quot;express&amp;quot;);
+
+const voteAccount = anchor.web3.Keypair.generate();
+
+const PORT = process.env.PORT || 3001;
+
+const app = express();
+
+app.use(express.static(path.resolve(__dirname, &amp;quot;app/build&amp;quot;)));
+
+app.get(&amp;quot;/voteAccount&amp;quot;, (req, res) =&amp;gt; {
+  res.json({ voteAccount });
+});
+
+app.get(&amp;quot;*&amp;quot;, (req, res) =&amp;gt; {
+  res.sendFile(path.resolve(__dirname, &amp;quot;app/build&amp;quot;, &amp;quot;index.html&amp;quot;));
+});
+
+app.listen(PORT, () =&amp;gt; {
+  console.log(`Server listening on ${PORT}`);
+});&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🚨 ALERT: I do not consider this code to be secure. Do not use in production apps with actual funds. This is for demonstrative purposes only.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With my disclaimer out of the way, let’s fire up our express server&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# in the crunchy-vs-smooth root directory
+node index.js
+
+# output
+Server listening on 3001&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Then let’s kill the terminal that’s running our existing React app and then restart it:&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# in crunchy-vs-smooth/app
+npm start&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;You should now be able to click on the “Initialize Program” button and then vote for your favorite type of peanut butter!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/896a98c896de41c1f32d745644c4c5f2/0d7fe/ivoted.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACEUlEQVQoz5VTW2sTQRTe3+mjP8FXESxFSy7NRbAK9lWxPgqFgsULItYbSJqQ0lSkG5OYpJvZ2+zszs7O55nZtCQVHxz4ON+ZnTnzncs6jXoVD3ceY7vRRKVaQ7Vat2g222i22tY2mi3iD9AiGF6h7wa1Wh33t6q4cWsbN+/uor3zBA7+sRhj8DwPQRAgiiLM53NMp78Rx9FfZ098oOOX3FGqQC4l8jyHJKuUgu/76PV6Ft1uF/2TvuWdTgeDwQCcc3tOLu8BBgqFylcU6uIKqUiQJAl4IsBCH164QEx+IlLEPEGaSRQaFtpYlNDkOCm9lmaFfUPjf1cZqkgYVMbLlNngA7zvzxH9OIT69RZ68h4Yv8Fw7OLTGPg2loQcXwnGfiF8HhmrcOQKvDsLsH/UhzualAHjwEMWkiMZlYKTbJN2jiTLsRAaTBRLaOtzqSlVDUX5xsRDCYwWHHMWlAGlVMhyVZbxogOcPoU+ewHw0WVx15L8yRRenkrsDySmcWH38kxQQ8oYjr1Aqsw1NfkIdfwIqrcLROdllYrCdtQoMqt/ofDsWGCvK3Duq7UnbVOul1kvwZOMxodhOBzaUXFdF4zGqZDpmnITZBVOkAbwhY8FdcoXjMTmVnFC3Q/D0M7kbDYrOQ17mmV2XIxiE+BKxJI7G682sXl4D7cP7mDrdQVCinXFdND8Mdf3VoNcWjPofwAsBYJNyU1EPQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Voted Screen&quot;
+        title=&quot;Voted Screen&quot;
+        src=&quot;/static/896a98c896de41c1f32d745644c4c5f2/fcda8/ivoted.png&quot;
+        srcset=&quot;/static/896a98c896de41c1f32d745644c4c5f2/12f09/ivoted.png 148w,
+/static/896a98c896de41c1f32d745644c4c5f2/e4a3f/ivoted.png 295w,
+/static/896a98c896de41c1f32d745644c4c5f2/fcda8/ivoted.png 590w,
+/static/896a98c896de41c1f32d745644c4c5f2/efc66/ivoted.png 885w,
+/static/896a98c896de41c1f32d745644c4c5f2/c83ae/ivoted.png 1180w,
+/static/896a98c896de41c1f32d745644c4c5f2/0d7fe/ivoted.png 2875w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I’d like to reiterate that my Express server is not meant to be considered production-ready. Outside of security, another big drawback to storing our &lt;code class=&quot;language-text&quot;&gt;voteAccount&lt;/code&gt; keypair on a backend server is that we are beholden to our hosting provider. If our server goes down, our keypair is lost. A much better alternative is to use something called a &lt;a href=&quot;https://docs.solana.com/developing/programming-model/calling-between-programs#program-derived-addresses&quot;&gt;Program Derived Address&lt;/a&gt; which is native to Solana. I may explore this in a future post.&lt;/p&gt;
+&lt;h2&gt;Deploying our completed work for the rest of the world to see&lt;/h2&gt;
+&lt;p&gt;If you made it this far, take a deep breath. The hard stuff is over.&lt;/p&gt;
+&lt;p&gt;Deploying a live network is very straightforward. The process mirrors the same one we took when we deployed to localnet.&lt;/p&gt;
+&lt;p&gt;Here is a handy list I use to make sure I’m covering all my bases whenever I switch networks:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set your Solana configuration&lt;/li&gt;
+&lt;/ol&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# replace devnet with your desired network (i.e. localhost, testnet, mainnet-beta)
+solana config set --url devnet&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Copy this network to your &lt;code class=&quot;language-text&quot;&gt;Anchor.toml&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;Rebuild your Anchor program and make sure your program ID matches what’s in &lt;code class=&quot;language-text&quot;&gt;Anchor.toml&lt;/code&gt; (it usually does)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;anchor build&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Deploy your program&lt;/li&gt;
+&lt;/ol&gt;
+&lt;deckgo-highlight-code   highlight-lines=&quot;undefined&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;anchor deploy&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;In &lt;code class=&quot;language-text&quot;&gt;app/src/App.js&lt;/code&gt; update the network url to your desired network (i.e. &lt;code class=&quot;language-text&quot;&gt;clusterApiUrl(&quot;devnet&quot;)&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Update network settings in your Phantom wallet&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Deploying to Heroku&lt;/h4&gt;
+&lt;p&gt;Because this is a small hobby project and I wanted to get an MVP up quickly, I decided to deploy it to Heroku. If you host your code on GitHub, they make it easy to connect your account and deploy in one click.&lt;/p&gt;
+&lt;p&gt;If you’re considering launching a serious project on Solana, I would highly recommend finding a better hosting solution. If you were around for the Degen Ape Academy launch, you might recall that Heroku had a &lt;a href=&quot;https://twitter.com/rajgokal/status/1426344733316554753&quot;&gt;few growing pains&lt;/a&gt; when dealing with the influx of demand.&lt;/p&gt;
+&lt;p&gt;The last item I’ll leave you with is my deploy script, which should be added to &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; at the root of the directory&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;json&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;build&amp;quot;: &amp;quot;cd app &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build&amp;quot;
+  }&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;If you followed along until now, thank you! Hopefully you have an understanding of how to go about building and experimenting with your own small projects.&lt;/p&gt;
+&lt;h2&gt;Potential Improvements&lt;/h2&gt;
+&lt;p&gt;This app was built in three days, but if I had more time I would definitely want to implement a number of improvements, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Replacing my voteAccount keypair with a Program Derived Address&lt;/li&gt;
+&lt;li&gt;Refactoring my program’s instruction handlers down to a singular vote function&lt;/li&gt;
+&lt;li&gt;Adding feedback in between casting and confirming a vote on my React frontend&lt;/li&gt;
+&lt;li&gt;Showing voting analytics&lt;/li&gt;
+&lt;li&gt;Adding better transaction instruction metadata&lt;/li&gt;
+&lt;li&gt;Experiment with enforcing voting rules (e.g. 1 account, 1 vote)&lt;/li&gt;
+&lt;li&gt;Showing the entirety of a user’s voting history, not just the votes that ocurred during this session&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Acknowledgements&lt;/h2&gt;
+&lt;p&gt;Special thanks to everyone who wrote early guides on Solana development. In particular I’d like to thank &lt;a href=&quot;https://twitter.com/dabit3&quot;&gt;Nader Dabit&lt;/a&gt; for &lt;a href=&quot;https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291&quot;&gt;The Complete Guide to Full Stack Solana Development with React, Anchor, Rust, and Phantom&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/paulxpaulxpaulx&quot;&gt;Paulx&lt;/a&gt; for &lt;a href=&quot;https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction/&quot;&gt;Programming on Solana - An Introduction&lt;/a&gt;. I’d also like to thank all those who are active in the Anchor Discord, especially &lt;a href=&quot;https://twitter.com/armaniferrante&quot;&gt;Armani Ferrante&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/0xjcaa&quot;&gt;@xjcaa&lt;/a&gt; who answered my questions.&lt;/p&gt;
+&lt;p&gt;If you found this helpful please let me know via &lt;a href=&quot;https://twitter.com/bfriel_&quot;&gt;Twitter&lt;/a&gt;!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Bitcoin on Ethereum]]></title><description><![CDATA[This article was originally published on castlefunds.com. Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of…]]></description><link>https://brianfriel.xyz/btc-on-ethereum/</link><guid isPermaLink="false">https://brianfriel.xyz/btc-on-ethereum/</guid><pubDate>Sun, 20 Sep 2020 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This article was originally published on &lt;a href=&quot;https://castlefunds.com&quot;&gt;castlefunds.com&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Decentralized finance (DeFi) burst onto the scene this summer amidst a flurry of innovation happening on the Ethereum network. Fueled by permissionless software development on top of blockchain-enforced contracts, a Cambrian explosion of new projects arose surrounding financial services such as lending, trading, and synthetic asset issuance. But while the 100x returns and catastrophic collapses of some of these projects dominated headlines, a new trend has quietly begun taking hold: More and more bitcoin (BTC) continues to move over to Ethereum.&lt;/p&gt;
 &lt;p&gt;Since Ethereum’s inception in 2015, the two networks have remained completely separate and incompatible with each other. Recent developments, however, have now enabled investors to lockup their bitcoin on the Bitcoin network and mint “tokenized” BTC on Ethereum, combining Bitcoin’s power as a digital store of value with the diversity of activities available on Ethereum.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -66,7 +664,7 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;What is all this tokenized bitcoin doing on Ethereum? Analysis from &lt;a href=&quot;https://duneanalytics.com/&quot;&gt;Dune Analytics&lt;/a&gt; shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms &lt;a href=&quot;https://aave.com/&quot;&gt;Aave&lt;/a&gt; and &lt;a href=&quot;https://compound.finance/&quot;&gt;Compound&lt;/a&gt;, which let depositers borrow against their WBTC collateral and have at times offered attractive variable yields on lending WBTC. Other DeFi applications include &lt;a href=&quot;https://uniswap.org/&quot;&gt;Uniswap&lt;/a&gt; and &lt;a href=&quot;https://balancer.fi/&quot;&gt;Balancer&lt;/a&gt;, which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.&lt;/p&gt;
+&lt;p&gt;What is all this tokenized bitcoin doing on Ethereum? Analysis from &lt;a href=&quot;https://duneanalytics.com/&quot;&gt;Dune Analytics&lt;/a&gt; shows an uptick in usage this summer across numerous DeFi platforms. Chief amongst these are lending platforms &lt;a href=&quot;https://aave.com/&quot;&gt;Aave&lt;/a&gt; and &lt;a href=&quot;https://compound.finance/&quot;&gt;Compound&lt;/a&gt;, which let depositors borrow against their WBTC collateral and have at times offered attractive variable yields on lending WBTC. Other DeFi applications include &lt;a href=&quot;https://uniswap.org/&quot;&gt;Uniswap&lt;/a&gt; and &lt;a href=&quot;https://balancer.fi/&quot;&gt;Balancer&lt;/a&gt;, which let WBTC depositors collect trading fees in return for the liquidity provided on their platforms.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
