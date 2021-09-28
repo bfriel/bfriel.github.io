@@ -16,12 +16,14 @@ export default function BlogPostTemplate({ data, pageContext, location }) {
   const siteTitle = data.site.siteMetadata.title
   const post = data.markdownRemark
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+  const thumbnail = post.frontmatter.thumbnail
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.featuredImage.childImageSharp.resize.src}
+        thumbnail={thumbnail}
       />
       <article>
         <header>
@@ -136,6 +138,13 @@ export const pageQuery = graphql`
             resize(width: 900, quality: 90) {
               src
             }
+          }
+        }
+      }
+      thumbnail {
+        childImageSharp {
+          sizes(maxWidth: 600) {
+            ...GatsbyImageSharpSizes
           }
         }
       }

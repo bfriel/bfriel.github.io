@@ -3,6 +3,7 @@ title: Early Lending Opportunities in Crypto
 date: "2019-09-18T23:46:37.121Z"
 description: "An Introduction to Stablecoins and Trust-Minimized Lending Protocols"
 featuredImage: ./wright-brothers.jpg
+thumbnail: ./wright-brothers.jpg
 ---
 
 ## Introduction

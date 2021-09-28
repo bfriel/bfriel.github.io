@@ -3,6 +3,7 @@ title: Bitcoin on Ethereum
 date: "2020-09-20T23:46:37.121Z"
 description: "Bitcoin can now be transferred onto the Ethereum network and its usage is soaring. I look at how and why this came to be."
 featuredImage: ./bridge.jpeg
+thumbnail: ./bridge.jpeg
 ---
 
 _This article was originally published on [castlefunds.com](https://castlefunds.com)._

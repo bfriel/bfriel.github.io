@@ -3,6 +3,7 @@ title: Learning How to Build on Solana
 date: "2021-09-27T20:46:37.121Z"
 description: "An introductory tour to writing applications on Solana, built with the Anchor framework and React."
 featuredImage: ./shipbuilder.jpeg
+thumbnail: ./shipbuilder.jpeg
 ---
 
 > Check out the [live app](https://www.pbvote.com/) and its [code](https://github.com/bfriel/crunchy-vs-smooth).
