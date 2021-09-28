@@ -74,7 +74,7 @@ Opening up our project, the first thing you'll notice is that Anchor already cre
 
 - **test** - Where we can write JavaScript tests for our program
 
-It's worth reiterating that Anchor is an _opinionated_ framework. This means that it makes makes assumptions about how code should be structured and makes tradeoffs surrounding low-level things like serialization and deserialization. For the vast majority of new developers entering Solana, these opinions shouldn't get in your way. Anchor's goal is to become a true zero-cost abstraction in the sense that there is no performance penalty for adopting the framework.
+It's worth reiterating that Anchor is an _opinionated_ framework. This means that it makes assumptions about how code should be structured and makes trade offs surrounding low-level things like serialization and deserialization. For the vast majority of new developers entering Solana, these opinions shouldn't get in your way. Anchor's goal is to become a true zero-cost abstraction in the sense that there is no performance penalty for adopting the framework.
 
 Diving into our `programs` folder, you'll notice a basic program that Anchor has written on our behalf:
 
@@ -171,9 +171,9 @@ pub struct VoteAccount {
 
 There are two things I want to highlight here. The first is the way that Solana programs handle data. If you're familiar with Solidity, you're used to the idea of code and data living in the same place. In Ethereum, smart contracts own data and can update their data within their own functions. In Solana, data and code live separately. If you take a look at our updated `initialize` function, you'll see that we are reading and writing data from a vote account that is being passed into our program via the Context parameter `ctx`. Our vote account is defined at the bottom of our file as a simple struct with two fields, crunchy and smooth, that hold unsigned 64-bit integers.
 
-This idea of code and data separation can be a bit unintuitive at first, but Anchor makes it easier with the `#[derive(Accounts)]` macro. This is the second thing I want to highlight. With `#[derive(Accounts)]`, we can specify all the accounts that are required for a given transaction instruction and let Anchor deal with all the serialization and deserialization required to tie everything together. The big take away here is that with Anchor, we're able to separate our account validation logic from the business logic in our main program. This leads to less boilerplate and less code to reason about. For more information on how accounts work with programs, I recommend reading the aptly named [ok so what the fuck is the deal with solana anyway](https://2501babe.github.io/posts/solana101.html).
+This idea of code and data separation can be a bit unintuitive at first, but Anchor makes it easier with the `#[derive(Accounts)]` macro. This is the second thing I want to highlight. With `#[derive(Accounts)]`, we can specify all the accounts that are required for a given transaction instruction and let Anchor deal with all the serialization and deserialization required to tie everything together. The big takeaway here is that with Anchor, we're able to separate our account validation logic from the business logic in our main program. This leads to less boilerplate and less code to reason about. For more information on how accounts work with programs, I recommend reading the aptly named [ok so what the fuck is the deal with solana anyway](https://2501babe.github.io/posts/solana101.html).
 
-With our program newly updated, lets build our code by running the following command:
+With our program newly updated, let's build our code by running the following command:
 
 ```bash
 anchor build
@@ -250,7 +250,7 @@ describe("crunchy-vs-smooth", () => {
 });
 ```
 
-Here we can see our IDL in action, as we're now using JavaScript to interact with our program's RPC endpoints. Interacting with an Anchor program generally requires two key building blocks: a **provider** and a **program**. The provider is an abstraction of our connection to Solana, while program is an abstraction that combines our provider, IDL, and program ID. In testing, Anchor provides convenient methods for us to create these variables based on our environment.
+Here we can see our IDL in action, as we're now using JavaScript to interact with our program's RPC endpoints. Interacting with an Anchor program generally requires two key building blocks: a **provider** and a **program**. Provider is an abstraction of our connection to Solana, while program is an abstraction that combines our provider, IDL, and program ID. In testing, Anchor provides convenient methods for us to create these variables based on our environment.
 
 ```javascript
 const provider = anchor.Provider.env()
@@ -261,7 +261,7 @@ const program = anchor.workspace.CrunchyVsSmooth
 
 Later on, when we develop our client, we will have to construct these ourselves by interacting with the user's Solana wallet.
 
-With these two building blocks, we can start now start calling functions and accounts in our program using the convenient patterns `program.rpc.[functionName]` and `program.account.[accountName]`.
+With these two building blocks, we can now start calling functions and accounts in our program using the convenient patterns `program.rpc.[functionName]` and `program.account.[accountName]`.
 
 ```javascript
 await program.rpc.initialize({
@@ -328,13 +328,13 @@ If your configuration is on any different network than the one above (such as `d
 solana config set --url localhost
 ```
 
-As you develop your application, you'll likely be switching back and forth between `localhost` and `devnet` to iterate and then test your product against a live network. On each network, your CLI wallet address will be the same, but you will have to acquire SOL for each separate network. To do this, lets first spin up a local node.
+As you develop your application, you'll likely be switching back and forth between `localhost` and `devnet` to iterate and then test your product against a live network. On each network, your CLI wallet address will be the same, but you will have to acquire SOL for each separate network. To do this, let's first spin up a local node.
 
 ```bash
 solana-test-validator
 ```
 
-Then lets check our address:
+Then let's check our address:
 
 ```bash
 solana address
@@ -354,7 +354,7 @@ solana airdrop 1000
 
 With our program all set up and our localnet wallet flush with generational wealth, we can now finally test and deploy our program.
 
-One quirky thing about Anchor is the way it works with your [local validator while testing](https://project-serum.github.io/anchor/cli/commands.html#test). Before running your tests, you must either shut down your local validator or add a `--skip-local-validator` flag to your test command. You can shut down your local validator by clicking on the terminal window in which it runs and pressing `control` + `c`. With our validator offline, Let's run our the JavaScript tests we looked at earlier.
+One quirky thing about Anchor is the way it works with your [local validator while testing](https://project-serum.github.io/anchor/cli/commands.html#test). Before running your tests, you must either shut down your local validator or add a `--skip-local-validator` flag to your test command. You can shut down your local validator by clicking on the terminal window in which it runs and pressing `control` + `c`. With our validator offline, Let's run the JavaScript tests we looked at earlier.
 
 ```bash
 anchor test
@@ -402,7 +402,7 @@ And then adding the newly renamed `..git` file to our `.gitignore` file.
 
 Even though it provides a `.gitignore` file at the root of our project, Anchor does not start us off with a git repository. If you want to track all your work together in git as one big project, you can call `git init` from the root directory and Anchor will help us ignore unnecessary folders like `target` and `node_modules`. For more information or links on how to install git, check out [Git SCM](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-Another thing to note is that your project should now have two `package.json` files, one at the root created by Anchor and one within app created by Create React App. When you're working on your frontend, you'll need to install your dependencies within your `app` folder instead of at the project root.
+Another thing to note is that your project should now have two `package.json` files, one at the root created by Anchor and one within `app` created by Create React App. When you're working on your frontend, you'll need to install your dependencies within your `app` folder instead of at the project root.
 
 **Building Your Own Frontend**
 
@@ -483,7 +483,7 @@ With your Phantom wallet set to localnet, go ahead and connect to our app by cli
 
 #### Interacting with the Anchor IDL
 
-Let's take a look at how we can interact with our program from a React frontend. Go ahead and open up `app/src/Main.jsx`. There's a lot happening in the file, but I want to focus in on the `getVotes` function within our `useEffect()` hook.
+Let's take a look at how we can interact with our program from a React frontend. Go ahead and open up `app/src/Main.jsx`. There's a lot happening in the file, but I want to focus on the `getVotes` function within our `useEffect()` hook.
 
 ```javascript
 async function getVotes() {
@@ -522,7 +522,7 @@ const wallet = useWallet()
 
 The rest of our program interactions follow the same `program.rpc.[functionName]` and `program.account.[accountName]` patterns we explored earlier. Within `Main.jsx`, you can see I've set up two functions for interacting with our RPC methods: `initializeVoting` and `handleVote`.
 
-If you try and initialize our program via the blue button in the center of the page, you'll likely see the following message: `Error: TypeError: Cannot read properties of null (reading 'publicKey')`. This is because we are missing our `voteAccount` keypair. If you recall back to `tests`, we defined our vote account as a random keypair:
+If you try to initialize our program via the blue button in the center of the page, you'll likely see the following message: `Error: TypeError: Cannot read properties of null (reading 'publicKey')`. This is because we are missing our `voteAccount` keypair. If you recall back to `tests`, we defined our vote account as a random keypair:
 
 ```javascript
 const voteAccount = anchor.web3.Keypair.generate()
@@ -609,7 +609,7 @@ I'd like to reiterate that my Express server is not meant to be considered produ
 
 If you made it this far, take a deep breath. The hard stuff is over.
 
-Deploying a live network is very straightforward. The process mirrors the same one we took when we deployed to localnet.
+Deploying to a live network is very straightforward. The process mirrors the same one we took when we deployed to localnet.
 
 Here is a handy list I use to make sure I'm covering all my bases whenever I switch networks:
 
@@ -640,9 +640,9 @@ anchor deploy
 
 #### Deploying to Heroku
 
-Because this is a small hobby project and I wanted to get an MVP up quickly, I decided to deploy it to Heroku. If you host your code on GitHub, they make it easy to connect your account and deploy in one click.
+Because this is a small hobby project and I wanted to get an MVP up quickly, I decided to deploy it to [Heroku](https://www.heroku.com/). If you host your code on GitHub, they make it easy to connect your account and deploy in one click.
 
-If you're considering launching a serious project on Solana, I would highly recommend finding a better hosting solution. If you were around for the Degen Ape Academy launch, you might recall that Heroku had a [few growing pains](https://twitter.com/rajgokal/status/1426344733316554753) when dealing with the influx of demand.
+If you're considering launching a serious project on Solana, I would highly recommend finding a more robust hosting solution. If you were around for the Degen Ape Academy launch, you might recall that Heroku experienced [a few growing pains](https://twitter.com/rajgokal/status/1426344733316554753) when dealing with the influx of demand.
 
 The last item I'll leave you with is my deploy script, which should be added to `package.json` at the root of the directory
 
@@ -656,14 +656,14 @@ If you followed along until now, thank you! Hopefully you have an understanding 
 
 ## Potential Improvements
 
-This app was built in three days, but if I had more time I would definitely want to implement a number of improvements, including:
+I built this app in around three days, but if I had more time I would definitely want to implement a number of improvements, including:
 
 - Replacing my voteAccount keypair with a Program Derived Address
 - Refactoring my program's instruction handlers down to a singular vote function
 - Adding feedback in between casting and confirming a vote on my React frontend
 - Showing voting analytics
 - Adding better transaction instruction metadata
-- Experiment with enforcing voting rules (e.g. 1 account, 1 vote)
+- Experimenting with enforcing voting rules (e.g. 1 account, 1 vote)
 - Showing the entirety of a user's voting history, not just the votes that ocurred during this session
 
 ## Acknowledgements
