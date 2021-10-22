@@ -269,7 +269,7 @@ async function initializeVoting() {
 }
 ```
 
-Once `initialize` is called, we'll be all set up with PDA to handle our crunchy and smooth voting needs. The rest of our frontend should be straightforward if you've read through my [previous walkthrough]([last post](https://www.brianfriel.xyz/learning-how-to-build-on-solana/)).
+Once `initialize` is called, we'll be all set up with a PDA to handle our crunchy and smooth voting needs. The rest of our frontend should be straightforward if you've read through my [previous walkthrough](https://www.brianfriel.xyz/learning-how-to-build-on-solana/).
 
 ### Wrapping Up
 
