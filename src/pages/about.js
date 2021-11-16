@@ -37,9 +37,26 @@ export default function About({ data, location }) {
           portal.
         </p>
         <p>
-          Before getting into tech, I worked as a whitewater raft guide, led
-          backpacking trips across four European countries, and played football
-          at{" "}
+          Before getting into tech, I worked in the outdoor industry at
+          companies such as{" "}
+          <a
+            className="blue-link"
+            href="https://nols.edu/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NOLS
+          </a>{" "}
+          and{" "}
+          <a
+            className="blue-link"
+            href="https://www.oars.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OARS
+          </a>{" "}
+          and played football at{" "}
           <a
             className="blue-link"
             href="https://www.sagehens.com/sports/fball/2014-15/bios/friel_brian_ar4p"
@@ -50,7 +67,7 @@ export default function About({ data, location }) {
           </a>
         </p>
         <p>
-          Feel free to reach out via{" "}
+          Feel free to reach out to me via{" "}
           <a
             className="blue-link"
             href="https://twitter.com/bfriel_"
@@ -58,7 +75,8 @@ export default function About({ data, location }) {
             rel="noopener noreferrer"
           >
             Twitter
-          </a>{" "}
+          </a>
+          {"."}
         </p>
       </section>
     </Layout>
