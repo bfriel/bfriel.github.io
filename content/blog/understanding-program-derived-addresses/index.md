@@ -40,7 +40,7 @@ Accounts are created by simply generating a new keypair and registering its publ
 
 ### Program Derived Addresses (PDAs)
 
-A Program Derived Address (PDA) is home to an account that's designed to be controlled by a specific program. With PDAs, programs can programatically sign for certain addresses without needing a private key. At the same time, PDAs ensure that no external user could also generate a valid signature for the same address. These addresses serve as the foundation for [Cross-Program Invocation](https://docs.solana.com/developing/programming-model/calling-between-programs), which allows Solana apps to be compossible with one another.
+A Program Derived Address (PDA) is home to an account that's designed to be controlled by a specific program. With PDAs, programs can programatically sign for certain addresses without needing a private key. At the same time, PDAs ensure that no external user could also generate a valid signature for the same address. These addresses serve as the foundation for [Cross-Program Invocation](https://docs.solana.com/developing/programming-model/calling-between-programs), which allows Solana apps to be composable with one another.
 
 The secret sauce behind PDAs is that while they look like standard public keys, they don't actually lie on the ed25519 elliptic curve at all. This means they have no associated private key. You might be asking yourself, "How can a program sign for an account that has no private key?" The answer lies in how PDAs are derived.
 
@@ -273,4 +273,4 @@ Once `initialize` is called, we'll be all set up with a PDA to handle our crunch
 
 ### Wrapping Up
 
-If you're new to Solana, I hope this walkthrough helped shed a little light on what PDAs are and how you can go about implementing them in your own projects. If you have questions or feedback on this post, please reach out to me via [Twitter](https://twitter.com/bfriel_). Special thanks to everyone in the Anchor discord who helped me gain a better understanding of PDAs, especially @cqfd (Alan) and @donderper.
+If you're new to Solana, I hope this walkthrough helped shed a little light on what PDAs are and how you can go about implementing them in your own projects. If you have questions or feedback on this post, please reach out to me via [Twitter](https://twitter.com/bfriel_). Special thanks to everyone in the Anchor discord who helped me gain a better understanding of PDAs, especially [@cqfd (Alan)](https://twitter.com/cqfdee) and @donderper.
