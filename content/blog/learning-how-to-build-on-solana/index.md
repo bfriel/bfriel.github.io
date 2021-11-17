@@ -610,7 +610,7 @@ You should now be able to click on the "Initialize Program" button and then vote
 
 ![Voted Screen](ivoted.png)
 
-I'd like to reiterate that my Express server is not meant to be considered production-ready. Outside of security, another big drawback to storing our `voteAccount` keypair on a backend server is that we are beholden to our hosting provider. If our server goes down, our keypair is lost. A much better alternative is to use something called a [Program Derived Address](https://docs.solana.com/developing/programming-model/calling-between-programs#program-derived-addresses) which is native to Solana. I may explore this in a future post.
+I'd like to reiterate that my Express server is not meant to be considered production-ready. Outside of security, another big drawback to storing our `voteAccount` keypair on a backend server is that we are beholden to our hosting provider. If our server goes down, our keypair is lost. A much better alternative is to use something called a [Program Derived Address](https://docs.solana.com/developing/programming-model/calling-between-programs#program-derived-addresses) which is native to Solana. ~~I may explore this in a future post~~ (**UPDATE**: I wrote a follow up post on PDAs which can be found [here](https://www.brianfriel.xyz/understanding-program-derived-addresses/)).
 
 ## Deploying our completed work for the rest of the world to see
 
