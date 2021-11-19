@@ -14,25 +14,27 @@ To better understand the intricacies of Solana, I decided to create my own token
 
 ![BugLogo](logo.png)
 
-All in, it cost me a grand total of 0.0035 SOL, or $0.75, to create BUG and mint myself 1 billion units. Sending BUG between two established parties costs less than one-hundredth of one penny, further underscoring Solana's potential in letting everyday people interact with one another on-chain.
+All in, it cost me a grand total of 0.0035 SOL, or $0.75, to create BUG and mint myself 1 billion units. Sending BUG between two established parties costs less than one-tenth of one penny, further underscoring Solana's potential to let everyday people interact with one another on-chain.
 
-My goal in writing this tutorial is help others gain a better understanding of Solana, and in the process, deliver a practical guide to creating tokens.
+My goal in writing this tutorial is help others gain a better understanding of Solana, and in the process deliver a practical guide to creating tokens.
 
 ## Overview
 
 This walkthrough covers three main sections:
 
-1. Creating our token via the SPL-Token Library
+1. Creating our token via the SPL Token Program
 2. Adding an official name and logo to our token for the rest of the world to see
 3. Interacting with our token via transfers, burns, and account freezes.
 
-In each section, we'll go over the concepts behind what is happening under the hood, with the goal gaining a better understanding of how tokens work on Solana.
+In each section, we'll go over the concepts behind what is happening under the hood, with the goal of gaining a better understanding of how tokens work on Solana.
 
 ## Creating a Token
 
-All tokens on Solana are created using the SPL-token 
+All tokens on Solana, whether they are fungible tokens or NFTs, are created using the [SPL Token Program](https://spl.solana.com/token). SPL stands for [Solana Program Library](https://spl.solana.com/), and is a set of programs (aka smart contracts) that serve as core building blocks for the Solana ecosystem. 
 
-<!-- As you may recall, smart contracts on Solana are called **programs**. The Solana Labs team has created a few key programs that serve as building blocks for the rest of the ecosystem to use freely. These programs are known as the Solana Program Library or SPL. If you're familiar with ERC-20 standard on Ethereum. [SPL Token](https://spl.solana.com/token). We can interact with the SPL program via [Rust crates](https://crates.io/crates/spl-token) -->
+If you're familiar with Ethereum, you can think of SPL as a token standard such as [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) or [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, you simply have to send an instruction to the Token Program and it will create and mint tokens on your behalf.
+
+We can interact with the Token Program in both on-chain and off-chain applications via [Rust crates](https://crates.io/crates/spl-token), [C bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/program/inc/token.h), and [JavaScript bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/js/client/token.js). For the purposes of this tutorial we'll be using the [Command Line Interface (CLI)](https://spl.solana.com/token#command-line-utility) which is the easiest and most straightforward way to get started. I may explore how you can integrate it with Rust and JavaScript in a future tutorial.
 
 ### Prerequisites
 
@@ -68,13 +70,33 @@ At the time of this writing, my setup runs on MacOS 12.0.1. For the purposes of 
 
 ### Understanding What Our Address Signifies
 
-One of the most important concepts to understand in Solana is the [account model](https://solana.wiki/zh-cn/docs/account-model/#account-storage). Accounts can be thought of as storage buckets, capable of storing nearly everything in Solana: from tokens such as SOL and SRM, to a program's state (e.g. integers, strings, public keys), and even entire programs themselves. Every account has a specified owner, and a single owner can own many different kinds of accounts. In addition its owner's address, each account also has its own address so that it is easily identifiable.
+One of the most important concepts to understand in Solana is the [account model](https://solana.wiki/zh-cn/docs/account-model/#account-storage). Accounts can be thought of as storage buckets, capable of storing nearly everything Solana touches: from tokens such as SOL and SRM, to a program's state (e.g. integers, strings, public keys), and even entire programs themselves. Every account has a specified owner, and a single owner can own many different kinds of accounts. In addition to its owner's address, each account also has its own address making it easily identifiable.
 
-To make this tutorial a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I've added a quick guide on how you can generate your own at this bottom of this tutorial). For the purposes of this walkthrough, we'll refer to `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T` as the address for our command-line wallet. Do note that even if you generate your own vanity address, you will never be able to generate the exact same address I did.
+To make this all a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I've added a quick guide on how you can generate your own at this bottom of this tutorial). In this walkthrough, we'll refer to `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`, or "Friel", as the address for our command-line wallet. Note that even if you generate your own vanity address, you will never be able to generate the exact same address I did.
+
+#### Funding our Wallet
+
+Let's go ahead and fund our command line wallet with a little bit of SOL. I did 0.2 SOL, but ~$5 worth should be plenty. If you're on mainnet, you can send SOL from an exchange like [FTX](https://ftx.us/home/#a=1490381) or [Coinbase](https://www.coinbase.com/join/friel_t3). If you want to proceed on devnet, open up your terminal run:
+
+```bash
+solana config set --url devnet
+```
+
+And then airdrop yourself 0.2 SOL with:
+
+```bash
+solana airdrop 0.2
+```
+
+Once funded, we can visualize our main account with the below diagram:
 
 ![Friel Account Visualized](friel-diagram.png)
 
-We can visualize our main account with the above diagram. So far
+So far, there's not a lot going on. The account holds some SOL that we deposited from an external source. It also has an address (in my case, `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`) that we can use to identify it. If you paste your address into a [block explorer](https://explorer.solana.com/), it should look something like this:
+
+![Friel Account on Block Explorer](friel0.png)
+
+
 
 On Solana, token balances are typically stored in unique accounts where the storage account address is derived from the address of the owner account.
 
@@ -84,7 +106,7 @@ with each account storing different types of data
 
  Each account has an address 
 
-![Friel Account on Block Explorer](friel0.png)
+
 
 Visually, it looks like this
 
@@ -92,7 +114,8 @@ Visually, it looks like this
 
 ![Friel's Bug Account Visualized](friel-bug-diagram.png)
 
-### Funding our Wallet
+
+
 
 ### Creating our Token
 
@@ -110,3 +133,5 @@ In addition, it allows a user to send tokens to another user even if the benefic
 
 
 ## Further Integrations
+
+## Bonus: Generating Vanity Addresses
