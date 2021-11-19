@@ -32,7 +32,7 @@ In each section, we'll go over the concepts behind what is happening under the h
 
 All tokens on Solana, whether they are fungible tokens or NFTs, are created using the [SPL Token Program](https://spl.solana.com/token). SPL stands for [Solana Program Library](https://spl.solana.com/), and is a set of programs (aka smart contracts) that serve as core building blocks for the Solana ecosystem. 
 
-If you're familiar with Ethereum, you can think of SPL as a token standard such as [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) or [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, you simply have to send an instruction to the Token Program and it will create and mint tokens on your behalf.
+If you're familiar with Ethereum, you can think of SPL tokens as a token standard such as [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) or [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, its simply requires you to send instructions to the Token Program and it will create and mint tokens on your behalf.
 
 We can interact with the Token Program in both on-chain and off-chain applications via [Rust crates](https://crates.io/crates/spl-token), [C bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/program/inc/token.h), and [JavaScript bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/js/client/token.js). For the purposes of this tutorial we'll be using the [Command Line Interface (CLI)](https://spl.solana.com/token#command-line-utility) which is the easiest and most straightforward way to get started. I may explore how you can integrate it with Rust and JavaScript in a future tutorial.
 
@@ -68,15 +68,15 @@ solana address
 
 At the time of this writing, my setup runs on MacOS 12.0.1. For the purposes of this walkthrough, I won't be covering anything related to other operating systems such as Linux or Windows.
 
-### Understanding What Our Address Signifies
+### Understanding What our Address Signifies
 
-One of the most important concepts to understand in Solana is the [account model](https://solana.wiki/zh-cn/docs/account-model/#account-storage). Accounts can be thought of as storage buckets, capable of storing nearly everything Solana touches: from tokens such as SOL and SRM, to a program's state (e.g. integers, strings, public keys), and even entire programs themselves. Every account has a specified owner, and a single owner can own many different kinds of accounts. In addition to its owner's address, each account also has its own address making it easily identifiable.
+One of the most important concepts to understand in Solana is the [account model](https://solana.wiki/zh-cn/docs/account-model/#account-storage). **Accounts** can be thought of as storage buckets, capable of storing nearly everything Solana touches: from tokens such as SOL and SRM, to a program's state (e.g. integers, strings, public keys), and even entire programs themselves. Every account has a specified owner, and a single owner can own many different kinds of accounts. In addition to its owner's address, each account also has its own address making it easily identifiable.
 
-To make this all a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I've added a quick guide on how you can generate your own at this bottom of this tutorial). In this walkthrough, we'll refer to `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`, or "Friel", as the address for our command-line wallet. Note that even if you generate your own vanity address, you will never be able to generate the exact same address I did.
+To make this all a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I've added a quick guide on how you can generate your own at this bottom of this tutorial). In this walkthrough, we'll refer to `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`, or "Friel", as the address for our command-line wallet. Note that even if you generate your own vanity address, you won't be able to generate the exact same address I did.
 
 #### Funding our Wallet
 
-Let's go ahead and fund our command line wallet with a little bit of SOL. I did 0.2 SOL, but ~$5 worth should be plenty. If you're on mainnet, you can send SOL from an exchange like [FTX](https://ftx.us/home/#a=1490381) or [Coinbase](https://www.coinbase.com/join/friel_t3). If you want to proceed on devnet, open up your terminal run:
+Let's go ahead and fund our command line wallet with a little bit of SOL. I did 0.2 SOL, but ~$5 worth should be plenty. If you're on mainnet, you can send SOL from an exchange like [FTX](https://ftx.us/home/#a=1490381) or [Coinbase](https://www.coinbase.com/join/friel_t3). If you want to proceed on devnet, open up your terminal and run:
 
 ```bash
 solana config set --url devnet
@@ -90,13 +90,50 @@ solana airdrop 0.2
 
 Once funded, we can visualize our main account with the below diagram:
 
-![Friel Account Visualized](friel-diagram.png)
+![Friel Account Diagram](friel-diagram.png)
 
 So far, there's not a lot going on. The account holds some SOL that we deposited from an external source. It also has an address (in my case, `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`) that we can use to identify it. If you paste your address into a [block explorer](https://explorer.solana.com/), it should look something like this:
 
-![Friel Account on Block Explorer](friel0.png)
+![Starting Friel account](friel0.png)
 
+### Creating our Token
 
+Let's make things more interesting and create our first token. In our terminal, let's run:
+
+```bash
+spl-token create-token --enable-freeze
+```
+
+What just happened? Remember, all we had to do to create a token was to send instructions to the Token Program. Specifically we sent the Token Program two instructions:
+
+1. To create a new account (this is carried out by the [System Program](https://docs.solana.com/developing/runtime-facilities/programs#system-program))
+2. To recognize this new account as a token [Mint](https://docs.solana.com/integrations/exchange#token-mints)
+
+Solana lets us bundle both of these instructions into a single transaction. We can visualize this transaction like so:
+
+![Friel creates BUG](friel-creates-bug.png)
+
+If you take a look at [my transaction](https://explorer.solana.com/tx/2wAaKQw2vhraXqM8beFkKm3fgG11zpRrVa3V9XYA6eKfgVn2YmKppQCCgsbstRYHgsib9jz97F4nUZy4EsTVM2bM), you'll see that the entire transaction cost my "Friel" account 0.0014716 SOL or $0.316394. If you scroll to the "Instructions" section at the bottom of the explorer, you'll see that the vast majority of this (0.0014616 SOL) was used to fund the new account we created. This new account is called a **mint** because it will hold all the metadata that describes our token's features, such as its supply, number of decimals, and the various addresses that have authority over parts of it. 
+
+In keeping with the human-readable theme, I initialized this mint at `BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf` or "BUG". If you ran the last command on your own, you initialized your mint at a randomly generated address. I cover how you can use vanity addresses at the end of this tutorial. 
+
+Why did it cost us so much to create an account relative to other transactions on Solana? By creating a new account, we're asking all Solana validators to keep track of the information it stores in memory. To make up for this resource consumption, Solana charges us a time-and-space based fee called [rent](https://docs.solana.com/implemented-proposals/rent), and will close our account if we fail to meet the minimum rent requirements. To get around this, nearly everyone opts to pay a one-time fee to mark our account as "rent-exempt", allowing it to live on in perpetuity.
+
+If we had looked up our token's mint before we actually made any instructions, it would have just appeared as a standard, empty account:
+
+![Empty BUG account](bug0.png)
+
+Now, after telling the Token Program to create our account and initialize it as a token mint, the network will recognize it as a mint:
+
+![Tokenized BUG account](bug1.png)
+
+A few things to note:
+
+1. Right away, you should notice that this mint is for a "Unknown Token". This is expected and we will correct this later on in the tutorial
+2. Our mint already comes with `Mint Authority` and `Freeze Authority` fields. By default, our "Friel" account is the Mint Authority for this token because it paid for the mint's creation. If you recall back to our last command, we added an `--enable-freeze` flag which also gave our "Friel" account the authority to freeze tokens. If we had not added that special flag, our mint would not have a Freeze Authority and we would not be able to add one in the future. More on that later.
+3. The token currently has no supply. Remember, the mint account just holds the metadata that describes our token, it does not hold the tokens themselves. We haven't actually minted any units yet that we can send around. Let's change that.
+
+### Minting our Token
 
 On Solana, token balances are typically stored in unique accounts where the storage account address is derived from the address of the owner account.
 
@@ -117,7 +154,6 @@ Visually, it looks like this
 
 
 
-### Creating our Token
 
 In Solana, token balances are typically stored in unique accounts where the storage account address is derived from the address of the owner account.
 
@@ -135,3 +171,5 @@ In addition, it allows a user to send tokens to another user even if the benefic
 ## Further Integrations
 
 ## Bonus: Generating Vanity Addresses
+
+For me, I generated my vanity address in the folder `.config/solana`, so my command would have been: `spl-token create-token .config/solana/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf.json --enable-freeze`
