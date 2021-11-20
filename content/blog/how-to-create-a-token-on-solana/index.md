@@ -182,15 +182,45 @@ This time, we should see our transaction go through. If we pull up our "Friel" a
 
 ## Naming and Logos
 
-So far, we've been working with our new token mint "BUG", but Solana keeps referring to it as some "Unknown Token". Let's go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on [this GitHub repo](https://github.com/solana-labs/token-list) hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.
+So far, we've been working with our new token mint "BUG", but Solana keeps referring to it as some "Unknown Token". Let's go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on [this GitHub repository](https://github.com/solana-labs/token-list) hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.
 
 First, head on over to the previously mentioned [GitHub repo](https://github.com/solana-labs/token-list) and click the "Fork" button on in the top right corner. This will create a forked version that lives on your GitHub account (If you don't already have a GitHub account, please create one now). We'll be using this forked GitHub repo going forward.
 
 ![Fork the repo](fork.png)
 
+Once forked, head back to your personal GitHub page and locate the newly forked repo. This is where we'll be making our additions. If you're not familiar with [Git](https://git-scm.com/), the easiest way to add your token is to open this with repo with GitHub Desktop like so:
+
 ![Open with GitHub Desktop](open-with-github-desktop.png)
 
+In GitHub Desktop, you will choose to "Clone a Repository" and then find your newly forked repo like so:
+
 ![Get Token List](gettokenlist.png)
+
+There are two places you must make additions to if you want your token to display properly
+
+1. In the `assets/mainnet` directory, create a new folder named after your token mint address. In my case, this would be `assets/mainnet/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf`. Once created, place your logo within this newly created folder and name it `logo.png` (SVG format is also ok). Solana will crop your logo to a square, so make sure you design it appropriately.
+
+2. Locate `src/tokens/solana.tokenlist.json` and open this file with a simple text editor. In this file, locate the `tokens` array and add an object that describes your token like so:
+
+```json
+    {
+      "chainId": 101,
+      "address": "YOUR-MINT-ADDRESS",
+      "symbol": "BUG",
+      "name": "Bug",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/YOUR-MINT-ADDRESS/logo.png"
+    }
+```
+
+> 🚨 WARNING: Do not delete or modify any existing info. Only commit additions. If you commit any deletions, your merge request will fail.
+
+This is the part which will cause the majority of issues. Solana Labs uses a bot to automatically test and merge updates to the Token List without human review. To avoid any issues, its important to take the time to ensure that you are not commiting any deletions or potential syntax errors. The two that trip people up the most are:
+
+1. Leaving a trailing comma after the last field (i.e. "," after the string in "logoURI" above)
+2. Letting their formatter delete the last line of the entire json file. DO NOT DELETE THIS LINE. If you are having trouble leaving this line unchanged, you can always use Mac's built-in TextEdit app.
+
+Make sure you update the JSON fields with your relevant information. Namely, replace `YOUR-MINT-ADDRESS` with your actual mint address in the `address` and `logoURI` fields. Be sure to also update `symbol` and `name` with values that you want. `decimals` is by default 9, and `chainId` should remain the same. If you are worried about adding more fields like `twitter` or `website`, you can always come back and make more additions later on.
 
 ![Confirm all is green](mergeconfirmgreen.png)
 
