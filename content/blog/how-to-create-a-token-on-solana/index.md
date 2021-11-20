@@ -104,16 +104,18 @@ Let's make things more interesting and create our first token. In our terminal, 
 spl-token create-token --enable-freeze
 ```
 
+You should immediately see the message: `Creating token <SOME-ADDRESS>`. Copy that address as we'll be using it later.
+
 What just happened? Remember, all we had to do to create a token was to send instructions to the Token Program. Specifically we sent the Token Program two instructions:
 
 1. To create a new account (this is carried out by the [System Program](https://docs.solana.com/developing/runtime-facilities/programs#system-program))
-2. To recognize this new account as a token [Mint](https://docs.solana.com/integrations/exchange#token-mints)
+2. To recognize this new account as a Token [Mint](https://docs.solana.com/integrations/exchange#token-mints)
 
 Solana lets us bundle both of these instructions into a single transaction. We can visualize this transaction like so:
 
 ![Friel creates BUG](friel-creates-bug.png)
 
-If you take a look at [my transaction](https://explorer.solana.com/tx/2wAaKQw2vhraXqM8beFkKm3fgG11zpRrVa3V9XYA6eKfgVn2YmKppQCCgsbstRYHgsib9jz97F4nUZy4EsTVM2bM), you'll see that the entire transaction cost my "Friel" account 0.0014716 SOL or $0.316394. If you scroll to the "Instructions" section at the bottom of the explorer, you'll see that the vast majority of this (0.0014616 SOL) was used to fund the new account we created. This new account is called a **mint** because it will hold all the metadata that describes our token's features, such as its supply, number of decimals, and the various addresses that have authority over parts of it. 
+If you take a look at [my transaction](https://explorer.solana.com/tx/2wAaKQw2vhraXqM8beFkKm3fgG11zpRrVa3V9XYA6eKfgVn2YmKppQCCgsbstRYHgsib9jz97F4nUZy4EsTVM2bM), you'll see that the entire transaction cost my "Friel" account 0.0014716 SOL or ~$0.31. If you scroll to the "Instructions" section at the bottom of the explorer, you'll see that the vast majority of this fee (0.0014616 SOL) was used to fund the new account we created. This new account is called a **mint** because it will hold all the metadata that describes our token's features, such as its supply, number of decimals, and the various addresses that have authority over parts of it. 
 
 In keeping with the human-readable theme, I initialized this mint at `BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf` or "BUG". If you ran the last command on your own, you initialized your mint at a randomly generated address. I cover how you can use vanity addresses at the end of this tutorial. 
 
@@ -129,35 +131,72 @@ Now, after telling the Token Program to create our account and initialize it as 
 
 A few things to note:
 
-1. Right away, you should notice that this mint is for a "Unknown Token". This is expected and we will correct this later on in the tutorial
+1. Right away, you should notice that this mint is for an "Unknown Token". This is expected and we will correct this later on in the tutorial
 2. Our mint already comes with `Mint Authority` and `Freeze Authority` fields. By default, our "Friel" account is the Mint Authority for this token because it paid for the mint's creation. If you recall back to our last command, we added an `--enable-freeze` flag which also gave our "Friel" account the authority to freeze tokens. If we had not added that special flag, our mint would not have a Freeze Authority and we would not be able to add one in the future. More on that later.
 3. The token currently has no supply. Remember, the mint account just holds the metadata that describes our token, it does not hold the tokens themselves. We haven't actually minted any units yet that we can send around. Let's change that.
 
 ### Minting our Token
 
-On Solana, token balances are typically stored in unique accounts where the storage account address is derived from the address of the owner account.
+It's time to make ourselves billionaires. Copy the mint address you just created, open up your terminal, and run the following command:
 
+```bash
+spl-token mint <PASTE-YOUR-MINT-ADDRESS-HERE> 1000000000
+```
 
+You should be met with the following:
 
-with each account storing different types of data
+```bash
+Minting 1000000000 tokens
+  Token: <YOUR-MINT-ADDRESS>
+  Recipient: <SOME-NEW-ADDRESS>
+Account could not be parsed as token account: pubkey=<SOME-NEW-ADDRESS>
+```
 
- Each account has an address 
+What's that, an error? Yes. Sorry to lead us astray (I won't do it again) but I can't pass up a good teaching moment.
 
+We just tried to mint ourselves a bunch of tokens, but the recipient appeared to be some new address we hadn't seen before (not "Friel"). Furthermore, the transaction failed because the Token Program told us that it could not parse this new address as a token account. What's going on here?
 
+On Solana, our token balances are also stored in their own unique accounts. These accounts are called [Associated Token Accounts](https://spl.solana.com/associated-token-account), and their addresses are derived from the address of their owner. In my case, I derived `Et3bNDxe2wP1yE5ao6mMvUByQUHg8nZTndpJNvfKLdCb` from my main "Friel" account. The issue is that when we asked the Token Program to mint us some tokens, it derived this new address but did not recognize it as an Associated Token Account for our newly created mint. Instead, it just appeared as a standard empty account. Let's go ahead and fix this with:
 
-Visually, it looks like this
+```bash
+spl-token create-account <PASTE-YOUR-MINT-ADDRESS-HERE>
+```
 
+Here's a quick visualization of what just happened:
 
+![Create Associated Token Account](friel-create-ata.png)
 
-![Friel's Bug Account Visualized](friel-bug-diagram.png)
+If we take a look at this [latest transaction](https://explorer.solana.com/tx/D93obissbSVsZpgpRBNrD8HWNBbpyd7yJAAoHce4AZrqw2nrLP43eVBo7eg7CwotpTBxyp6ExXxHjHLqgsMMrfb), we'll see that we are once again paying a relatively large sum to make this new account rent-exempt. In my case, I paid 0.00204428 SOL or ~$0.44 cents. Looking at this newly created account on a block explorer confirms that it is indeed registered as a "Token Account":
 
+![New Token Account](friel-bug-account0.png)
 
+With our token account now properly configured, let's try minting ourselves some tokens agains:
 
+```bash
+spl-token mint <PASTE-YOUR-MINT-ADDRESS-HERE> 1000000000
+```
 
+This time, we should see our transaction go through. If we pull up our "Friel" account in a block explorer and navigate the "Tokens" tab, we'll also confirm that we now own 1 billion tokens. We're rich!
 
-In Solana, token balances are typically stored in unique accounts where the storage account address is derived from the address of the owner account.
+![Friel minted bugs](friel2bugs.png)
 
 ## Naming and Logos
+
+So far, we've been working with our new token mint "BUG", but Solana keeps referring to it as some "Unknown Token". Let's go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on [this GitHub repo](https://github.com/solana-labs/token-list) hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.
+
+First, head on over to the previously mentioned [GitHub repo](https://github.com/solana-labs/token-list) and click the "Fork" button on in the top right corner. This will create a forked version that lives on your GitHub account (If you don't already have a GitHub account, please create one now). We'll be using this forked GitHub repo going forward.
+
+![Fork the repo](fork.png)
+
+![Open with GitHub Desktop](open-with-github-desktop.png)
+
+![Get Token List](gettokenlist.png)
+
+![Confirm all is green](mergeconfirmgreen.png)
+
+![Show tests complete](testscomplete.png)
+
+The easiest way to add your 
 
 ## Transferring, Burning, and Freezing
 
