@@ -16,7 +16,7 @@ To better understand the intricacies of Solana, I decided to create my own token
 
 All in, it cost me a grand total of 0.0035 SOL, or $0.75, to create BUG and mint myself 1 billion units. Sending BUG between two established parties costs less than one-tenth of one penny, further underscoring Solana's potential to let everyday people interact with one another on-chain.
 
-My goal in writing this tutorial is help others gain a better understanding of Solana, and in the process deliver a practical guide to creating tokens.
+My goal in writing this tutorial is to help others gain a better understanding of Solana, and in the process deliver a practical guide to creating tokens.
 
 ## Overview
 
@@ -119,7 +119,7 @@ If you take a look at [my transaction](https://explorer.solana.com/tx/2wAaKQw2vh
 
 In keeping with the human-readable theme, I initialized this mint at `BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf` or "BUG". If you ran the last command on your own, you initialized your mint at a randomly generated address. I cover how you can use vanity addresses at the end of this tutorial. 
 
-Why did it cost us so much to create an account relative to other transactions on Solana? By creating a new account, we're asking all Solana validators to keep track of the information it stores in memory. To make up for this resource consumption, Solana charges us a time-and-space based fee called [rent](https://docs.solana.com/implemented-proposals/rent), and will close our account if we fail to meet the minimum rent requirements. To get around this, nearly everyone opts to pay a one-time fee to mark our account as "rent-exempt", allowing it to live on in perpetuity.
+Why did it cost us so much to create an account relative to other transactions on Solana? By creating a new account, we're asking all Solana validators to keep track of the information it stores in memory. To make up for this resource consumption, Solana charges us a time-and-space based fee called [rent](https://docs.solana.com/implemented-proposals/rent), and will close our account if we fail to meet the minimum rent requirements. To get around this, nearly everyone opts to pay a one-time fee to mark their account as "rent-exempt", allowing it to live on in perpetuity.
 
 If we had looked up our token's mint before we actually made any instructions, it would have just appeared as a standard, empty account:
 
@@ -156,7 +156,7 @@ What's that, an error? Yes. Sorry to lead us astray (I won't do it again) but I 
 
 We just tried to mint ourselves a bunch of tokens, but the recipient appeared to be some new address we hadn't seen before (not "Friel"). Furthermore, the transaction failed because the Token Program told us that it could not parse this new address as a token account. What's going on here?
 
-On Solana, our token balances are also stored in their own unique accounts. These accounts are called [Associated Token Accounts](https://spl.solana.com/associated-token-account), and their addresses are derived from the address of their owner. In my case, I derived `Et3bNDxe2wP1yE5ao6mMvUByQUHg8nZTndpJNvfKLdCb` from my main "Friel" account. The issue is that when we asked the Token Program to mint us some tokens, it derived this new address but did not recognize it as an Associated Token Account for our newly created mint. Instead, it just appeared as a standard empty account. Let's go ahead and fix this with:
+On Solana, our token balances are each stored in their own unique accounts. These accounts are called [Associated Token Accounts](https://spl.solana.com/associated-token-account), and their addresses are derived from the address of their owner. In my case, I derived `Et3bNDxe2wP1yE5ao6mMvUByQUHg8nZTndpJNvfKLdCb` from my main "Friel" account. The issue is that when we asked the Token Program to mint us some tokens, it derived this new address but did not recognize it as an Associated Token Account for our newly created mint. Instead, it just appeared as a standard empty account. Let's go ahead and fix this with:
 
 ```bash
 spl-token create-account <PASTE-YOUR-MINT-ADDRESS-HERE>
@@ -170,7 +170,7 @@ If we take a look at this [latest transaction](https://explorer.solana.com/tx/D9
 
 ![New Token Account](friel-bug-account0.png)
 
-With our token account now properly configured, let's try minting ourselves some tokens agains:
+With our token account now properly configured, let's try minting ourselves some tokens again:
 
 ```bash
 spl-token mint <PASTE-YOUR-MINT-ADDRESS-HERE> 1000000000
@@ -182,21 +182,23 @@ This time, we should see our transaction go through. If we pull up our "Friel" a
 
 ## Naming and Logos
 
+> Note: This section only applies to tokens on mainnet
+
 So far, we've been working with our new token mint "BUG", but Solana keeps referring to it as some "Unknown Token". Let's go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on [this GitHub repository](https://github.com/solana-labs/token-list) hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.
 
 First, head on over to the previously mentioned [GitHub repo](https://github.com/solana-labs/token-list) and click the "Fork" button on in the top right corner. This will create a forked version that lives on your GitHub account (If you don't already have a GitHub account, please create one now). We'll be using this forked GitHub repo going forward.
 
 ![Fork the repo](fork.png)
 
-Once forked, head back to your personal GitHub page and locate the newly forked repo. This is where we'll be making our additions. If you're not familiar with [Git](https://git-scm.com/), the easiest way to add your token is to open this with repo with GitHub Desktop like so:
+Once forked, head back to your personal GitHub page and locate the newly forked repo. This is where we'll be making our additions. If you're not familiar with [Git](https://git-scm.com/), the easiest way to add your token is to open the forked repo with GitHub Desktop like so:
 
 ![Open with GitHub Desktop](open-with-github-desktop.png)
 
-In GitHub Desktop, you will choose to "Clone a Repository" and then find your newly forked repo like so:
+In GitHub Desktop, choose to "Clone a Repository" and then find your newly forked repo.
 
 ![Get Token List](gettokenlist.png)
 
-There are two places you must make additions to if you want your token to display properly
+There are two places where we must add information about our token:
 
 1. In the `assets/mainnet` directory, create a new folder named after your token mint address. In my case, this would be `assets/mainnet/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf`. Once created, place your logo within this newly created folder and name it `logo.png` (SVG format is also ok). Solana will crop your logo to a square, so make sure you design it appropriately.
 
@@ -213,20 +215,34 @@ There are two places you must make additions to if you want your token to displa
     }
 ```
 
-> 🚨 WARNING: Do not delete or modify any existing info. Only commit additions. If you commit any deletions, your merge request will fail.
+> 🚨 WARNING: Do not delete or modify any existing info in this file. Only commit additions. If you commit any deletions, your merge request will fail.
 
-This is the part which will cause the majority of issues. Solana Labs uses a bot to automatically test and merge updates to the Token List without human review. To avoid any issues, its important to take the time to ensure that you are not commiting any deletions or potential syntax errors. The two that trip people up the most are:
+This is the part which will cause the majority of issues. Solana Labs uses a bot to automatically test and merge updates to the Token List without requiring human review. To avoid any issues, it's important to take time to ensure that you are not committing any deletions or potential syntax errors. The two mistakes that trip people up the most are:
 
-1. Leaving a trailing comma after the last field (i.e. "," after the string in "logoURI" above)
-2. Letting their formatter delete the last line of the entire json file. DO NOT DELETE THIS LINE. If you are having trouble leaving this line unchanged, you can always use Mac's built-in TextEdit app.
+1. Leaving a trailing comma after the last field in their JSON object (i.e. "," after the string in "logoURI" above).
+2. Letting their formatter delete the last line at the bottom of the JSON file. **DO NOT DELETE THIS LINE.** If your IDE is giving you a hard time you can always use Mac's built-in TextEdit app.
 
 Make sure you update the JSON fields with your relevant information. Namely, replace `YOUR-MINT-ADDRESS` with your actual mint address in the `address` and `logoURI` fields. Be sure to also update `symbol` and `name` with values that you want. `decimals` is by default 9, and `chainId` should remain the same. If you are worried about adding more fields like `twitter` or `website`, you can always come back and make more additions later on.
 
+In GitHub Desktop, double check that you are only making additions (only green, no red!). If everything looks good, write a simple commit summary and commit your work in the bottom left corner. Then click "Push Origin".
+
+![Commit](commit.png)
+
+![Push Origin](pushorigin.png)
+
+Your changes should now be visible on the forked token list your GitHub account is hosting. To get these changes merged into the official Solana Labs version, head over to the "Pull Request" tab of their repository [here](https://github.com/solana-labs/token-list/pulls). Then, click on the big green "New pull request" button. On the following screen, click "compare across forks" and then change the "head repository" dropdown option to the `token-list` repository at your personal GitHub. These steps are outlined below:
+
 ![Confirm all is green](mergeconfirmgreen.png)
+
+If all the changes are green, go ahead and click "Create pull request" and then submit it with a title of your choosing. Once submitted, you'll see the bot run its tests. This process will take a few minutes. If you accidentally made any errors, the bot will provide you with feedback. Otherwise, you should see your tests pass.
 
 ![Show tests complete](testscomplete.png)
 
-The easiest way to add your 
+Congrats! You just created a token on Solana. In a few hours, your changes will be merged into the official token registry. These changes won't be reflected overnight: it may take some services like Phantom or the block explorer a few days to pick up the new metadata. You'll know the changes went through when you can view your logo at the `logoUrl` you provided in the JSON object. After a few days, the rest of Solana will pick up on your new branding.
+
+![Bug updated Phantom](phantom.png)
+
+![Bug updated block explorer](bugupdated.png)
 
 ## Transferring, Burning, and Freezing
 
