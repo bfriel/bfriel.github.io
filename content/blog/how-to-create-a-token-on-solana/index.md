@@ -32,7 +32,7 @@ In each section, we'll go over the concepts behind what is happening under the h
 
 All tokens on Solana, whether they are fungible tokens or NFTs, are created using the [SPL Token Program](https://spl.solana.com/token). SPL stands for [Solana Program Library](https://spl.solana.com/), and is a set of programs (aka smart contracts) that serve as core building blocks for the Solana ecosystem. 
 
-If you're familiar with Ethereum, you can think of SPL tokens as a token standard such as [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) or [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, its simply requires you to send instructions to the Token Program and it will create and mint tokens on your behalf.
+If you're familiar with Ethereum, you can think of SPL tokens as a token standard such as [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) or [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, it simply requires you to send instructions to the Token Program and it will create and mint tokens on your behalf.
 
 We can interact with the Token Program in both on-chain and off-chain applications via [Rust crates](https://crates.io/crates/spl-token), [C bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/program/inc/token.h), and [JavaScript bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/js/client/token.js). For the purposes of this tutorial we'll be using the [Command Line Interface (CLI)](https://spl.solana.com/token#command-line-utility) which is the easiest and most straightforward way to get started. I may explore how you can integrate it with Rust and JavaScript in a future tutorial.
 
@@ -40,7 +40,7 @@ We can interact with the Token Program in both on-chain and off-chain applicatio
 
 Before we can create anything, we first have to install the necessary command line tools. Namely: [Solana](https://docs.solana.com/cli/install-solana-cli-tools) and the [SPL-Token Library](https://spl.solana.com/token#command-line-utility). I've linked to guides on how to install them which include installing their necessary dependencies such as Rust.
 
-You'll also need to setup a [command line wallet](https://docs.solana.com/wallet-guide/cli) and fund it with SOL in order to pay for the creation of your token. For the purposes of this demonstration, I used a simple [file system wallet](https://docs.solana.com/wallet-guide/file-system-wallet). Make sure you properly back up your recovery phrase.
+You'll also need to set up a [command line wallet](https://docs.solana.com/wallet-guide/cli) and fund it with SOL in order to pay for the creation of your token. For the purposes of this demonstration, I used a simple [file system wallet](https://docs.solana.com/wallet-guide/file-system-wallet). Make sure you properly backup your recovery phrase.
 
 > 🚨 WARNING: This tutorial covers using real funds on mainnet. Do not fund your wallet with more SOL than you are willing to lose.
 
@@ -72,7 +72,7 @@ At the time of this writing, my setup runs on MacOS 12.0.1. For the purposes of 
 
 One of the most important concepts to understand in Solana is the [account model](https://solana.wiki/zh-cn/docs/account-model/#account-storage). **Accounts** can be thought of as storage buckets, capable of storing nearly everything Solana touches: from tokens such as SOL and SRM, to a program's state (e.g. integers, strings, public keys), and even entire programs themselves. Every account has a specified owner, and a single owner can own many different kinds of accounts. In addition to its owner's address, each account also has its own address making it easily identifiable.
 
-To make this all a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I've added a quick guide on how you can generate your own at this bottom of this tutorial). In this walkthrough, we'll refer to `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`, or "Friel", as the address for our command-line wallet. Note that even if you generate your own vanity address, you won't be able to generate the exact same address I did.
+To make this all a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I've added a quick guide on how you can generate your own at the end of this tutorial). In this walkthrough, we'll refer to `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T`, or "Friel", as the address for our command-line wallet. Note that even if you generate your own vanity address, you won't be able to generate the exact same address I did.
 
 #### Funding our Wallet
 
@@ -186,7 +186,7 @@ This time, we should see our transaction go through. If we pull up our "Friel" a
 
 So far, we've been working with our new token mint "BUG", but Solana keeps referring to it as some "Unknown Token". Let's go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on [this GitHub repository](https://github.com/solana-labs/token-list) hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.
 
-First, head on over to the previously mentioned [GitHub repo](https://github.com/solana-labs/token-list) and click the "Fork" button on in the top right corner. This will create a forked version that lives on your GitHub account (If you don't already have a GitHub account, please create one now). We'll be using this forked GitHub repo going forward.
+First, head on over to the previously mentioned [GitHub repo](https://github.com/solana-labs/token-list) and click the "Fork" button in the top right corner. This will create a forked version that lives on your GitHub account (If you don't already have a GitHub account, please create one now). We'll be using this forked GitHub repo going forward.
 
 ![Fork the repo](fork.png)
 
@@ -292,7 +292,7 @@ This is a useful feature to combat illegal activity, but by default it is turned
 
 ### Burning Tokens
 
-The other type of token mint authority is known as **Mint Authority**. This one is pretty straightforward, as we use it earlier to mint ourselves 1 billion tokens. When someone creates a new token, their address is granted mint authority by default.
+The other type of token mint authority is known as **Mint Authority**. This one is pretty straightforward, as we used it earlier to mint ourselves 1 billion tokens. When someone creates a new token, their address is granted mint authority by default.
 
 In addition to minting new tokens, the mint authority can also burn existing tokens. Burning in Solana is very explicit: there is no burn address that tokens are sent to. Instead, the Token Program reduces the units in a given token account. When burning tokens, the mint authority must provide the token account address they would like to burn from, otherwise they will by default burn from their own balances.
 
@@ -306,4 +306,26 @@ If you found this tutorial helpful, please let me know via [Twitter](https://twi
 
 ## Bonus: Generating Vanity Addresses
 
-For me, I generated my vanity address in the folder `.config/solana`, so my command would have been: `spl-token create-token .config/solana/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf.json --enable-freeze`
+Your seed phrase grants you access to many different private keys, each with their own corresponding public key. We can search these for a public key that looks cool by using the `solana-keygen grind` command.
+
+To find an address that starts with "BUG", I ran:
+
+```bash
+solana-keygen grind --starts-with bug:1 --ignore-case
+```
+
+The `--starts-with` flag will search for words that start with the next argument (in my case, bug). You can replace bug with a word that you want. The `:1` option tells the CLI to just return the first result it finds. You should keep it at `:1` for now. The `--ignore-case` flag tells the CLI that we don't care if letters are uppercase or lowercase. Keeping it at `--ignore-case` will greatly reduce search time.
+
+Once a result is found, the CLI will print a JSON file with your new vanity address. In my case, it printed `FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T.json`. This JSON file will live wherever your terminal current is located. You can find that path by running `pwd`.
+
+To use your new vanity address from the CLI you can run:
+
+```bash
+solana config set --keypair <PATH/TO/YOUR-VANITY-ADDRESS>.json
+```
+
+Note that on Mac, Solana stores your default `id.json` keypair at `.config/solana`. You can check your keypair anytime by running:
+
+```bash
+solana config get
+```
