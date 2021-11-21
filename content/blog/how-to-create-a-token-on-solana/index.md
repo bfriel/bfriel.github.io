@@ -8,7 +8,7 @@ thumbnail: ./creation.png
 
 ## Introduction
 
-For many newcomers, [Solana](https://solana.com/) can at first appear confusing. Terms like accounts, programs, mints, and authorities can be thrown around haphazardly, with each one meaning something unique to the Solana ecosystem. In contrast to most other blockchains, Solana declined to build on the [Ethereum Virtual Machine (EVM)](https://ethereum.org/en/developers/docs/evm/) and instead built its own [Rust-based architecture](https://github.com/solana-labs/solana) entirely from scratch. As a result, Solana is one of the most performant, yet least well-understood, blockchains in the world.
+For many newcomers, [Solana](https://solana.com/) can at first appear confusing. Terms like accounts, programs, mints, and authorities are often misunderstood, as each refers to something unique to the Solana ecosystem. In contrast to most other blockchains, Solana declined to build on the [Ethereum Virtual Machine (EVM)](https://ethereum.org/en/developers/docs/evm/) and instead built its own [Rust-based architecture](https://github.com/solana-labs/solana) entirely from scratch. As a result, Solana is one of the most performant, yet least well-understood, blockchains in the world.
 
 To better understand the intricacies of Solana, I decided to create my own token and document the process for others to follow. My token is called [BUG](https://explorer.solana.com/address/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf) and if you can't tell by its official logo it has absolutely zero value so please do not try and buy it.
 
@@ -238,22 +238,71 @@ If all the changes are green, go ahead and click "Create pull request" and then 
 
 ![Show tests complete](testscomplete.png)
 
-Congrats! You just created a token on Solana. In a few hours, your changes will be merged into the official token registry. These changes won't be reflected overnight: it may take some services like Phantom or the block explorer a few days to pick up the new metadata. You'll know the changes went through when you can view your logo at the `logoUrl` you provided in the JSON object. After a few days, the rest of Solana will pick up on your new branding.
-
-![Bug updated Phantom](phantom.png)
+Congrats! You just created a token on Solana. In a few hours, your changes will be merged into the official token registry. These changes won't be reflected overnight: it may take some services like [Phantom](https://phantom.app/) or the block explorer a few days to pick up the new metadata. You'll know the changes went through when you can view your logo at the `logoUrl` you provided in the JSON object. After a few days, the rest of Solana will pick up on your new branding.
 
 ![Bug updated block explorer](bugupdated.png)
 
-## Transferring, Burning, and Freezing
+## Transferring, Freezing, and Burning
 
-Associated Token Account Program
+Ok, we just created a stylish new token. Now what? 
 
-A user may own arbitrarily many token accounts belonging to the same mint which makes it difficult for other users to know which account they should send tokens to and introduces friction into many other aspects of token management. This program introduces a way to deterministically derive a token account key from a user's main System account address and a token mint address, allowing the user to create a main token account for each token he owns. We call these accounts Associated Token Accounts.
+If we turn our attention back to the Token Program, we can see there's a few things we can do right away.
 
-In addition, it allows a user to send tokens to another user even if the beneficiary does not yet have a token account for that mint. Unlike a system transfer, for a token transfer to succeed the recipient must have a token account with the compatible mint already, and somebody needs to fund that token account. If the recipient must fund it first, it makes things like airdrop campaigns difficult and just generally increases the friction of token transfers. AToken allows the sender to create the associated token account for the receiver, so the token transfer just works.
+### Transferring Tokens
 
+The first thing we can do is to send some tokens to a friend. If you've used a web wallet like Phantom before, you're probably already familiar with doing this via a UI. But how does this work behind the scenes? 
 
-## Further Integrations
+Once again, we'll be sending instructions to the Token Program. Specifically, we'll be using the [transfer](https://spl.solana.com/token#example-transferring-tokens-to-another-user) command. But there's a catch! Remember back to when we first minted ourselves 1 billion units: we ran into an issue because we did not already have an associated token account to store our token balances. If we try to just transfer a new token to our friend's address, we'll run into the same problem. The issue is that our friend has not already set up an associated token account for our mint.
+
+There are two ways to get around this. The first way is to ask our friend to create and fund their own account just like we did. They could do this by running `spl-token create-account <OUR-MINT-ADDRESS>`. This method, however, is impractical. Our friend may be offline, or we may want to send them some tokens as a surprise gift. To do this, we can choose to create and fund their associated token account for them by adding a `--fund-recipient` flag:
+
+```bash
+spl-token transfer <YOUR-MINT-ADDRESS> 1 <YOUR-FRIENDS-ADDRESS> --fund-recipient
+```
+
+This is what happens everytime you receive an unexpected airdrop. If you receive a new token without making a transaction, it means the sender is paying the account rent on your behalf! We can visualize this transaction like so:
+
+![Transfer](transfer.png)
+
+For [my transaction](https://explorer.solana.com/tx/4uDR3BQTMaX25FFsam2o8hXpvE8xut2Z8j5fvQQmjTbMpUHK5pxdfF9ikbDHCKNtycp6mCfgsdyLShfkopDxYDbQ), I chose to transfer one BUG token from my "Friel" wallet to another wallet I created called "Brian". By plugging my "Brian" wallet into Phantom, we can see that we are now the proud owner of 1 BUG!
+
+![Bug updated Phantom](phantom.png)
+
+### Freezing Tokens
+
+You may recall that when we first created our token, we added an `--enable-freeze` flag. By adding that flag, Solana recognized our "Friel" account as the **Freeze Authority** for our mint "BUG". This grants us the power to disable anyone's BUG token account.
+
+When we gifted 1 BUG to "Brian", we created and funded a token account for him at `CMSC2GeWDsTPjfnhzCZHEqGRjKseBhrWaC2zNcfQQuGS`. Let's freeze that account now:
+
+```bash
+spl-token freeze <TOKEN-ACCOUNT-TO-FREEZE>
+```
+
+Now Brian's 1 BUG is frozen in place. If we switch over to Phantom and try to transfer it out of our wallet, we'll run into an error:
+
+![Frozen BUG](freeze.png)
+ 
+To unfreeze "Brian", we can run the aptly named `thaw` command:
+
+```bash
+spl-token thaw <TOKEN-ACCOUNT-TO-UNFREEZE>
+```
+
+This is a useful feature to combat illegal activity, but by default it is turned off in Solana. Importantly, if a token is created without setting a freeze authority then it can never be added back in later. This is why we added the `--enable-freeze` flag to our `create-token` command: it gave us optionality. Once we are an authority, we can add or transfer authority to other addresses by using the `authorize` and `revoke` commands. Once we `revoke` all authorities, however, there's no going back.
+
+### Burning Tokens
+
+The other type of token mint authority is known as **Mint Authority**. This one is pretty straightforward, as we use it earlier to mint ourselves 1 billion tokens. When someone creates a new token, their address is granted mint authority by default.
+
+In addition to minting new tokens, the mint authority can also burn existing tokens. Burning in Solana is very explicit: there is no burn address that tokens are sent to. Instead, the Token Program reduces the units in a given token account. When burning tokens, the mint authority must provide the token account address they would like to burn from, otherwise they will by default burn from their own balances.
+
+If we want to follow in Bitcoin's footsteps, we can put a hard cap on the supply of our token by calling `revoke` on all mint authorities. This will prevent anyone from altering our token's supply ever again.
+
+## Next Steps
+
+We covered a lot of material here, but this is all just dependent on Solana's core Token Program. There's a lot more you can do with tokens on Solana, including but not limited to: [Creating Serum Markets](https://docs.projectserum.com/serum-ecosystem/building-on-our-vision/add-a-market-on-serum-serum-academy), [Lending](https://spl.solana.com/token-lending), and [AMM-like swaps](https://spl.solana.com/token-swap). I may explore some of these in a future tutorial.
+
+If you found this tutorial helpful, please let me know via [Twitter](https://twitter.com/bfriel_).
 
 ## Bonus: Generating Vanity Addresses
 
