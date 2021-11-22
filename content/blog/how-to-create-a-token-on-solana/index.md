@@ -337,3 +337,7 @@ If you're planning on launching a token on Solana, using a vanity address makes 
 - [Saber](https://saber.so/): [Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1](https://explorer.solana.com/address/Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1)
 - [Jet](https://www.jetprotocol.io/): [JET6zMJWkCN9tpRT2v2jfAmm5VnQFDpUBCyaKojmGtz](https://explorer.solana.com/address/JET6zMJWkCN9tpRT2v2jfAmm5VnQFDpUBCyaKojmGtz)
 - [Orca](https://www.orca.so/): [orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE](https://explorer.solana.com/address/orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE)
+
+## Acknowledgements
+
+Many thanks to [Pencilflip](https://twitter.com/pencilflip) and [Jacob CG](https://twitter.com/cryptogosu) for their review and feedback.
