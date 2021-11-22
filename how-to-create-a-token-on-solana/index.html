@@ -1,0 +1,869 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.5 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(204,12.449720506%,0%,0.77);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:2.25rem;line-height:3rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.83712rem;line-height:2.25rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.25rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.14471rem;line-height:1.5rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.87358rem;line-height:1.5rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.76314rem;line-height:1.5rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}ul{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:0.85rem;line-height:1.5rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:1rem;line-height:1.5rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}blockquote{margin-left:1.5rem;margin-right:1.5rem;margin-top:0;padding-bottom:0.5rem;padding-left:1rem;padding-right:1rem;padding-top:0.5rem;margin-bottom:1.5rem;font-size:1.22474rem;line-height:1.5rem;border-left:0.25rem solid #eceeef;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.5rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}li > ul{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5rem / 2);}code{font-size:0.85rem;line-height:1.5rem;}kbd{font-size:0.85rem;line-height:1.5rem;}samp{font-size:0.85rem;line-height:1.5rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:calc(0.75rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.5rem;color:hsla(204,5.275997423999999%,0%,0.46);font-weight:400;font-style:normal;}</style><style data-href="/styles.15ea5215d66473021c65.css" id="gatsby-global-css">body{position:relative;min-height:100vh;padding-bottom:120px;background-color:#fafafa}a{text-decoration:none;box-shadow:none;padding:2px 0;color:#4665b7;text-decoration:underline}blockquote{border-color:#232c3a}code{background-color:#e6e6e5}.small-font{font-size:.8rem}.text-center{text-align:center}.divider{background:#e6e6e5}a.no-link{box-shadow:none;text-decoration:none;color:inherit}a.no-link.grey-color{color:#aaa}a.no-underline{text-decoration:none}.show-xs{display:none}#header{position:relative;width:100%;height:40px}.inner-header{background-color:#fafafa;position:fixed;z-index:200;top:0;left:50%;width:100%;-webkit-transform:translate(-50%);transform:translate(-50%);transition:all .2s ease}.inner-header.show{top:0}.inner-header.hide{top:-20%}.inner-header.shadow{box-shadow:0 4px 12px 0 rgba(0,0,0,.05)}.nav{display:flex;align-items:flex-end;justify-content:space-between;margin-left:auto;margin-right:auto}.title{margin:0;letter-spacing:.7px;font-weight:500}.main-footer{position:absolute;bottom:0;width:100%;height:80px}.inner-footer{margin-left:auto;margin-right:auto;border-top:1px solid #e6e6e5;display:flex;justify-content:space-between;align-items:center}.social-icon{height:36px;width:36px;display:block;cursor:pointer;padding:10px}.social-icon.twitter{margin-left:5px;margin-right:5px}.social-icon.twitter:hover{fill:#009df7}.social-icon.linkedin:hover{fill:#005dc5}.light-subheader{margin:0;text-transform:uppercase;color:#999;font-weight:300}a.gatsby-resp-image-link{padding:initial}.article{display:flex;background-color:#fff;align-items:flex-start;width:100%;box-shadow:0 1px 2px rgba(46,41,51,.08),0 2px 4px rgba(71,63,79,.08);transition:all .1s cubic-bezier(.4,0,.2,1) 0s}.article:hover{-webkit-transform:translateY(-.25rem);transform:translateY(-.25rem);box-shadow:0 4px 8px rgba(46,41,51,.08),0 8px 16px rgba(71,63,79,.16)}.article-preview{margin-bottom:0;margin-top:10px;font-style:italic;color:#636161}.article-main{width:100%;margin-right:10px;padding:20px 0 20px 20px}.article-title{margin:0;transition:color .1s ease}.about-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:center}.about-headshot{height:200px;width:100%;max-width:200px;margin-bottom:30px;margin-right:30px;overflow:hidden}.about-headshot,.about-headshot:before{border-radius:100px}@media screen and (max-width:740px){.text-center-small{text-align:center}.article-preview{display:none}.about-headshot{margin:10px auto 30px}}@media screen and (max-width:480px){.hide-xs{display:none}.show-xs{display:block}.inner-footer{flex-direction:column}}</style><meta name="generator" content="Gatsby 2.32.13"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=168ee89ba2801148378d297223ee6ca2" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=168ee89ba2801148378d297223ee6ca2"/><title data-react-helmet="true">Creating Tokens on Solana | Brian Friel</title><meta data-react-helmet="true" name="description" content="An introduction to the SPL Token Program and Solana&#x27;s account model, complete with a guide on how to create a token on Solana."/><meta data-react-helmet="true" property="og:title" content="Creating Tokens on Solana"/><meta data-react-helmet="true" property="og:description" content="An introduction to the SPL Token Program and Solana&#x27;s account model, complete with a guide on how to create a token on Solana."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:image" content="/static/6cfec58855f62b92575a320dcdd22888/8282f/creation.png"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Brian Friel"/><meta data-react-helmet="true" name="twitter:title" content="Creating Tokens on Solana"/><meta data-react-helmet="true" name="twitter:description" content="An introduction to the SPL Token Program and Solana&#x27;s account model, complete with a guide on how to create a token on Solana."/><meta data-react-helmet="true" name="twitter:image" content="https://www.brianfriel.xyz/static/6cfec58855f62b92575a320dcdd22888/2a4de/creation.png"/><link as="script" rel="preload" href="/webpack-runtime-ec13b808f4a889122cab.js"/><link as="script" rel="preload" href="/framework-6c3ead24af170cdcb87c.js"/><link as="script" rel="preload" href="/app-e359323c89f061e0bccd.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/133dca110fad53aa1997b630637bbac3134a2d14-65405d1728a30a30f444.js"/><link as="script" rel="preload" href="/93241701166c3169d92c9fdd395837837cace836-2d1b2187487d62879401.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-430926cdfe550295060d.js"/><link as="fetch" rel="preload" href="/page-data/how-to-create-a-token-on-solana/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1347968780.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/702208682.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><header id="header"><div class="inner-header show no-shadow"><nav class="nav" style="max-width:36rem;padding:0.75rem 1.125rem"><a class="small-font grey-color no-link" href="/">Brian Friel</a></nav></div></header><main style="margin-left:auto;margin-right:auto;max-width:36rem;padding:0.75rem 1.125rem"><article><header><section class=" gatsby-background-image-ebbfpft_depr gatsby-image-wrapper" style="position:relative;height:300px;width:100%;opacity:0.99;background-position:center;background-repeat:no-repeat;background-size:cover"><style>
+          .gatsby-background-image-ebbfpft_depr:before,
+          .gatsby-background-image-ebbfpft_depr:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #040e18;
+            transition: opacity 0.5s ease 0.25s;
+            background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+          }
+          .gatsby-background-image-ebbfpft_depr:before {
+            z-index: -100;
+            
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAACMElEQVQozwElAtr9AMrErtLKt8rCrsi/qdTLs9jOtc3FsMzFscbBrMnDr8/Lt83It7GijYBvVn5cQHpTOG5RPZl+Z6aWgY54YAC2trPBw7vKzrbaz7vd1L7e07rSyrXQyrfPyrfW0b7Dv6ycjXRKQDNIRT+DZkE5MykdIiNJKxluQS1nPy0AoquksdW1uty/yc+808u51s661s+419C739vH3NO+YmBegHhmoZZ8wKqWgmlKTEItWUw6GSQrRyANViwYAJGpfqParqPasbDYsNPGv9PKtM69n9fNtd7VvdS/opV3WLSdeurYv76nl5F0XINtUph7UlxLOE8pFXlYQwCinG68yJmw25uWlWaok3XDp4HUwqXh1bjf1LXHsJFXOBx2Wy+dhWKymYTQvazCqZKihF2Mbj2Oa0eSf2oAj3pRz6h4rYteal85waZ9u6N8qquU49zH9+/T39S5cEgyXjogW0spfmlBuqB7oohjcl47c1s8aVIzfWdOAHVlQp2CWsKgb6OHWr+dcYN0UmBdPoR/bN3VwPLoy+HVurmegXxoQ21oQ2xjPWxiO2RVO2tTPH1qVId5XgA7NiZVSzOaf1XIp3zEp36SglllWT9UTDSCf2/Z0rzq38Xo3sbf0ri3qJConYefrIqQoXq1rIzCt53SzrkAJh4UNjYlSkgwX1EyU0gygmxImYBXlIBYbl9Ce3xww72s3c+42c252M252M240cu2tLuducGk0s6429S+4TcvnxIpOFcAAAAASUVORK5CYII=);
+            opacity: 0; 
+          }
+          .gatsby-background-image-ebbfpft_depr:after {
+            z-index: -101;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAACMElEQVQozwElAtr9AMrErtLKt8rCrsi/qdTLs9jOtc3FsMzFscbBrMnDr8/Lt83It7GijYBvVn5cQHpTOG5RPZl+Z6aWgY54YAC2trPBw7vKzrbaz7vd1L7e07rSyrXQyrfPyrfW0b7Dv6ycjXRKQDNIRT+DZkE5MykdIiNJKxluQS1nPy0AoquksdW1uty/yc+808u51s661s+419C739vH3NO+YmBegHhmoZZ8wKqWgmlKTEItWUw6GSQrRyANViwYAJGpfqParqPasbDYsNPGv9PKtM69n9fNtd7VvdS/opV3WLSdeurYv76nl5F0XINtUph7UlxLOE8pFXlYQwCinG68yJmw25uWlWaok3XDp4HUwqXh1bjf1LXHsJFXOBx2Wy+dhWKymYTQvazCqZKihF2Mbj2Oa0eSf2oAj3pRz6h4rYteal85waZ9u6N8qquU49zH9+/T39S5cEgyXjogW0spfmlBuqB7oohjcl47c1s8aVIzfWdOAHVlQp2CWsKgb6OHWr+dcYN0UmBdPoR/bN3VwPLoy+HVurmegXxoQ21oQ2xjPWxiO2RVO2tTPH1qVId5XgA7NiZVSzOaf1XIp3zEp36SglllWT9UTDSCf2/Z0rzq38Xo3sbf0ri3qJConYefrIqQoXq1rIzCt53SzrkAJh4UNjYlSkgwX1EyU0gygmxImYBXlIBYbl9Ce3xww72s3c+42c252M252M240cu2tLuducGk0s6429S+4TcvnxIpOFcAAAAASUVORK5CYII=);
+            
+            
+          }
+        </style><noscript><style>
+          .gatsby-background-image-ebbfpft_depr:before {
+            opacity: 1;
+            background-image: url('/static/6cfec58855f62b92575a320dcdd22888/ee604/creation.png');
+          }</style></noscript></section><h1 style="margin-top:1.5rem;margin-bottom:0">Creating Tokens on Solana</h1><p style="font-size:0.85028rem;line-height:1.5rem;display:block;margin-bottom:0.3rem">November 17, 2021<!-- --> | <!-- -->22<!-- --> Min Read</p><p style="display:block;font-style:italic;margin-bottom:1.5rem">An introduction to the SPL Token Program and Solana&#x27;s account model, complete with a guide on how to create a token on Solana.</p></header><section><h2>Introduction</h2>
+<p>For many newcomers, <a href="https://solana.com/">Solana</a> can at first appear confusing. Terms like accounts, programs, mints, and authorities are often misunderstood, as each refers to something unique to the Solana ecosystem. In contrast to most other blockchains, Solana declined to build on the <a href="https://ethereum.org/en/developers/docs/evm/">Ethereum Virtual Machine (EVM)</a> and instead built its own <a href="https://github.com/solana-labs/solana">Rust-based architecture</a> entirely from scratch. As a result, Solana is one of the most performant, yet least well-understood, blockchains in the world.</p>
+<p>To better understand the intricacies of Solana, I decided to create my own token and document the process for others to follow. My token is called <a href="https://explorer.solana.com/address/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf">BUG</a> and if you can’t tell by its official logo it has absolutely zero value so please do not try and buy it.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3cbea8dc2d837608e5d3b7564d07893c/eb390/logo.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEtklEQVQ4y61Ue0xTZxQ/vXUqM9nmY4YRR5gmc2bRRTcTl2WJOMzci2wz6ow6M1hijCbE+WI6nWZOFAWES3ndvgvtvS2vW0uhDwpUQVChFURWBqjFCCpgBdTRxz372rlsccz9s5P8ku/77jm/73e+c88B8xVEzjnCtQ4hWG/Zpkhdn4ikV+JB2h4Pis6Ev0P05/ope5HgvSdrEfCXJpAxdifoGu6Bvum6uLB1VYRsEkKYhFD0NDvITL1f2boQrj5EESJCUdsqyGr6AmbP/eN7djctkg+rKMWIUlw0KKN+bk6DsN9TpH8RpxyVwjnTEMXLiynzyctU6foxkJQY4MDZQ8AJZeLjLSdAPqwEpU8DhbelkZiiATl1G/2RtXUtiioOtlLmPAdl3P+LCKLnxcTqtrdDNWMDfkc/5AMCy2vEYWcOS+GY/dTLOd2SD3P78tZne3KXh88LBxkoHa4WI/HVr0Dg93qgKtsJlTu8kUsSWnbjfOPJ8wkVyQNLTgM+X84pImkV9DMHlePKYTbEIes3YPEjLcpH5Zdoj+Rd3QAP9EkUcSvwdX5Xz2pT2sVEQvga2JiGZIc7c7Su5yd0dKQ/tjcwl41HLCsVo6ozEm8+5rjkqBk1BFlkgwqfJpTdKkPlQ41f4iz+yJzanlxTZqi3N+a5Ha5Mt9WolUGVjY5rxcXRLoyd5cIZ0T0Y+6r6Kr1X49eiqb8hOD6Eof4bj1DbaxZc3ptCyIcT9Z4OlA6prp1gEqOKP70PNYwVquh6YN8ixSIPudRcYD9szq378eyplm/sgDNVD3QydbAY2zpuBTzt17DH4xHa7KNCs/WqUF9fjd7O8aDqrgElnbKE6m19H5illtMkPskQjy8AketwPtjlaBhLoc935u3Zs3H/hoIbzDUtsugYdIW2rNspRMfFYIXHiZJCTvh2417B7L4U0iKHymYuvZbTbau7dfiQrZ75riLpzkIo33QfmnADrAWcnkMUh4shuVlwUS+UYQmWBLnHvJDpzhByvMewLGgSjP5a1ApsUBfQI30v+8vKmkpwWJlIyto4QsCn9L1ps6iaatuy7luq1W57+vkURTdL64hCttvq53xnkdRWkA7kCLoAR67QCVywlFRc95tUYvvYcsa51Vxo316+ZWSB8YcOgOoi2xqnb/fXzbju7XO4aWFLYPOcNP54rHpCfVd/3Yr6o/0T3LmmICdUhlUF2IDBH1bH3JHTOpKVtaZkjcOdkWvhdYbSzwLzoU7ihkZfKnRhErDez2HrztmguaOGTDf9vjqoGmGHjUgIkfVVEs161E5wKBtSli9bs3RqwRETOHgWargyuIjxUcb9XXMg7pUF01cmvhG16J25M+bEzHhpWpR41hiOU8q7JXCk8sQ8xleUoULFBfV4iZu0X43kRsHW8Dvv41OhiDdQteUcZSkzTGnEzeSP6frHrHiOICbc7E68QB1vPEXaTxsp1LLVy6f9iteBDIjI/nRHlii3Lx/UXbKIwtq2TDDu88CkFg7w4m3I9tAiLlQqDu8XJywBD/ZSzKBMHJ44GR1ZQPfmTRov+tfZ9sRSTQfg2IU0SMpJjqT6fdVBeJZNI5hKMIVgJsFc+J9t0bPU/pf9Ds2I2123CLCHAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="BugLogo"
+        title="BugLogo"
+        src="/static/3cbea8dc2d837608e5d3b7564d07893c/fcda8/logo.png"
+        srcset="/static/3cbea8dc2d837608e5d3b7564d07893c/12f09/logo.png 148w,
+/static/3cbea8dc2d837608e5d3b7564d07893c/e4a3f/logo.png 295w,
+/static/3cbea8dc2d837608e5d3b7564d07893c/fcda8/logo.png 590w,
+/static/3cbea8dc2d837608e5d3b7564d07893c/efc66/logo.png 885w,
+/static/3cbea8dc2d837608e5d3b7564d07893c/eb390/logo.png 935w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>All in, it cost me a grand total of 0.0035 SOL, or $0.75, to create BUG and mint myself one billion units. Sending BUG between two established parties costs less than one-tenth of one penny, further underscoring Solana’s potential to let everyday people interact with one another on-chain.</p>
+<p>My goal in writing this tutorial is to help others gain a better understanding of Solana, and in the process deliver a practical guide to creating tokens.</p>
+<h2>Overview</h2>
+<p>This walkthrough does not require you to have prior coding experience, but it does assume some basic understanding of how to use a <a href="https://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface (CLI)</a>. We’ll cover three main sections:</p>
+<ol>
+<li>Creating our token via the SPL Token Program</li>
+<li>Adding an official name and logo to our token for the rest of the world to see</li>
+<li>Interacting with our token via transfers, burns, and account freezes.</li>
+</ol>
+<p>In each section, we’ll go over the concepts behind what is happening under the hood, with the goal of gaining a better understanding of how tokens work on Solana.</p>
+<h2>Creating a Token</h2>
+<p>All tokens on Solana, whether they are fungible tokens or NFTs, are created using the <a href="https://spl.solana.com/token">SPL Token Program</a>. SPL stands for <a href="https://spl.solana.com/">Solana Program Library</a>, and is a set of programs (aka smart contracts) that serve as core building blocks for the Solana ecosystem. </p>
+<p>If you’re familiar with Ethereum, you can think of SPL tokens as a token standard such as <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20</a> or <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-721</a>. One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, it simply requires you to send instructions to the Token Program and it will create and mint tokens on your behalf.</p>
+<p>We can interact with the Token Program in both on-chain and off-chain applications via <a href="https://crates.io/crates/spl-token">Rust crates</a>, <a href="https://github.com/solana-labs/solana-program-library/blob/master/token/program/inc/token.h">C bindings</a>, and <a href="https://github.com/solana-labs/solana-program-library/blob/master/token/js/client/token.js">JavaScript bindings</a>. For the purposes of this tutorial we’ll be using <a href="https://spl.solana.com/token#command-line-utility">Solana’s CLI Toolkit</a> which is the easiest and most straightforward way to get started. I may explore how you can integrate the Token Program with Rust and JavaScript in a future tutorial.</p>
+<h3>Prerequisites</h3>
+<p>Before we can create anything, we first have to install the necessary command line tools. Namely: <a href="https://docs.solana.com/cli/install-solana-cli-tools">Solana</a> and the <a href="https://spl.solana.com/token#command-line-utility">SPL-Token Library</a>. I’ve linked to guides on how to install them which include installing their necessary dependencies such as Rust.</p>
+<p>You’ll also need to set up a <a href="https://docs.solana.com/wallet-guide/cli">command line wallet</a> and fund it with SOL in order to pay for the creation of your token. For the purposes of this demonstration, I used a simple <a href="https://docs.solana.com/wallet-guide/file-system-wallet">file system wallet</a>. Make sure you properly backup your recovery phrase.</p>
+<blockquote>
+<p>🚨 WARNING: This tutorial covers using real funds on mainnet. Do not fund your wallet with more SOL than you are willing to lose.</p>
+</blockquote>
+<p>Section two of this tutorial (Naming and Logos) is only applicable to Solana’s mainnet. If you’re not already familiar with using the command line or recovering a wallet from its seed phrase, I recommend skipping this section and following this tutorial using fake money on Solana’s devnet. I’ll cover how you can switch to devnet later on in the tutorial.</p>
+<p>Before proceeding, you should be able to run the following commands in your terminal:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana --version
+spl-token --version</code>
+        </deckgo-highlight-code>
+<p>I created my token with the following versions:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana-cli 1.7.14
+spl-token-cli 2.0.15</code>
+        </deckgo-highlight-code>
+<p>You should also have already set up a command line wallet, whose address you can check by running:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana address</code>
+        </deckgo-highlight-code>
+<p>At the time of this writing, my setup runs on MacOS 12.0.1. For the purposes of this walkthrough, I won’t be covering anything related to other operating systems such as Linux or Windows.</p>
+<h3>Understanding What our Address Signifies</h3>
+<p>One of the most important concepts to understand in Solana is the <a href="https://solana.wiki/zh-cn/docs/account-model/#account-storage">account model</a>. <strong>Accounts</strong> can be thought of as storage buckets, capable of storing nearly everything Solana touches: from tokens such as SOL and SRM, to a program’s state (e.g. integers, strings, public keys), and even entire programs themselves. Every account has a specified owner, and a single owner can own many different kinds of accounts. In addition to its owner’s address, each account also has its own address making it easily identifiable.</p>
+<p>To make this all a little easier to follow, I completed this tutorial using vanity addresses that are more human-readable (NB: Vanity addresses are entirely optional, but I’ve added a quick guide on how you can generate your own at the end of this tutorial). In this walkthrough, we’ll refer to <code class="language-text">FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T</code>, or “Friel”, as the address for our command-line wallet. Note that even if you generate your own vanity address, you won’t be able to generate the exact same address I did.</p>
+<h4>Funding our Wallet</h4>
+<p>Let’s go ahead and fund our command line wallet with a little bit of SOL. I did 0.2 SOL, but ~$5 worth should be plenty. If you’re on mainnet, you can send SOL from an exchange like <a href="https://ftx.us/home/#a=1490381">FTX</a> or <a href="https://www.coinbase.com/join/friel_t3">Coinbase</a>. If you want to proceed on devnet, open up your terminal and run:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana config set --url devnet</code>
+        </deckgo-highlight-code>
+<p>And then airdrop yourself 0.2 SOL with:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana airdrop 0.2</code>
+        </deckgo-highlight-code>
+<p>Once funded, we can visualize our main account with the below diagram:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5fed788e7a7dad08a6975ef3c93d2532/6d2da/friel-diagram.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 110.13513513513513%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC00lEQVQ4y+WUyU8TYRTAnwx/ikcP3kz0aky86MEENdFLowYNlK2lpaUtQxc2Y0ChCFUoBFqgC5Q94hKNxgVJNBgNwaLEIKAopRRomTrP98qYeJnyBzDJy/e+me/7zdsBDvZT3v0NyjqiUOKZA3P/rxxbOCHYBreEqsGtXBbWbeFNwdT3M6ewdRa0dz+AzvtVHVh6/zPcuDMDmppHDISqwe09GVJE2Vf4V+HEOR1cNAeBwapPWecCFLS8B03tY8HYu3zc5P+hrRz4XW8JxNwkLaTX0Lt8Q8/SUT5/SlMHRW0f1YHm/jV2B+hCFbmHjtE/6Bj7X2S0j6aR3EZ91+KlCt8qsPuqQGtoM5eE3fVWD+8iSZJEEiMpSRxOZVbap/gbwUzWUJzuxAVVoBhJCs4JBLKu3exfxvKOOcnY9UU2di3IpMsGXjvn09bAL7QEN3SOcaTY7qgD+aNzkoHbHoM3ioVNL6Si5jdyiXsGacXi5mlZe/tl2tS7hJbQpp7PUpKyWEjA6hEJLMG4R6QYVvatSqWt7+TilrcMw7L2WdkW2kiLQ9tIYdFTGPYHkpVAGfWQ6+iaQMkWijEEWcShLdk1iWnnOCIlQ6+UUXYgxZEsjHmUzEoEll17cCSQTJlOc7bNfWt6pTazx1BkC4OxNgbWPkCpfgplBilg1v8BdfsCybpctrByYL27bgrx2q1XydNad9o+Ikm2YEyyBtYZlmKXCWjmn2fNsjUYF8g6oC4xUKxQ43qCJzUNKEYoCf4VNPuW0T6yS/skGnu+59GPOd7qhX2l4RkcO1Og9HX0iBjZuVwzjibKussaSjipVAxG38r50nvzh7ujCIgIeQafeutdvfkczmrbMrrOuwh1DxEanyJwKdlHZXCMUY2GE5mJNLmLmXMXTAF1II+i4vZPUOie5b7OoWEg0DAQOPC2MI+uhMCtVuFbOXS9aRryG18DWXvAhz78BaKnJAuFqrfYAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Friel Account Diagram"
+        title="Friel Account Diagram"
+        src="/static/5fed788e7a7dad08a6975ef3c93d2532/fcda8/friel-diagram.png"
+        srcset="/static/5fed788e7a7dad08a6975ef3c93d2532/12f09/friel-diagram.png 148w,
+/static/5fed788e7a7dad08a6975ef3c93d2532/e4a3f/friel-diagram.png 295w,
+/static/5fed788e7a7dad08a6975ef3c93d2532/fcda8/friel-diagram.png 590w,
+/static/5fed788e7a7dad08a6975ef3c93d2532/efc66/friel-diagram.png 885w,
+/static/5fed788e7a7dad08a6975ef3c93d2532/6d2da/friel-diagram.png 936w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>So far, there’s not a lot going on. The account holds some SOL that we deposited from an external source. It also has an address (in my case, <code class="language-text">FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T</code>) that we can use to identify it. If you paste your address into a <a href="https://explorer.solana.com/">block explorer</a>, it should look something like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ae2564d5fc93b1db8ac7add1f6fe0d10/d777c/friel0.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.21621621621621%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPUlEQVQoz32Sa26DMBCEe4cqgFm/7TXmkZJEan/kAj1DD9L7d4CgkhBF+mSt15qd9dpv0lvpjGLfHAfDYdr+44AK3ia2DRvn5PdV/v7I61lqJYN7K0iAkmqXUIB9Tr5JITcuRWHUDb2iJBEVolpUk/hQV2R1yAnBvMUBggrbpyzKm3hylrVrGCVqozbolW1S3YlRrNLyeDnjbobjnjT03WnsxxErYjhtnCFWBDH3HcajY3gB5lpKmu+1ONMkPn19Dpczjp+aL7g2x49+Ft/fObZZOkvOvAaPd982xIpwUCiqjNqNt9zyXhVLz4/O3LXzwHfYGaPRmuVY0IMzCR46Ho8UXR3shLfCG+ERoNVpJWdV9CbHg9g5Kw5AZzagScD3rRs6g4+ZZhh5Vik8OuNXQV+u2QU8AdhmZurDGv8BMglbufZYpbIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Starting Friel account"
+        title="Starting Friel account"
+        src="/static/ae2564d5fc93b1db8ac7add1f6fe0d10/fcda8/friel0.png"
+        srcset="/static/ae2564d5fc93b1db8ac7add1f6fe0d10/12f09/friel0.png 148w,
+/static/ae2564d5fc93b1db8ac7add1f6fe0d10/e4a3f/friel0.png 295w,
+/static/ae2564d5fc93b1db8ac7add1f6fe0d10/fcda8/friel0.png 590w,
+/static/ae2564d5fc93b1db8ac7add1f6fe0d10/efc66/friel0.png 885w,
+/static/ae2564d5fc93b1db8ac7add1f6fe0d10/c83ae/friel0.png 1180w,
+/static/ae2564d5fc93b1db8ac7add1f6fe0d10/d777c/friel0.png 1555w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3>Creating our Token</h3>
+<p>Let’s make things more interesting and create our first token. In our terminal, let’s run:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token create-token --enable-freeze</code>
+        </deckgo-highlight-code>
+<p>You should immediately see the message: <code class="language-text">Creating token &lt;SOME-ADDRESS></code>. Copy that address as we’ll be using it later.</p>
+<p>What just happened? Recall that if we were creating a token on Ethereum, we would have had to write a new ERC20 contract and then deploy it to mainnet. Here on Solana, all we had to do to create a token was to send instructions to the Token Program. Specifically, our <code class="language-text">create-token</code> command sent two instructions:</p>
+<ol>
+<li>To create a new account (this is carried out by the <a href="https://docs.solana.com/developing/runtime-facilities/programs#system-program">System Program</a>)</li>
+<li>To recognize this new account as a Token <a href="https://docs.solana.com/integrations/exchange#token-mints">Mint</a></li>
+</ol>
+<p>Solana lets us bundle both of these instructions into a single transaction. We can visualize this transaction like so:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3758784940ce310bd892d8bcd496b0f9/ed8a2/friel-creates-bug.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 92.56756756756756%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABYlAAAWJQFJUiTwAAAEs0lEQVQ4y42UC0xTVxjH/70XNx1jOnXGuLk4l2UaFRTZdNPOICr0cdu6SRgkbj5QedQWxRmw2mJV4uaUbWKGDgoU7AOLqIAiOC12tGiNKFQRBEHZw6nTKj4oiGfnksi2uGye5J/v5Oac3/l/33fugcZ6C6nmG0gp/BVa2z1GV/KA1e3vZNdZbgo2l/eCV8J3Z/DcY8M+LzTW21hr7EDagUfQH+rGxoM+UCC2HCHYcpjgcQawcVEgUmMm4FKelGk2cmxzPsc25EgETfkcePUPjfUPpJiuIzm37RXd/vtzKDQyreQhl2r6fbTuYA/WZDeBfX0WQqeNR7IQaMqToqVAhhYjB0+OBBQMesBfwLQDD9mN1NkG292tNBLqjqqLUHhNMyH966YHj4eaRupwVmuBTHbZyCkasiVjrxTKcMEgYS4YpHwEUoztbGphB9Zbb+1M3uMhSZnuR6uzzhON+fq59G3b2eDgYD+paM4LA4a+w6YsixjUWqhourJXTnjRVFW8W/uOMFzMlfaJLzqbXkFo7XwZeups3d5funTF98jmsp6z29OUL0+Z+v4Q4cwZQ0eNfnuwbs3S15oKPr7sMXDkYq6MNOZx2+p2i8af2yMeU58tBi/wXdUWd0JbfO/7NAqkTeihhxB9aY+H/C3l8JkT8YUkgG03yd0/WxW9HRaFj7r0XbMoCHW5+5pZgatmBYuFaYeZBasLEZfhTor92tGts3nvr7fc6NXavEVlHoKn0MmT3+2bu3dMHWYvWDui3jDfWZ/DkQZDn9Mcj4GvpYxFRimB/SzB4lOd2GR7OGS9rXOMtvTBSFlFsR8PaHO3BGgy9QFBIZOHT5ww8VVLScVLJABoKZSXXzUpSDvVZaNsN41oM8lZ6Pd6kW64DdXSMmiLbmLHIYLYQw7EOb7Ezur8EbknrSM/rVuH6XiDCQp/z8++L3MA77k+K3RsgzFG6DFGC89nhY1u3PMRLtBrhBVfObFQU4rVWzsQY/mBebPcD/MKlP5iu/IbrkZ9TVqjahNVJ27+sCiGDUmXgNQSlG6LQr0lDrQG4OF1ZiXqSrRo5Lv8dISVLEZUu1YQfUsPiVNlEpetIOHmJSTctISIK+KJxKXatah1E5aSXQJ+faS+BqeP7/d3Hdvnb6XgykYC/i72D3F1IhPxYzwiquLGcaeSHnO1Sb3iyoTH4qPxPXRO6Le70ZVrxspJJoRRc16kW5iqqqoAp9M5yOVyweFw/POfFjuUjNieCJE9MYQ7pSacU90jPprwRHIs8QnnUj+hwK6Eav0HAwFBSOi04UFBQYNNJpM/bZyAb94zwPDKFQJhfjRmZEUOktaqm6V2JREfie+m6XZLT64kUpfazW8MnjQFEwa+hcDAQJjNZty5cwddXV3PArlaNSQ1KxmJQwnR8Xghhf7GuWmqVHTeFnEsbsrsE8sgOrCcmTRqXD/Q6/XC5/P9C/B0EuZ71kJ2ZpVA8tNKvknDaF2jqBaEFn0WID6phNSlYmTuVRCdSPj/d3G27XPEkm/xyaUUulHNzC2P5evap7CDSyB1qhj5uWREtmogNMY832M7r2I55GeTIa9LBu24gLpiedF0BTRt0MZgblnsfzL+BJiNbFLTbkgNAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Friel creates BUG"
+        title="Friel creates BUG"
+        src="/static/3758784940ce310bd892d8bcd496b0f9/fcda8/friel-creates-bug.png"
+        srcset="/static/3758784940ce310bd892d8bcd496b0f9/12f09/friel-creates-bug.png 148w,
+/static/3758784940ce310bd892d8bcd496b0f9/e4a3f/friel-creates-bug.png 295w,
+/static/3758784940ce310bd892d8bcd496b0f9/fcda8/friel-creates-bug.png 590w,
+/static/3758784940ce310bd892d8bcd496b0f9/efc66/friel-creates-bug.png 885w,
+/static/3758784940ce310bd892d8bcd496b0f9/c83ae/friel-creates-bug.png 1180w,
+/static/3758784940ce310bd892d8bcd496b0f9/ed8a2/friel-creates-bug.png 1972w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>If you take a look at <a href="https://explorer.solana.com/tx/2wAaKQw2vhraXqM8beFkKm3fgG11zpRrVa3V9XYA6eKfgVn2YmKppQCCgsbstRYHgsib9jz97F4nUZy4EsTVM2bM">my transaction</a>, you’ll see that the entire transaction cost my “Friel” account 0.0014716 SOL or ~$0.31. If you scroll to the “Instructions” section at the bottom of the explorer, you’ll see that the vast majority of this fee (0.0014616 SOL) was used to fund the new account we created. This new account is called a <strong>mint</strong> because it will hold all the metadata that describes our token’s features, such as its supply, number of decimals, and the various addresses that have authority over parts of it. </p>
+<p>In keeping with the human-readable theme, I initialized this mint at <code class="language-text">BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf</code> or “BUG”. If you ran the last command on your own, you initialized your mint at a randomly generated address. I cover how you can use vanity addresses at the end of this tutorial. </p>
+<p>Why did it cost us so much to create an account relative to other transactions on Solana? By creating a new account, we’re asking all Solana validators to keep track of the information it stores in memory. To make up for this resource consumption, Solana charges us a time-and-space based fee called <a href="https://docs.solana.com/implemented-proposals/rent">rent</a>, and will close our account if we fail to meet the minimum rent requirements. To get around this, nearly everyone opts to pay a one-time fee to mark their account as “rent-exempt”, allowing it to live on in perpetuity.</p>
+<p>If we had looked up our token’s mint before we actually made any instructions, it would have just appeared as a standard, empty account:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e227a39b0f53dd167ce9701333903607/a4f81/bug0.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.432432432432435%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABGUlEQVQoz32RXW6DMBCEc4cWjNe7/gMbEhLykDxV6nMP0Yv0+B1D00CiFn1aCcuzszvecfDGO9enfBwlBgZhrjekjT5n12fvA79f+OuTP94YXwy72uiKGrLSDn075LkWfOrI2QVtBRdKFTZklG6gAkX8qlXInU9tpVVNTWWaUv/CAH0X40hbhlVjeY2e3cDDec20cbZtnK4X27Uudc/0x3F/nobphHo4T9oJ/O7OxtnhdEQGBvk9gczQXQrB54RZtmIvFKyyrMRUVFek1mC0X16aelFudk7jIfaZnJR4f5AZSytKNGIexdgnjXuOHswt5CaQFdZ1UTGVF1nEAP8YGC3vMm+RH/akrTMWrs0q7cJtjeqfF16xXP4Gzq5K1Ry8k00AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Empty BUG account"
+        title="Empty BUG account"
+        src="/static/e227a39b0f53dd167ce9701333903607/fcda8/bug0.png"
+        srcset="/static/e227a39b0f53dd167ce9701333903607/12f09/bug0.png 148w,
+/static/e227a39b0f53dd167ce9701333903607/e4a3f/bug0.png 295w,
+/static/e227a39b0f53dd167ce9701333903607/fcda8/bug0.png 590w,
+/static/e227a39b0f53dd167ce9701333903607/efc66/bug0.png 885w,
+/static/e227a39b0f53dd167ce9701333903607/c83ae/bug0.png 1180w,
+/static/e227a39b0f53dd167ce9701333903607/a4f81/bug0.png 1508w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Now, after telling the Token Program to create our account and initialize it as a token mint, the network will recognize it as a mint:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a2d3eb72b610b6c9f15056409dcd6718/d777c/bug1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.21621621621621%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXUlEQVQoz3WSbW7DIAyGd4iGJmBsCF8hpOladX96gZ1hB9n95yRNu2ad9AhZhtc2tt+gNWAJg+vGgYKD1k6eG2xb7VoTg0mBrIXPK3x/wfUEqMHZN6EaplKSQrDR2xTaLrousd2QvoErGhQoIetFNYl3jaAQ/cc1DbmNoVrv2HjJcnsTV7IBkrk4aahBtdc36hUBUijJJzuVwSexUPUeVD4ebYr8Q/Jug+9zKL3PXToM/XHcT7EemWsOP5ze21mM3m1YxC53+TiOl8uTmOHMh/OZX7wUm9Lh2BNz6Kl0f8RacT08ErCPCd3B6DGFBUqBM20yS6684pMHY7BG+K/Vu1pUv0cl5j/HoYSSeTeUNXPbYZ4trGiOKAnRtZtuT7Rd8iVLg9NT0pMxb4gkrQzxhNjDu0jRb8VcNuWEJWEfMS8kM2RTMtuUmEC8pDno7IWU28yPHVyZmmfpr/8u+QGY3lzw2I+5cwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Tokenized BUG account"
+        title="Tokenized BUG account"
+        src="/static/a2d3eb72b610b6c9f15056409dcd6718/fcda8/bug1.png"
+        srcset="/static/a2d3eb72b610b6c9f15056409dcd6718/12f09/bug1.png 148w,
+/static/a2d3eb72b610b6c9f15056409dcd6718/e4a3f/bug1.png 295w,
+/static/a2d3eb72b610b6c9f15056409dcd6718/fcda8/bug1.png 590w,
+/static/a2d3eb72b610b6c9f15056409dcd6718/efc66/bug1.png 885w,
+/static/a2d3eb72b610b6c9f15056409dcd6718/c83ae/bug1.png 1180w,
+/static/a2d3eb72b610b6c9f15056409dcd6718/d777c/bug1.png 1555w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>A few things to note:</p>
+<ol>
+<li>Right away, you should notice that this mint is for an “Unknown Token”. This is expected and we will correct this later on in the tutorial</li>
+<li>Our mint already comes with <code class="language-text">Mint Authority</code> and <code class="language-text">Freeze Authority</code> fields. By default, our “Friel” account is the Mint Authority for this token because it paid for the mint’s creation. If you recall back to our last command, we added an <code class="language-text">--enable-freeze</code> flag which also gave our “Friel” account the authority to freeze tokens. If we had not added that special flag, our mint would not have a Freeze Authority and we would not be able to add one in the future. More on that later.</li>
+<li>The token currently has no supply. Remember, the mint account just holds the metadata that describes our token, it does not hold the tokens themselves. We haven’t actually minted any units yet that we can send around. Let’s change that.</li>
+</ol>
+<h3>Minting our Token</h3>
+<p>It’s time to make ourselves billionaires. Copy the mint address you just created, open up your terminal, and run the following command:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token mint &lt;PASTE-YOUR-MINT-ADDRESS-HERE&gt; 1000000000</code>
+        </deckgo-highlight-code>
+<p>You should be met with the following:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">Minting 1000000000 tokens
+  Token: &lt;YOUR-MINT-ADDRESS&gt;
+  Recipient: &lt;SOME-NEW-ADDRESS&gt;
+Account could not be parsed as token account: pubkey=&lt;SOME-NEW-ADDRESS&gt;</code>
+        </deckgo-highlight-code>
+<p>What’s that, an error? Yes. Sorry to lead us astray (I won’t do it again) but I can’t pass up a good teaching moment.</p>
+<p>We just tried to mint ourselves a bunch of tokens, but the recipient appeared to be some new address we hadn’t seen before (not “Friel”). Furthermore, the transaction failed because the Token Program told us that it could not parse this new address as a token account. What’s going on here?</p>
+<p>On Solana, our token balances are each stored in their own unique accounts. These accounts are called <a href="https://spl.solana.com/associated-token-account">Associated Token Accounts</a>, and their addresses are derived from the addresses of their owner and the mint itself. In my case, I derived <code class="language-text">Et3bNDxe2wP1yE5ao6mMvUByQUHg8nZTndpJNvfKLdCb</code> from my main “Friel” account. The issue is that when we asked the Token Program to mint us some tokens, it derived this new address but did not recognize it as an Associated Token Account for our newly created mint. Instead, it just appeared as a standard empty account. Let’s go ahead and fix this with:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token create-account &lt;PASTE-YOUR-MINT-ADDRESS-HERE&gt;</code>
+        </deckgo-highlight-code>
+<p>Here’s a quick visualization of what just happened:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/9ff134d16c0ee4da0488947891a4356d/0faf1/friel-create-ata.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 98.64864864864865%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAE4klEQVQ4y5VUC1CUVRT+/v0To1ScsqzpYTqlleULJTUfmRrPfUBqOTYJ4xM0S4QUWB778AmkLoqawD6BZWERYUkEp1AUEZV2mV2F3QVcdDIVEIQAhbzdf2ucaaaYOjNnzv3/mfvd75zznQP8Dzt3YClSN87ArjXT0Kji8xwaAevQ8FlrZiBj1/BhV/OBBOMDt8fltSGxsAdiw30mwdiN+IIu7K0g2HWKIEJx5Qng7nXTIQmdikZ6uVkngFMrAAV0f7sBo9U3EZH2M1IrCeLzOzlAd1wtP43IDAciM52QH9QhafUU/JiyGKQ/Guodc3kNqiBfCvY5ZbiyPiPwresqPhpUfAafbjkMQgj2lBNsy2h4OlrZPCZK2TSykv7bpLiMVdvVeNHLA3N8pqM6zQ9lexdh0msjeTdyhPYbOSLiyhURChp1Sy9Ca66IRVJRHy/pRC/E+ffDpcWP7stMv3dKSwZ6afrKwj7ifoyzjxfORX3eJqYmPciz+uDi561ZfGtVWiC5fDSIAgoiWymgUytkIdbfYcV592iaHUdjdbfIDq1rMEZ3k8QbOmwc2IdLPsOmdV/wMDwKS8eDbckWVN/Uix66coSP7BpBd5NO+Oi6MiicRlDnIcHQzibRZiQau/fHaFxka/rV/m+VDpJo7KyzXa18Zv6CheNmzZo5edI7741THpK9YNeGOG1ZfGJTCsg1JV9Se/iT0ebvA0bVHw+AhTpkpkFWahqkqfcqdv5AiLz0cS/tLBfNcQHgLfhoidfsD3zGvj156mhp5Kpnm7NFzuZsIWnJFj1uyRZ20lT7aIc3unKFoKx5WBGTzwaEp2N96sWUiLQ6IjnRQxLyOyjDB7WDf9Xv1Vdegs+M97H+OVBpBPk1aflhtIY36jOeMI1s1AjRoBaw2JhSi9DEcmxIrhkTrXIFS4xt4XH6tpVxho43pVk1mL/tHBMWn8OIwmIZi2o56o/7g1jWcvVqpAxJs05IqFyi6BmUOYswyRks/0aPUNlZRGc0Yr6CYMI+NzMPVfJmD47k3pIu8BNrcGS/DPcKBLwz3/kPs6sD/Z05y8Oc2cvW2DJ8Jzap/UDlw2BD6iV8KTmNzYorzNasVjbe2MMeMzk83p34xlOxmeZRR09emxSrbfHiOv6V4iLWRiW7pdSgDwVZA5AtgCU3AlbjNoabmidWVVUFi8VCm9PPk53soaP34Guqy265abCH6rKf6jJTcZUgq5kwhzLzQJYBtRW6kbXlmhFp9AHDHQJunv8GaDabIc69zYr1dzldKmO0rYT6ABfjDe3mYiuBouQ2wzHs6uri7nieP3/ek7vL+T8aJ3TaZSQUdKVvVzmpLuv6o7PsRFrYWVdwZPuIKdO8X/f2njlx3rx5LzscjhFFRUXskIBUf6y8lEBysu+YrGSASIsf9lKtErlp4ArHbJEgbJi3zxyPkJAQtr29nbFarRgS8MDZOjbtQjVSymyKfWVOEqP7leqynSSd+K1Ka/lztsePHY7g4GC0tbXBZrMNDbjn1DWkVNRCXnhpzM7Su8KEgu7VdIGsEOd3TpCUchvJjpk+s+Hr6wuXy+V+4F/BONv/Ux0OX6hEsukC9pX/QrvdDUnxQ7qEe7CbLtydZQThBy//9zUvL7FjV6kFUmM9ZMV3WCofli4OVmzoYGgtQaU0JOAfYa3HDza/Qt8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Create Associated Token Account"
+        title="Create Associated Token Account"
+        src="/static/9ff134d16c0ee4da0488947891a4356d/fcda8/friel-create-ata.png"
+        srcset="/static/9ff134d16c0ee4da0488947891a4356d/12f09/friel-create-ata.png 148w,
+/static/9ff134d16c0ee4da0488947891a4356d/e4a3f/friel-create-ata.png 295w,
+/static/9ff134d16c0ee4da0488947891a4356d/fcda8/friel-create-ata.png 590w,
+/static/9ff134d16c0ee4da0488947891a4356d/efc66/friel-create-ata.png 885w,
+/static/9ff134d16c0ee4da0488947891a4356d/c83ae/friel-create-ata.png 1180w,
+/static/9ff134d16c0ee4da0488947891a4356d/0faf1/friel-create-ata.png 1956w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>If we take a look at this <a href="https://explorer.solana.com/tx/D93obissbSVsZpgpRBNrD8HWNBbpyd7yJAAoHce4AZrqw2nrLP43eVBo7eg7CwotpTBxyp6ExXxHjHLqgsMMrfb">latest transaction</a>, we’ll see that we are once again paying a relatively large sum to make this new account rent-exempt. In my case, I paid 0.00204428 SOL or ~$0.44 cents. Looking at this newly created account on a block explorer confirms that it is indeed registered as a “Token Account”:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4ce60accde3e540f4117cbdad19ea225/d777c/friel-bug-account0.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.21621621621621%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABP0lEQVQoz3WSW3KDMAxFu4e2PIws2fiBbQIMzV820DV0Id1/BSYJIenM+cDSXAld6Q1aBZqka7vhRM4szzuakaZV3qnOkdbwfYHfH7jMgBKMfiuamikboT0XcG3wjAlee1uT3MArEhpoClFl1SL+FBUoYsFHXa5PTnC64vgz76LMyk28dAbBDcm2guQOvLJFGoVozIOY61WyGc9n1yfOkbUH2I5+mphhnoevmTs9iGsEEwPbg9Y8o09JTb0akxp77GOxFzPcOU5jd+rlau8B8g67DRV8yZ4dZuaRSoQK4TbSHbZ3ZfFsMXXndrHO7IdkU+T18givkFyXzUPTHt1m2tixYULhjbxk/mg05QiXVs6+WBUFjylg6jD6DKVAfcDoKE/rHUUHwRZCHDtvN0R38nnuI5kXv72Y8c9VHbhJ/gDULFrQ6EGbWAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New Token Account"
+        title="New Token Account"
+        src="/static/4ce60accde3e540f4117cbdad19ea225/fcda8/friel-bug-account0.png"
+        srcset="/static/4ce60accde3e540f4117cbdad19ea225/12f09/friel-bug-account0.png 148w,
+/static/4ce60accde3e540f4117cbdad19ea225/e4a3f/friel-bug-account0.png 295w,
+/static/4ce60accde3e540f4117cbdad19ea225/fcda8/friel-bug-account0.png 590w,
+/static/4ce60accde3e540f4117cbdad19ea225/efc66/friel-bug-account0.png 885w,
+/static/4ce60accde3e540f4117cbdad19ea225/c83ae/friel-bug-account0.png 1180w,
+/static/4ce60accde3e540f4117cbdad19ea225/d777c/friel-bug-account0.png 1555w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>With our token account now properly configured, let’s try minting ourselves some tokens again:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token mint &lt;PASTE-YOUR-MINT-ADDRESS-HERE&gt; 1000000000</code>
+        </deckgo-highlight-code>
+<p>This time, we should see our transaction go through. If we pull up our “Friel” account in a block explorer and navigate the “Tokens” tab, we’ll also confirm that we now own one billion tokens. We’re rich!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ab60263bdb5a7a99dc003dac47d3f0e5/5ba90/friel2bugs.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 74.32432432432432%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsTAAALEwEAmpwYAAABeUlEQVQoz3WSCY7bMAwA84hurIvUQZ12ru4CbR/QN/QJ/Ut/XWqVOIjhBQayLWtIidQBKHQSLe83qtUEvzJ+YSTfaocI/vw2//7CrxtYC5EOk1EDJB9KDqVQLaEWn5Ny9gWLirypaUI9lMNRyzclBOrYigAjjBKgO0Ydlbij5R1+l8/Pw3hwGKpZOzt103TQyAcca1rhoBuZk8/XC7WKRDbGVygtc7temOV2zadlR67nU5zbqNAGlxPXgqvA5ny77siXj/fvP3/01SluiTQqb2uJ52Xd+VOOrbrUK6y9+4rRv23mDijlUFjgQF8ip29y2tl2Xlo7n9jv/bTwOb4gEJCCS3FHxsSnJcmyt527/zkiGO+4bGNmR3Yl2VZ08iYTo73ltg/YsYm4HRgDBL8j8yXxKY5rKIyWnC04NoE4kJNgeM/ccx7fHnfuWTBDgRPinGzNpmbMkW8FzQ1bwZahJijJlMhrjptWMZLP47CfeWARYu+tWmcerMp/nupq1i2VvyIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Friel minted bugs"
+        title="Friel minted bugs"
+        src="/static/ab60263bdb5a7a99dc003dac47d3f0e5/fcda8/friel2bugs.png"
+        srcset="/static/ab60263bdb5a7a99dc003dac47d3f0e5/12f09/friel2bugs.png 148w,
+/static/ab60263bdb5a7a99dc003dac47d3f0e5/e4a3f/friel2bugs.png 295w,
+/static/ab60263bdb5a7a99dc003dac47d3f0e5/fcda8/friel2bugs.png 590w,
+/static/ab60263bdb5a7a99dc003dac47d3f0e5/efc66/friel2bugs.png 885w,
+/static/ab60263bdb5a7a99dc003dac47d3f0e5/c83ae/friel2bugs.png 1180w,
+/static/ab60263bdb5a7a99dc003dac47d3f0e5/5ba90/friel2bugs.png 1604w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2>Naming and Logos</h2>
+<blockquote>
+<p>Note: This section only applies to tokens on mainnet. The steps outlined here are subject to change and do not cover other registries such as the one maintained by <a href="https://docs.bonfida.org/collection/v/help/tokens#token-name-registry">Bonfida</a>.</p>
+</blockquote>
+<p>So far, we’ve been working with our new token mint “BUG”, but Solana keeps referring to it as some “Unknown Token”. Let’s go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on <a href="https://github.com/solana-labs/token-list">this GitHub repository</a> hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.</p>
+<p>First, head on over to the previously mentioned <a href="https://github.com/solana-labs/token-list">GitHub repo</a> and click the “Fork” button in the top right corner. This will create a forked version that lives on your GitHub account (If you don’t already have a GitHub account, please create one now). We’ll be using this forked GitHub repo going forward.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7eeb078d598d9cc06d89f2d181950240/7db30/fork.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 25.675675675675674%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0klEQVQY0y2PyY6EMAxEuff0QjAmTuKs7A0zHPr/v62NGKkcJY6eq1z168HlTWFSXQAd0rj7ssZhE3WuKH02gQKYKM/OZrRZ2zykIQy/lUJGv2B4I48thUdDTxEYOV9gLsn9dmvRRJEMMppnFxGoqoEAjbap6Vg+hL+AurXCaC6Gex0L/iUg/1T0P73Ge91VPy98KJ2mI44b58WXhXwvcerWNcg2TJzmtOz+s3KZ6UyetMvCn7DUCY+7tMRNMJdmMbxCoknX2mQKhA3icVeCnbaiLwVGHz3azGFBAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Fork the repo"
+        title="Fork the repo"
+        src="/static/7eeb078d598d9cc06d89f2d181950240/fcda8/fork.png"
+        srcset="/static/7eeb078d598d9cc06d89f2d181950240/12f09/fork.png 148w,
+/static/7eeb078d598d9cc06d89f2d181950240/e4a3f/fork.png 295w,
+/static/7eeb078d598d9cc06d89f2d181950240/fcda8/fork.png 590w,
+/static/7eeb078d598d9cc06d89f2d181950240/efc66/fork.png 885w,
+/static/7eeb078d598d9cc06d89f2d181950240/c83ae/fork.png 1180w,
+/static/7eeb078d598d9cc06d89f2d181950240/7db30/fork.png 1494w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Once forked, head back to your personal GitHub page and locate the newly forked repo. This is where we’ll be making our additions. If you’re not familiar with <a href="https://git-scm.com/">Git</a>, the easiest way to add your token is to open the forked repo with GitHub Desktop like so:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/bf12f708906e9302888982a62f0b2338/25c1c/open-with-github-desktop.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.67567567567568%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABh0lEQVQoz11S23KbMBTktUlrg0F3IYGQxEUYcOKZNpOfyGP//0u6BrcPndnRrHTue5Sl268+bUK3yvoLqwuqmXb9/N4Nq+uX4XoP0w1guqPK/YesEo2Ob2r4yf0bkc3pwk+lqLgpWQ0QYUte43ouxcO0A/xABg/lUmlm2i4XZnabPDx+FOx7TsFBzuUzJt/fX3P2krOsKLk1DifXLepcqCbSIiNV7VGcPYihsq24rYSlskFGcSGqJNmjk4JiVBsSDPAoqAIpiHo5Va9nAqDUt1MlTNeEpN0Y/HT/Wpfft+zoLSeqGxbrUxtn6HRgv16ljdAmjGvtRmkC152ouxj8ELtncMmNDVfVRGkDr/0/COPRMMh2/5xuHz69w62Ji3GJa78HnwmRLWwuzkiMEbAzjAfxEYmyXLVDmJZ+Xscrttf5JJseojwrF5VE29L4Q16cGNu4AS/cxmjcZ1qWtM3TusVxkvVDP2H/BhOlbNRNhOB4AbBbVD7WCz6M2zouvm6VbNj+Q/BB/gDr0ELZ7g1SYgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Open with GitHub Desktop"
+        title="Open with GitHub Desktop"
+        src="/static/bf12f708906e9302888982a62f0b2338/fcda8/open-with-github-desktop.png"
+        srcset="/static/bf12f708906e9302888982a62f0b2338/12f09/open-with-github-desktop.png 148w,
+/static/bf12f708906e9302888982a62f0b2338/e4a3f/open-with-github-desktop.png 295w,
+/static/bf12f708906e9302888982a62f0b2338/fcda8/open-with-github-desktop.png 590w,
+/static/bf12f708906e9302888982a62f0b2338/efc66/open-with-github-desktop.png 885w,
+/static/bf12f708906e9302888982a62f0b2338/25c1c/open-with-github-desktop.png 1047w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>In GitHub Desktop, choose to “Clone a Repository” and then find your newly forked repo.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b0ad637a38516d746d93d2391f42b765/3d22e/gettokenlist.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.56756756756756%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACZUlEQVQoz1WSyW8TMRTG5w9IWtLM4mVsj8fjbdZMtknSDrSAoCqFC4eqEtCKI1cE4gISXFkkLvy9OKnKIv306ZOsz35+73lt3kpYi3hF456iIwoPiQM4NjvWt6wIWFLYMbQi0YyCRbP31htjEBEWxXEU4xDjACGnPoI+BDvg1u9wRyzLhDWQ0jGI7N61hxgzeZWXtS1qU0xmq37e9SqfZLaRTk0jdL1V0zBhpK2EKVOVBzA2wyvPx3FIVECkH2fMzqvliZn23M6KZlHP1qqccl3pcmaqOWaCSyN0jmjqQ2SG195IdndOPg7793v9h3RyLGxLsoZnhqXSkQjFhXamnCxcZuSHfoTcFYBQM7j2okSwqif5BtsOnX7u33xdvv505+zn+Pz7+PzHwY7xk2+jZ7/G9dMw9EchXq4Pmcj04MpzreJCUi4oz2h93yxP9OIunZ6y6eO/tI/4/BxmkwDAgxCtNj0T0gxeeQHGMZM0VQ6hy0wXmSqkzv/HKlviJAsAPghhtwvbwUsPJ0lRz1ySS8tNm9pW5I7pDVkxc7hGiGKOEn0bPuJS5cMXXohj10YQMxBTmTf1bOMmpPJWFa0zqa64LJSt83rb7QDiUQA2/bGu6mJw6QUI+yB2jAF2ZdfTrpgsimZetkunqS6ZqlXbV90DtyJ/XpZuK4YXHiCMyYKrMpHF9h1VusFuja5MvWjaOe2eo7Mv8OE7mNgAoFEI10f3bNW0LhzFFDNJUk1ShVmGmPgDJNz9JcJueRNHiEiAXI3YJXHCu/0Lzy1aAMhN5SEg/xJslUaAAbhjaxJHGFGI+Hr/8jfa23/c530QXgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Get Token List"
+        title="Get Token List"
+        src="/static/b0ad637a38516d746d93d2391f42b765/fcda8/gettokenlist.png"
+        srcset="/static/b0ad637a38516d746d93d2391f42b765/12f09/gettokenlist.png 148w,
+/static/b0ad637a38516d746d93d2391f42b765/e4a3f/gettokenlist.png 295w,
+/static/b0ad637a38516d746d93d2391f42b765/fcda8/gettokenlist.png 590w,
+/static/b0ad637a38516d746d93d2391f42b765/efc66/gettokenlist.png 885w,
+/static/b0ad637a38516d746d93d2391f42b765/c83ae/gettokenlist.png 1180w,
+/static/b0ad637a38516d746d93d2391f42b765/3d22e/gettokenlist.png 2010w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>There are two places where we must add information about our token:</p>
+<ol>
+<li>In the <code class="language-text">assets/mainnet</code> directory, create a new folder named after your token mint address. In my case, this would be <code class="language-text">assets/mainnet/BUGuuhPsHpk8YZrL2GctsCtXGneL1gmT5zYb7eMHZDWf</code>. Once created, place your logo within this newly created folder and name it <code class="language-text">logo.png</code> (SVG format is also ok). Solana will crop your logo to a square, so make sure you design it appropriately.</li>
+<li>Locate <code class="language-text">src/tokens/solana.tokenlist.json</code> and open this file with a simple text editor. In this file, locate the <code class="language-text">tokens</code> array and add an object that describes your token like so:</li>
+</ol>
+<deckgo-highlight-code language="json"  >
+          <code slot="code">    {
+      &quot;chainId&quot;: 101,
+      &quot;address&quot;: &quot;YOUR-MINT-ADDRESS&quot;,
+      &quot;symbol&quot;: &quot;BUG&quot;,
+      &quot;name&quot;: &quot;Bug&quot;,
+      &quot;decimals&quot;: 9,
+      &quot;logoURI&quot;: &quot;https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/YOUR-MINT-ADDRESS/logo.png&quot;
+    }</code>
+        </deckgo-highlight-code>
+<blockquote>
+<p>🚨 WARNING: Do not delete or modify any existing info in this file. Only commit additions. If you commit any deletions, your merge request will fail.</p>
+</blockquote>
+<p>This is the part which will cause the majority of issues. Solana Labs uses a bot to automatically test and merge updates to the Token List without requiring human review. To avoid any issues, it’s important to take time to ensure that you are not committing any deletions or potential syntax errors. The two mistakes that trip people up the most are:</p>
+<ol>
+<li>Leaving a trailing comma after the last field in their JSON object (i.e. ”,” after the string in “logoURI” above).</li>
+<li>Letting their formatter delete the last line at the bottom of the JSON file. <strong>DO NOT DELETE THIS LINE.</strong> If your IDE is giving you a hard time you can always use Mac’s built-in TextEdit app.</li>
+</ol>
+<p>Make sure you update the JSON fields with your relevant information. Namely, replace <code class="language-text">YOUR-MINT-ADDRESS</code> with your actual mint address in the <code class="language-text">address</code> and <code class="language-text">logoURI</code> fields. Be sure to also update <code class="language-text">symbol</code> and <code class="language-text">name</code> with values that you want. <code class="language-text">decimals</code> is by default 9, and <code class="language-text">chainId</code> should remain the same. If you are worried about adding more fields like <code class="language-text">twitter</code> or <code class="language-text">website</code>, you can always come back and make more additions later on.</p>
+<p>In GitHub Desktop, double check that you are only making additions (only green, no red!). If everything looks good, write a simple commit summary and commit your work in the bottom left corner. Then click “Push Origin”.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 494px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6d0585642ffa71bea5f665ec8822d0d5/d72d4/commit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 83.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsTAAALEwEAmpwYAAABu0lEQVQ4y52TzU7bQBSF5zEotuOfGdtjz4zjSYJNjAOkKUUpbZO22GTZbGgjoS66rhCbkkjdIhaV2kg0tAveg+fiOlk0LHAbpE9XR/Y5niPdMaJCVrCLKXNFja6CyyWqJZ2X+TB51nNZaPuhw6TDignvSgCPH0Zo/+j48uZ2ePqdMnHw+u1uZ7/7qr/Tea5UrHXNfIg1RTdtDyXt7qezi73BCeUyqG9yGS2m7VdLIF7gVRtI1JuabpnEgUeYCkKDYnrBvPyDgLmoDYdsJNtx2q7HabP1FITLq+sVS9FxCdDcdHzEwkgnFFNuOQy7zHJ8g1DNtMtRdYxdXoThS6pBllkhrBr4n+6SMHlsWEZPVAOaPyYM6xIygiWvdP7f2mFjU4QNpWKouvWfKJoB20FhlNqegKUv3fiaAxSXfC54jTBpM3nvx+CSyQ0U7GS4PyH9MemdA7h37r8bs8MJzwpA+IfjcDAJ8snCMOcrfvON7o0Q77xXj660/KeWTwElm1aHV1uj663RLD7+1fw4iz/MXnz+s3tybQym6tyjZT/UwW988AUFcZttZ8v4rcxrZTQtZiEWOs3u23KRdO8AXEe9FRg+gJ8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Commit"
+        title="Commit"
+        src="/static/6d0585642ffa71bea5f665ec8822d0d5/d72d4/commit.png"
+        srcset="/static/6d0585642ffa71bea5f665ec8822d0d5/12f09/commit.png 148w,
+/static/6d0585642ffa71bea5f665ec8822d0d5/e4a3f/commit.png 295w,
+/static/6d0585642ffa71bea5f665ec8822d0d5/d72d4/commit.png 494w"
+        sizes="(max-width: 494px) 100vw, 494px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d91a7d9ecdb047e0bfb2c37624642b19/f1901/pushorigin.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.83783783783784%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABwElEQVQoz3WS626bQBCFI1VV1R+5NE7TprITE3PZC3sBlmUBL4bYURInbS5qqyqJK/U5+gZ96g5Ccu3IlT7QwJ7DHEaz5WIOeEQQkXZQqQEXi1PEXhKEnb5jC64RYkEYza4+X17fTi+uzy+huIvSgkoVyhRgseaxJkLZ5hzzGPT/zC1E0GRMVeUL45DEIcrj2uMZPAYyx1EBd5/GzcWXgKs1s4e5g8SBvOsXT/38cWgXg+Jxh91vh7dv0c1rb/7Km2/782P1/JF9PUbaw+vmYSA+qO/D6teg/HmULz7li0P9dGSe95MfO+LbG/pwQO5Pbv44s98OSl28HnuExSGp3+Omhya7nt3zqz1/8s6f7Ad1DzdQ93w7OFV9NzvBynthhjFGaT6uZ2U9VeOpKhqVlT6BUAxy8Tjjykg9JlKPULg27W7gNMpiY0Vakrh0w3YqozZRCxyFgNSIJctprXVmidFlnRib5jbWBU/MUuf41KeSqxwLtcEMrxCLqYQNgT1RUMN/wOasnsLnNpuhs0gLY88yewb9lbGRLlVegafNjxjmKjEVjfQGc7eh0A3iAZ1hVQfb6hEJms3mVbrAy9j/4y8pgYsjASKXvAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Push Origin"
+        title="Push Origin"
+        src="/static/d91a7d9ecdb047e0bfb2c37624642b19/fcda8/pushorigin.png"
+        srcset="/static/d91a7d9ecdb047e0bfb2c37624642b19/12f09/pushorigin.png 148w,
+/static/d91a7d9ecdb047e0bfb2c37624642b19/e4a3f/pushorigin.png 295w,
+/static/d91a7d9ecdb047e0bfb2c37624642b19/fcda8/pushorigin.png 590w,
+/static/d91a7d9ecdb047e0bfb2c37624642b19/efc66/pushorigin.png 885w,
+/static/d91a7d9ecdb047e0bfb2c37624642b19/f1901/pushorigin.png 942w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Your changes should now be visible on the forked token list your GitHub account is hosting. To get these changes merged into the official Solana Labs version, head over to the “Pull Request” tab of their repository <a href="https://github.com/solana-labs/token-list/pulls">here</a>. Then, click on the big green “New pull request” button. On the following screen, click “compare across forks” and then change the “head repository” dropdown option to the <code class="language-text">token-list</code> repository at your personal GitHub. These steps are outlined below:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/29b3f01b79fc9d28f8f9958bdb80ec58/a3a5c/mergeconfirmgreen.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 81.08108108108108%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvUlEQVQ4y5WUSXLbRhSGsZU5YG6gATRmgIBAUgMlsiSXZUvZpJJFsvHC5dv6Ft7lALmC+efvpuSU7XKlsvjwXjcab25YQjWoxwtUwxZZM2IZJF9ZhCncQBo8rtNIfSGQnvg8s8NPZ47AK0d8eXWSBsvjgZyGqn6NdqDhfgNVj8jIUHbYrtaY6HDXjbhox2PPsypWfwdR/pcnFMjRpQ0vyk0QlhPSY7VC0g1QzUTjaxqcqK/RVQPavENT9OhIn7cIs/4YJA1CIpLmGMkGcVRBRjU82rI8xY/XT0jHB2Tnb41U0zsjg9U7hKtHiO4N7PwGbrk/uuUtPEqv2h/tfI9iszvefXjA4eMT8qGHtQgUlqLCQpQI1Qpe0mFJjzY9Ghkzmnzku8Gs9bkl0dKRLeJiBZGVaFQBX6Sw5m6EMC0RyAI2azBzwh+Yu8Iwc8S377i38GNKCW1nRizdmbzfQrJGtsh4IMGZ/W/XNGcv+vNHL+h1kJSMkhlkjQnImnsxjXUI9Ga5RtGyMaToJnPYoRPdQSfMTuPkf8vCl0jLARkbOHdjWNpTnFX0UiPOG0jVIqEDyY5qEnbZrLnv07BLwx6duC9wHSankpmUZzrC+gLZ+gppfY6kHBnxiIgN8iVHIX6Gus8R+Tk1dLZMWUL0bxG09xDFBs36HvV0j2I4cAwOiKpL2HJ1Iv4JcjBSB8cImfJVA7XjZsGrVis4FdNqcsOyYJ1y+d8oCW3LmgURqj8vsXn/GtFVi/GRw3q3QXTdEtZu1yO9HeBtS9gTnT3zvW6fK8x8bZCP8jfe1z8OENsam1/ukO8nyKsO6Y5X8ro36HV82Rqpedn7ql92mPvxqSl+yRvCOXTTCl5aY8a/zIIXXzPXs/msG6ITS3bc6OKk23FxquGcs1Tf/I76+leU4wHFuIda3fwvsn7H6zmZLv8D/nSqiW7btMoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Confirm all is green"
+        title="Confirm all is green"
+        src="/static/29b3f01b79fc9d28f8f9958bdb80ec58/fcda8/mergeconfirmgreen.png"
+        srcset="/static/29b3f01b79fc9d28f8f9958bdb80ec58/12f09/mergeconfirmgreen.png 148w,
+/static/29b3f01b79fc9d28f8f9958bdb80ec58/e4a3f/mergeconfirmgreen.png 295w,
+/static/29b3f01b79fc9d28f8f9958bdb80ec58/fcda8/mergeconfirmgreen.png 590w,
+/static/29b3f01b79fc9d28f8f9958bdb80ec58/efc66/mergeconfirmgreen.png 885w,
+/static/29b3f01b79fc9d28f8f9958bdb80ec58/c83ae/mergeconfirmgreen.png 1180w,
+/static/29b3f01b79fc9d28f8f9958bdb80ec58/a3a5c/mergeconfirmgreen.png 1277w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>If all the changes are green, go ahead and click “Create pull request” and then submit it with a title of your choosing. Once submitted, you’ll see the bot run its tests. This process will take a few minutes. If you accidentally made any errors, the bot will provide you with feedback. Otherwise, you should see your tests pass.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6de4a5834589780796772387e8c09acc/42de8/testscomplete.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.05405405405405%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVQoz42S2U7rMBCGg6AUsjh2xnviJXtLCi1cnYvD+78Wk7SquET6PLKsseaffybJSkmYETpW2oEOoL1sOkS53g9v2vVFpQmYO0WlruRMJTAF83+GIbrxuPEmmpYIU0pbGUdVnYP6TWk72gwFtzmVCXUNLAEOMQxLHE+unUF5ArYEizGna4WC6TuEOyJcwc1a+TWD55SKcxemJU7vbv5sD5dxufTHy3T6MmFEqRmTN6jE3IyKVQV+tu1xPP8rlQUbeB0rg837yni0ABF1i49gwgombDkYS7GKSur+NH9+M26FiRr7AUt5TeEGSF8Jx1XAC8Y7VNQoJEkJf8nZ4y5LHvbJwy5Jnv7AY0ogr3Sy+lHpnIg0h6zgG7DB8eUlZcg+pU97stsXKzuyf6bo3NoznpxpYVtZd6rp1wnjnPFed9gI5RYVch3aYekO5zi+249D/P4A53FBbpXRj0r5K1Q2VDQYiepKOxUyFlSYOjbtXIdJjK06D0Rvhm2V1e8dwiTfH3G3lB+1n5QbwE3MLRnTrwQyItNcXOf/A/tROEa/05r2AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Show tests complete"
+        title="Show tests complete"
+        src="/static/6de4a5834589780796772387e8c09acc/fcda8/testscomplete.png"
+        srcset="/static/6de4a5834589780796772387e8c09acc/12f09/testscomplete.png 148w,
+/static/6de4a5834589780796772387e8c09acc/e4a3f/testscomplete.png 295w,
+/static/6de4a5834589780796772387e8c09acc/fcda8/testscomplete.png 590w,
+/static/6de4a5834589780796772387e8c09acc/efc66/testscomplete.png 885w,
+/static/6de4a5834589780796772387e8c09acc/42de8/testscomplete.png 1033w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Congrats! You just created a token on Solana. In a few hours, your changes will be merged into the official token registry. These changes won’t be reflected overnight: it may take some services like <a href="https://phantom.app/">Phantom</a> or the block explorer a few days to pick up the new metadata. You’ll know the changes went through when you can view your logo at the <code class="language-text">logoUrl</code> you provided in the JSON object. After a few days, the rest of Solana will pick up on your new branding.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2405d84b1d9be15a5c4360c1f5e700c5/8cdda/bugupdated.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.05405405405405%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABK0lEQVQoz62TTW7DIBCFfYa2iW2MAf9DYhw7sdNVpZ6mUq/SRa/8ykDUSGkWjtTFp2EEvHmMhqg/jijaGryQyBxMCU9GuJxf8OtSQXUNpDsvXVRlCb5YsK8PsO9P8PcZUaVb1KZDvdNobijdHpP5bxEP5bcwBs45NkmMSDSFd8NU7sku0DqVHDFniHN2jfcQGRLHhiWIprcZle7wFG/wnGz/8JLGDxFtsxT/RXB4dg5dD6nheVU8DN3TQ492b4LD/XSAbCqIulxFZ/cY5iPoXu+wxwmH+QQz2OCQxsYcrK+0VpQgdzQF43LC9Lp4DS9oT5OvehUs7hAEKBauPdIayCEgrIbsNXLdYEuCZH83DqtcUWtIUDnBW6Rpg2Db7/xPCHMoVpDfhZfSP/kH2bwvVRyjXrUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Bug updated block explorer"
+        title="Bug updated block explorer"
+        src="/static/2405d84b1d9be15a5c4360c1f5e700c5/fcda8/bugupdated.png"
+        srcset="/static/2405d84b1d9be15a5c4360c1f5e700c5/12f09/bugupdated.png 148w,
+/static/2405d84b1d9be15a5c4360c1f5e700c5/e4a3f/bugupdated.png 295w,
+/static/2405d84b1d9be15a5c4360c1f5e700c5/fcda8/bugupdated.png 590w,
+/static/2405d84b1d9be15a5c4360c1f5e700c5/efc66/bugupdated.png 885w,
+/static/2405d84b1d9be15a5c4360c1f5e700c5/8cdda/bugupdated.png 1168w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2>Transferring, Freezing, and Burning</h2>
+<p>Ok, we just created a stylish new token. Now what? </p>
+<p>If we turn our attention back to the Token Program, we can see there’s a few things we can do right away.</p>
+<h3>Transferring Tokens</h3>
+<p>The first thing we can do is to send some tokens to a friend. If you’ve used a web wallet like Phantom before, you’re probably already familiar with doing this via a UI. But how does this work behind the scenes? </p>
+<p>Once again, we’ll be sending instructions to the Token Program. Specifically, we’ll be using the <a href="https://spl.solana.com/token#example-transferring-tokens-to-another-user">transfer</a> command. But there’s a catch! Remember back to when we first minted ourselves one billion units: we ran into an issue because we did not already have an associated token account to store our token balances. If we try to just transfer a new token to our friend’s address, we’ll run into the same problem. The issue is that our friend has not already set up an associated token account for our mint.</p>
+<p>There are two ways to get around this. The first way is to ask our friend to create and fund their own account just like we did. They could do this by running <code class="language-text">spl-token create-account &lt;OUR-MINT-ADDRESS></code>. This method, however, is impractical. Our friend may be offline, or we may want to send them some tokens as a surprise gift. To do this, we can choose to create and fund their associated token account for them by adding a <code class="language-text">--fund-recipient</code> flag:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token transfer &lt;YOUR-MINT-ADDRESS&gt; 1 &lt;YOUR-FRIENDS-ADDRESS&gt; --fund-recipient</code>
+        </deckgo-highlight-code>
+<p>This is what happens every time you receive an unexpected airdrop. If you receive a new token without making a transaction, it means the sender is paying the account rent on your behalf! We can visualize this transaction like so:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2e1f06d90599c32fb8bb272c87d7307c/6660b/transfer.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 95.94594594594595%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABYlAAAWJQFJUiTwAAAFT0lEQVQ4y1VUa0yTZxg9/QqKiGM64w/3Y8pcMmd0BDRkWzaVGY0oBcUpaDbnNDo3vGQZA0XGrQpaYMWiIkLpVUQR5FIHVZQBolwLQqEUimK5IwxFREB89n6wmexLTvLmTd7znedyDvbHlOKH6DuI1hNn6/AOXDfuw+nbxPF3+2Pv4dD5h/jvux/Xh1JJF0oknejWEhezTwMiQvMl4iifQHcI2Bt1C7sjdJDcJf6NYN57jpykiHBE/gQbth/C0g8XwsXFZQoV0kEUSzpQfMaKoauEHz0DhTyhJWWajO4xjlF2McYQdmNULNa9qRbrqIqdpdndhNnsD4sX2E6pcHV1RVlsL/RiMw/Hhgvj6uYkqjQlvamuTRjxb5MTGDhEMmXiYhIGp/UYA5VtFKiw0In0p53rvw2x+2TRPJuVn7vb8tJ7rnlz9UnxNjXxhNqEl06lcV0Td860UZHkMZVL+3X1iaNgEGJXdBm2ntAJI7JflR7XdNAxVTuF33hZ/9mXXzs5f7riIzc3tyUyRa59fcpm9F53QV2iClXxA4sMCc+7/4ppHy+OsZIhYVj7SEFolZMQlwwEZSMJf1W0G8OyXpI47zVF5Ix1uq0Vzf5i1bJZq93X21bnxi5s04iWW9O+cTYqZ85rTaIPKs8OTTyQDhAbCDUmTuQ9TSf0X2GE4GymJvidWH84UPWkICS9Xx+c1hfkL7nNetcLo3wTjOn717aoRWRWeVGLyuNscBiQf8oUlxNp1DOl+QbZsK85mWBKmuSmGs5jwx4x3PzzsSxoEKFpVpQXyFEQs9HWrNy82HJ1d4DhkidVXdxMzUqRwqLaj+gjT+GILXgYSqhPHkFfNoFXOUXWw4CPDghSMopnZORX2oXJsrj7EleUxq9zaFWLzK0aL7JovPpY2RqzytPXmrYaaUcDbK5p8+zKbzTNsP5GAiYLf19jPFEFBB+frdixfRs8PUWz/Px22gOhMCW7o/L8eocWtZe1mS9V7dXBCENaVJvXFEo9ATs3eHh4zPbz9Zvht9MXO3ZsR43sOcA7JTmjBLs0JLh8y2ybWdgw81hqE3c34mMUxqyzYyQRj7Re+iaF6A0rlxF7pxKlYtOar5wy1bo5psKeGSXfk4AJ5N0D+AZpAftfcDrvBXxYH5BKkOiGWStuw3LZh7NoRGAr42qeVskG453Mt4l9c7blvG/XKSI0KIbxOHsSg3wPs54RskYIoZkjhyNzJ26Jc8cLQ7NeBhWzRzU3ZYKSM6vABjO/TePp/Vjr5WNWui+rCiEhW5XoxqSJwobEMb1B9sLXnEQwM08jgndKCXPK5W4j75JARRuduNLbefR8FXPILmjlCRw924vRmz4YznaGKTEJ1QkDS0piOyZuRZuJd8sDaV9e3YURMAhx+HI//JXtwt8zXpQGKR9TkOoRhWcNG7WZ+rkPDZUOcqXWfqXLinc3rXWdp9PK55YPxNlVqjtWVMuG+m9HWcZK4zqp7tyI1qpmXlawxRb5xWPDVqkwumDEyCZOp/4k5pbJrgXOW4THoy6Ab9fy5cun0B1JgnJZL8rPDDqZkicnTOrXxAKCjIkTur40AoMQtf8udnyRURx23Vp9TNNVdVzbKeXvzGOstxeL3hKWyNoFVcHjMISMO9akDKrLrrZX1px9Xl177oV/C3MKcwuHn8NN2BNgRFpzKzB/UnBQXsudzH2FA3+U4yeZgQVs3duA5fOw4tQzVEYOo5MFag1ISGygLXwesn0mPlMPhjdhd0A9NI3tHJaO4ZDGAnHOKHdAWjFNeO7/hOVRQ6g4+QxdN4krw3R1LSwHSc/OLJj/AY15LetEn+0cAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Transfer"
+        title="Transfer"
+        src="/static/2e1f06d90599c32fb8bb272c87d7307c/fcda8/transfer.png"
+        srcset="/static/2e1f06d90599c32fb8bb272c87d7307c/12f09/transfer.png 148w,
+/static/2e1f06d90599c32fb8bb272c87d7307c/e4a3f/transfer.png 295w,
+/static/2e1f06d90599c32fb8bb272c87d7307c/fcda8/transfer.png 590w,
+/static/2e1f06d90599c32fb8bb272c87d7307c/efc66/transfer.png 885w,
+/static/2e1f06d90599c32fb8bb272c87d7307c/c83ae/transfer.png 1180w,
+/static/2e1f06d90599c32fb8bb272c87d7307c/6660b/transfer.png 2278w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>For <a href="https://explorer.solana.com/tx/4uDR3BQTMaX25FFsam2o8hXpvE8xut2Z8j5fvQQmjTbMpUHK5pxdfF9ikbDHCKNtycp6mCfgsdyLShfkopDxYDbQ">my transaction</a>, I chose to transfer one BUG token from my “Friel” wallet to another wallet I created called “Brian”. Here, I replaced <code class="language-text">&lt;YOUR-FRIENDS-ADDRESS></code> with the address on the “Brian” wallet. Because “Brian” did not already have a token account for “BUG”, I funded the account for him. If “Brian” already had a token account for “BUG”, I could have dropped the <code class="language-text">--fund-recipient</code> flag and either kept the same <code class="language-text">&lt;YOUR-FRIENDS-ADDRESS></code> or replaced it with his associated token account address. In both cases, Solana would have transferred the tokens to his associated token account.</p>
+<p>By plugging my “Brian” wallet into Phantom, we can see that we are now the proud owner of 1 BUG!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 355px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1c98db5ae2796314d8faaa8e14854629/526ee/phantom.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 152.02702702702703%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEEUlEQVRIx41Wy27bRhTlJ2SXJpZEDjl8iaJEva0aquNWkWzLjdHaC8OxZSNB0ceuaJqiRdF1UaDbrvovXvW7Tu8ZkgItKI4XBzNz79wzl/clWUEQoNVqQSkFx3HQHwywv7+PyWSC8XiMT/f2MBqNzJ0kSdBsNuH7vlnb7bbZN5SDifaReB6sKAzRzTK4JLRtfDad4vTVKV7OZnghxCfLJY4ODw1pt9tFJnebcYyOkA3kcdrviN2rIMbA07BUqOEEHtzIN2hohR3VQN21UZP1uVNHTfa2765R2pR7T+xqstohCZMA99AK4LZCsw+7LUS9FEGWwEsjI9ftGE7Tv2fjCNxibykqN+AlIZ65dbz79T1+/OUdLlavcXJ2ij///gtXb2+xo+2cYIutpWKNTbjNAM9UHd/88C1+++N3XL+5xcvjBX56/zNer65Q84SQBFtsLRXJZhMhlT7syEMjdNGIJV5teSR2UEslfmmArXYRCSW4KpSkCEkVapFBXYyhTgdQn3dgX+zCeTuF8/0+7GUfrn/fhhzkspQolGTL0QWYOZ7FOydmNot9Kh4XcBI/v1Oxy3lIqD3o0EecNA3COEIQhQgFkdRbU2RBGBiw/mIBdWEs+ma8tvMC8VKT0HMRi2I0HJlCvby8xGq1MutUipwydkS70zHF3e/3cX5+jpubGxwcHKDX6xl5GEUglyH0Az9vrVYirdfPDWVN09TIeTkSz8v2I8lgmD/EM+Xa1zmh60oMpBdtxzZoNBo57EYhc0yPEzxzpb4usG17reMsUG5ByAERBRIXWV1pcMoIrbVp/g8hEJR3vcLOosITwye1p1IKGrvjXezJhOG04ScxCZws20DdWGI/EZtu1s0JPfnuT57ayL7+Dk/qNRzN57i6vjZJ4fii96VxFZSFMmlmywUWXx5jPNmFchQsE8y6JOZ5V+KmjFcdySjH1IMexgJJon/Qhf8iQzRMoV2PHnqIJIuudmSV2oqKWpPXHwPGPir2rufmhFqmrbLFS50HmVnjpz6W1BS+3CeXIRyMejg8OzK1dyjTeSlTmvX1UEKqYB2yZg2hkrgdfzXHP//9i+XZEtO9qUkIxz1DsZmMbSiL2xCy1vhKNshEmP8I8TUm5jHeVbH+ZNYiM2SKVWLBRz5W1Ntg6tC0TNE25d48IIR8bK0XuMWdsjuquhJWqaxeYvPzszlpOF1Y4Iwp99RxTz2rYdPeyn/gbSGyi1Wt+7L0pnr+GIyHUdiVRu/JcEhF6NyfIMU/iodISr3xkGnv90eYfbGQLLclW/G69Zg5lkQ596p1V5658n55Np98e3uDu7s7DIdDk4yZ/A05OTlZFzYHLuNZDglOo7JOScZG4Jm6wsM+5vPFujvoHS9UPaKXH/KQd8vz/2bphR35yvxrAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Bug updated Phantom"
+        title="Bug updated Phantom"
+        src="/static/1c98db5ae2796314d8faaa8e14854629/526ee/phantom.png"
+        srcset="/static/1c98db5ae2796314d8faaa8e14854629/12f09/phantom.png 148w,
+/static/1c98db5ae2796314d8faaa8e14854629/e4a3f/phantom.png 295w,
+/static/1c98db5ae2796314d8faaa8e14854629/526ee/phantom.png 355w"
+        sizes="(max-width: 355px) 100vw, 355px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3>Freezing Tokens</h3>
+<p>You may recall that when we first created our token, we added an <code class="language-text">--enable-freeze</code> flag. By adding that flag, Solana recognized our “Friel” account as the <strong>Freeze Authority</strong> for our mint “BUG”. This grants us the power to disable anyone’s BUG token account.</p>
+<p>When we gifted 1 BUG to “Brian”, we created and funded a token account for him at <code class="language-text">CMSC2GeWDsTPjfnhzCZHEqGRjKseBhrWaC2zNcfQQuGS</code>. Let’s freeze that account now:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token freeze &lt;TOKEN-ACCOUNT-TO-FREEZE&gt;</code>
+        </deckgo-highlight-code>
+<p>Now Brian’s 1 BUG is frozen in place. If we switch over to Phantom and try to transfer it out of our wallet, we’ll run into an error:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 354px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6380e7d803073f5c475e86921a07bc70/8f50f/freeze.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 151.35135135135135%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAAAsTAAALEwEAmpwYAAADTUlEQVRIx51W7U4aURD1KSAqn/sBKwsssNYq1A9AQKUVVJAmxlbbmDbpnz5IX6E/2/dp0zZtU5/ldM7Fu1kQLfXHydydvXPuzNyZ2V3IZrMoFotIp9NIpVLY2NhAp9PB9vY2Njc3Ua83lCyXyygUCsjn88hkMkpSl5V1XOx27AxKpoWFuwjr9Tqq1Sra7TaazSZ830epVILnecjlcsqGhI7Yx8Suk3HgW0JoGIYiozRNE8lkEktLS4hEIohGo0ouLi4qHcH18vKyAh1I39jFjDSSslaEmlQTt1ot9Ho9HBwcYDAYKA/7/b7y/OTkBEdHRyoCEmk7kzwiA8IwMUPb3d1V4e7t7aFWqylS6ngYwcM0Ydh+pocMW4fFMGOx2MQzZTweD/aHSWd6qPMZYPpZML3/TsLpjer2bzDLo7kIpw1XDBOOQa9mk87tIUP1zQzKgoqCfS/ZvYQMsSCVX7WyeLNSxEsnj8eydg1LvXsQYVk8eiSeffTW8KHgK0890c1FOB0GjZi7J+JV3XbQsldQk3XWMOe7lPCLcHkULFt6NIuKlYErKTCmSmcmYfjmWNQs5KB3BQkp4rjoYiJ1P1MmEolbTTHhoW3bqsWOj49xeHiI8/NznJ2dodFoqF7m9Ol2u6qf+Z6tecvDiQKW6cE5yM2np6eKcDQaYWdnR+koORiGw6GSPEh7qTmCkC2ZZRyajuMEOdL9yoGq93BtmmMCRsTZGE7bRA65mVPZdV01UNfX11GpVNRBfF5bW1PvueYEYgpoM0EYDplecRLz1NXV1WB0kZCTnOOLo406hssUME0zQw7nUd8280NJHdeEfsd0TOfv3sL+H8ychw8lnHsePhT/QchWs/6Bm1tm0vVlhBHWp1JLchkRQRTJVFSex3KsG+vT6SQWWCr82LOgdU3pAUEdYdsm8rln8L0rVLxLeO4F8s6FkpXiZQDbKoz/HPRfwdbWVtCn+/v76s/A91elDnNo1j7juHONbv0LXj3/hfdvr3Epstf6ptBvfZdDu5OErHz2KD/yLOpSqawKfEz4SRE+bXzFi8FPvHv9B1dnv9Fva8IfY0KGxlBJzN7UeWPY1BGWZSLn7MLLjwQDCXeAFfsErsiiOxDdUEnLdPEXfVWEduroDAMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Frozen BUG"
+        title="Frozen BUG"
+        src="/static/6380e7d803073f5c475e86921a07bc70/8f50f/freeze.png"
+        srcset="/static/6380e7d803073f5c475e86921a07bc70/12f09/freeze.png 148w,
+/static/6380e7d803073f5c475e86921a07bc70/e4a3f/freeze.png 295w,
+/static/6380e7d803073f5c475e86921a07bc70/8f50f/freeze.png 354w"
+        sizes="(max-width: 354px) 100vw, 354px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>To unfreeze “Brian”, we can run the aptly named <code class="language-text">thaw</code> command:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">spl-token thaw &lt;TOKEN-ACCOUNT-TO-UNFREEZE&gt;</code>
+        </deckgo-highlight-code>
+<p>This is a useful feature to combat illegal activity, but by default it is turned off in Solana. Importantly, if a token is created without setting a freeze authority then it can never be added back in later. This is why we added the <code class="language-text">--enable-freeze</code> flag to our <code class="language-text">create-token</code> command: it gave us optionality. Once we are an authority, we can add or transfer authority to other addresses by using the <code class="language-text">authorize</code> and <code class="language-text">revoke</code> commands. Once we <code class="language-text">revoke</code> all authorities, however, there’s no going back.</p>
+<h3>Burning Tokens</h3>
+<p>The other type of token mint authority is known as <strong>Mint Authority</strong>. This one is pretty straightforward, as we used it earlier to mint ourselves 1 billion tokens. When someone creates a new token, their address is granted mint authority by default.</p>
+<p>In addition to minting new tokens, the mint authority can also burn existing tokens. Burning in Solana is very explicit: there is no burn address that tokens are sent to. Instead, the Token Program reduces the units in a given token account. When burning tokens, the mint authority must provide the token account address they would like to burn from, otherwise they will by default burn from their own balances.</p>
+<p>If we want to follow in Bitcoin’s footsteps, we can put a hard cap on the supply of our token by calling <code class="language-text">revoke</code> on all mint authorities. This will prevent anyone from altering our token’s supply ever again.</p>
+<h2>Next Steps</h2>
+<p>We covered a lot of material here, but this is all just dependent on Solana’s core Token Program. There’s a lot more you can do with tokens on Solana, including but not limited to: <a href="https://docs.projectserum.com/serum-ecosystem/building-on-our-vision/add-a-market-on-serum-serum-academy">Creating Serum Markets</a>, <a href="https://spl.solana.com/token-lending">Lending</a>, and <a href="https://spl.solana.com/token-swap">AMM-like swaps</a>. I may explore some of these in a future tutorial.</p>
+<p>If you found this tutorial helpful, please let me know via <a href="https://twitter.com/bfriel_">Twitter</a>.</p>
+<h2>Bonus: Generating Vanity Addresses</h2>
+<p>Your seed phrase grants you access to many different private keys, each with their own corresponding public key. We can search these for a public key that looks cool by using the <code class="language-text">solana-keygen grind</code> command.</p>
+<p>To find an address that starts with “BUG”, I ran:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana-keygen grind --starts-with bug:1 --ignore-case</code>
+        </deckgo-highlight-code>
+<p>The <code class="language-text">--starts-with</code> flag will search for words that start with the next argument (in my case, bug). You can replace bug with a word that you want. The <code class="language-text">:1</code> option tells the CLI to just return the first result it finds. You should keep it at <code class="language-text">:1</code> for now. The <code class="language-text">--ignore-case</code> flag tells the CLI that we don’t care if letters are uppercase or lowercase. Keeping it at <code class="language-text">--ignore-case</code> will greatly reduce search time.</p>
+<p>Once a result is found, the CLI will print a JSON file with your new vanity address. In my case, it printed <code class="language-text">FriELggez2Dy3phZeHHAdpcoEXkKQVkv6tx3zDtCVP8T.json</code>. This JSON file will live wherever your terminal current is located. You can find that path by running <code class="language-text">pwd</code>.</p>
+<p>To use your new vanity address from the CLI you can run:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana config set --keypair &lt;PATH/TO/YOUR-VANITY-ADDRESS&gt;.json</code>
+        </deckgo-highlight-code>
+<p>Note that on Mac, Solana stores your default <code class="language-text">id.json</code> keypair at <code class="language-text">.config/solana</code>. You can check your keypair anytime by running:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">solana config get</code>
+        </deckgo-highlight-code>
+<p>If you’re planning on launching a token on Solana, using a vanity address makes it easy for your users to verify that they are interacting with the correct token mint. A number of established projects have already adopted this technique, including:</p>
+<ul>
+<li><a href="https://saber.so/">Saber</a>: <a href="https://explorer.solana.com/address/Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1">Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1</a></li>
+<li><a href="https://www.jetprotocol.io/">Jet</a>: <a href="https://explorer.solana.com/address/JET6zMJWkCN9tpRT2v2jfAmm5VnQFDpUBCyaKojmGtz">JET6zMJWkCN9tpRT2v2jfAmm5VnQFDpUBCyaKojmGtz</a></li>
+<li><a href="https://www.orca.so/">Orca</a>: <a href="https://explorer.solana.com/address/orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE">orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE</a></li>
+</ul>
+<h2>Acknowledgements</h2>
+<p>Many thanks to <a href="https://twitter.com/pencilflip">Pencilflip</a> and <a href="https://twitter.com/cryptogosu">Jacob CG</a> for their review and feedback.</p></section><hr class="divider" style="margin-bottom:1.5rem"/><footer><div style="display:flex;margin-bottom:3.75rem"><div style="width:100%;max-width:80px"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;border-radius:100px"><div aria-hidden="true" style="width:100%;padding-bottom:104.5%"></div><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUDBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABox63Ed2bNEDUdTBv/8QAGxABAAICAwAAAAAAAAAAAAAAAgERAxMAEiH/2gAIAQEAAQUCzLpjnfZdlMoVa843KkZmYE7D/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAC/9oACAEDAQE/Acgwn//EABYRAQEBAAAAAAAAAAAAAAAAAAEQEf/aAAgBAgEBPwFZk//EAB0QAAICAQUAAAAAAAAAAAAAAAABAhEhEBIxgZH/2gAIAQEABj8CcvC93Qm8FM41wKTP/8QAGRAAAwEBAQAAAAAAAAAAAAAAAAERQSEx/9oACAEBAAE/IW+jPA3i0O6A8hckokctPCa4d+xDrbWTRGz/2gAMAwEAAgADAAAAEDzX/P/EABgRAAIDAAAAAAAAAAAAAAAAAAABEBEh/9oACAEDAQE/EFFsZiP/xAAZEQACAwEAAAAAAAAAAAAAAAAAAREhMVH/2gAIAQIBAT8Q4EDTBqz/xAAcEAEAAwADAQEAAAAAAAAAAAABABEhMUFRcaH/2gAIAQEAAT8QKxYVTyrRKC9i7YX0kdgBqWRpfAQfufsOgydcp7Au3gqMlgDAeIYitEFqVx8npoQV7n//2Q==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/b4e0ddf1bcac4bc2b10a9b24f7f221d0/f836f/profile-pic.jpg 200w,
+/static/b4e0ddf1bcac4bc2b10a9b24f7f221d0/169e8/profile-pic.jpg 382w" sizes="(max-width: 382px) 100vw, 382px" /><img loading="lazy" sizes="(max-width: 382px) 100vw, 382px" srcset="/static/b4e0ddf1bcac4bc2b10a9b24f7f221d0/f836f/profile-pic.jpg 200w,
+/static/b4e0ddf1bcac4bc2b10a9b24f7f221d0/169e8/profile-pic.jpg 382w" src="/static/b4e0ddf1bcac4bc2b10a9b24f7f221d0/169e8/profile-pic.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><div style="margin-left:0.75rem"><p style="line-height:20px;color:rgba(0,0,0,0.54);font-weight:300;font-size:15px;text-transform:uppercase;letter-spacing:0.5px;margin:0">Written by</p><h3 style="margin:0;font-size:28px;line-height:36px;font-weight:500">Brian Friel</h3><p>Product Manager at<!-- --> <a href="https://castlefunds.com" target="_blank" rel="noreferrer" class="blue-link">Castle Funds</a></p></div></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0;margin-left:0"><li><div><a rel="prev" class="no-underline" href="/understanding-program-derived-addresses/"><h5 class="light-subheader">Previous Post</h5>←<!-- --> <!-- -->Understanding Program Derived Addresses</a></div></li><li></li></ul></nav></main><footer class="main-footer"><div class="inner-footer" style="max-width:36rem;padding:0.75rem 1.125rem"><div class="hide-xs small-font">Made in San Francisco, CA</div><div style="display:flex"><a href="https://twitter.com/bfriel_" class="no-link" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" class="social-icon twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" title="" aria-labelledby="svg-inline--twitter"><title id="svg-inline--twitter"></title><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a><a href="https://www.linkedin.com/in/brian-friel-49a231103/" class="no-link" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" class="social-icon linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448.1 512" title="" aria-labelledby="svg-inline--linkedin"><title id="svg-inline--linkedin"></title><path d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z"></path></svg></a></div><div class="show-xs small-font">Made in San Francisco, CA</div></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-151349675-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/how-to-create-a-token-on-solana/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-a0c75589a40cac95b858.js"],"app":["/app-e359323c89f061e0bccd.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"],"component---src-pages-404-js":["/component---src-pages-404-js-9f00921babee413a29f1.js"],"component---src-pages-about-js":["/component---src-pages-about-js-51aa32d03fd83bdc28bc.js"],"component---src-pages-index-js":["/component---src-pages-index-js-94af954212ac4a051f31.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-430926cdfe550295060d.js"],"polyfills-dom":["/polyfills-dom-7c3fd74150942d7182c5.js"],"polyfills-core-js":["/polyfills-core-js-cffdc17afb3d4c391a4a.js"]};/*]]>*/</script><script src="/polyfill-a0c75589a40cac95b858.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-430926cdfe550295060d.js" async=""></script><script src="/93241701166c3169d92c9fdd395837837cace836-2d1b2187487d62879401.js" async=""></script><script src="/133dca110fad53aa1997b630637bbac3134a2d14-65405d1728a30a30f444.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-e359323c89f061e0bccd.js" async=""></script><script src="/framework-6c3ead24af170cdcb87c.js" async=""></script><script src="/webpack-runtime-ec13b808f4a889122cab.js" async=""></script></body></html>
