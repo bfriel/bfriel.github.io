@@ -14,13 +14,13 @@ To better understand the intricacies of Solana, I decided to create my own token
 
 ![BugLogo](logo.png)
 
-All in, it cost me a grand total of 0.0035 SOL, or $0.75, to create BUG and mint myself 1 billion units. Sending BUG between two established parties costs less than one-tenth of one penny, further underscoring Solana's potential to let everyday people interact with one another on-chain.
+All in, it cost me a grand total of 0.0035 SOL, or $0.75, to create BUG and mint myself one billion units. Sending BUG between two established parties costs less than one-tenth of one penny, further underscoring Solana's potential to let everyday people interact with one another on-chain.
 
 My goal in writing this tutorial is to help others gain a better understanding of Solana, and in the process deliver a practical guide to creating tokens.
 
 ## Overview
 
-This walkthrough covers three main sections:
+This walkthrough does not require you to have prior coding experience, but it does assume some basic understanding of how to use a [Command Line Interface (CLI)](https://en.wikipedia.org/wiki/Command-line_interface). We'll cover three main sections:
 
 1. Creating our token via the SPL Token Program
 2. Adding an official name and logo to our token for the rest of the world to see
@@ -34,7 +34,7 @@ All tokens on Solana, whether they are fungible tokens or NFTs, are created usin
 
 If you're familiar with Ethereum, you can think of SPL tokens as a token standard such as [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) or [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). One key difference, however, is that Solana does not require you to deploy a new contract for each token you create. Instead, it simply requires you to send instructions to the Token Program and it will create and mint tokens on your behalf.
 
-We can interact with the Token Program in both on-chain and off-chain applications via [Rust crates](https://crates.io/crates/spl-token), [C bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/program/inc/token.h), and [JavaScript bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/js/client/token.js). For the purposes of this tutorial we'll be using the [Command Line Interface (CLI)](https://spl.solana.com/token#command-line-utility) which is the easiest and most straightforward way to get started. I may explore how you can integrate it with Rust and JavaScript in a future tutorial.
+We can interact with the Token Program in both on-chain and off-chain applications via [Rust crates](https://crates.io/crates/spl-token), [C bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/program/inc/token.h), and [JavaScript bindings](https://github.com/solana-labs/solana-program-library/blob/master/token/js/client/token.js). For the purposes of this tutorial we'll be using [Solana's CLI Toolkit](https://spl.solana.com/token#command-line-utility) which is the easiest and most straightforward way to get started. I may explore how you can integrate the Token Program with Rust and JavaScript in a future tutorial.
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ You'll also need to set up a [command line wallet](https://docs.solana.com/walle
 
 > 🚨 WARNING: This tutorial covers using real funds on mainnet. Do not fund your wallet with more SOL than you are willing to lose.
 
-If you are not already familiar with using the command line or recovering a wallet from its seed phrase, I recommend following along using fake money on Solana's devnet. I'll cover how you can switch to devnet later on in the tutorial. 
+Section two of this tutorial (Naming and Logos) is only applicable to Solana’s mainnet. If you’re not already familiar with using the command line or recovering a wallet from its seed phrase, I recommend skipping this section and following this tutorial using fake money on Solana's devnet. I'll cover how you can switch to devnet later on in the tutorial.
 
 Before proceeding, you should be able to run the following commands in your terminal:
 
@@ -106,7 +106,7 @@ spl-token create-token --enable-freeze
 
 You should immediately see the message: `Creating token <SOME-ADDRESS>`. Copy that address as we'll be using it later.
 
-What just happened? Remember, all we had to do to create a token was to send instructions to the Token Program. Specifically we sent the Token Program two instructions:
+What just happened? Recall that if we were creating a token on Ethereum, we would have had to write a new ERC20 contract and then deploy it to mainnet. Here on Solana, all we had to do to create a token was to send instructions to the Token Program. Specifically, our `create-token` command sent two instructions:
 
 1. To create a new account (this is carried out by the [System Program](https://docs.solana.com/developing/runtime-facilities/programs#system-program))
 2. To recognize this new account as a Token [Mint](https://docs.solana.com/integrations/exchange#token-mints)
@@ -156,7 +156,7 @@ What's that, an error? Yes. Sorry to lead us astray (I won't do it again) but I 
 
 We just tried to mint ourselves a bunch of tokens, but the recipient appeared to be some new address we hadn't seen before (not "Friel"). Furthermore, the transaction failed because the Token Program told us that it could not parse this new address as a token account. What's going on here?
 
-On Solana, our token balances are each stored in their own unique accounts. These accounts are called [Associated Token Accounts](https://spl.solana.com/associated-token-account), and their addresses are derived from the address of their owner. In my case, I derived `Et3bNDxe2wP1yE5ao6mMvUByQUHg8nZTndpJNvfKLdCb` from my main "Friel" account. The issue is that when we asked the Token Program to mint us some tokens, it derived this new address but did not recognize it as an Associated Token Account for our newly created mint. Instead, it just appeared as a standard empty account. Let's go ahead and fix this with:
+On Solana, our token balances are each stored in their own unique accounts. These accounts are called [Associated Token Accounts](https://spl.solana.com/associated-token-account), and their addresses are derived from the addresses of their owner and the mint itself. In my case, I derived `Et3bNDxe2wP1yE5ao6mMvUByQUHg8nZTndpJNvfKLdCb` from my main "Friel" account. The issue is that when we asked the Token Program to mint us some tokens, it derived this new address but did not recognize it as an Associated Token Account for our newly created mint. Instead, it just appeared as a standard empty account. Let's go ahead and fix this with:
 
 ```bash
 spl-token create-account <PASTE-YOUR-MINT-ADDRESS-HERE>
@@ -176,13 +176,13 @@ With our token account now properly configured, let's try minting ourselves some
 spl-token mint <PASTE-YOUR-MINT-ADDRESS-HERE> 1000000000
 ```
 
-This time, we should see our transaction go through. If we pull up our "Friel" account in a block explorer and navigate the "Tokens" tab, we'll also confirm that we now own 1 billion tokens. We're rich!
+This time, we should see our transaction go through. If we pull up our "Friel" account in a block explorer and navigate the "Tokens" tab, we'll also confirm that we now own one billion tokens. We're rich!
 
 ![Friel minted bugs](friel2bugs.png)
 
 ## Naming and Logos
 
-> Note: This section only applies to tokens on mainnet
+> Note: This section only applies to tokens on mainnet. The steps outlined here are subject to change and do not cover other registries such as the one maintained by [Bonfida](https://docs.bonfida.org/collection/v/help/tokens#token-name-registry).
 
 So far, we've been working with our new token mint "BUG", but Solana keeps referring to it as some "Unknown Token". Let's go ahead and change that. At the time of this writing, the official registry of all SPL Tokens lives on [this GitHub repository](https://github.com/solana-labs/token-list) hosted by the Solana Labs team. To get our token recognized, we have to make a pull request in a very specific manner.
 
@@ -252,7 +252,7 @@ If we turn our attention back to the Token Program, we can see there's a few thi
 
 The first thing we can do is to send some tokens to a friend. If you've used a web wallet like Phantom before, you're probably already familiar with doing this via a UI. But how does this work behind the scenes? 
 
-Once again, we'll be sending instructions to the Token Program. Specifically, we'll be using the [transfer](https://spl.solana.com/token#example-transferring-tokens-to-another-user) command. But there's a catch! Remember back to when we first minted ourselves 1 billion units: we ran into an issue because we did not already have an associated token account to store our token balances. If we try to just transfer a new token to our friend's address, we'll run into the same problem. The issue is that our friend has not already set up an associated token account for our mint.
+Once again, we'll be sending instructions to the Token Program. Specifically, we'll be using the [transfer](https://spl.solana.com/token#example-transferring-tokens-to-another-user) command. But there's a catch! Remember back to when we first minted ourselves one billion units: we ran into an issue because we did not already have an associated token account to store our token balances. If we try to just transfer a new token to our friend's address, we'll run into the same problem. The issue is that our friend has not already set up an associated token account for our mint.
 
 There are two ways to get around this. The first way is to ask our friend to create and fund their own account just like we did. They could do this by running `spl-token create-account <OUR-MINT-ADDRESS>`. This method, however, is impractical. Our friend may be offline, or we may want to send them some tokens as a surprise gift. To do this, we can choose to create and fund their associated token account for them by adding a `--fund-recipient` flag:
 
@@ -260,11 +260,13 @@ There are two ways to get around this. The first way is to ask our friend to cre
 spl-token transfer <YOUR-MINT-ADDRESS> 1 <YOUR-FRIENDS-ADDRESS> --fund-recipient
 ```
 
-This is what happens everytime you receive an unexpected airdrop. If you receive a new token without making a transaction, it means the sender is paying the account rent on your behalf! We can visualize this transaction like so:
+This is what happens every time you receive an unexpected airdrop. If you receive a new token without making a transaction, it means the sender is paying the account rent on your behalf! We can visualize this transaction like so:
 
 ![Transfer](transfer.png)
 
-For [my transaction](https://explorer.solana.com/tx/4uDR3BQTMaX25FFsam2o8hXpvE8xut2Z8j5fvQQmjTbMpUHK5pxdfF9ikbDHCKNtycp6mCfgsdyLShfkopDxYDbQ), I chose to transfer one BUG token from my "Friel" wallet to another wallet I created called "Brian". By plugging my "Brian" wallet into Phantom, we can see that we are now the proud owner of 1 BUG!
+For [my transaction](https://explorer.solana.com/tx/4uDR3BQTMaX25FFsam2o8hXpvE8xut2Z8j5fvQQmjTbMpUHK5pxdfF9ikbDHCKNtycp6mCfgsdyLShfkopDxYDbQ), I chose to transfer one BUG token from my "Friel" wallet to another wallet I created called "Brian". Here, I replaced `<YOUR-FRIENDS-ADDRESS>` with the address on the "Brian" wallet. Because "Brian" did not already have a token account for "BUG", I funded the account for him. If "Brian" already had a token account for "BUG", I could have dropped the `--fund-recipient` flag and either kept the same `<YOUR-FRIENDS-ADDRESS>` or replaced it with his associated token account address. In both cases, Solana would have transferred the tokens to his associated token account.
+
+By plugging my "Brian" wallet into Phantom, we can see that we are now the proud owner of 1 BUG!
 
 ![Bug updated Phantom](phantom.png)
 
@@ -329,3 +331,9 @@ Note that on Mac, Solana stores your default `id.json` keypair at `.config/solan
 ```bash
 solana config get
 ```
+
+If you're planning on launching a token on Solana, using a vanity address makes it easy for your users to verify that they are interacting with the correct token mint. A number of established projects have already adopted this technique, including:
+
+- [Saber](https://saber.so/): [Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1](https://explorer.solana.com/address/Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1)
+- [Jet](https://www.jetprotocol.io/): [JET6zMJWkCN9tpRT2v2jfAmm5VnQFDpUBCyaKojmGtz](https://explorer.solana.com/address/JET6zMJWkCN9tpRT2v2jfAmm5VnQFDpUBCyaKojmGtz)
+- [Orca](https://www.orca.so/): [orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE](https://explorer.solana.com/address/orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE)
