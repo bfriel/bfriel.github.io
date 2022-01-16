@@ -195,7 +195,7 @@ a.gatsby-resp-image-link {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .about-headshot {

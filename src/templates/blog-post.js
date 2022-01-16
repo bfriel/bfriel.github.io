@@ -22,7 +22,7 @@ export default function BlogPostTemplate({ data, pageContext, location }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        image={post.frontmatter.featuredImage.childImageSharp.resize.src}
+        image={post.frontmatter.featuredImage.src}
         thumbnail={thumbnail}
       />
       <article>
@@ -132,19 +132,14 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-            resize(width: 900, quality: 90) {
-              src
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         thumbnail {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes
-            }
+            gatsbyImageData(layout: FIXED)
           }
         }
       }
