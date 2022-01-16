@@ -33,12 +33,10 @@ export default function Homepage({ data, location }) {
           >
             <article className="article" style={{ marginBottom: rhythm(2) }}>
               <section className="article-main">
-                <header>
                   <h3 className="article-title">{title}</h3>
                   <small className="hide-xs">
                     {node.frontmatter.date} | {node.timeToRead} Min Read
                   </small>
-                </header>
                 <small
                   className="show-xs"
                   style={{
@@ -52,7 +50,7 @@ export default function Homepage({ data, location }) {
               <BackgroundImage
                 Tag="section"
                 fluid={featuredImgFluid}
-                style={{ height: "186px", width: "100%", maxWidth: "200px" }}
+                style={{ height: "215px", width: "100%", maxWidth: "200px" }}
                 backgroundColor="#040e18"
               />
             </article>
