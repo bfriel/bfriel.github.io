@@ -41,9 +41,8 @@ export default function SEO({
 
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image || avatar.childImageSharp.resize.src
-  const thumbnailSrc = thumbnail && thumbnail.childImageSharp.gatsbyImageData
+  const thumbnailSrc = thumbnail && thumbnail.childImageSharp.gatsbyImageData.images.fallback.src
   const thumbnailImg = `https://www.brianfriel.xyz${thumbnailSrc}`
-
   return (
     <Helmet
       htmlAttributes={{
