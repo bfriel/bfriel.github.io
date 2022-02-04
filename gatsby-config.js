@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Brian Friel`,
     author: `Brian Friel`,
-    description: `Brian Friel is a San Francisco-based product manager and frontend developer`,
+    description: `Brian Friel is a San Francisco-based software engineer`,
     siteUrl: `https://brianfriel.xyz/`,
     social: {
       twitter: `bfriel_`,

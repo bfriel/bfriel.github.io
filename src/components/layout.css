@@ -224,6 +224,8 @@ a.gatsby-resp-image-link {
 
   .text-center-small {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* POSTS */

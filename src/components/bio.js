@@ -64,14 +64,14 @@ export default function Bio() {
           {author}
         </h3>
         <p>
-          Product Manager at{" "}
+          Developer Relations at{" "}
           <a
-            href="https://castlefunds.com"
+            href="https://phantom.app"
             target="_blank"
             rel="noreferrer"
             className="blue-link"
           >
-            Castle Funds
+            Phantom
           </a>
         </p>
       </div>

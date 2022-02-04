@@ -23,8 +23,16 @@ export default function About({ data, location }) {
         </h1>
       </div>
       <section>
-        <p>
-          I'm a product manager at{" "}
+        <p>I'm a Developer Relations Evangelist at{" "}
+          <a
+            className="blue-link"
+            href="https://phantom.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Phantom
+          </a>{", "} where I help teams building web3 applications on Solana. If you're building something that interacts with Phantom, I'd love to hear from you!</p>
+        <p>Prior to Phantom, I worked as a frontend engineer and product manager at{" "}
           <a
             className="blue-link"
             href="https://castlefunds.com/"
@@ -32,12 +40,7 @@ export default function About({ data, location }) {
             rel="noopener noreferrer"
           >
             Castle Funds
-          </a>{" "}
-          where I lead development of our trading systems and client-facing web
-          portal.
-        </p>
-        <p>
-          Before getting into tech, I worked in the outdoor industry at
+          </a>{". "}In a previous life, I worked in the outdoor industry at
           companies such as{" "}
           <a
             className="blue-link"
@@ -63,12 +66,12 @@ export default function About({ data, location }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pomona College.
-          </a>
+            Pomona College
+          </a>{"."}
         </p>
         <p>
-          Feel free to reach out to me via{" "}
-          <a
+          I'm currently based in San Francisco. The best way to get in touch with me is via{" "}
+        <a
             className="blue-link"
             href="https://twitter.com/bfriel_"
             target="_blank"
