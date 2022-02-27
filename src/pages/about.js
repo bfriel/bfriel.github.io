@@ -31,7 +31,7 @@ export default function About({ data, location }) {
             rel="noopener noreferrer"
           >
             Phantom
-          </a>{", "} where I help teams build web3 applications on Solana. If you're building something that interacts with Phantom, I'd love to{" "}<a
+          </a>{", "} where I help teams build applications on Solana. If you're building something that interacts with Phantom, I'd love to{" "}<a
             className="blue-link"
             href="https://twitter.com/bfriel_"
             target="_blank"
