@@ -100,7 +100,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/winnie.jpeg/" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid

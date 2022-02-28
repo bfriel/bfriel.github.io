@@ -28,7 +28,7 @@ export default function SEO({
             author
           }
         }
-        avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+        avatar: file(absolutePath: { regex: "/winnie.jpeg/" }) {
           childImageSharp {
             resize(width: 900, quality: 90) {
               src
