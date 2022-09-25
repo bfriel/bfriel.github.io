@@ -27,9 +27,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // {
-          //   resolve: "gatsby-remark-embed-video",
-          // },
           "gatsby-remark-embed-video",
           {
             resolve: `gatsby-remark-images`,
@@ -121,7 +118,7 @@ module.exports = {
         short_name: `BrianFriel`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#fafafa`,
         display: `minimal-ui`,
         icon: `content/assets/favicon-32x32.png`,
       },

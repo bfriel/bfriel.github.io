@@ -9,7 +9,6 @@ import { rhythm } from "../utils/typography"
 export default function Homepage({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  posts.forEach((post) => console.log(post.node))
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
