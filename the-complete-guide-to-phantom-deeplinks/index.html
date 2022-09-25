@@ -1,0 +1,1730 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.5 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(204,12.449720506%,0%,0.77);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:2.25rem;line-height:3rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.83712rem;line-height:2.25rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.25rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.14471rem;line-height:1.5rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.87358rem;line-height:1.5rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.76314rem;line-height:1.5rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}ul{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:0.85rem;line-height:1.5rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:1rem;line-height:1.5rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}blockquote{margin-left:1.5rem;margin-right:1.5rem;margin-top:0;padding-bottom:0.5rem;padding-left:1rem;padding-right:1rem;padding-top:0.5rem;margin-bottom:1.5rem;font-size:1.22474rem;line-height:1.5rem;border-left:0.25rem solid #eceeef;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.5rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}li > ul{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5rem / 2);}code{font-size:0.85rem;line-height:1.5rem;}kbd{font-size:0.85rem;line-height:1.5rem;}samp{font-size:0.85rem;line-height:1.5rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:calc(0.75rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.5rem;color:hsla(204,5.275997423999999%,0%,0.46);font-weight:400;font-style:normal;}</style><meta name="generator" content="Gatsby 4.22.1"/><meta name="theme-color" content="#663399"/><meta data-react-helmet="true" name="description" content="Building a Solana mobile dapp with React Native, Expo, and Phantom."/><meta data-react-helmet="true" property="og:title" content="The Complete Guide to Phantom Deeplinks"/><meta data-react-helmet="true" property="og:description" content="Building a Solana mobile dapp with React Native, Expo, and Phantom."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:image" content="/static/5e27e9ba69bab462155a4e4fff3b516d/8275e/winnie.jpg"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:creator" content="Brian Friel"/><meta data-react-helmet="true" name="twitter:title" content="The Complete Guide to Phantom Deeplinks"/><meta data-react-helmet="true" name="twitter:description" content="Building a Solana mobile dapp with React Native, Expo, and Phantom."/><meta data-react-helmet="true" name="twitter:image" content="https://www.brianfriel.xyz/static/b96b3926b1ce6f7a1e1941a8ff554d80/6b926/alexander-the-great.jpg"/><style data-href="/styles.21f034cdef9dd069a10c.css" data-identity="gatsby-global-css">body{background-color:#fafafa;min-height:100vh;padding-bottom:120px;position:relative}a{box-shadow:none;color:#4665b7;padding:2px 0;text-decoration:none;text-decoration:underline}blockquote{border-color:#232c3a}code{background-color:#e6e6e5}.small-font{font-size:.8rem}.text-center{text-align:center}.divider{background:#e6e6e5}a.no-link{box-shadow:none;color:inherit;text-decoration:none}a.no-link.grey-color{color:#aaa}a.no-underline{text-decoration:none}.show-xs{display:none}#header{height:40px;position:relative;width:100%}.inner-header{background-color:#fafafa;left:50%;position:fixed;top:0;-webkit-transform:translate(-50%);transform:translate(-50%);transition:all .2s ease;width:100%;z-index:200}.inner-header.show{top:0}.inner-header.hide{top:-20%}.inner-header.shadow{box-shadow:0 4px 12px 0 rgba(0,0,0,.05)}.nav{align-items:flex-end;display:flex;justify-content:space-between;margin-left:auto;margin-right:auto}.title{font-weight:500;letter-spacing:.7px;margin:0}.main-footer{bottom:0;height:80px;position:absolute;width:100%}.inner-footer{align-items:center;border-top:1px solid #e6e6e5;display:flex;justify-content:space-between;margin-left:auto;margin-right:auto}.social-icon{cursor:pointer;display:block;height:36px;padding:10px;width:36px}.social-icon.twitter{margin-left:5px;margin-right:5px}.social-icon.twitter:hover{fill:#009df7}.social-icon.linkedin:hover{fill:#005dc5}.light-subheader{color:#999;font-weight:300;margin:0;text-transform:uppercase}a.gatsby-resp-image-link{padding:initial}.article{align-items:stretch;background-color:#fff;box-shadow:0 1px 2px rgba(46,41,51,.08),0 2px 4px rgba(71,63,79,.08);display:flex;transition:all .1s cubic-bezier(.4,0,.2,1) 0s;width:100%}.article:hover{box-shadow:0 4px 8px rgba(46,41,51,.08),0 8px 16px rgba(71,63,79,.16);-webkit-transform:translateY(-.25rem);transform:translateY(-.25rem)}.article-preview{color:#636161;font-style:italic;margin-bottom:0;margin-top:10px}.article-main{display:flex;flex-direction:column;justify-content:space-between;margin-right:10px;padding:20px 0 20px 20px;width:100%}.article-title{margin:0;transition:color .1s ease}.about-header{align-items:center;display:flex;flex-wrap:wrap;justify-content:start}.about-headshot{height:200px;margin-bottom:30px;margin-right:30px;max-width:200px;overflow:hidden;width:100%}.about-headshot,.about-headshot:before{border-radius:100px}@media screen and (max-width:740px){.text-center-small{margin-left:auto;margin-right:auto;text-align:center}.article-preview{display:none}.about-headshot{margin:10px auto 30px}}@media screen and (max-width:480px){.hide-xs{display:none}.show-xs{display:block}.inner-footer{flex-direction:column}}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" title="Brian Friel" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=168ee89ba2801148378d297223ee6ca2" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=168ee89ba2801148378d297223ee6ca2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=168ee89ba2801148378d297223ee6ca2"/><title data-react-helmet="true">The Complete Guide to Phantom Deeplinks | Brian Friel</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><header id="header"><div class="inner-header show no-shadow"><nav class="nav" style="max-width:36rem;padding:0.75rem 1.125rem"><a class="small-font grey-color no-link" href="/">Brian Friel</a></nav></div></header><main style="margin-left:auto;margin-right:auto;max-width:36rem;padding:0.75rem 1.125rem"><article><header><section class="gbi-1035923929-dfPqgdjGP5oDy5eMb9atRQ" style="background-position:center;background-repeat:no-repeat;background-size:cover;position:relative;height:300px;width:100%;opacity:0.99"><style>
+          .gbi-1035923929-dfPqgdjGP5oDy5eMb9atRQ:before,
+          .gbi-1035923929-dfPqgdjGP5oDy5eMb9atRQ:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #040e18;
+            transition: opacity 0.5s ease 250ms;
+            background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+          }
+          .gbi-1035923929-dfPqgdjGP5oDy5eMb9atRQ:before {
+            z-index: -100;
+            
+            
+            opacity: 1; 
+          }
+          .gbi-1035923929-dfPqgdjGP5oDy5eMb9atRQ:after {
+            z-index: -101;
+            
+            
+            
+          }
+        </style><noscript><style>
+    .gbi-1035923929-dfPqgdjGP5oDy5eMb9atRQ:before {
+      opacity: 1;
+      background-image: url('/static/b96b3926b1ce6f7a1e1941a8ff554d80/271d8/alexander-the-great.jpg');
+    }</style></noscript></section><h1 style="margin-top:1.5rem;margin-bottom:0">The Complete Guide to Phantom Deeplinks</h1><p style="font-size:0.85028rem;line-height:1.5rem;display:block;margin-bottom:0.3rem">August 25, 2022<!-- --> | <!-- -->44<!-- --> Min Read</p><p style="display:block;font-style:italic;margin-bottom:1.5rem">Building a Solana mobile dapp with React Native, Expo, and Phantom.</p></header><section><p><em>This article was originally published on <a href="https://phantom.app/blog/the-complete-guide-to-phantom-deeplinks">phantom.app</a>.</em></p>
+<h2>Introduction</h2>
+<p>Solana’s fast and cheap transactions make it the perfect testing ground for novel mobile applications. Until recently, however, there was no way for native mobile applications to interact with existing Solana wallets. In order to connect to users, Solana dapps had to be web-based. In a mobile context, these web dapps were most often viewed within a wallet’s in-app browser.</p>
+<p>All of this changed in Phantom <code class="language-text">v22.04.01</code> with the release of Phantom <strong>deeplinks</strong>. With deeplinks, iOS and Android apps can now interact directly with the Phantom mobile app to connect, sign, and send transactions. In this tutorial, we’ll walk through how you can integrate Phantom deeplinks into your Solana dapp.</p>
+<h2>What are deeplinks?</h2>
+<p>If you’ve ever created a link using an HTML <code class="language-text">&lt;a></code> tag, you’re probably familiar with the <code class="language-text">mailto:</code> scheme. Unlike a normal url that directs users straight to a website (i.e. <code class="language-text">href="&lt;https://google.com>"</code>), the <code class="language-text">mailto:</code> scheme tells the operating system that it should instead open the email application. Once open, your email app can then parse the url to present a rich user experience. For example, the url <code class="language-text">href="mailto:brian@phantom.app?subject=Deeplinking Tutorial Feedback&amp;body=Hi Brian,"</code> will <a href="mailto:brian@phantom.app?subject=Deeplinking Tutorial Feedback&body=Hi Brian,">compose an email to me</a> with both a subject and body already pre-configured. These url schemes are often referred to as <a href="https://en.wikipedia.org/wiki/Mobile_deep_linking">deeplinks</a>.</p>
+<p>Just like using the <code class="language-text">mailto:</code> scheme, other applications can also link to each other by using their own custom url schemes. When developing a mobile application, we can specify our own protocol handler (such as: <code class="language-text">discord://</code> or <code class="language-text">phantom://</code>) and create deeplinks that tell the operating system to open our native app.</p>
+<p>We can even take it a step further: using a concept known as <a href="https://developer.apple.com/ios/universal-links/">universal links</a>, we can create deeplinks based on regular <code class="language-text">https://</code> links for a domain that we control. This comes with the added benefits of being more secure, as well as a better user experience in cases where users have yet to install our app.</p>
+<p>Phantom supports both universal links (e.g. <code class="language-text">https://phantom.app/ul/&lt;version>/&lt;method></code>) as well as a custom protocol handler (<code class="language-text">phantom://&lt;version>/&lt;method></code>). For the remainder of this tutorial, we’ll focus on Phantom’s universal links and refer to these collectively as <strong>deeplinks</strong>.</p>
+<h2>What we’re building</h2>
+<p>To showcase the power of Phantom deeplinks, we’ll be creating a mobile app that can interact with a program (aka smart contract) on Solana. Specifically, we’re going to be building a mobile-version of the movie reviews dapp from <a href="https://github.com/Unboxed-Software/solana-course/blob/main/README.md#module-1---client-interaction-with-the-solana-network">module 1 of the Solana Development Course</a>.</p>
+<p>For the purposes of this tutorial, we won’t be writing any Solana programs ourselves. The Solana Development Course already does a great job of teaching this! Instead, we’ll be writing a mobile app that interacts with the <a href="https://solscan.io/account/CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN?cluster=devnet">course’s program</a> that’s already deployed to devnet. Once complete, our app will let users sign-in and send reviews using Phantom. All in all, it’ll look a little something like this:</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="Full Flow" src="https://www.youtube.com/embed/tiYizz9h3YE?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<p>We’ll be building this app with <a href="https://reactnative.dev/">React Native</a> and <a href="https://docs.expo.dev/workflow/expo-cli/">Expo CLI</a>. If you’re new to mobile development, Expo makes it easy to get started within minutes. The majority of code we’ll be writing will be indistinguishable from standard <a href="https://reactjs.org/">React</a> and <a href="https://www.typescriptlang.org/">TypeScript</a>. An added benefit of using Expo with React Native is that our app will be ready to use across both iOS and Android devices.</p>
+<h2>Overview</h2>
+<p>This tutorial covers 3 main sections:</p>
+<ul>
+<li><a href="https://www.notion.so/The-Complete-Guide-to-Phantom-Deeplinks-f7d0f1ea59a9420eb32a53560cf1bfc5">Creating our mobile app using React Native and Expo CLI</a></li>
+<li><a href="https://www.notion.so/The-Complete-Guide-to-Phantom-Deeplinks-f7d0f1ea59a9420eb32a53560cf1bfc5">Connecting our app to Phantom</a></li>
+<li><a href="https://www.notion.so/The-Complete-Guide-to-Phantom-Deeplinks-f7d0f1ea59a9420eb32a53560cf1bfc5">Signing and sending transactions via Phantom</a></li>
+</ul>
+<h2>Creating our mobile app using React Native and Expo CLI</h2>
+<h3>Prerequisites</h3>
+<p>Before we can build anything, we first need to install the necessary command-line tools. Chief amongst these are <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://docs.expo.dev/workflow/expo-cli/#installation">Expo CLI</a>. If you don’t have Node yet, I recommend installing it via <a href="https://github.com/nvm-sh/nvm">Node Version Manager (NVM)</a>.</p>
+<p>Before proceeding, you should be able to run the following commands in your terminal. I developed mine with the following versions:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">node -v
+# output: v16.15.0
+expo-cli --version
+# output: 5.5.1</code>
+        </deckgo-highlight-code>
+<p>In addition to our laptop’s development environment, we’ll also want a phone to test our React Native app. One of the many benefits of Expo is that it makes it easy to test your app on a physical device throughout the development process. Before proceeding, make sure to install both the <a href="https://docs.expo.dev/guides/testing-on-devices/">Expo</a> and <a href="https://phantom.app/download">Phantom</a> mobile apps from your phone’s official app store.</p>
+<h3>Scaffolding our React Native app</h3>
+<p>With the necessary tools installed, we can get started with our app. To recap: we’re going to be building a mobile app for the movie reviews program in the <a href="https://github.com/Unboxed-Software/solana-course/blob/main/README.md#module-1---client-interaction-with-the-solana-network">Solana Development Course</a>. Instead of rehashing the lessons from that course, I’ve added the necessary components to a starter repo located on our <a href="https://github.com/phantom-labs/deep-links-movie-tutorial.git">GitHub</a>. To get started, simply fork the repo and clone it to your local developer environment:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">git clone -b starter https://github.com/phantom-labs/deep-links-movie-tutorial.git</code>
+        </deckgo-highlight-code>
+<p>Then, change into the project directory and install the necessary dependencies:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">cd deep-links-movie-tutorial
+yarn</code>
+        </deckgo-highlight-code>
+<p>Once you’ve installed the dependencies, you can fire up the app with:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">yarn start</code>
+        </deckgo-highlight-code>
+<p>From here, your terminal should present you with a large QR code. Go ahead and grab your phone, open the camera app, and scan the QR code that is present on your laptop’s terminal. If you’re using an Android phone, you may need to scan it from within the Expo mobile app. If all goes well, your code should begin bundling and your phone will open the mobile app from the video above.</p>
+<p>Go ahead and try scrolling and searching within the app. If you’ve already completed the Solana Development Course’s module on <a href="https://github.com/Unboxed-Software/solana-course/blob/main/content/deserialize-custom-data.md">Deserializing Custom Account Data</a>, then this should look pretty familiar. Here, our app is fetching reviews from the <a href="https://solscan.io/account/CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN?cluster=devnet">course’s program</a> and then paginating and filtering the results based on how far you scroll or what you search. If you take a look at our starter repo, you’ll see that the <code class="language-text">MovieList.tsx</code> and <code class="language-text">MovieCoordinator.ts</code> components from the course have already been integrated into our React Native app under the <code class="language-text">components</code> directory. For the purposes of this tutorial, we won’t be going into detail over how these are working under the hood. If you’re interested in learning more, the <a href="https://github.com/Unboxed-Software/solana-course/blob/main/README.md#module-1---client-interaction-with-the-solana-network">Solana Development Course</a> already does a great job teaching how all this works!</p>
+<p>After playing around with our app, we can see that we’re already reading and displaying movies reviews that are stored on Solana. How would we go about adding new reviews? If you were to tap on the “Connect Phantom” button, you’ll see that nothing happens. Let’s see what’s going on by opening up the <code class="language-text">App.tsx</code> file at the root of directory:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import &quot;react-native-get-random-values&quot;
+import &quot;react-native-url-polyfill/auto&quot;
+import { Buffer } from &quot;buffer&quot;
+global.Buffer = global.Buffer || Buffer
+import { StatusBar } from &quot;expo-status-bar&quot;
+import React, { useRef, useState } from &quot;react&quot;
+import { ActivityIndicator, StyleSheet, Text, View } from &quot;react-native&quot;
+import {
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  Transaction,
+} from &quot;@solana/web3.js&quot;
+import MovieList from &quot;./components/MovieList&quot;
+import Button from &quot;./components/Button&quot;
+import { SafeAreaProvider, SafeAreaView } from &quot;react-native-safe-area-context&quot;
+import ActionSheet from &quot;react-native-actions-sheet&quot;
+import AddReviewSheet from &quot;./components/AddReviewSheet&quot;
+import Toast from &quot;react-native-toast-message&quot;
+import { toastConfig } from &quot;./components/ToastConfig&quot;
+import { COLORS } from &quot;./constants&quot;
+import * as Linking from &quot;expo-linking&quot;
+
+const connection = new Connection(clusterApiUrl(&quot;devnet&quot;))
+
+export default function App() {
+  const [phantomWalletPublicKey, setPhantomWalletPublicKey] =
+    useState&lt;PublicKey | null&gt;(null)
+
+  const [submitting, setSubmitting] = useState(false)
+
+  const actionSheetRef = useRef&lt;ActionSheet&gt;(null)
+
+  // Initiate a new connection to Phantom
+  const connect = async () =&gt; {}
+
+  // Initiate a disconnect from Phantom
+  const disconnect = async () =&gt; {}
+
+  // Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+  const signAndSendTransaction = async (transaction: Transaction) =&gt; {}
+
+  // Open the &#39;Add a Review&#39; sheet defined in `components/AddReviewSheet.tsx`
+  const openAddReviewSheet = () =&gt; {
+    actionSheetRef.current?.show()
+  }
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;SafeAreaView style={styles.container}&gt;
+        &lt;View style={styles.header}&gt;
+          {phantomWalletPublicKey ? (
+            &lt;&gt;
+              &lt;View style={[styles.row, styles.wallet]}&gt;
+                &lt;View style={styles.greenDot} /&gt;
+                &lt;Text
+                  style={styles.text}
+                  numberOfLines={1}
+                  ellipsizeMode=&quot;middle&quot;
+                &gt;
+                  {`Connected to: ${phantomWalletPublicKey.toString()}`}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.row}&gt;
+                &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+                &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+              &lt;/View&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;View style={{ marginTop: 15 }}&gt;
+              &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+            &lt;/View&gt;
+          )}
+        &lt;/View&gt;
+        {submitting &amp;&amp; (
+          &lt;ActivityIndicator
+            color={COLORS.WHITE}
+            size=&quot;large&quot;
+            style={styles.spinner}
+          /&gt;
+        )}
+        &lt;MovieList connection={connection} /&gt;
+        &lt;AddReviewSheet
+          actionSheetRef={actionSheetRef}
+          phantomWalletPublicKey={phantomWalletPublicKey}
+          signAndSendTransaction={signAndSendTransaction}
+        /&gt;
+        &lt;Toast config={toastConfig} /&gt;
+        &lt;StatusBar style=&quot;auto&quot; /&gt;
+      &lt;/SafeAreaView&gt;
+    &lt;/SafeAreaProvider&gt;
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.DARK_GREY,
+    flexGrow: 1,
+    position: &quot;relative&quot;,
+  },
+  greenDot: {
+    height: 8,
+    width: 8,
+    borderRadius: 10,
+    marginRight: 5,
+    backgroundColor: COLORS.GREEN,
+  },
+  header: {
+    width: &quot;95%&quot;,
+    marginLeft: &quot;auto&quot;,
+    marginRight: &quot;auto&quot;,
+  },
+  row: {
+    flexDirection: &quot;row&quot;,
+    justifyContent: &quot;space-between&quot;,
+    marginBottom: 5,
+  },
+  spinner: {
+    position: &quot;absolute&quot;,
+    alignSelf: &quot;center&quot;,
+    top: &quot;50%&quot;,
+    zIndex: 1000,
+  },
+  text: {
+    color: COLORS.LIGHT_GREY,
+    width: &quot;100%&quot;,
+  },
+  wallet: {
+    alignItems: &quot;center&quot;,
+    margin: 10,
+    marginBottom: 15,
+  },
+})</code>
+        </deckgo-highlight-code>
+<p>We’ll be focusing mostly on this file for the majority of our walkthrough. Looking at our <code class="language-text">App.tsx</code> component, you can see right off the bat that our app is looking to store a <code class="language-text">phantomWalletPublicKey</code>. If we look down at what is returned from this component, you’ll see that if this <code class="language-text">phantomWalletPublicKey</code> exists, we’ll render a button that let’s us add a new movie review. Otherwise, we’ll return a “Connect Phantom” button:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">{
+  phantomWalletPublicKey ? (
+    &lt;&gt;
+      &lt;View style={[styles.row, styles.wallet]}&gt;
+        &lt;View style={styles.greenDot} /&gt;
+        &lt;Text style={styles.text} numberOfLines={1} ellipsizeMode=&quot;middle&quot;&gt;
+          {`Connected to: ${phantomWalletPublicKey.toString()}`}
+        &lt;/Text&gt;
+      &lt;/View&gt;
+      &lt;View style={styles.row}&gt;
+        &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+        &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+      &lt;/View&gt;
+    &lt;/&gt;
+  ) : (
+    &lt;View style={{ marginTop: 15 }}&gt;
+      &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+    &lt;/View&gt;
+  )
+}</code>
+        </deckgo-highlight-code>
+<p>We can also see that our <code class="language-text">connect</code> function is currently lacking functionality:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Initiate a new connection to Phantom
+const connect = async () =&gt; {
+  console.log(&quot;connect&quot;)
+}</code>
+        </deckgo-highlight-code>
+<p>Let’s go ahead and change that!</p>
+<h2>Connecting our app to Phantom</h2>
+<p>When we first introduced the concept of deeplinking, we compared it to clicking on a <code class="language-text">mailto:</code> link. In React Native, however, there are no <code class="language-text">&lt;a></code> tags for us to work with. Instead, we can use the <a href="https://docs.expo.dev/versions/latest/sdk/linking/">expo-linking</a> package to create and open URLs from within our app.</p>
+<p>Let’s use this package to try and connect to Phantom from within our <code class="language-text">connect</code> function. Taking a look at <a href="https://docs.phantom.app/integrating/deeplinks-ios-and-android/provider-methods/connect">Phantom’s documentation</a>, we can see that the URL needed to deeplink into Phantom’s connect method is: <a href="https://phantom.app/ul/v1/connect"><code class="language-text">https://phantom.app/ul/v1/connect</code></a>. Let’s try a naive approach by replacing our <code class="language-text">connect</code> method with the following:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Initiate a new connection to Phantom
+const connect = async () =&gt; {
+  const url = &quot;https://phantom.app/ul/v1/connect&quot;
+  Linking.openURL(url)
+}</code>
+        </deckgo-highlight-code>
+<p>Turning back to our phone, let’s try tapping on our “Connect Phantom” button again. This time, we should instantly teleport over to our Phantom app. Pretty cool!</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="" src="https://www.youtube.com/embed/P_T0Kgzlunc?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<p>While our <code class="language-text">connect</code> deeplink jumped us over to the Phantom app, it didn’t quite work as expected. When we opened Phantom, we were never prompted with a connection request. If we switch back over to our dapp, it appears as if nothing had happened.</p>
+<p>Taking another look at the Phantom documentation, it’s clear that our connection request requires us to specify four <a href="https://docs.phantom.app/integrating/deeplinks-ios-and-android/provider-methods/connect#query-string-parameters">additional parameters</a>:</p>
+<ul>
+<li><code class="language-text">app_url</code> : A URL used to fetch app metadata (i.e. title, icon) using the same properties found in <a href="notion://www.notion.so/best-practices/displaying-your-app">Displaying Your App</a>.</li>
+<li><code class="language-text">dapp_encryption_public_key</code> : A public key used for end-to-end encryption.</li>
+<li><code class="language-text">redirect_link</code> : The URI where Phantom should redirect the user upon connection.</li>
+<li><code class="language-text">cluster</code> : The network that should be used for subsequent interactions.</li>
+</ul>
+<p>The <code class="language-text">app_url</code> and <code class="language-text">cluster</code> are both straightforward. For the <code class="language-text">app_url</code>, we just need to pass a URL that represents our app. I created a dummy site at <a href="https://deeplink-movie-tutorial-dummy-site.vercel.app/"><code class="language-text">https://deeplink-movie-tutorial-dummy-site.vercel.app/</code></a>, but feel free to add your own website here. When it comes to selecting a <code class="language-text">cluster</code>, we’ll want to specify <code class="language-text">devnet</code>. This is because the program we are interacting with has already been deployed on devnet.</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Initiate a new connection to Phantom
+const connect = async () =&gt; {
+  // TODO
+  const params = {
+    cluster: &quot;devnet&quot;,
+    app_url: &quot;https://deeplink-movie-tutorial-dummy-site.vercel.app/&quot;,
+  }
+
+  const url = &quot;https://phantom.app/ul/v1/connect&quot;
+  Linking.openURL(url)
+}</code>
+        </deckgo-highlight-code>
+<p>Before we dive deeper into how we can configure a proper connection request, let’s take a minute to switch our wallet’s network over to <code class="language-text">devnet</code>. We’ll need this to connect and sign <code class="language-text">devnet</code> requests coming from our app. You can change this within Phantom’s settings by following the steps in this video:</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="" src="https://www.youtube.com/embed/3h51s4igs-o?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<p>Turning back to our developer environment, the last two parameters we have to specify are <code class="language-text">dapp_encryption_public_key</code> and <code class="language-text">redirect_link</code>. We will need both of these not only for our <code class="language-text">connect</code> request, but also for all subsequent requests to Phantom. Let’s look at what each of these entails.</p>
+<h3>Handling Encryption</h3>
+<p>When using deeplinks, all communication between our app and Phantom will be encrypted by default. We can achieve this encryption via a simple key exchange known as <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie-Hellman</a>.</p>
+<p>In the same way that a Phantom user has a <strong>keypair</strong> made of up a <strong>public key</strong> (i.e. their Solana address) and a <strong>private key</strong> (managed by Phantom), our app will create its own keypair specific to its connection with Phantom. Under the Diffie-Hellman exchange, our app will then share its public key in the initial <code class="language-text">connect</code> request to Phantom. Once it receives our public key, Phantom will then generate its own keypair that’s unique to our app. When sending a <code class="language-text">connect</code> response back to our app, Phantom will also share its corresponding public key with our app.</p>
+<p>Once both parties have each other’s public keys, they can combine them with their own private keys that they <strong><em>did not</em></strong> share and end up with the same result. The beauty of this process is that while neither party shared any sensitive information (both only shared public keys), they can now reliably create the same secret that can be used for encrypting messages. We’ll refer to this secret as the <strong>shared secret.</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a386b2a9123acd53c892ef721726530b/373fb/diffie-hellman.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.621621621621614%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQUlEQVQoz32SXUtCQRCG/efdRNBviCioH2A3fUBXCVoXEVpalEVhKmj5ec7p7O7MPrFHO6VZAwO7M7Mvz8xswXvPsoXQqvhijV95Lnxdmn2l3hU+rM8L1CtWDKcvB9wPqqSS4NWjqnMhQSTORYNnguo9h3XLzoWhNVREJKM01jJJEzZLxxRvL3mPJ6gIxliMjZhOr2h3tojiBqrmmzD445vjumOJjGYExhhEPU6h9gqtARhHlvvqYEaY5HQLLf+0QGitzWgg5F2Izs//zzUXrLTLnDwdMUpHmWAw5wQncPYAzR6kGWGgmlGKJhjbW1hMYZYQ9uu7rJfXeBo28wJRJbaGjdIexbsKg2SKOIexDmtjplGVdnf79wzDNl/Gz9z0a4zTUS6YbVkNtf45j6MGiYv47zcttPzXH1vxLF/CsgfCT8bFuvBA5L0kAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Diffie-Hellman"
+        title="Diffie-Hellman"
+        src="/static/a386b2a9123acd53c892ef721726530b/fcda8/diffie-hellman.png"
+        srcset="/static/a386b2a9123acd53c892ef721726530b/12f09/diffie-hellman.png 148w,
+/static/a386b2a9123acd53c892ef721726530b/e4a3f/diffie-hellman.png 295w,
+/static/a386b2a9123acd53c892ef721726530b/fcda8/diffie-hellman.png 590w,
+/static/a386b2a9123acd53c892ef721726530b/efc66/diffie-hellman.png 885w,
+/static/a386b2a9123acd53c892ef721726530b/c83ae/diffie-hellman.png 1180w,
+/static/a386b2a9123acd53c892ef721726530b/373fb/diffie-hellman.png 2068w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>To begin implementing Diffie-Hellman, we’ll need a way of generating a x25519 keypair. We recommend using <a href="https://tweetnacl.js.org/#/">TweetNaCl</a> which is already installed with our starter repo. In addition to importing TweetNaCl, we’ll need to keep track of the public key we generate as well as the shared secret we’ll get when Phantom sends us a response. When we send our public key as a <code class="language-text">dapp_encryption_public_key</code> parameter, we’ll also need to encode with with <code class="language-text">bs58</code>. Let’s update our <code class="language-text">App.tsx</code> file with the following:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import &quot;react-native-get-random-values&quot;
+import &quot;react-native-url-polyfill/auto&quot;
+import { Buffer } from &quot;buffer&quot;
+global.Buffer = global.Buffer || Buffer
+import { StatusBar } from &quot;expo-status-bar&quot;
+import React, { useRef, useState } from &quot;react&quot;
+import { ActivityIndicator, StyleSheet, Text, View } from &quot;react-native&quot;
+import {
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  Transaction,
+} from &quot;@solana/web3.js&quot;
+import MovieList from &quot;./components/MovieList&quot;
+import Button from &quot;./components/Button&quot;
+import { SafeAreaProvider, SafeAreaView } from &quot;react-native-safe-area-context&quot;
+import ActionSheet from &quot;react-native-actions-sheet&quot;
+import AddReviewSheet from &quot;./components/AddReviewSheet&quot;
+import Toast from &quot;react-native-toast-message&quot;
+import { toastConfig } from &quot;./components/ToastConfig&quot;
+import { COLORS } from &quot;./constants&quot;
+import * as Linking from &quot;expo-linking&quot;
+import nacl from &quot;tweetnacl&quot;
+import bs58 from &quot;bs58&quot;
+
+const connection = new Connection(clusterApiUrl(&quot;devnet&quot;))
+
+export default function App() {
+  const [phantomWalletPublicKey, setPhantomWalletPublicKey] =
+    useState&lt;PublicKey | null&gt;(null)
+
+  const [submitting, setSubmitting] = useState(false)
+
+  const actionSheetRef = useRef&lt;ActionSheet&gt;(null)
+
+  const [dappKeyPair] = useState(nacl.box.keyPair())
+  const [sharedSecret, setSharedSecret] = useState&lt;Uint8Array&gt;()
+
+  // Initiate a new connection to Phantom
+  const connect = async () =&gt; {
+    // TODO
+    const params = {
+      cluster: &quot;devnet&quot;,
+      app_url: &quot;https://deeplink-movie-tutorial-dummy-site.vercel.app/&quot;,
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+    }
+
+    const url = &quot;https://phantom.app/ul/v1/connect&quot;
+    Linking.openURL(url)
+  }
+
+  // Initiate a disconnect from Phantom
+  const disconnect = async () =&gt; {
+    console.log(&quot;disconnect&quot;)
+  }
+
+  // Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+  const signAndSendTransaction = async (transaction: Transaction) =&gt; {
+    console.log(&quot;signAndSendTransaction&quot;)
+  }
+
+  // Open the &#39;Add a Review&#39; sheet defined in `components/AddReviewSheet.tsx`
+  const openAddReviewSheet = () =&gt; {
+    actionSheetRef.current?.show()
+  }
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;SafeAreaView style={styles.container}&gt;
+        &lt;View style={styles.header}&gt;
+          {phantomWalletPublicKey ? (
+            &lt;&gt;
+              &lt;View style={[styles.row, styles.wallet]}&gt;
+                &lt;View style={styles.greenDot} /&gt;
+                &lt;Text
+                  style={styles.text}
+                  numberOfLines={1}
+                  ellipsizeMode=&quot;middle&quot;
+                &gt;
+                  {`Connected to: ${phantomWalletPublicKey.toString()}`}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.row}&gt;
+                &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+                &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+              &lt;/View&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;View style={{ marginTop: 15 }}&gt;
+              &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+            &lt;/View&gt;
+          )}
+        &lt;/View&gt;
+        {submitting &amp;&amp; (
+          &lt;ActivityIndicator
+            color={COLORS.WHITE}
+            size=&quot;large&quot;
+            style={styles.spinner}
+          /&gt;
+        )}
+        &lt;MovieList connection={connection} /&gt;
+        &lt;AddReviewSheet
+          actionSheetRef={actionSheetRef}
+          phantomWalletPublicKey={phantomWalletPublicKey}
+          signAndSendTransaction={signAndSendTransaction}
+        /&gt;
+        &lt;Toast config={toastConfig} /&gt;
+        &lt;StatusBar style=&quot;auto&quot; /&gt;
+      &lt;/SafeAreaView&gt;
+    &lt;/SafeAreaProvider&gt;
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.DARK_GREY,
+    flexGrow: 1,
+    position: &quot;relative&quot;,
+  },
+  greenDot: {
+    height: 8,
+    width: 8,
+    borderRadius: 10,
+    marginRight: 5,
+    backgroundColor: COLORS.GREEN,
+  },
+  header: {
+    width: &quot;95%&quot;,
+    marginLeft: &quot;auto&quot;,
+    marginRight: &quot;auto&quot;,
+  },
+  row: {
+    flexDirection: &quot;row&quot;,
+    justifyContent: &quot;space-between&quot;,
+    marginBottom: 5,
+  },
+  spinner: {
+    position: &quot;absolute&quot;,
+    alignSelf: &quot;center&quot;,
+    top: &quot;50%&quot;,
+    zIndex: 1000,
+  },
+  text: {
+    color: COLORS.LIGHT_GREY,
+    width: &quot;100%&quot;,
+  },
+  wallet: {
+    alignItems: &quot;center&quot;,
+    margin: 10,
+    marginBottom: 15,
+  },
+})</code>
+        </deckgo-highlight-code>
+<p>Before we can get to using our <code class="language-text">dapp_encryption_public_key</code>, we’ll need to set up some way of handling a response from Phantom. Let’s go ahead and set that up now.</p>
+<h3>Specifying Redirects</h3>
+<p>Whenever we make a deeplinking request to Phantom, we’ll also need to tell Phantom how to get back to our app. We can do this by creating our own set of deeplinks for our React Native app. Specifically, we can create a deeplink for receiving a Phantom <code class="language-text">connect</code> event and include that as the <code class="language-text">redirect_link</code> in our initial request.</p>
+<p>Once again, the <a href="https://docs.expo.dev/versions/latest/sdk/linking/">expo-linking</a> package can help us achieve this. First, we’ll need to specify our own app’s <a href="https://docs.expo.dev/guides/linking/#linking-to-your-app">URL scheme</a>, just like how Phantom specifies <code class="language-text">phantom://</code>. We can do this from within our <code class="language-text">app.json</code> file. Here, I’ve already set us up with <code class="language-text">deep-links-movie-tutorial://</code>. Next, we’ll need to create the URL endpoint we want to pass as our <code class="language-text">redirect_link</code>. Let’s call this <code class="language-text">onConnect</code>. We can create this URL from within <code class="language-text">App.tsx</code> like so:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">const onConnectRedirectLink = Linking.createURL(&quot;onConnect&quot;)</code>
+        </deckgo-highlight-code>
+<p>Now that we have a valid URL that Phantom can redirect back to, we’ll need a way for our app to actually listen for in-bound links. There are <a href="https://reactnative.dev/docs/linking#handling-deep-links">two scenarios</a> in which our app could be opened with this link.</p>
+<ol>
+<li><strong>Our app is already already opened and a Linking URL event is fired</strong></li>
+<li><strong>Our app is not already opened and a URL is passed which opens our app and sets it as our app’s <code class="language-text">initialURL</code></strong></li>
+</ol>
+<p>In the first case, because our app is already open and running, we can simply listen for a <code class="language-text">url</code> event and track the incoming URL:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">const [deepLink, setDeepLink] = useState&lt;string&gt;(&quot;&quot;)
+
+// On app start up, listen for a &quot;url&quot; event
+useEffect(() =&gt; {
+  Linking.addEventListener(&quot;url&quot;, handleDeepLink)
+  return () =&gt; {
+    Linking.removeEventListener(&quot;url&quot;, handleDeepLink)
+  }
+}, [])
+
+// When a &quot;url&quot; event occurs, track the url
+const handleDeepLink = ({ url }: Linking.EventType) =&gt; {
+  setDeepLink(url)
+}</code>
+        </deckgo-highlight-code>
+<p>In the second scenario, we can’t rely on just listening for the event because our app may not already be open when the event is fired. To account for this, we should make sure we always call <a href="https://docs.expo.dev/versions/latest/sdk/linking/#linkinggetinitialurl">Linking.getInitialURL</a> on our app startup:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">const [deepLink, setDeepLink] = useState&lt;string&gt;(&quot;&quot;)
+
+// On app start up, check if we were opened by an inbound deeplink. If so, track the intial URL
+// Then, listen for a &quot;url&quot; event
+useEffect(() =&gt; {
+  const initializeDeeplinks = async () =&gt; {
+    const initialUrl = await Linking.getInitialURL()
+    if (initialUrl) {
+      setDeepLink(initialUrl)
+    }
+  }
+  initializeDeeplinks()
+  const listener = Linking.addEventListener(&quot;url&quot;, handleDeepLink)
+  return () =&gt; {
+    listener.remove()
+  }
+}, [])
+
+// When a &quot;url&quot; event occurs, track the url
+const handleDeepLink = ({ url }: Linking.EventType) =&gt; {
+  setDeepLink(url)
+}</code>
+        </deckgo-highlight-code>
+<p>Finally, we’ll need some way of actually parsing the inbound link from Phantom and responding to it accordingly. Whenever we receive a <code class="language-text">deeplink</code> that matches the <code class="language-text">onConnect</code> URL we specified earlier, we know we’ll be dealing with a <code class="language-text">connect</code> response. We can handle this like so:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Handle in-bound links
+useEffect(() =&gt; {
+  if (!deepLink) return
+
+  const url = new URL(deepLink)
+  const params = url.searchParams
+
+  // Handle an error response from Phantom
+  if (params.get(&quot;errorCode&quot;)) {
+    const error = Object.fromEntries([...params])
+    const message =
+      error?.errorMessage ??
+      JSON.stringify(Object.fromEntries([...params]), null, 2)
+    console.log(&quot;error: &quot;, message)
+    return
+  }
+
+  // Handle a `connect` response from Phantom
+  if (/onConnect/.test(url.pathname)) {
+    console.log(&quot;we received a connect response from Phantom: &quot;, url)
+  }
+}, [deepLink])</code>
+        </deckgo-highlight-code>
+<h3>Making a proper request to Phantom</h3>
+<p>Now that we have all of the necessary components, it’s time for us to make a proper <code class="language-text">connect</code> request to Phantom. To recap, our connect request requires four parameters:</p>
+<ul>
+<li><code class="language-text">app_url</code></li>
+<li><code class="language-text">dapp_encryption_public_key</code></li>
+<li><code class="language-text">redirect_link</code></li>
+<li><code class="language-text">cluster</code></li>
+</ul>
+<p>When interacting with deeplinks, we can specify additional parameters by simply appending them to the base URL as query string parameters. Let’s put all these pieces together and try making a new connect request. Go ahead and update your <code class="language-text">App.tsx</code> file with the following:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import &quot;react-native-get-random-values&quot;
+import &quot;react-native-url-polyfill/auto&quot;
+import { Buffer } from &quot;buffer&quot;
+global.Buffer = global.Buffer || Buffer
+import { StatusBar } from &quot;expo-status-bar&quot;
+import React, { useEffect, useRef, useState } from &quot;react&quot;
+import { ActivityIndicator, StyleSheet, Text, View } from &quot;react-native&quot;
+import {
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  Transaction,
+} from &quot;@solana/web3.js&quot;
+import MovieList from &quot;./components/MovieList&quot;
+import Button from &quot;./components/Button&quot;
+import { SafeAreaProvider, SafeAreaView } from &quot;react-native-safe-area-context&quot;
+import ActionSheet from &quot;react-native-actions-sheet&quot;
+import AddReviewSheet from &quot;./components/AddReviewSheet&quot;
+import Toast from &quot;react-native-toast-message&quot;
+import { toastConfig } from &quot;./components/ToastConfig&quot;
+import { COLORS } from &quot;./constants&quot;
+import nacl from &quot;tweetnacl&quot;
+import bs58 from &quot;bs58&quot;
+import * as Linking from &quot;expo-linking&quot;
+
+const onConnectRedirectLink = Linking.createURL(&quot;onConnect&quot;)
+
+const connection = new Connection(clusterApiUrl(&quot;devnet&quot;))
+
+export default function App() {
+  const [phantomWalletPublicKey, setPhantomWalletPublicKey] =
+    useState&lt;PublicKey | null&gt;(null)
+
+  const [submitting, setSubmitting] = useState(false)
+
+  const actionSheetRef = useRef&lt;ActionSheet&gt;(null)
+
+  const [dappKeyPair] = useState(nacl.box.keyPair())
+  const [sharedSecret, setSharedSecret] = useState&lt;Uint8Array&gt;()
+
+  const [deepLink, setDeepLink] = useState&lt;string&gt;(&quot;&quot;)
+
+  // On app start up, check if we were opened by an inbound deeplink. If so, track the intial URL
+  // Then, listen for a &quot;url&quot; event
+  useEffect(() =&gt; {
+    const initializeDeeplinks = async () =&gt; {
+      const initialUrl = await Linking.getInitialURL()
+      if (initialUrl) {
+        setDeepLink(initialUrl)
+      }
+    }
+    initializeDeeplinks()
+    const listener = Linking.addEventListener(&quot;url&quot;, handleDeepLink)
+    return () =&gt; {
+      listener.remove()
+    }
+  }, [])
+
+  // When a &quot;url&quot; event occurs, track the url
+  const handleDeepLink = ({ url }: Linking.EventType) =&gt; {
+    setDeepLink(url)
+  }
+
+  // Handle in-bound links
+  useEffect(() =&gt; {
+    if (!deepLink) return
+
+    const url = new URL(deepLink)
+    const params = url.searchParams
+
+    // Handle an error response from Phantom
+    if (params.get(&quot;errorCode&quot;)) {
+      const error = Object.fromEntries([...params])
+      const message =
+        error?.errorMessage ??
+        JSON.stringify(Object.fromEntries([...params]), null, 2)
+      console.log(&quot;error: &quot;, message)
+      return
+    }
+
+    // Handle a `connect` response from Phantom
+    if (/onConnect/.test(url.pathname)) {
+      console.log(&quot;we received a connect response from Phantom: &quot;, url)
+    }
+  }, [deepLink])
+
+  // Initiate a new connection to Phantom
+  const connect = async () =&gt; {
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      cluster: &quot;devnet&quot;,
+      app_url: &quot;https://phantom.app&quot;,
+      redirect_link: onConnectRedirectLink,
+    })
+
+    const url = `https://phantom.app/ul/v1/connect?${params.toString()}`
+    Linking.openURL(url)
+  }
+
+  // Initiate a disconnect from Phantom
+  const disconnect = async () =&gt; {
+    console.log(&quot;disconnect&quot;)
+  }
+
+  // Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+  const signAndSendTransaction = async (transaction: Transaction) =&gt; {
+    console.log(&quot;signAndSendTransaction&quot;)
+  }
+
+  // Open the &#39;Add a Review&#39; sheet defined in `components/AddReviewSheet.tsx`
+  const openAddReviewSheet = () =&gt; {
+    actionSheetRef.current?.show()
+  }
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;SafeAreaView style={styles.container}&gt;
+        &lt;View style={styles.header}&gt;
+          {phantomWalletPublicKey ? (
+            &lt;&gt;
+              &lt;View style={[styles.row, styles.wallet]}&gt;
+                &lt;View style={styles.greenDot} /&gt;
+                &lt;Text
+                  style={styles.text}
+                  numberOfLines={1}
+                  ellipsizeMode=&quot;middle&quot;
+                &gt;
+                  {`Connected to: ${phantomWalletPublicKey.toString()}`}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.row}&gt;
+                &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+                &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+              &lt;/View&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;View style={{ marginTop: 15 }}&gt;
+              &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+            &lt;/View&gt;
+          )}
+        &lt;/View&gt;
+        {submitting &amp;&amp; (
+          &lt;ActivityIndicator
+            color={COLORS.WHITE}
+            size=&quot;large&quot;
+            style={styles.spinner}
+          /&gt;
+        )}
+        &lt;MovieList connection={connection} /&gt;
+        &lt;AddReviewSheet
+          actionSheetRef={actionSheetRef}
+          phantomWalletPublicKey={phantomWalletPublicKey}
+          signAndSendTransaction={signAndSendTransaction}
+        /&gt;
+        &lt;Toast config={toastConfig} /&gt;
+        &lt;StatusBar style=&quot;auto&quot; /&gt;
+      &lt;/SafeAreaView&gt;
+    &lt;/SafeAreaProvider&gt;
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.DARK_GREY,
+    flexGrow: 1,
+    position: &quot;relative&quot;,
+  },
+  greenDot: {
+    height: 8,
+    width: 8,
+    borderRadius: 10,
+    marginRight: 5,
+    backgroundColor: COLORS.GREEN,
+  },
+  header: {
+    width: &quot;95%&quot;,
+    marginLeft: &quot;auto&quot;,
+    marginRight: &quot;auto&quot;,
+  },
+  row: {
+    flexDirection: &quot;row&quot;,
+    justifyContent: &quot;space-between&quot;,
+    marginBottom: 5,
+  },
+  spinner: {
+    position: &quot;absolute&quot;,
+    alignSelf: &quot;center&quot;,
+    top: &quot;50%&quot;,
+    zIndex: 1000,
+  },
+  text: {
+    color: COLORS.LIGHT_GREY,
+    width: &quot;100%&quot;,
+  },
+  wallet: {
+    alignItems: &quot;center&quot;,
+    margin: 10,
+    marginBottom: 15,
+  },
+})</code>
+        </deckgo-highlight-code>
+<p>Now, when we tap our “Connect Phantom” button, we should also see a connect modal pop up from within Phantom. When we approve this request by tapping “Connect”, Phantom should then redirect us back to our app. Progress!</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="" src="https://www.youtube.com/embed/4cN0eL36yjE?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<h3>Putting it all together</h3>
+<p>Let’s take a look at our console to see what Phantom is sending back to our app. If you take a look your console, you should see that we’re logging a URL that looks something like this:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">&quot;exp://172.20.10.2:19000/--/onConnect?phantom_encryption_public_key=AHWZNYZ7Q3wsnugvYSmSLfupcRHvAJqDRWkHwwBBm5jh&amp;nonce=2n76Ujnsi6u5i3NM1xC4HE6m6WuMyX3L2&amp;data=FspPVemQN61nddg5DhyftJYcycsNQrvUpnSQi6DxtgmpvMh82bDUrE3itP5LSCJmqKgbQdYU3M5N5duM6HMrvesC2pyMdDmAJtGawo9wjWqxG6F1VUAg5dndAqVHN1XWsDhuBjsJYRL1DMFMSgb6PveeV6tJ3joxjGMi4ZrjFGxXFakGUWRKsQzgd44w28B4yJH1n9Eiwp8rPLwi4BaWwtuMzjUX42UwmVyEbeCEZrJ3rJQZfuTYEULWo5RPnDZDKssnR4nLY4nfYjk27iSG3ooDX5C4SoCvvZLbMd7jXtR6hhwWfzdYUM66fsjbN9WPaVDvxVBDmVSjwJBsM1HQv1GfKf981eD9aeZJptVA6yJjxTHYoVyQJd8WMqPJrhjZUJHbhPwfc9qLiKhXvpECSwGyKfGxLuqW5kK&quot;</code>
+        </deckgo-highlight-code>
+<p>Recall that when we made our <code class="language-text">connect</code> request to Phantom, we passed additional data such as our <code class="language-text">app_url</code> and <code class="language-text">dapp_encryption_public_key</code> as query string parameters. Now that we have a response, we can see that the URL we’re logging from Phantom also has additional data at the following query string parameters:</p>
+<ul>
+<li><code class="language-text">phantom_encryption_public_key</code></li>
+<li><code class="language-text">nonce</code></li>
+<li><code class="language-text">data</code></li>
+</ul>
+<p>Taking a closer look at these query string parameters, you’ll see now that all data from Phantom has been encrypted. In particular, the <code class="language-text">data</code> field sent back from Phantom is now an encrypted JSON string. Let’s go ahead and decrypt it!</p>
+<p>When we made our <code class="language-text">connect</code> request to Phantom, we passed along our <code class="language-text">dapp_encryption_public_key</code> that Phantom could use to generate a shared secret on its side. Now that Phantom has passed us back its <code class="language-text">phantom_encryption_public_key</code>, we can also generate this shared secret and complete the Diffie-Hellman key exchange needed to decrypt the <code class="language-text">data</code>. We can do this by decoding the <code class="language-text">phantom_encryption_public_key</code> received from Phantom and combining it with our app’s <code class="language-text">dappKeyPair.secretKey</code> like so:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Handle a `connect` response from Phantom
+if (/onConnect/.test(url.pathname)) {
+  console.log(&quot;we received a connect response from Phantom: &quot;, url)
+  const sharedSecretDapp = nacl.box.before(
+    bs58.decode(params.get(&quot;phantom_encryption_public_key&quot;)!),
+    dappKeyPair.secretKey
+  )
+}</code>
+        </deckgo-highlight-code>
+<p>Moving over to our <code class="language-text">utils</code> folder, let’s create a new file named <code class="language-text">decryptPayload.ts</code> and add the following function:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import nacl from &quot;tweetnacl&quot;
+import bs58 from &quot;bs58&quot;
+
+export const decryptPayload = (
+  data: string,
+  nonce: string,
+  sharedSecret?: Uint8Array
+) =&gt; {
+  if (!sharedSecret) throw new Error(&quot;missing shared secret&quot;)
+
+  const decryptedData = nacl.box.open.after(
+    bs58.decode(data),
+    bs58.decode(nonce),
+    sharedSecret
+  )
+  if (!decryptedData) {
+    throw new Error(&quot;Unable to decrypt data&quot;)
+  }
+  return JSON.parse(Buffer.from(decryptedData).toString(&quot;utf8&quot;))
+}</code>
+        </deckgo-highlight-code>
+<p>Here, we’re creating a helper function that will decrypt a given <code class="language-text">data</code> string using the <code class="language-text">sharedSecret</code> we just generated in our Diffie-Hellman key exchange and the <code class="language-text">nonce</code> passed back from Phantom. With this method now in place, we can now decrypt the <code class="language-text">data</code> passed back from Phantom:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Handle a `connect` response from Phantom
+if (/onConnect/.test(url.pathname)) {
+  console.log(&quot;we received a connect response from Phantom: &quot;, url)
+  const sharedSecretDapp = nacl.box.before(
+    bs58.decode(params.get(&quot;phantom_encryption_public_key&quot;)!),
+    dappKeyPair.secretKey
+  )
+  const connectData = decryptPayload(
+    params.get(&quot;data&quot;)!,
+    params.get(&quot;nonce&quot;)!,
+    sharedSecretDapp
+  )
+  console.log(&quot;decrypted data received from Phantom: &quot;, connectData)
+}</code>
+        </deckgo-highlight-code>
+<p>Taking a look at our console, we should see that our app has decoded the <code class="language-text">data</code> from Phantom to an object that has <code class="language-text">public_key</code> and <code class="language-text">session</code> fields:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">decrypted data received from Phantom:  Object {
+  &quot;public_key&quot;: &quot;GYLkraPfvT3UtUbdxcHiVWV2EShBoZtqW1Bcq4VazUCt&quot;,
+  &quot;session&quot;: &quot;22XD6EDJ4X3ALDJkHkQrdmrFdTHVHjD2noCbPrPum7xr9x5cbLN9XS5MtiVtNF5tCUFAY6XyBmyvyLatcCrzpGCGJ6kFFwYf4jKkG3YnYJYZDbTaEFPraADF2U56gtXq14ZMu7YTSA3Uge8sV51Qhs5HSv2UvP4wsdsDDhNXZJB7jUcbY4LgE6sfdP2UEEwvYxf91dmMQgEc3BwFD8ab59Lssi&quot;,
+}</code>
+        </deckgo-highlight-code>
+<p>Here, the <code class="language-text">public_key</code> that Phantom passes us is the public key of the end user. The <code class="language-text">session</code> we receive is specific to this user and represents our user’s connection to our app. Our app should continue to pass this <code class="language-text">session</code> param back to Phantom to authenticate all subsequent requests. As long as this <code class="language-text">session</code> is valid, we should consider this user “connected” to our app.</p>
+<p>With this data now decrypted, we can go ahead and store both the <code class="language-text">public_key</code> and <code class="language-text">session</code> received from Phantom. Let’s update our <code class="language-text">App.tsx</code> file with the following:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import &quot;react-native-get-random-values&quot;
+import &quot;react-native-url-polyfill/auto&quot;
+import { Buffer } from &quot;buffer&quot;
+global.Buffer = global.Buffer || Buffer
+import { StatusBar } from &quot;expo-status-bar&quot;
+import React, { useEffect, useRef, useState } from &quot;react&quot;
+import { ActivityIndicator, StyleSheet, Text, View } from &quot;react-native&quot;
+import {
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  Transaction,
+} from &quot;@solana/web3.js&quot;
+import MovieList from &quot;./components/MovieList&quot;
+import Button from &quot;./components/Button&quot;
+import { SafeAreaProvider, SafeAreaView } from &quot;react-native-safe-area-context&quot;
+import ActionSheet from &quot;react-native-actions-sheet&quot;
+import AddReviewSheet from &quot;./components/AddReviewSheet&quot;
+import Toast from &quot;react-native-toast-message&quot;
+import { toastConfig } from &quot;./components/ToastConfig&quot;
+import { COLORS } from &quot;./constants&quot;
+import * as Linking from &quot;expo-linking&quot;
+import nacl from &quot;tweetnacl&quot;
+import bs58 from &quot;bs58&quot;
+import { decryptPayload } from &quot;./utils/decryptPayload&quot;
+
+const onConnectRedirectLink = Linking.createURL(&quot;onConnect&quot;)
+
+const connection = new Connection(clusterApiUrl(&quot;devnet&quot;))
+
+export default function App() {
+  const [phantomWalletPublicKey, setPhantomWalletPublicKey] =
+    useState&lt;PublicKey | null&gt;(null)
+
+  const [submitting, setSubmitting] = useState(false)
+
+  const actionSheetRef = useRef&lt;ActionSheet&gt;(null)
+
+  const [dappKeyPair] = useState(nacl.box.keyPair())
+  const [sharedSecret, setSharedSecret] = useState&lt;Uint8Array&gt;()
+  const [session, setSession] = useState&lt;string&gt;()
+
+  const [deepLink, setDeepLink] = useState&lt;string&gt;(&quot;&quot;)
+
+  // On app start up, check if we were opened by an inbound deeplink. If so, track the intial URL
+  // Then, listen for a &quot;url&quot; event
+  useEffect(() =&gt; {
+    const initializeDeeplinks = async () =&gt; {
+      const initialUrl = await Linking.getInitialURL()
+      if (initialUrl) {
+        setDeepLink(initialUrl)
+      }
+    }
+    initializeDeeplinks()
+    const listener = Linking.addEventListener(&quot;url&quot;, handleDeepLink)
+    return () =&gt; {
+      listener.remove()
+    }
+  }, [])
+
+  // When a &quot;url&quot; event occurs, track the url
+  const handleDeepLink = ({ url }: Linking.EventType) =&gt; {
+    setDeepLink(url)
+  }
+
+  // Handle in-bound links
+  useEffect(() =&gt; {
+    if (!deepLink) return
+
+    const url = new URL(deepLink)
+    const params = url.searchParams
+
+    // Handle an error response from Phantom
+    if (params.get(&quot;errorCode&quot;)) {
+      const error = Object.fromEntries([...params])
+      const message =
+        error?.errorMessage ??
+        JSON.stringify(Object.fromEntries([...params]), null, 2)
+      console.log(&quot;error: &quot;, message)
+      return
+    }
+
+    // Handle a `connect` response from Phantom
+    if (/onConnect/.test(url.pathname)) {
+      const sharedSecretDapp = nacl.box.before(
+        bs58.decode(params.get(&quot;phantom_encryption_public_key&quot;)!),
+        dappKeyPair.secretKey
+      )
+      const connectData = decryptPayload(
+        params.get(&quot;data&quot;)!,
+        params.get(&quot;nonce&quot;)!,
+        sharedSecretDapp
+      )
+      setSharedSecret(sharedSecretDapp)
+      setSession(connectData.session)
+      setPhantomWalletPublicKey(new PublicKey(connectData.public_key))
+      console.log(`connected to ${connectData.public_key.toString()}`)
+    }
+  }, [deepLink])
+
+  // Initiate a new connection to Phantom
+  const connect = async () =&gt; {
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      cluster: &quot;devnet&quot;,
+      app_url: &quot;https://deeplink-movie-tutorial-dummy-site.vercel.app/&quot;,
+      redirect_link: onConnectRedirectLink,
+    })
+
+    const url = `https://phantom.app/ul/v1/connect?${params.toString()}`
+    Linking.openURL(url)
+  }
+
+  // Initiate a disconnect from Phantom
+  const disconnect = async () =&gt; {
+    console.log(&quot;disconnect&quot;)
+  }
+
+  // Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+  const signAndSendTransaction = async (transaction: Transaction) =&gt; {
+    console.log(&quot;signAndSendTransaction&quot;)
+  }
+
+  // Open the &#39;Add a Review&#39; sheet defined in `components/AddReviewSheet.tsx`
+  const openAddReviewSheet = () =&gt; {
+    actionSheetRef.current?.show()
+  }
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;SafeAreaView style={styles.container}&gt;
+        &lt;View style={styles.header}&gt;
+          {phantomWalletPublicKey ? (
+            &lt;&gt;
+              &lt;View style={[styles.row, styles.wallet]}&gt;
+                &lt;View style={styles.greenDot} /&gt;
+                &lt;Text
+                  style={styles.text}
+                  numberOfLines={1}
+                  ellipsizeMode=&quot;middle&quot;
+                &gt;
+                  {`Connected to: ${phantomWalletPublicKey.toString()}`}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.row}&gt;
+                &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+                &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+              &lt;/View&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;View style={{ marginTop: 15 }}&gt;
+              &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+            &lt;/View&gt;
+          )}
+        &lt;/View&gt;
+        {submitting &amp;&amp; (
+          &lt;ActivityIndicator
+            color={COLORS.WHITE}
+            size=&quot;large&quot;
+            style={styles.spinner}
+          /&gt;
+        )}
+        &lt;MovieList connection={connection} /&gt;
+        &lt;AddReviewSheet
+          actionSheetRef={actionSheetRef}
+          phantomWalletPublicKey={phantomWalletPublicKey}
+          signAndSendTransaction={signAndSendTransaction}
+        /&gt;
+        &lt;Toast config={toastConfig} /&gt;
+        &lt;StatusBar style=&quot;auto&quot; /&gt;
+      &lt;/SafeAreaView&gt;
+    &lt;/SafeAreaProvider&gt;
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.DARK_GREY,
+    flexGrow: 1,
+    position: &quot;relative&quot;,
+  },
+  greenDot: {
+    height: 8,
+    width: 8,
+    borderRadius: 10,
+    marginRight: 5,
+    backgroundColor: COLORS.GREEN,
+  },
+  header: {
+    width: &quot;95%&quot;,
+    marginLeft: &quot;auto&quot;,
+    marginRight: &quot;auto&quot;,
+  },
+  row: {
+    flexDirection: &quot;row&quot;,
+    justifyContent: &quot;space-between&quot;,
+    marginBottom: 5,
+  },
+  spinner: {
+    position: &quot;absolute&quot;,
+    alignSelf: &quot;center&quot;,
+    top: &quot;50%&quot;,
+    zIndex: 1000,
+  },
+  text: {
+    color: COLORS.LIGHT_GREY,
+    width: &quot;100%&quot;,
+  },
+  wallet: {
+    alignItems: &quot;center&quot;,
+    margin: 10,
+    marginBottom: 15,
+  },
+})</code>
+        </deckgo-highlight-code>
+<p>Now, when we approve our <code class="language-text">connect</code> request, our app should recognize that the request was successful and render “Add Review” and “Disconnect” buttons. We’re now officially connected!</p>
+<h3>Notes on Sessions</h3>
+<p>From here on out, all communication with Phantom will require the <code class="language-text">session</code> param that our app has stored. This <code class="language-text">session</code> does not expire, and will represent our connection to Phantom until it is deemed invalid. There are two scenarios in which a <code class="language-text">session</code> can be deemed invalid:</p>
+<ol>
+<li>It was not signed by the current wallet keypair. This could mean that the session is entirely fake, or that it was signed by another keypair in the user’s wallet.</li>
+<li>It was signed by the current wallet keypair, but the session’s JSON <code class="language-text">data</code> does not pass muster. There are a few reasons why this might occur:
+a. The user switched chains (or possibly networks).
+b. The <code class="language-text">app_url</code> could be blocked if malicious.</li>
+</ol>
+<p>In cases where our app loses this <code class="language-text">session</code> (such as if a user force closes our app) we should simply consider the user disconnected and require a new connection before continuing.</p>
+<h2>Disconnecting From Phantom</h2>
+<p>Before we continue on to adding movie reviews to our app, we should also give our users a way to disconnect. Disconnecting follows much of the same process as connecting. Namely, we will make a deeplink to Phantom that:</p>
+<ul>
+<li>Links to a specific base URL (in this case <a href="https://phantom.app/ul/v1/disconnect"><code class="language-text">https://phantom.app/ul/v1/disconnect</code></a>)</li>
+<li>Passes additional query string parameters (including <code class="language-text">dapp_encryption_public_key</code> and <code class="language-text">redirect_link</code>)</li>
+<li>When successful, is set up with logic to decrypt and parse a redirect link received from Phantom.</li>
+</ul>
+<p>We’ve already covered most of the heavy lifting here in our initial <code class="language-text">connect</code> request. To set ourselves up for future requests, let’s refactor some of our existing connect logic.</p>
+<p>First, let’s add the following line to our <code class="language-text">constants/index.ts</code> file:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">export const BASE_URL = &quot;https://phantom.app/ul/v1/&quot;</code>
+        </deckgo-highlight-code>
+<p>Next, create a new file within our <code class="language-text">utils</code> folder named <code class="language-text">buildUrl.ts</code> and add the following function. This will make it easier for us to construct different Phantom deeplinks in the future:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import { BASE_URL } from &quot;../constants&quot;
+
+export const buildUrl = (path: string, params: URLSearchParams) =&gt;
+  `${BASE_URL}${path}?${params.toString()}`</code>
+        </deckgo-highlight-code>
+<p>If we take a look at the <a href="https://docs.phantom.app/integrating/deeplinks-ios-and-android/provider-methods/disconnect#query-string-parameters">query string parameters required for disconnect</a>, we can see that most of it looks similar to our initial <code class="language-text">connect</code> request. This time, however, we will also need to encrypt a <code class="language-text">payload</code> in our request to Phantom. Remember, our encrypted channel with Phantom works both ways!</p>
+<p>To set ourselves up for encrypting future requests, let’s create a new file under our <code class="language-text">utils</code> folder named <code class="language-text">encryptPayload.ts</code> and add the following:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import nacl from &quot;tweetnacl&quot;
+
+export const encryptPayload = (payload: any, sharedSecret?: Uint8Array) =&gt; {
+  if (!sharedSecret) throw new Error(&quot;missing shared secret&quot;)
+
+  const nonce = nacl.randomBytes(24)
+
+  const encryptedPayload = nacl.box.after(
+    Buffer.from(JSON.stringify(payload)),
+    nonce,
+    sharedSecret
+  )
+
+  return [nonce, encryptedPayload]
+}</code>
+        </deckgo-highlight-code>
+<p>Here, we’re using the <code class="language-text">sharedSecret</code> we generated from our Diffie-Hellman key exchange to encrypt some arbitrary payload that we will send to Phantom. As part of this encryption process, we’ll also generate a <code class="language-text">nonce</code> that we’ll send to Phantom so that Phantom can decrypt our payload.</p>
+<p>Switching over to our <code class="language-text">App.tsx</code> file, we can now add the necessary components to make a <code class="language-text">disconnect</code> deeplink and handle its corresponding redirect link back from Phantom. First, we’ll need to create a redirect link:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">const onDisconnectRedirectLink = Linking.createURL(&quot;onDisconnect&quot;)</code>
+        </deckgo-highlight-code>
+<p>Then, we’ll need a way to handle this incoming redirect link. In the case of <code class="language-text">disconnect</code>, Phantom doesn’t return us anything—we should simply forget our users <code class="language-text">phantomWalletPublicKey</code> as our <code class="language-text">session</code> would no longer be valid:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Handle a `disconnect` response from Phantom
+if (/onDisconnect/.test(url.pathname)) {
+  setPhantomWalletPublicKey(null)
+  console.log(&quot;disconnected&quot;)
+}</code>
+        </deckgo-highlight-code>
+<p>With our redirect route in place, we can finally build and open our <code class="language-text">disconnect</code> deeplink. Note that we are encrypting a payload to Phantom that includes our <code class="language-text">session</code> param from earlier. We will need to pass this to Phantom to authenticate all subsequent requests!</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Initiate a disconnect from Phantom
+const disconnect = async () =&gt; {
+  const payload = {
+    session,
+  }
+  const [nonce, encryptedPayload] = encryptPayload(payload, sharedSecret)
+  const params = new URLSearchParams({
+    dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+    nonce: bs58.encode(nonce),
+    redirect_link: onDisconnectRedirectLink,
+    payload: bs58.encode(encryptedPayload),
+  })
+  const url = buildUrl(&quot;disconnect&quot;, params)
+  Linking.openURL(url)
+}</code>
+        </deckgo-highlight-code>
+<p>Once all this in place, our app should be able to quickly connect and disconnect like so:</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="" src="https://www.youtube.com/embed/j6tB18bJvao?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<p>Before moving on, take a minute to refactor <code class="language-text">connect</code> to make use of our new <code class="language-text">buildUrl</code> helper method. Our <code class="language-text">App.tsx</code> file should now look like this:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import &quot;react-native-get-random-values&quot;
+import &quot;react-native-url-polyfill/auto&quot;
+import { Buffer } from &quot;buffer&quot;
+global.Buffer = global.Buffer || Buffer
+import { StatusBar } from &quot;expo-status-bar&quot;
+import React, { useEffect, useRef, useState } from &quot;react&quot;
+import { ActivityIndicator, StyleSheet, Text, View } from &quot;react-native&quot;
+import {
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  Transaction,
+} from &quot;@solana/web3.js&quot;
+import MovieList from &quot;./components/MovieList&quot;
+import Button from &quot;./components/Button&quot;
+import { SafeAreaProvider, SafeAreaView } from &quot;react-native-safe-area-context&quot;
+import ActionSheet from &quot;react-native-actions-sheet&quot;
+import AddReviewSheet from &quot;./components/AddReviewSheet&quot;
+import Toast from &quot;react-native-toast-message&quot;
+import { toastConfig } from &quot;./components/ToastConfig&quot;
+import { COLORS } from &quot;./constants&quot;
+import * as Linking from &quot;expo-linking&quot;
+import nacl from &quot;tweetnacl&quot;
+import bs58 from &quot;bs58&quot;
+import { decryptPayload } from &quot;./utils/decryptPayload&quot;
+import { encryptPayload } from &quot;./utils/encryptPayload&quot;
+import { buildUrl } from &quot;./utils/buildUrl&quot;
+
+const onConnectRedirectLink = Linking.createURL(&quot;onConnect&quot;)
+const onDisconnectRedirectLink = Linking.createURL(&quot;onDisconnect&quot;)
+
+const connection = new Connection(clusterApiUrl(&quot;devnet&quot;))
+
+export default function App() {
+  const [phantomWalletPublicKey, setPhantomWalletPublicKey] =
+    useState&lt;PublicKey | null&gt;(null)
+
+  const [submitting, setSubmitting] = useState(false)
+
+  const actionSheetRef = useRef&lt;ActionSheet&gt;(null)
+
+  const [dappKeyPair] = useState(nacl.box.keyPair())
+  const [sharedSecret, setSharedSecret] = useState&lt;Uint8Array&gt;()
+  const [session, setSession] = useState&lt;string&gt;()
+
+  const [deepLink, setDeepLink] = useState&lt;string&gt;(&quot;&quot;)
+
+  // On app start up, check if we were opened by an inbound deeplink. If so, track the intial URL
+  // Then, listen for a &quot;url&quot; event
+  useEffect(() =&gt; {
+    const initializeDeeplinks = async () =&gt; {
+      const initialUrl = await Linking.getInitialURL()
+      if (initialUrl) {
+        setDeepLink(initialUrl)
+      }
+    }
+    initializeDeeplinks()
+    const listener = Linking.addEventListener(&quot;url&quot;, handleDeepLink)
+    return () =&gt; {
+      listener.remove()
+    }
+  }, [])
+
+  // When a &quot;url&quot; event occurs, track the url
+  const handleDeepLink = ({ url }: Linking.EventType) =&gt; {
+    setDeepLink(url)
+  }
+
+  // Handle in-bound links
+  useEffect(() =&gt; {
+    if (!deepLink) return
+
+    const url = new URL(deepLink)
+    const params = url.searchParams
+
+    // Handle an error response from Phantom
+    if (params.get(&quot;errorCode&quot;)) {
+      const error = Object.fromEntries([...params])
+      const message =
+        error?.errorMessage ??
+        JSON.stringify(Object.fromEntries([...params]), null, 2)
+      console.log(&quot;error: &quot;, message)
+      return
+    }
+
+    // Handle a `connect` response from Phantom
+    if (/onConnect/.test(url.pathname)) {
+      const sharedSecretDapp = nacl.box.before(
+        bs58.decode(params.get(&quot;phantom_encryption_public_key&quot;)!),
+        dappKeyPair.secretKey
+      )
+      const connectData = decryptPayload(
+        params.get(&quot;data&quot;)!,
+        params.get(&quot;nonce&quot;)!,
+        sharedSecretDapp
+      )
+      setSharedSecret(sharedSecretDapp)
+      setSession(connectData.session)
+      setPhantomWalletPublicKey(new PublicKey(connectData.public_key))
+      console.log(`connected to ${connectData.public_key.toString()}`)
+    }
+
+    // Handle a `disconnect` response from Phantom
+    if (/onDisconnect/.test(url.pathname)) {
+      setPhantomWalletPublicKey(null)
+      console.log(&quot;disconnected&quot;)
+    }
+  }, [deepLink])
+
+  // Initiate a new connection to Phantom
+  const connect = async () =&gt; {
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      cluster: &quot;devnet&quot;,
+      app_url: &quot;https://deeplink-movie-tutorial-dummy-site.vercel.app/&quot;,
+      redirect_link: onConnectRedirectLink,
+    })
+
+    const url = buildUrl(&quot;connect&quot;, params)
+    Linking.openURL(url)
+  }
+
+  // Initiate a disconnect from Phantom
+  const disconnect = async () =&gt; {
+    const payload = {
+      session,
+    }
+    const [nonce, encryptedPayload] = encryptPayload(payload, sharedSecret)
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      nonce: bs58.encode(nonce),
+      redirect_link: onDisconnectRedirectLink,
+      payload: bs58.encode(encryptedPayload),
+    })
+    const url = buildUrl(&quot;disconnect&quot;, params)
+    Linking.openURL(url)
+  }
+
+  // Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+  const signAndSendTransaction = async (transaction: Transaction) =&gt; {
+    console.log(&quot;signAndSendTransaction&quot;)
+  }
+
+  // Open the &#39;Add a Review&#39; sheet defined in `components/AddReviewSheet.tsx`
+  const openAddReviewSheet = () =&gt; {
+    actionSheetRef.current?.show()
+  }
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;SafeAreaView style={styles.container}&gt;
+        &lt;View style={styles.header}&gt;
+          {phantomWalletPublicKey ? (
+            &lt;&gt;
+              &lt;View style={[styles.row, styles.wallet]}&gt;
+                &lt;View style={styles.greenDot} /&gt;
+                &lt;Text
+                  style={styles.text}
+                  numberOfLines={1}
+                  ellipsizeMode=&quot;middle&quot;
+                &gt;
+                  {`Connected to: ${phantomWalletPublicKey.toString()}`}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.row}&gt;
+                &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+                &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+              &lt;/View&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;View style={{ marginTop: 15 }}&gt;
+              &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+            &lt;/View&gt;
+          )}
+        &lt;/View&gt;
+        {submitting &amp;&amp; (
+          &lt;ActivityIndicator
+            color={COLORS.WHITE}
+            size=&quot;large&quot;
+            style={styles.spinner}
+          /&gt;
+        )}
+        &lt;MovieList connection={connection} /&gt;
+        &lt;AddReviewSheet
+          actionSheetRef={actionSheetRef}
+          phantomWalletPublicKey={phantomWalletPublicKey}
+          signAndSendTransaction={signAndSendTransaction}
+        /&gt;
+        &lt;Toast config={toastConfig} /&gt;
+        &lt;StatusBar style=&quot;auto&quot; /&gt;
+      &lt;/SafeAreaView&gt;
+    &lt;/SafeAreaProvider&gt;
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.DARK_GREY,
+    flexGrow: 1,
+    position: &quot;relative&quot;,
+  },
+  greenDot: {
+    height: 8,
+    width: 8,
+    borderRadius: 10,
+    marginRight: 5,
+    backgroundColor: COLORS.GREEN,
+  },
+  header: {
+    width: &quot;95%&quot;,
+    marginLeft: &quot;auto&quot;,
+    marginRight: &quot;auto&quot;,
+  },
+  row: {
+    flexDirection: &quot;row&quot;,
+    justifyContent: &quot;space-between&quot;,
+    marginBottom: 5,
+  },
+  spinner: {
+    position: &quot;absolute&quot;,
+    alignSelf: &quot;center&quot;,
+    top: &quot;50%&quot;,
+    zIndex: 1000,
+  },
+  text: {
+    color: COLORS.LIGHT_GREY,
+    width: &quot;100%&quot;,
+  },
+  wallet: {
+    alignItems: &quot;center&quot;,
+    margin: 10,
+    marginBottom: 15,
+  },
+})</code>
+        </deckgo-highlight-code>
+<h2>Signing and sending transactions via Phantom</h2>
+<p>Now that our users can connect and disconnect from our app, we’re finally ready to give them the ability to write their own movie reviews. So far, we’ve just been reading reviews created by other people who have interacted with the program that’s already on devnet. Now, our users can write their own reviews and use Phantom broadcast them to the network.</p>
+<p>If you tap on our existing “Add Review” button, you’ll see a form pop up that asks for a movie’s title, review, and rating. All of this is already set up for us within <code class="language-text">components/AddReviewSheet.tsx</code>. I won’t rehash everything in here, since the Solana Development Course already does a great job of explaining how to interact with their existing program. If we look at our <code class="language-text">handleSubmit</code> function, however, we can see that we’re already constructing our review as a <a href="https://solana-labs.github.io/solana-web3.js/classes/TransactionInstruction.html">TransactionInstruction</a> and then packaging it into a <a href="https://solana-labs.github.io/solana-web3.js/classes/Transaction.html">Transaction</a>. This transaction now needs to be signed and submitted to the Solana network.</p>
+<p>Let’s zoom back out to our <code class="language-text">App.tsx</code> file. Here, we’ll need to add much of the same deeplinking flows that we’ve already covered. Specifically, we’ll need:</p>
+<ol>
+<li>An <code class="language-text">onSignAndSendTransactionRedirectLink</code></li>
+<li>A way to react to an incoming <code class="language-text">onSignAndSendTransaction</code> redirect.</li>
+<li>A method that properly serializes our transaction and sends it to Phantom.</li>
+</ol>
+<p>Go ahead and try your hand at implementing the first two items from our list above. Afterwards, scroll down to find our <code class="language-text">signAndSendTransaction</code> method. Here, we can add the necessary logic to pass our transaction to Phantom so that it can be signed and submitted to the network:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">// Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+const signAndSendTransaction = async (transaction: Transaction) =&gt; {
+  if (!phantomWalletPublicKey) return
+  setSubmitting(true)
+  transaction.feePayer = phantomWalletPublicKey
+  transaction.recentBlockhash = (
+    await connection.getLatestBlockhash()
+  ).blockhash
+  const serializedTransaction = transaction.serialize({
+    requireAllSignatures: false,
+  })
+  const payload = {
+    session,
+    transaction: bs58.encode(serializedTransaction),
+  }
+  const [nonce, encryptedPayload] = encryptPayload(payload, sharedSecret)
+  const params = new URLSearchParams({
+    dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+    nonce: bs58.encode(nonce),
+    redirect_link: onSignAndSendTransactionRedirectLink,
+    payload: bs58.encode(encryptedPayload),
+  })
+  const url = buildUrl(&quot;signAndSendTransaction&quot;, params)
+  Linking.openURL(url)
+}</code>
+        </deckgo-highlight-code>
+<p>In this method, the transaction we’re dealing with is already equipped with a movie review instruction. Before we serialize it, however, we’ll first need to specify its <code class="language-text">feePayer</code> and date it with a <code class="language-text">recentBlockhash</code>. The <code class="language-text">feePayer</code> portion is straightforward—we can simply set this to our user’s <code class="language-text">phantomWalletPublicKey</code>. Whenever we’re sending a transaction to Solana, we’ll want to wait until the last possible moment to fetch and set a <code class="language-text">recentBlockhash</code> using <a href="https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getLatestBlockhash">connection.getLatestBlockhash</a>. If you’re interested in learning more about why this is considered best practice, I highly recommend reading these posts from <a href="https://www.notion.so/Transaction-confirmation-d5b8f4e09b9c4a70a1f263f82307d7ce">Justin Starry</a> and the <a href="https://solanacookbook.com/guides/retrying-transactions.html#facts">Solana Cookbook</a>.</p>
+<p>When serializing our transaction, it’s very important to pass an additional options object that sets <code class="language-text">requireAllSignatures: false</code>. This is because our transaction has not been signed yet! Once its serialized, we can then base58-encode it and add it to our <code class="language-text">payload</code>. From here, everything else should be review from our <code class="language-text">disconnect</code> section: we’ll encrypt our payload, specify the necessary query string params, and build and open our deeplink.</p>
+<p>With this method in place, we’re now finally ready to submit our movie review! If you haven’t done so already, feel free to customize your <code class="language-text">onSignAndSendTransaction</code> redirect handler in whatever way you see fit. In my case, I simply triggered a “Success” popup that links the user to the transaction id on a block explorer. All in all, your <code class="language-text">App.tsx</code> file should now look something like this:</p>
+<deckgo-highlight-code language="tsx"  >
+          <code slot="code">import &quot;react-native-get-random-values&quot;
+import &quot;react-native-url-polyfill/auto&quot;
+import { Buffer } from &quot;buffer&quot;
+global.Buffer = global.Buffer || Buffer
+import { StatusBar } from &quot;expo-status-bar&quot;
+import React, { useEffect, useRef, useState } from &quot;react&quot;
+import { ActivityIndicator, StyleSheet, Text, View } from &quot;react-native&quot;
+import {
+  clusterApiUrl,
+  Connection,
+  PublicKey,
+  Transaction,
+} from &quot;@solana/web3.js&quot;
+import MovieList from &quot;./components/MovieList&quot;
+import Button from &quot;./components/Button&quot;
+import { SafeAreaProvider, SafeAreaView } from &quot;react-native-safe-area-context&quot;
+import ActionSheet from &quot;react-native-actions-sheet&quot;
+import AddReviewSheet from &quot;./components/AddReviewSheet&quot;
+import Toast from &quot;react-native-toast-message&quot;
+import { toastConfig } from &quot;./components/ToastConfig&quot;
+import { COLORS } from &quot;./constants&quot;
+import * as Linking from &quot;expo-linking&quot;
+import nacl from &quot;tweetnacl&quot;
+import bs58 from &quot;bs58&quot;
+import { decryptPayload } from &quot;./utils/decryptPayload&quot;
+import { encryptPayload } from &quot;./utils/encryptPayload&quot;
+import { buildUrl } from &quot;./utils/buildUrl&quot;
+
+const onConnectRedirectLink = Linking.createURL(&quot;onConnect&quot;)
+const onDisconnectRedirectLink = Linking.createURL(&quot;onDisconnect&quot;)
+const onSignAndSendTransactionRedirectLink = Linking.createURL(
+  &quot;onSignAndSendTransaction&quot;
+)
+
+const connection = new Connection(clusterApiUrl(&quot;devnet&quot;))
+
+export default function App() {
+  const [phantomWalletPublicKey, setPhantomWalletPublicKey] =
+    useState&lt;PublicKey | null&gt;(null)
+
+  const [submitting, setSubmitting] = useState(false)
+
+  const actionSheetRef = useRef&lt;ActionSheet&gt;(null)
+
+  const [dappKeyPair] = useState(nacl.box.keyPair())
+  const [sharedSecret, setSharedSecret] = useState&lt;Uint8Array&gt;()
+  const [session, setSession] = useState&lt;string&gt;()
+
+  const [deepLink, setDeepLink] = useState&lt;string&gt;(&quot;&quot;)
+
+  // On app start up, check if we were opened by an inbound deeplink. If so, track the intial URL
+  // Then, listen for a &quot;url&quot; event
+  useEffect(() =&gt; {
+    const initializeDeeplinks = async () =&gt; {
+      const initialUrl = await Linking.getInitialURL()
+      if (initialUrl) {
+        setDeepLink(initialUrl)
+      }
+    }
+    initializeDeeplinks()
+    const listener = Linking.addEventListener(&quot;url&quot;, handleDeepLink)
+    return () =&gt; {
+      listener.remove()
+    }
+  }, [])
+
+  // When a &quot;url&quot; event occurs, track the url
+  const handleDeepLink = ({ url }: Linking.EventType) =&gt; {
+    setDeepLink(url)
+  }
+
+  // Handle in-bound links
+  useEffect(() =&gt; {
+    setSubmitting(false)
+    if (!deepLink) return
+
+    const url = new URL(deepLink)
+    const params = url.searchParams
+
+    // Handle an error response from Phantom
+    if (params.get(&quot;errorCode&quot;)) {
+      const error = Object.fromEntries([...params])
+      const message =
+        error?.errorMessage ??
+        JSON.stringify(Object.fromEntries([...params]), null, 2)
+      console.log(&quot;error: &quot;, message)
+      return
+    }
+
+    // Handle a `connect` response from Phantom
+    if (/onConnect/.test(url.pathname)) {
+      const sharedSecretDapp = nacl.box.before(
+        bs58.decode(params.get(&quot;phantom_encryption_public_key&quot;)!),
+        dappKeyPair.secretKey
+      )
+      const connectData = decryptPayload(
+        params.get(&quot;data&quot;)!,
+        params.get(&quot;nonce&quot;)!,
+        sharedSecretDapp
+      )
+      setSharedSecret(sharedSecretDapp)
+      setSession(connectData.session)
+      setPhantomWalletPublicKey(new PublicKey(connectData.public_key))
+      console.log(`connected to ${connectData.public_key.toString()}`)
+    }
+
+    // Handle a `disconnect` response from Phantom
+    if (/onDisconnect/.test(url.pathname)) {
+      setPhantomWalletPublicKey(null)
+      console.log(&quot;disconnected&quot;)
+    }
+
+    // Handle a `signAndSendTransaction` response from Phantom
+    if (/onSignAndSendTransaction/.test(url.pathname)) {
+      actionSheetRef.current?.hide()
+      const signAndSendTransactionData = decryptPayload(
+        params.get(&quot;data&quot;)!,
+        params.get(&quot;nonce&quot;)!,
+        sharedSecret
+      )
+      console.log(&quot;transaction submitted: &quot;, signAndSendTransactionData)
+      Toast.show({
+        type: &quot;success&quot;,
+        text1: &quot;Review submitted 🎥&quot;,
+        text2: signAndSendTransactionData.signature,
+      })
+    }
+  }, [deepLink])
+
+  // Initiate a new connection to Phantom
+  const connect = async () =&gt; {
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      cluster: &quot;devnet&quot;,
+      app_url: &quot;https://deeplink-movie-tutorial-dummy-site.vercel.app/&quot;,
+      redirect_link: onConnectRedirectLink,
+    })
+
+    const url = buildUrl(&quot;connect&quot;, params)
+    Linking.openURL(url)
+  }
+
+  // Initiate a disconnect from Phantom
+  const disconnect = async () =&gt; {
+    const payload = {
+      session,
+    }
+    const [nonce, encryptedPayload] = encryptPayload(payload, sharedSecret)
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      nonce: bs58.encode(nonce),
+      redirect_link: onDisconnectRedirectLink,
+      payload: bs58.encode(encryptedPayload),
+    })
+    const url = buildUrl(&quot;disconnect&quot;, params)
+    Linking.openURL(url)
+  }
+
+  // Initiate a new transaction via Phantom. We call this in `components/AddReviewSheet.tsx` to send our movie review to the Solana network
+  const signAndSendTransaction = async (transaction: Transaction) =&gt; {
+    if (!phantomWalletPublicKey) return
+    setSubmitting(true)
+    transaction.feePayer = phantomWalletPublicKey
+    transaction.recentBlockhash = (
+      await connection.getLatestBlockhash()
+    ).blockhash
+    const serializedTransaction = transaction.serialize({
+      requireAllSignatures: false,
+    })
+    const payload = {
+      session,
+      transaction: bs58.encode(serializedTransaction),
+    }
+    const [nonce, encryptedPayload] = encryptPayload(payload, sharedSecret)
+    const params = new URLSearchParams({
+      dapp_encryption_public_key: bs58.encode(dappKeyPair.publicKey),
+      nonce: bs58.encode(nonce),
+      redirect_link: onSignAndSendTransactionRedirectLink,
+      payload: bs58.encode(encryptedPayload),
+    })
+    const url = buildUrl(&quot;signAndSendTransaction&quot;, params)
+    Linking.openURL(url)
+  }
+
+  // Open the &#39;Add a Review&#39; sheet defined in `components/AddReviewSheet.tsx`
+  const openAddReviewSheet = () =&gt; {
+    actionSheetRef.current?.show()
+  }
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;SafeAreaView style={styles.container}&gt;
+        &lt;View style={styles.header}&gt;
+          {phantomWalletPublicKey ? (
+            &lt;&gt;
+              &lt;View style={[styles.row, styles.wallet]}&gt;
+                &lt;View style={styles.greenDot} /&gt;
+                &lt;Text
+                  style={styles.text}
+                  numberOfLines={1}
+                  ellipsizeMode=&quot;middle&quot;
+                &gt;
+                  {`Connected to: ${phantomWalletPublicKey.toString()}`}
+                &lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.row}&gt;
+                &lt;Button title=&quot;Add Review&quot; onPress={openAddReviewSheet} /&gt;
+                &lt;Button title=&quot;Disconnect&quot; onPress={disconnect} /&gt;
+              &lt;/View&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;View style={{ marginTop: 15 }}&gt;
+              &lt;Button title=&quot;Connect Phantom&quot; onPress={connect} /&gt;
+            &lt;/View&gt;
+          )}
+        &lt;/View&gt;
+        {submitting &amp;&amp; (
+          &lt;ActivityIndicator
+            color={COLORS.WHITE}
+            size=&quot;large&quot;
+            style={styles.spinner}
+          /&gt;
+        )}
+        &lt;MovieList connection={connection} /&gt;
+        &lt;AddReviewSheet
+          actionSheetRef={actionSheetRef}
+          phantomWalletPublicKey={phantomWalletPublicKey}
+          signAndSendTransaction={signAndSendTransaction}
+        /&gt;
+        &lt;Toast config={toastConfig} /&gt;
+        &lt;StatusBar style=&quot;auto&quot; /&gt;
+      &lt;/SafeAreaView&gt;
+    &lt;/SafeAreaProvider&gt;
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.DARK_GREY,
+    flexGrow: 1,
+    position: &quot;relative&quot;,
+  },
+  greenDot: {
+    height: 8,
+    width: 8,
+    borderRadius: 10,
+    marginRight: 5,
+    backgroundColor: COLORS.GREEN,
+  },
+  header: {
+    width: &quot;95%&quot;,
+    marginLeft: &quot;auto&quot;,
+    marginRight: &quot;auto&quot;,
+  },
+  row: {
+    flexDirection: &quot;row&quot;,
+    justifyContent: &quot;space-between&quot;,
+    marginBottom: 5,
+  },
+  spinner: {
+    position: &quot;absolute&quot;,
+    alignSelf: &quot;center&quot;,
+    top: &quot;50%&quot;,
+    zIndex: 1000,
+  },
+  text: {
+    color: COLORS.LIGHT_GREY,
+    width: &quot;100%&quot;,
+  },
+  wallet: {
+    alignItems: &quot;center&quot;,
+    margin: 10,
+    marginBottom: 15,
+  },
+})</code>
+        </deckgo-highlight-code>
+<h2>Wrapping Up</h2>
+<p>Our movie reviews app is now complete! All together, our new flow should look a little something like this:</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="" src="https://www.youtube.com/embed/tiYizz9h3YE?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<p>Once we’ve added our review, it will live forever on Solana. Try finding for your review by either scrolling or searching in our app!</p>
+<p><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.42857142857143%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem" > <div class="embedVideo-container"> <iframe title="" src="https://www.youtube.com/embed/7ijYr_q7E_s?rel=0" class="embedVideo-iframe" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; " loading="eager" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> </div> </div></p>
+<p>If you enjoyed this tutorial or you have any feedback, please let me know via <a href="https://twitter.com/bfriel_">Twitter</a>! Make sure to also check out our Developer Discord where you can stay up to date on the latest from Phantom.</p></section><hr class="divider" style="margin-bottom:1.5rem"/><footer><div style="display:flex;margin-bottom:3.75rem"><div style="width:100%;max-width:80px"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;border-radius:100px"><div aria-hidden="true" style="width:100%;padding-bottom:100%"></div><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQBBf/EABcBAQEBAQAAAAAAAAAAAAAAAAADAgT/2gAMAwEAAhADEAAAAZ9nsMVCSs5q8YWx/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAwQSISIz/9oACAEBAAEFAgRrzAI1xZ27CorYgx690QKuR7f/xAAYEQEBAAMAAAAAAAAAAAAAAAABAAMRE//aAAgBAwEBPwExmm5RN//EABoRAQEAAgMAAAAAAAAAAAAAAAEAAxEUMWH/2gAIAQIBAT8Bc7suT5LHV//EABwQAQACAgMBAAAAAAAAAAAAAAEAEQIhAxBBMf/aAAgBAQAGPwJm631Q1hDLi+ktAfZUQ8jP/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAITFBUf/aAAgBAQABPyGmFqOnJSEb0CKYBSFMQSXoSHhEHclA+zEFErcjRENOCk9Rn//aAAwDAQACAAMAAAAQtAhC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAExYf/aAAgBAwEBPxACdIjVf//EABgRAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAECAQE/EComShyMvW8r/8QAHhABAQACAgIDAAAAAAAAAAAAAREAIVFhMUGRobH/2gAIAQEAAT8Qt9Bbs7woVSIhJNPzkSqhkcYpfePS+/zBeMRDlEbwbwbcUYEHnHpuEb6dZbbYVZtwJEhJzDP/2Q==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/5e27e9ba69bab462155a4e4fff3b516d/f836f/winnie.jpg 200w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/2244e/winnie.jpg 400w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/14b42/winnie.jpg 800w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/47498/winnie.jpg 1200w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/0e329/winnie.jpg 1600w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/75550/winnie.jpg 2345w" sizes="(max-width: 800px) 100vw, 800px" /><img loading="lazy" sizes="(max-width: 800px) 100vw, 800px" srcset="/static/5e27e9ba69bab462155a4e4fff3b516d/f836f/winnie.jpg 200w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/2244e/winnie.jpg 400w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/14b42/winnie.jpg 800w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/47498/winnie.jpg 1200w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/0e329/winnie.jpg 1600w,
+/static/5e27e9ba69bab462155a4e4fff3b516d/75550/winnie.jpg 2345w" src="/static/5e27e9ba69bab462155a4e4fff3b516d/14b42/winnie.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><div style="margin-left:0.75rem"><p style="line-height:20px;color:rgba(0,0,0,0.54);font-weight:300;font-size:15px;text-transform:uppercase;letter-spacing:0.5px;margin:0">Written by</p><h3 style="margin:0;font-size:28px;line-height:36px;font-weight:500">Brian Friel</h3><p>Developer Relations at<!-- --> <a href="https://phantom.app" target="_blank" rel="noreferrer" class="blue-link">Phantom</a></p></div></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0;margin-left:0"><li><div><a rel="prev" class="no-underline" href="/resending-dropped-transactions-on-solana/"><h5 class="light-subheader">Previous Post</h5>←<!-- --> <!-- -->Resending Dropped Transactions</a></div></li><li></li></ul></nav></main><footer class="main-footer"><div class="inner-footer" style="max-width:36rem;padding:0.75rem 1.125rem"><div class="hide-xs small-font">Made in San Francisco, CA</div><div style="display:flex"><a href="https://twitter.com/bfriel_" class="no-link" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" class="social-icon twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" title="" aria-labelledby="svg-inline--twitter"><title id="svg-inline--twitter"></title><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a><a href="https://www.linkedin.com/in/brian-friel-49a231103/" class="no-link" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" class="social-icon linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448.1 512" title="" aria-labelledby="svg-inline--linkedin"><title id="svg-inline--linkedin"></title><path d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z"></path></svg></a></div><div class="show-xs small-font">Made in San Francisco, CA</div></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-151349675-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/the-complete-guide-to-phantom-deeplinks/";window.___webpackCompilationHash="da00c6ab0fd37913c4e2";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-a076bc9a13ab05624525.js"],"app":["/app-86f4dfcfb40ec08f19c1.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-2cd44f38904a9889a234.js"],"component---src-pages-404-js":["/component---src-pages-404-js-346c2975468f913d3210.js"],"component---src-pages-about-js":["/component---src-pages-about-js-ba3fcbba2c6ad694e240.js"],"component---src-pages-index-js":["/component---src-pages-index-js-84a017933e060006e677.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-e73855cfd1de38b334f7.js"]};/*]]>*/</script><script src="/polyfill-a076bc9a13ab05624525.js" nomodule=""></script><script src="/app-86f4dfcfb40ec08f19c1.js" async=""></script><script src="/framework-fc28777b8484ee240f1d.js" async=""></script><script src="/webpack-runtime-7de1faa08eac07d25ba3.js" async=""></script></body></html>
