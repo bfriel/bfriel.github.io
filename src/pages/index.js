@@ -9,11 +9,21 @@ import { rhythm } from "../utils/typography"
 export default function Homepage({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  posts.forEach((post) => console.log(post.node))
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
       <p style={{ marginBottom: rhythm(0.5) }}>
-        Developer Relations at <a href="https://phantom.app/" target="_blank" rel="noreferrer" className="blue-link">Phantom</a>{". "} More{" "}
+        Developer Relations at{" "}
+        <a
+          href="https://phantom.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="blue-link"
+        >
+          Phantom
+        </a>
+        {". "} More{" "}
         <Link className="blue-link" to="/about">
           about me
         </Link>
@@ -33,10 +43,10 @@ export default function Homepage({ data, location }) {
           >
             <article className="article" style={{ marginBottom: rhythm(2) }}>
               <section className="article-main">
-                  <h3 className="article-title">{title}</h3>
-                  <small className="hide-xs">
-                    {node.frontmatter.date} | {node.timeToRead} Min Read
-                  </small>
+                <h3 className="article-title">{title}</h3>
+                <small className="hide-xs">
+                  {node.frontmatter.date} | {node.timeToRead} Min Read
+                </small>
                 <small
                   className="show-xs"
                   style={{
