@@ -1,11 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
-// const axios = require("axios")
-// const crypto = require("crypto")
-// -----
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
