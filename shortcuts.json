@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "shortcuts": [
+    {
+      "label": "Stake",
+      "uri": "https://www.tensor.trade/shipyard",
+      "icon": "stake-2"
+    },
+    {
+      "label": "Trade",
+      "uri": "https://www.tensor.trade",
+      "icon": "stake"
+    }
+  ]
+}
