@@ -2,14 +2,34 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Stake",
-      "uri": "https://www.tensor.trade/shipyard",
-      "icon": "stake-2"
+      "label": "Enter Three",
+      "uri": "https://three.okay.xyz",
+      "icon": "leaderboard"
     },
     {
-      "label": "Trade",
-      "uri": "https://www.tensor.trade",
-      "icon": "stake"
+      "label": "Join Discord",
+      "uri": "https://discord.com/invite/okaybears",
+      "icon": "discord"
+    },
+    {
+      "label": "Shop",
+      "uri": "https://shop.okaybears.com",
+      "icon": "mint"
+    },
+    {
+      "label": "View Twitter",
+      "uri": "https://twitter.com/okaybears",
+      "icon": "twitter"
+    },
+    {
+      "label": "View Instagram",
+      "uri": "https://www.instagram.com/okaybears/",
+      "icon": "instagram"
+    },
+    {
+      "label": "View Website",
+      "uri": "https://www.okaybears.com",
+      "icon": "generic-link"
     }
   ]
 }
