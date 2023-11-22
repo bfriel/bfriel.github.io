@@ -9,7 +9,8 @@
     {
       "label": "Join Discord",
       "uri": "https://discord.com/invite/okaybears",
-      "icon": "discord"
+      "icon": "discord",
+      "prefersExternalTarget": true
     },
     {
       "label": "Shop",
@@ -19,12 +20,14 @@
     {
       "label": "View Twitter",
       "uri": "https://twitter.com/okaybears",
-      "icon": "twitter"
+      "icon": "twitter",
+      "prefersExternalTarget": true
     },
     {
       "label": "View Instagram",
       "uri": "https://www.instagram.com/okaybears/",
-      "icon": "instagram"
+      "icon": "instagram",
+      "prefersExternalTarget": true
     },
     {
       "label": "View Website",
