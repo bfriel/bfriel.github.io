@@ -2,30 +2,20 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Stake Your Seals",
-      "uri": "https://www.sappyseals.io/staking",
-      "icon": "stake"
-    },
-    {
-      "label": "Spend $PIXL",
-      "uri": "https://www.sappyseals.io/marketplace",
+      "label": "Lend on Sharky",
+      "uri": "https://sharky.fi/lend",
       "icon": "stake-2"
     },
     {
-      "label": "View Pixlverse",
-      "uri": "https://www.thepixlverse.com/",
-      "icon": "view"
+      "label": "Clam your Chowder",
+      "uri": "https://sharky.fi/sharx-nft/upgrade",
+      "icon": "stake"
     },
     {
       "label": "Join Discord",
-      "uri": "https://discord.com/invite/aNpmbHChVy",
+      "uri": "https://discord.com/invite/sharkyfi",
       "icon": "discord",
       "prefersExternalTarget": true
-    },
-    {
-      "label": "Shop Merch",
-      "uri": "https://shop.sappyseals.com/",
-      "icon": "tip"
     }
   ]
 }
