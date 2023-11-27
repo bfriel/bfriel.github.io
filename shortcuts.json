@@ -2,19 +2,29 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Enter Banana Stand",
-      "uri": "https://bananastand.monkedao.io/login",
+      "label": "Stake Your Seals",
+      "uri": "https://www.sappyseals.io/staking",
+      "icon": "stake"
+    },
+    {
+      "label": "Spend $PIXL",
+      "uri": "https://www.sappyseals.io/marketplace",
       "icon": "stake-2"
     },
     {
-      "label": "Join MonkeDAO",
-      "uri": "https://discord.gg/monkedao",
+      "label": "View Pixlverse",
+      "uri": "https://www.thepixlverse.com/",
+      "icon": "view"
+    },
+    {
+      "label": "Join Discord",
+      "uri": "https://discord.com/invite/aNpmbHChVy",
       "icon": "discord",
       "prefersExternalTarget": true
     },
     {
-      "label": "Shop",
-      "uri": "https://shop.monkedao.io/",
+      "label": "Shop Merch",
+      "uri": "https://shop.sappyseals.com/",
       "icon": "tip"
     }
   ]
