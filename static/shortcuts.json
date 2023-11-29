@@ -2,8 +2,18 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Join The Bodega",
-      "uri": "http://discord.gg/TheNifty",
+      "label": "Enter Dashboard",
+      "uri": "https://bozo.network/dashboard",
+      "icon": "leaderboard"
+    },
+    {
+      "label": "View Website",
+      "uri": "https://bozo.network/",
+      "icon": "generic-link"
+    },
+    {
+      "label": "Join Discord",
+      "uri": "https://discord.com/invite/bozodao",
       "icon": "discord",
       "prefersExternalTarget": true
     }
