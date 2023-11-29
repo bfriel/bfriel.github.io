@@ -2,18 +2,18 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Play The Heist",
-      "uri": "https://theheist.game/",
+      "label": "Play Oogy Blast",
+      "uri": "https://blast.oogy.io/",
       "icon": "gaming-2"
     },
     {
-      "label": "Trade $NANA",
-      "uri": "https://jup.ag/swap/NANA_HxRELUQfvvjToVbacjr9YECdfQMUqGgPYB68jVDYxkbr-SOL",
-      "icon": "stake"
+      "label": "View Website",
+      "uri": "https://www.oogy.io/",
+      "icon": "generic-link"
     },
     {
       "label": "Join Discord",
-      "uri": "https://discord.com/invite/theheist",
+      "uri": "https://discord.com/invite/oogy",
       "icon": "discord",
       "prefersExternalTarget": true
     }
