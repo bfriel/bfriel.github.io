@@ -2,18 +2,18 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Play Oogy Blast",
-      "uri": "https://blast.oogy.io/",
-      "icon": "gaming-2"
+      "label": "Enter Dashboard",
+      "uri": "https://bozo.network/dashboard#",
+      "icon": "leaderboard"
     },
     {
       "label": "View Website",
-      "uri": "https://www.oogy.io/",
+      "uri": "https://bozo.network/",
       "icon": "generic-link"
     },
     {
       "label": "Join Discord",
-      "uri": "https://discord.com/invite/oogy",
+      "uri": "https://discord.com/invite/bozodao",
       "icon": "discord",
       "prefersExternalTarget": true
     }
