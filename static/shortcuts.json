@@ -2,20 +2,9 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Join The Nifty",
-      "uri": "https://www.thenifty.com/",
-      "icon": "stake-2"
-    },
-    {
       "label": "Join The Bodega",
       "uri": "http://discord.gg/TheNifty",
       "icon": "discord",
-      "prefersExternalTarget": true
-    },
-    {
-      "label": "View Twitter",
-      "uri": "https://twitter.com/BoDoggosNFT",
-      "icon": "twitter",
       "prefersExternalTarget": true
     }
   ]
