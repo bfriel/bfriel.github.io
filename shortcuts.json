@@ -4,12 +4,12 @@
     {
       "label": "Play The Heist",
       "uri": "https://theheist.game/",
-      "icon": "gaming"
+      "icon": "gaming-2"
     },
     {
       "label": "Trade $NANA",
       "uri": "https://jup.ag/swap/NANA_HxRELUQfvvjToVbacjr9YECdfQMUqGgPYB68jVDYxkbr-SOL",
-      "icon": "stake-2"
+      "icon": "stake"
     },
     {
       "label": "Join Discord",
