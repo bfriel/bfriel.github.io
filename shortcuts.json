@@ -2,18 +2,18 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Lend on Sharky",
-      "uri": "https://sharky.fi/lend",
+      "label": "Play The Heist",
+      "uri": "https://theheist.game/",
+      "icon": "gaming"
+    },
+    {
+      "label": "Trade $NANA",
+      "uri": "https://jup.ag/swap/NANA_HxRELUQfvvjToVbacjr9YECdfQMUqGgPYB68jVDYxkbr-SOL",
       "icon": "stake-2"
     },
     {
-      "label": "Clam your Chowder",
-      "uri": "https://sharky.fi/sharx-nft/upgrade",
-      "icon": "stake"
-    },
-    {
       "label": "Join Discord",
-      "uri": "https://discord.com/invite/sharkyfi",
+      "uri": "https://discord.com/invite/theheist",
       "icon": "discord",
       "prefersExternalTarget": true
     }
