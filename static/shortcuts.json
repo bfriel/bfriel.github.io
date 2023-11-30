@@ -2,19 +2,20 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Enter Dashboard",
-      "uri": "https://bozo.network/dashboard",
-      "icon": "leaderboard"
+      "label": "Join The Nifty",
+      "uri": "https://www.thenifty.com/",
+      "icon": "stake-2"
     },
     {
-      "label": "View Website",
-      "uri": "https://bozo.network/",
-      "icon": "generic-link"
-    },
-    {
-      "label": "Join Discord",
-      "uri": "https://discord.com/invite/bozodao",
+      "label": "Join The Bodega",
+      "uri": "https://discord.com/invite/TheNifty",
       "icon": "discord",
+      "prefersExternalTarget": true
+    },
+    {
+      "label": "View Twitter",
+      "uri": "https://twitter.com/BoDoggosNFT",
+      "icon": "twitter",
       "prefersExternalTarget": true
     }
   ]
