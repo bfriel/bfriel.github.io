@@ -2,9 +2,14 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Stake Ovols",
+      "label": "Stake Ovol",
       "uri": "https://www.ovols.com/essence/?open=staking",
       "icon": "stake-2"
+    },
+    {
+      "label": "Evolve Ovol",
+      "uri": "https://www.ovols.com/evolution",
+      "icon": "mint"
     },
     {
       "label": "Dollar Cost Average",
