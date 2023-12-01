@@ -2,20 +2,31 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Stake",
-      "uri": "https://photofinish.live/pfp-marketplace/staking",
+      "label": "Stake Ovols",
+      "uri": "https://www.ovols.com/essence/?open=staking",
       "icon": "stake-2"
     },
     {
-      "label": "Race for Free",
-      "uri": "https://photofinish.live/free-races",
-      "icon": "gaming-2"
+      "label": "Dollar Cost Average",
+      "uri": "https://www.ovols.com/dca",
+      "icon": "stake"
     },
     {
       "label": "Join Discord",
       "uri": "https://discord.com/invite/tVhBawVeb9",
       "icon": "discord",
       "prefersExternalTarget": true
+    },
+    {
+      "label": "View Twitter",
+      "uri": "https://x.com/ovolsnft",
+      "icon": "twitter",
+      "prefersExternalTarget": true
+    },
+    {
+      "label": "View Website",
+      "uri": "https://www.ovols.com",
+      "icon": "generic-link"
     }
   ]
 }
