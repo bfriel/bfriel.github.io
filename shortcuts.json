@@ -2,47 +2,19 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Explore Raposa",
-      "uri": "https://raposacoffee.com",
-      "icon": "generic-link"
+      "label": "View Quekz",
+      "uri": "https://quekz.com/",
+      "icon": "view"
     },
     {
-      "label": "Buy Coffee",
-      "uri": "https://shop.raposacoffee.com",
-      "icon": "tip"
-    },
-    {
-      "label": "Stake Your Kup",
-      "uri": "https://stake.raposacoffee.com",
-      "icon": "stake-2"
-    },
-    {
-      "label": "Win Rewards",
-      "uri": "https://rewards.raposacoffee.com",
-      "icon": "leaderboard"
-    },
-    {
-      "label": "Follow Us",
-      "uri": "https://twitter.com/raposacoffeeco",
-      "icon": "twitter",
-      "prefersExternalTarget": true
+      "label": "Race Quekz",
+      "uri": "https://quekz.com/race",
+      "icon": "gaming"
     },
     {
       "label": "Join Discord",
-      "uri": "https://discord.gg/raposa",
+      "uri": "https://t.co/XAZLE05vyK",
       "icon": "discord",
-      "prefersExternalTarget": true
-    },
-    {
-      "label": "Visit Instagram",
-      "uri": "https://instagram.com/raposa.coffee",
-      "icon": "instagram",
-      "prefersExternalTarget": true
-    },
-    {
-      "label": "Visit TikTok",
-      "uri": "https://tiktok.com/@raposacoffee",
-      "icon": "generic-link",
       "prefersExternalTarget": true
     }
   ]
