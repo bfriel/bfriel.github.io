@@ -2,36 +2,48 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Stake Ovol",
-      "uri": "https://www.ovols.com/essence/?open=staking",
+      "label": "Explore Raposa",
+      "uri": "https://raposacoffee.com",
+      "icon": "generic-link"
+    },
+    {
+      "label": "Buy Coffee",
+      "uri": "https://shop.raposacoffee.com",
+      "icon": "tip"
+    },
+    {
+      "label": "Stake Your Kup",
+      "uri": "https://stake.raposacoffee.com",
       "icon": "stake-2"
     },
     {
-      "label": "Evolve Ovol",
-      "uri": "https://www.ovols.com/evolution",
-      "icon": "mint"
+      "label": "Win Rewards",
+      "uri": "https://rewards.raposacoffee.com",
+      "icon": "leaderboard"
     },
     {
-      "label": "Dollar Cost Average",
-      "uri": "https://www.ovols.com/dca",
-      "icon": "stake"
-    },
-    {
-      "label": "Join Discord",
-      "uri": "https://discord.gg/ovolsnft",
-      "icon": "discord",
-      "prefersExternalTarget": true
-    },
-    {
-      "label": "View Twitter",
-      "uri": "https://x.com/ovolsnft",
+      "label": "Follow Us",
+      "uri": "https://twitter.com/raposacoffeeco",
       "icon": "twitter",
       "prefersExternalTarget": true
     },
     {
-      "label": "View Website",
-      "uri": "https://www.ovols.com",
-      "icon": "generic-link"
+      "label": "Join Discord",
+      "uri": "https://discord.gg/raposa",
+      "icon": "discord",
+      "prefersExternalTarget": true
+    },
+    {
+      "label": "Visit Instagram",
+      "uri": "https://instagram.com/raposa.coffee",
+      "icon": "instagram",
+      "prefersExternalTarget": true
+    },
+    {
+      "label": "Visit TikTok",
+      "uri": "https://tiktok.com/@raposacoffee",
+      "icon": "generic-link",
+      "prefersExternalTarget": true
     }
   ]
 }
