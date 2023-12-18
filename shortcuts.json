@@ -2,18 +2,40 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "View Quekz",
-      "uri": "https://quekz.com/",
-      "icon": "view"
-    },
-    {
-      "label": "Race Quekz",
-      "uri": "https://quekz.com/race",
+      "label": "Play Seekers of Tokane",
+      "uri": "https://app.aurory.io/seekers-of-tokane",
       "icon": "gaming"
     },
     {
+      "label": "Manage Expeditions",
+      "uri": "https://app.aurory.io/expeditions",
+      "icon": "gaming-2"
+    },
+    {
+      "label": "Stake $AURY",
+      "uri": "https://app.aurory.io/staking",
+      "icon": "stake"
+    },
+    {
+      "label": "View Whitepaper",
+      "uri": "https://docs.aurory.io/aurory-whitepaper",
+      "icon": "view"
+    },
+    {
+      "label": "View Twitter",
+      "uri": "https://twitter.com/AuroryProject",
+      "icon": "twitter",
+      "prefersExternalTarget": true
+    },
+    {
+      "label": "View Instagram",
+      "uri": "https://instagram.com/auroryproject",
+      "icon": "instagram",
+      "prefersExternalTarget": true
+    },
+    {
       "label": "Join Discord",
-      "uri": "https://discord.gg/vpfSrk636g",
+      "uri": "https://discord.gg/aurory",
       "icon": "discord",
       "prefersExternalTarget": true
     }
