@@ -2,40 +2,18 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Play Seekers of Tokane",
-      "uri": "https://app.aurory.io/seekers-of-tokane",
-      "icon": "gaming"
-    },
-    {
-      "label": "Manage Expeditions",
-      "uri": "https://app.aurory.io/expeditions",
-      "icon": "gaming-2"
-    },
-    {
-      "label": "Stake $AURY",
-      "uri": "https://app.aurory.io/staking",
+      "label": "Stake Your Ducks",
+      "uri": "https://staking.dazedducks.io/",
       "icon": "stake"
     },
     {
-      "label": "View Whitepaper",
-      "uri": "https://docs.aurory.io/aurory-whitepaper",
+      "label": "View Website",
+      "uri": "https://dazedducks.io/",
       "icon": "view"
     },
     {
-      "label": "View Twitter",
-      "uri": "https://twitter.com/AuroryProject",
-      "icon": "twitter",
-      "prefersExternalTarget": true
-    },
-    {
-      "label": "View Instagram",
-      "uri": "https://instagram.com/auroryproject",
-      "icon": "instagram",
-      "prefersExternalTarget": true
-    },
-    {
       "label": "Join Discord",
-      "uri": "https://discord.gg/aurory",
+      "uri": "https://discord.gg/dazedducks",
       "icon": "discord",
       "prefersExternalTarget": true
     }
