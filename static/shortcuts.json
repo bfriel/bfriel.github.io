@@ -2,20 +2,31 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "Stake Your Ducks",
-      "uri": "https://staking.dazedducks.io/",
-      "icon": "stake"
-    },
-    {
       "label": "View Website",
-      "uri": "https://dazedducks.io/",
+      "uri": "https://bonkz.io/",
       "icon": "view"
     },
     {
-      "label": "Join Discord",
-      "uri": "https://discord.gg/dazedducks",
-      "icon": "discord",
+      "label": "View Twitter",
+      "uri": "twitter.com/BonkzNFT_",
+      "icon": "twitter",
       "prefersExternalTarget": true
+    },
+    {
+      "label": "View Instagram",
+      "uri": "www.instagram.com/bonkz___/",
+      "icon": "instagram",
+      "prefersExternalTarget": true
+    },
+    {
+      "label": "Shop Merch",
+      "uri": "bonkzclothing.com",
+      "icon": "tip"
+    },
+    {
+      "label": "Reveal Bonkz",
+      "uri": "https://reveal.bonkz.io/",
+      "icon": "mint"
     }
   ]
 }
