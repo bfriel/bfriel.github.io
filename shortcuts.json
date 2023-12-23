@@ -8,7 +8,7 @@
     },
     {
       "label": "View Twitter",
-      "uri": "twitter.com/BonkzNFT_",
+      "uri": "https://twitter.com/BonkzNFT_",
       "icon": "twitter",
       "prefersExternalTarget": true
     },
@@ -20,7 +20,7 @@
     },
     {
       "label": "Shop Merch",
-      "uri": "bonkzclothing.com",
+      "uri": "https://bonkzclothing.com/",
       "icon": "tip"
     },
     {
