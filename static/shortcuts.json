@@ -14,8 +14,8 @@
     },
     {
       "label": "Join Discord",
-      "uri": "discord.gg/chads",
-      "icon": "instagram",
+      "uri": "https://discord.gg/chads",
+      "icon": "discord",
       "prefersExternalTarget": true
     },
     {
