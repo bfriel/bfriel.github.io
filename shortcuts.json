@@ -3,20 +3,25 @@
   "shortcuts": [
     {
       "label": "View Website",
-      "uri": "https://thefracture.io/",
+      "uri": "https://www.chads.wtf/",
       "icon": "view"
     },
     {
       "label": "View Twitter",
-      "uri": "https://twitter.com/TheFracture_",
+      "uri": "https://twitter.com/CHADSwtf",
       "icon": "twitter",
       "prefersExternalTarget": true
     },
     {
-      "label": "View Instagram",
-      "uri": "https://www.instagram.com/the.fracture_/",
+      "label": "Join Discord",
+      "uri": "discord.gg/chads",
       "icon": "instagram",
       "prefersExternalTarget": true
+    },
+    {
+      "label": "Subscribe on DRiP",
+      "uri": "https://drip.haus/chads",
+      "icon": "mint"
     }
   ]
 }
