@@ -2,26 +2,20 @@
   "version": 1,
   "shortcuts": [
     {
-      "label": "View Website",
-      "uri": "https://www.chads.wtf/",
-      "icon": "view"
+      "label": "View Leaderboard",
+      "uri": "https://two.solanamobile.com/leaderboard",
+      "icon": "leaderboard"
     },
     {
-      "label": "View Twitter",
-      "uri": "https://twitter.com/CHADSwtf",
-      "icon": "twitter",
-      "prefersExternalTarget": true
+      "label": "Preorder Now",
+      "uri": "https://two.solanamobile.com/preorder",
+      "icon": "tip"
     },
     {
       "label": "Join Discord",
-      "uri": "https://discord.gg/chads",
+      "uri": "https://discord.com/invite/solanamobile",
       "icon": "discord",
       "prefersExternalTarget": true
-    },
-    {
-      "label": "Subscribe on DRiP",
-      "uri": "https://drip.haus/chads",
-      "icon": "mint"
     }
   ]
 }
