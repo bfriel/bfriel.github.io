@@ -2,5 +2,6 @@
   "name": "Test Token",
   "symbol": "TEST",
   "image": "https://brianfriel.xyz/phantomdev.gif",
-  "description": "Just a test!"
+  "description": "Just a test!",
+  "external_url": "https://brianfriel.xyz"
 }

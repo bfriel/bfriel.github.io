@@ -1,19 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "shortcuts": [
     {
       "label": "View Leaderboard",
       "uri": "https://two.solanamobile.com/leaderboard",
+      "type": "fungible",
       "icon": "leaderboard"
     },
     {
       "label": "Preorder Now",
       "uri": "https://two.solanamobile.com/preorder",
+      "type": "fungible",
       "icon": "tip"
     },
     {
       "label": "Join Discord",
       "uri": "https://discord.com/invite/solanamobile",
+      "type": "fungible",
       "icon": "discord",
       "prefersExternalTarget": true
     }
