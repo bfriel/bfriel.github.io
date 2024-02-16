@@ -23,7 +23,8 @@ export default function About({ data, location }) {
         </h1>
       </div>
       <section>
-        <p>I'm a Developer Relations Evangelist at{" "}
+        <p>
+          I'm currently the Head of Ecosystem Success at{" "}
           <a
             className="blue-link"
             href="https://phantom.app/"
@@ -31,24 +32,21 @@ export default function About({ data, location }) {
             rel="noopener noreferrer"
           >
             Phantom
-          </a>{", "} where I help teams build applications on Solana. If you're building something that interacts with Phantom, I'd love to{" "}<a
+          </a>
+          {". "}If you're building something that interacts with Phantom, I'd
+          love to{" "}
+          <a
             className="blue-link"
             href="https://twitter.com/bfriel_"
             target="_blank"
             rel="noopener noreferrer"
           >
             hear from you!
-          </a></p>
-        <p>Prior to Phantom, I worked as a frontend engineer and product manager at{" "}
-          <a
-            className="blue-link"
-            href="https://castlefunds.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Castle Funds
-          </a>{". "}In a previous life, I worked in the outdoor industry at
-          companies such as{" "}
+          </a>
+        </p>
+        <p>
+          Prior to starting my career as a software developer, I worked in the
+          outdoor industry at companies such as{" "}
           <a
             className="blue-link"
             href="https://nols.edu/en/"
@@ -74,11 +72,13 @@ export default function About({ data, location }) {
             rel="noopener noreferrer"
           >
             Pomona College
-          </a>{"."}
+          </a>
+          {"."}
         </p>
         <p>
-          I'm currently based in San Francisco. The best way to get in touch with me is via{" "}
-        <a
+          I'm currently based in San Francisco. The best way to get in touch
+          with me is via{" "}
+          <a
             className="blue-link"
             href="https://twitter.com/bfriel_"
             target="_blank"
