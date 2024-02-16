@@ -64,7 +64,7 @@ export default function Bio() {
           {author}
         </h3>
         <p>
-          Developer Relations at{" "}
+          Building{" "}
           <a
             href="https://phantom.app"
             target="_blank"

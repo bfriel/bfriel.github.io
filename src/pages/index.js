@@ -13,7 +13,7 @@ export default function Homepage({ data, location }) {
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
       <p style={{ marginBottom: rhythm(0.5) }}>
-        Developer Relations at{" "}
+        Building{" "}
         <a
           href="https://phantom.app/"
           target="_blank"
