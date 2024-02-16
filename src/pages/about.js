@@ -67,7 +67,7 @@ export default function About({ data, location }) {
           and played football at{" "}
           <a
             className="blue-link"
-            href="https://www.sagehens.com/sports/fball/2014-15/bios/friel_brian_ar4p"
+            href="https://sagehens.com/sports/football/roster/brian-friel/754"
             target="_blank"
             rel="noopener noreferrer"
           >
