@@ -1,22 +1,19 @@
 {
-  "version": 2,
+  "version": 1,
   "shortcuts": [
     {
-      "label": "View Leaderboard",
-      "uri": "https://two.solanamobile.com/leaderboard",
-      "type": "fungible",
-      "icon": "leaderboard"
+      "label": "View Quekz",
+      "uri": "https://quekz.com/",
+      "icon": "view"
     },
     {
-      "label": "Preorder Now",
-      "uri": "https://two.solanamobile.com/preorder",
-      "type": "fungible",
-      "icon": "tip"
+      "label": "Race Quekz",
+      "uri": "https://quekz.com/race",
+      "icon": "gaming"
     },
     {
       "label": "Join Discord",
-      "uri": "https://discord.com/invite/solanamobile",
-      "type": "fungible",
+      "uri": "https://discord.gg/vpfSrk636g",
       "icon": "discord",
       "prefersExternalTarget": true
     }
