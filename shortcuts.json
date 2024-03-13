@@ -2,20 +2,110 @@
   "version": 1,
   "shortcuts": [
     {
+      "icon": "view",
       "label": "View Quekz",
-      "uri": "https://quekz.com/",
-      "icon": "view"
+      "uri": "https://quekz.com/"
     },
     {
+      "icon": "gaming",
       "label": "Race Quekz",
-      "uri": "https://quekz.com/race",
-      "icon": "gaming"
+      "uri": "https://quekz.com/race"
     },
     {
-      "label": "Join Discord",
-      "uri": "https://discord.gg/vpfSrk636g",
       "icon": "discord",
-      "prefersExternalTarget": true
+      "label": "Join Discord",
+      "prefersExternalTarget": true,
+      "uri": "https://discord.gg/vpfSrk636g"
+    },
+    {
+      "icon": "vote",
+      "label": "Open Vote",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "vote-2",
+      "label": "Open Vote-2",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "stake",
+      "label": "Open Stake",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "stake-2",
+      "label": "Open Stake-2",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "chat",
+      "label": "Open Chat",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "tip",
+      "label": "Open Tip",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "mint",
+      "label": "Open Mint",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "mint-2",
+      "label": "Open Mint-2",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "twitter",
+      "label": "Open Twitter",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "twitter-2",
+      "label": "Open Twitter-2",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "x",
+      "label": "Open X",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "instagram",
+      "label": "Open Instagram",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "telegram",
+      "label": "Open Telegram",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "leaderboard",
+      "label": "Open Leaderboard",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "gaming-2",
+      "label": "Open Gaming-2",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "generic-link",
+      "label": "Open Generic-link",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "generic-add",
+      "label": "Open Generic-add",
+      "uri": "https://phantom.app"
+    },
+    {
+      "icon": "default",
+      "label": "Open Default",
+      "uri": "https://phantom.app"
     }
   ]
 }
