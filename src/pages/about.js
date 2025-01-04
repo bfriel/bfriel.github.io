@@ -24,7 +24,7 @@ export default function About({ data, location }) {
       </div>
       <section>
         <p>
-          I'm currently the Head of Ecosystem Success at{" "}
+          I'm currently a Product Manager at{" "}
           <a
             className="blue-link"
             href="https://phantom.app/"
